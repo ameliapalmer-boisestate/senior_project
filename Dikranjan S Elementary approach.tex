@@ -1,0 +1,73 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage{mathrsfs}
+\usepackage{amssymb}
+
+\title{An elementary approach to Haar integration and Pontryagin duality in
+locally compact abelian groups}
+\author{Dikran Dikranjan,  Luchezar Stoyanov }
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+        We offer an elementary proof of Pontryagin duality theorem for compact and discrete
+    abelian groups. To this end we make use of an elementary proof of Peter-Weyl theorem
+    due to Prodanov that makes no recourse to Haar integral. As a long series of applications
+    of this approach we obtain proofs of Bohr-von Neumann's theorem on almost periodic
+    functions, Comfort-Ross' theorem on the description of the precompact topologies on
+    abelian groups, and, last but not least, the existence of Haar integral in LCA groups.
+\end{abstract}
+
+\section{Introduction}
+
+
+        Pontryagin duality is a formidable tool in the theory of topological groups and harmonic analysis, as well as many other
+    fields of mathematics [20]. This is why it is desirable that experts in all these fields become familiar with this extraordinary
+    technique. Unfortunately, the doors to this magnificent castle are “guarded” by another masterpiece in mathematics, Peter-
+    Weyl’s theorem in the sense that its proof is the hardest inevitable part in the proof of the duality theorem. Usually, the
+    standard expositions in topological groups provide a proof of Peter-Weyl's theorem in full generality which requires a heavy
+    machinery coming from functional analysis, whereas the proof of Pontryagin duality theorem needs only the Peter-Weyl's
+    theorem in the abelian case. This motivated the first tentative of Prodanov to provide such a proof in [27]. A second proof
+    appeared in the monograph [8], that is out of print since many years. Meanwhile, the proof was further improved as a result
+    of its exposition at graduate courses or elsewhere. Since this approach seems to remain relatively unknown to a part of the
+    wide audience, we decided to present here this improved version of the elementary proof from [8] as well as several
+    applications with the hope that Prodanov’s ideas will become widely known and used. Other ideas of Prodanov related to
+    dualities are discussed in [7].
+    
+    
+        Let $\mathcal{L}$ denote the category of locally compact abelian (LCA) groups and continuous homomorphisms. Prominent examples
+    of compact abelian groups are the powers of the circle group $\mathbb{T}$, as well as their closed subgroups. This is the most general
+    instance of a compact abelian group, i.e. every compact abelian group is isomorphic to a closed subgroup of a power of $\mathbb{T}$ (see
+    Corollary 5.4). Furthermore, every abelian group of the form    $\mathbb{R}^n \times G$, where $G$ has an open compact subgroup $K$, is locally
+    compact. Actually, every locally compact abelian group has this form (see e.g. [15,25]).
+    
+    
+        For $G \in \mathcal{L}$ denote by $\widehat{G}$ the group of continuous homomorphisms $G \to \mathcal{T}$ equipped with the compact-open topology
+    having as a base of the neighborhoods of 0 the family of sets $W (K, U) = {\chi \in \widehat{G}: \chi(K) \subseteq U}$, where $K \subseteq G$ is compact and
+    U is an open neighborhood of the neutral element in $\matbb{T}$. If $G \in \mathcal{L}$, then also $\widehat{G} \in \mathcal{L}$. So
+
+
+    $G \mapsto \widehat{G}$, $f \mapsto \widehat{f}$
+
+
+    is a contravariant endofunctor $\widehat{}:\mathcal{L} \to \mathcal{L}$, where $\widehat{f}$ is defined for $f : H \to G$ as $\widehat{f} : \widehat{G} \to \widehat{H}$, with $\mathcal{f}(\chi) = \chi \circ f$ for $\chi \in \widehat{H}$.
+    
+    
+        Pontryagin-van Kampen duality theorem says that this functor is an involution i.e., $\tilde{\bar{\bar{G}}} \cong G$ for every $G \in \mathcal{L}$. Moreover,
+    this functor sends compact groups to discrete ones and vice versa, i.e., it defines a duality between the subcategory $\mathcal{C}$ of
+    compact abelian groups and the subcategory $\mathcal{D}$ of discrete abelian groups.
+        Let $G$ be a topological abelian group. Define $\omega_G : G \to \widehat{\widehat{G}}$ such that $\omega_G (x)(\chi) = \chi(x)$, for every $\chi \in G$ and for every $\chi \in \widehat{G}$.
+    In a more precise form, the Pontryagin-van Kampen duality theorem says that $\omega_G$ is a topological isomorphism for every
+    $G \in \mathcal{L}$.
+
+
+        Injectivity of $\omega_G(x)$ means that $\widehat{G}$ separates the points of $G$ (i.e., for every $x \in G \\ \{0\}$, there exists $\chi \in \widehat{G}$ with $\chi(x) \neq 1$).
+    So the main step in the proof of the Pontryagin–van Kampen duality is the following theorem, proved in Section 5 (Corollary 5.3).
+
+
+\end{document}
