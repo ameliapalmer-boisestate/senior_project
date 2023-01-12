@@ -70,4 +70,147 @@ locally compact abelian groups}
     So the main step in the proof of the Pontryagin–van Kampen duality is the following theorem, proved in Section 5 (Corollary 5.3).
 
 
+    \textbf{Peter-Weyl's theorem} \emph{(Alebian Case). If G is a compact alebian group, then $\widehat{G}$ separates the points of $G$}
+
+
+        The main tool in the proof of this theorem is the so-called Følne'’s Theorem 5.1 which is a rather deep and general
+    fact on its own account. An elementary proof of it was found by Prodanov [27] and we present it in Section 5. It is based
+    on a topology-free local form of the Stone-Weierstraß theorem for subsets of an abelian group (Proposition 4.6) and the
+    so-called Prodanov's lemma (see Section 4 below) which in certain situations derives existence of continuous characters on
+    topological abelian groups from that of discontinuous ones. This remarkable lemma is very efficient in applications, yet its
+    proof is completely elementary.
+
+
+    Using Peter-Weyl's theorem we then derive
+
+
+    \textbf{Pontryagin-van Kampen duality theorem} \emph{(Discrete-compact case)). If G is a discrete or compact alebian group, then $\omega_G : G \to \widehat{G}$ is a topological isomorphism)}
+
+
+        The techniques developed in the first 5 sections of this paper have a wide range of possible applications, however here
+    we limit ourselves with just two more substantial consequences. The first one is the description of the algebra $A(G)$ of
+    almost periodic functions on an abelian group G and Bohr-von Neumann theorem (see Section 6). The second one is the
+    following celebrated theorem:
+
+
+    \textbf{Existance of Haar Integral}. \emph{Every locally compact abelian group $G$ admits a Haar integral, i.e. a non-zero linear functional
+    $f : C_0 (G) → \mathbb{C}$ which is positive (i.e. if $f \in C_0 (G)$ is real-valued and $f \geqslant 0$, then also  $\int f \geqslant 0$) and invariant (i.e.,  $\int f_a =  f$ for
+    every $f \in C_0(G)$ and $a \in G$, where $f_a (x) = f (x + a)$, and $C_0 (G)$ denotes the space of all continuous complex-valued functions with
+    compact support}
+
+
+        The proof proceeds roughly speaking like this: in Section 6 we show that for every abelian group $G$ there is a unique
+    invariant mean $\mathcal{I}$ on $A(G)$ (Theorem 6.13). Applying Prodanov’s lemma we show that the one-dimensional subspace of $A(G)$
+    formed by the constant functions splits as a direct summand. The resulting projection $A(G) \to \mathbb{C}$ gives a linear positive
+    functional that is nothing else but the invariant mean $\mathcal{I}$. Using the fact that every continuous function on a compact group
+    is almost periodic, this invariant mean gives also a (unique) Haar integral for compact abelian groups. Finally, the Haar
+    integral is extended to arbitrary LCA groups (Theorem 7.5). We should mention that elementary proofs of the existence and
+    uniqueness of the Haar integral on general locally compact groups were given by $H$. Cartan [4] (see also Chapter 4 in [15]
+    or Section II.9 in [22]) and $A$. Weil (see e.g. Section II.8 in [22]). Our proof, fully exploiting the advantage of the abelian
+    structure, is shorter and more transparent.
+
+
+    The paper is organized as follows. In Section 2 we give the proof of Bogoliouboff-Følner's lemmas (the articulation of
+    the proof does not faithfully follow [8, $\S\S$1.2-1.3], we give a new Lemma 2.2, while [8, Lemma 1.3.1] is absorbed in the
+    proof of Lemma 2.5), Section 3 is dedicated to the subgroups of the compact group, namely the precompact groups. Here
+    we use Folner's lemma to give a description of the zero-neighborhoods in the Bohr topology. Section 3 can be omitted at
+    first reading by the reader interested to get to the proof of Pontryagin–van Kampen duality theorem as soon as possible.
+    In Section 4 comes Prodanov's lemma and its first applications to independence of characters. Here we give a local form
+    of Stone-WeierstraB theorem used further in the proof of Folner's theorem. In Section 5 come the proofs of Peter-Weyl's
+    theorem, Folner's theorem, Comfort-Ross' theorem and Pontryagin-van Kampen duality theorem in the discrete-compact
+    case. In Section 5.3 we give some facts on the structure of the locally compact abelian groups used here and in the last
+    section. Section 6 is dedicated to the algebra $A(G)$ of almost periodic functions on an abelian group G and the proof of
+    Bohr-von Neumann's Theorem 6.6. In Section 6.3 we build the invariant mean on A(G).
+
+
+        We denote by $\mathbb{P}, \mathbb{N}$ and $\mathbb{N}_+$ respectively the set of primes, the set of natural numbers and the set of positive integers.
+    The symbols $\mathbb{Z}, \mathbb{Q}, \mathbb{R}, \mathbb{C}$ will denote the integers, the rationals, the reals and the complex numbers, respectively. In the circle
+    group $\mathbb{T}$ we use the multiplicative notation. Concerning abelian groups our notation and terminology follow [13], while for
+    basic topological background we refer the reader to [10].
+
+
+        For an abelian group $G$ we denote by $Hom(G,\mathbb{T})$ or $G^*$ the group of all homomorphisms from $G$ to $\mathbb{T}$ and we call the
+    elements of $Hom(G,\mathbb{T})$ characters. So $\widehat{G}$ is a subgroup of $G^*$, when $G$ is a topological group. In particular, $G^* = G$ when $G$
+    is discrete.
+
+
+    When $G$ carries no specific topology, we shall always assume that $G$ is discrete, so that $\widehat{G} = G^*$. If $G$ is a topological
+    abelian group, we shall denote by $G_d$ the group $G$ equipped with the discrete topology, so that $G^* = \widehat{G_d}$.
+    
+    
+    If $M$ is a subset of $G$ then $<M>$ is the smallest subgroup of $G$ containing $M$ and $\bar{M}$ is the closure of $M$ in $G$.
+    For a set $X$ we denote by $B(X)$, the $\mathbb{C}$-algebra of all bounded complex-valued functions on $X$. For $f \in B(X)$ let
+
+
+    $\|f\| = sup\{|f(x)|: x \in X\}$\dots
+
+
+        The $\mathbb{C}$-algebra $B(X)$ will always carry the uniform convergence topology, i.e., the topology induced by this norm. If $X$ is a
+    topological space, $C(X)$ will denote the $\mathbb{C}$-algebra of all continuous complex-valued functions on $X$.
+    In the sequel various subspaces of the $\mathbb{C}$-algebra $B(G)$ for an abelian group $G$ will be used. The group $G$ acts on $B(G)$
+    by translations $f \mapsto f_a$, where $f_a (x) = f (x + a)$ for all $x \in G$ and $a \in G$. These translations are isometries, i.e., $\| f_a \|=\| f \|$ for
+    all $a \in G$.
+
+
+        If $G$ is a topological abelian group, we denote by $\mathfrak{X} (G)$ the $\mathbb{C}$-subspace of $B(G)$ spanned by $\widehat{G}$ (i.e., consisting of all linear
+    combinations of continuous characters of the group $G$ with coefficients from $\mathbb{C}$) and by $\mathfrak{X}_0(G)$ its $\mathbb{C}$-subspace spanned by
+    $\widehat{G} \ \{1\}$. Note that $\mathfrak{X}(G)$ is a subalgebra of $B(X)$ and $\mathfrak{X}(G) = \mathbb{C} · 1 + \mathfrak{X}_0(G)$, where 1 denotes the constant function 1. Both
+    $\mathcal{X} (G)$ and $\mathfrak{X}_0(G)$ are invariant under the action $f \mapsto f_a$ of the group $G$. We shall see that $\mathfrak{X}_0(G)$ is a hyperspace of $\mathfrak{X}(G)$,
+    i.e., $\mathfrak{X}(G) = \mathbb{C} · 1 \oplus \mathfrak{X}_0(G)$.
+        
+    
+        Furthermore, let $\mathfrak{A}(G)$ denote the closure of $\mathfrak{X}(G)$ in $B(G)$ (i.e., the set of all functions $f \in B(G)$ such that for every $\epsilon > 0$
+    there exists a $g \in \mathfrak{X}(G)$ with $\| f - g \| \leqslant \epsilon$). Hence $\mathfrak{A}(G)$ is again a $\mathbb{C}$-subalgebra of $B(G)$ containing all constants and closed
+    under complex conjugation.
+    
+    
+        Clearly, $\mathfrak{X}(G), \mathfrak{X}_0(G)$ and $\mathfrak{A}(G)$ make perfectly sense also for a \emph{non-topologized} group $G$, which will always be considered
+    with the \emph{discrete topology}. Hence, in this case $\mathfrak{X}(G)$ is the $\mathbb{C}$-subalgebra of $B(G)$ spanned by $G^*, \mathfrak{A}(G)$ is the closure of $\mathfrak{X}(G)$
+    in $B(G)$, etc. So, for a topological abelian group $G$ one can consider also the underlying discrete group $G_d$, so that $\mathfrak{X}(G)$ will
+    be a $\mathbb{C}$-subalgebra of the larger subalgebra $\mathfrak{X}(G_d)$ (spanned by $G^*$). Analogously, $\mathfrak{A}(G)$ is a $\mathbb{C}$-subalgebra of $\mathfrak{A}(G_d)$ - the
+    closure of $\mathfrak{X}(G_d)$ in $B(G)$.
+
+
+        It is good to point out (see Corollary 4.3) that
+
+
+        $\mathfrak{X}(G_d) \cap C(G) = \mathfrak{X}(G)$ and $C(G) \cap \mathfrak{A}(G_d) = \mathfrak{A}(G)$
+
+
+        i.e., if a linear combination of distinct characters is continuous, then we can assume that all characters are continuous (and
+    the same paradigm applies to uniform approximations by means of linear combinations of characters).
+
+
+    \section{Bogoliouboff-Folner's lemma}
+
+
+        A subset $X$ of an abelian group $G$ is \emph{big} if there exists a finite subset $F$ of $G$ such that $G = F + X$. If $|F | \leqslant k$, we say that
+    $X$ is $k$-big.
+
+
+    \textbf{Example 2.1.} Let $G$ be an abelian group. For characters $\chi_i, i=1,\dots,\mathbb{n}$ of $G$ and $\delta > 0$ let
+
+
+    $U_G(\chi_1,...,\chi_n; \delta) := x \in G:= \{Arg(\chi_i(x)) < \delta, i = 1,...,n\}$.
+
+
+        For a subset $E$ of an abelian group $G$ let $E_{(2)} = E - E, E_{(4)} = E - E + E - E, E_{(6)} = E - E + E - E + E - E$ and so on.
+    Clearly, for every homomorphism $q : G \to H$ and $E \subseteq G$ one has $q(E_{(4)}) = q(E)_{(4)}$. The next lemma shows a more subtle
+    aspect of this relation in the case of some special quotients.
+    
+    
+    \textbf{Lemma 2.2.} \emph{. Let $F$ be an abelian group and let $r,t \in \mathbb{N}$. For $A = \mathbb{Z}^r \times F$ and $n \in N_+$ let $A_n = (-n,n]^r \times F, N = 2tn\mathbb{Z}^r$ (considered as
+    a subgroup of $A$) and let $q : A \to A/N$ be the canonical homomorphism. If $B \subseteq A_n$, then every $a \in A_n$ with $q(a) \in q(B)_{(4)}$ satisfies}
+
+
+    $a \in \begin{cases}
+        B_(4), \text{if t>2, or}
+        B_(4)+{0, \pm 2n \pm 4n}^r \times {0} \text{if t=1 or 2.}
+    \end{cases}$
+
+
+    \textbf{Proof.} It follows from our hypothesis $q(a) \in q(B)_{(4)}$ that there exist $b_1, b_2, b_3, b_4 \in B$ and $c = (c_i) \in N$ such that $a = b_1 -
+    b_2 + b_3 - b_4 + c$. Now $c = a - b_1 + b_2 - b_3 + b_4 \in (A_n)_{(4)} + A_n$ implies $|c_i| \leqslant 5_n$ for each $i$. So $c = 0$, in case $t \geqslant 3$, as $2tn|c_i$
+    for each $i$. Thus $a \in B_{(4)}$ when $t \geqslant 3$. Otherwise, from $2tn|c_i$ for every $i$ and $|c_i| \leqslant 5n$, we conclude that $c_i \in {0,\pm 2n \pm 4n}$
+    for $i = 1, 2,...,r$. 
 \end{document}
