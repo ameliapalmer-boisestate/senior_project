@@ -1,0 +1,47 @@
+26: Locally compact Abelian groups
+abelian groups - commutative group has the following properties:
+associativity
+identity 
+inverse
+commutativity
+
+locally compact
+A topological group that is locally compact and Hausdorf
+topological group - are groups and topological spaces
+Group - a set G  with a binary operation such that the following are satisfied:
+associativity
+identity 
+inverse
+Topological space - 
+open sets definition
+a topology on a set X may be defined as a collection $\tau$ of subsets of X, called open sets satisfying the following axioums:
+/eptyset and X are in \tau
+any arbitrary union of members of tau is in tau
+the intersection of any finite members of tau is in tau
+neighborhood definition 
+This axiomatization is due to Felix Hausdorff. Let X be a set; 
+the elements of X are usually called points, though they can be any mathematical object. 
+We allow X to be empty. Let \mathcal {N}} be a function assigning to each x (point) in X a non-empty collection N(x) of subsets of X.
+X. 
+The elements of N(x) will be called neighbourhoods of x with respect to N (or, simply, neighbourhoods of x. 
+The function N is called a neighbourhood topology if the axioms below[8] are satisfied; and then X with N is called a topological space.
+
+If N is a neighbourhood of x(i.e., N \in N(x), then x \in N.
+In other words, each point belongs to every one of its neighbourhoods.
+
+If N is a subset of X and includes a neighbourhood of x, then N is a neighbourhood of x.
+x. I.e., every superset of a neighbourhood of a point x \in Xis again a neighbourhood of x.
+
+The intersection of two neighbourhoods of x is a neighbourhood of x.
+
+Any neighbourhood N of x includes a neighbourhood M of x
+x such that N is a neighbourhood of each point of M.
+
+Locally compact - let X be a topological space. X is locally compact  if every point x of X has a compact neighborhood, i.e., there exists an open set U and a compact set K, such that x \in U \subset K.
+
+Hausdorff space - Points x and y in a topological space X can be separated by neighbourhoods if there exists a neighbourhood U of x and a neighbourhood V of y such that U and Vare disjoint (U \cap V = \emptyset). X is a Hausdorff space if any two distinct points in X are separated by neighbourhoods. This condition is the third separation axiom (after T0 and T1), which is why Hausdorff spaces are also called T2 spaces. The name separated space is also used. 
+
+continuous homomorphisms - a continuous map between 2 algebraic structures that preserves the operations of the structures. 
+
+27: circle group
+- has a natural topology when thought of as a subset of the complex plane
