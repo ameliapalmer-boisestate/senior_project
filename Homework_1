@@ -1,0 +1,52 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage{mathrsfs}
+\usepackage{amssymb}
+
+\title{Homework 1}
+\author{Jens Harlander}
+
+\begin{document}
+
+\maketitle
+
+\section{Problem 1} (Calculus 1) Let $v_1$ be the velocity of light in air and $v_2$ be the velocity of
+light in water. A ray of light will travel from a point $A$ in air to a point $B$ in water by a
+path $ACB$ that minimizes the time taken. Show that
+
+
+$sin \theta_1 /sin \theta_2 = v_1 / v_2$
+
+where $\theta_1$ is the angle of incidence and $\theta_2$ is the angle of refraction. This equation is known
+as Snell's law.
+
+
+\section{Problem 2} (Calculus 2) A 200 lb cable is 100 ft long and hangs from a tall build-
+ing. How much work is required to lift the cable to the top of the building. Recall that
+
+$work = force \times distance$
+
+
+\section{Problem 3} (Calculus 3) A rectangular box without a lid is to be made from $12 m^2$ of
+cardboard. Find the maximum volume of such a box.
+
+
+\section{Problem 4} (Math 314) Use the $\delta$- definition of continuity to show that the following
+functions are continuous:
+(a) $f(x) = x^2$
+(b) $g(x) = \sqrt{x}$
+
+
+
+\section{Problem 5} Read the entire Section $6^*$ The Skeleton of Calculus in your book. The first
+sentence reads: “The behavior of a continuous function defined on an interval [a, b] is at
+the root of all calculus theory”. Looking back at your calculus and analysis experience so
+far, what do you think?
+
+
+
+
+\end{document}
