@@ -370,7 +370,7 @@ locally compact abelian groups}
     $t \in {1,...,r}$. Obviously, $L^0 \subseteq U_A(\varrho_1,...,\varrho_s; \frac{\pi}{8r} )$, so
 
 
-        $L^0_{(4r)} \subseteq U_A(\varrho_1,...,\varrho_s; \frac{\pi}{2}) \subseteq V_{(4)}$.
+        $L^0_{(4r)} \subseteq U_A(\varrho_1,...,\varrho_s; \frac{\pi}{2}) \subseteq V_{(4)}$. (5)
 
 
     Define $A_n = (-n,n]^r \times F$ and pick $\varepsilon > 0$ such that $\varepsilon < \frac{1}{6k^4}$ . Then $[( \frac{k}{1-k\epsilon} )^2] = k^2$, and as in the proof of (2), we get
@@ -400,5 +400,60 @@ locally compact abelian groups}
     that $\chi_j (a) = lim_l \chi_{j,n_l}(a)$ for every $j = 1,...,m$ and for every $a \in A$. Using $A = \bigcup{A_{n_l}: l > k, n_l ∈ L}$ for every $k \in {N}_+$ we
     can conclude as in the above proof that $U_A (\chi_1,...,\chi_m; \frac{\pi}{2}) \subseteq V_{(8)}$.
 
+
+    \textbf{Proof of Lemma 2.3}. Let $g_1,..., g_k \in A$ be such that $A = \bigcup^k_{i=1} (g_i + V )$. Suppose that $G$ is a finitely generated subgroup
+    of $A$ containing $g_1,..., g_k$. Then $G = \bigcup^k_{1=1}(g_i + V \cap G)$ and so $V \cap G$ is a $k$-big subset of $G$. By the above corollary there
+    exist $\varphi_1,G,...,\varphi_m,G \in G^*$, where $m = k^2$, such that
+
+
+        $U_G(\varphi_{1,G}, ... , \varphi_{m,G}; \frac{\pi}{2}) \subseteq (V \cap G)_{(8)} \subseteq V_{(8)}$
+
+
+    One can extend each $\varphi_{iG}$ to a character of $A$, so that we assume from now on $\varphi_{1,G},...,\varphi_{m,G} \in A^*$ and
+
+
+        $G \cap U_A (\varphi_{1,G}, ... , \varphi_{m,G}; \frac{\pi}{2}) = U_G(\varphi_{1,G}, ... , \varphi_{m,G}; \frac{\pi}{2}) \subseteq V_{(8)}$ (6)
+
+
+        Let $\mathcal{G}$ be the family of all finitely generated subgroups $G$ of $A$ containing $g_1,..., g_k$. It is a directed set under inclusion. So
+    we get $m$ nets ${\varphi_{j,G}}_{G \in \mathcal{G}}$ in $A^*$ for $j = 1,...,m$. By the compactness of $A^*$, there exist subnets $\{\varphi_{j,G_\beta}\}_\beta$ and $\chi_1,...,\chi_m \in A^*$
+    such that
+
+    
+        $\chi_j(x) = lim_\beta \varphi_{j,G_\beta} (x)$ for every $x \in A and j = 1,...,m.$  (7)
+
+
+    From (6) and (7) we conclude as before that $U_A(\chi_1,...,\chi_m; \frac{\pi}{2} ) \subseteq V_{(8)}$.
+
+
+\section{Precompact Groups}
+
+
+        This section is dedicated to the subgroups of the compact groups. Although all groups in this paper are abelian, let us
+    note that Definition 3.1, Example 3.2, Proposition 3.3, as well as Proposition 3.8, Theorem 3.9, work for arbitrary groups.
+
+
+    \textbf{Definition 3.1} A topological group $G$ is totally bounded if every open non-empty subset $U$ of $G$ is big. A Hausdorff totally
+    bounded group is called \emph{precompact}.
+
+
+    \textbf{Example 3.2} Clearly, compact groups are precompact. Subgroups of precompact groups are precompact. In particular, all
+    subgroups of compact groups are precompact.
+
+
+        Actually, one can prove that a group having a dense precompact subgroup is necessarily precompact. Hence the compact
+    groups are precisely the complete precompact groups. Therefore, this gives an external description of the precompact groups
+    as subgroups of the compact groups. Here we collect some other properties of this class.
+    
+    
+    \textbf{Proposition 3.3}
+        \begin{itemize}
+
+            \item (a) The class of totally bounded (precompact) groups is stable under taking subgroups, direct products and (Hausdorff) quotients.
+            
+            \item (b)Every topological group $(G, \tau)$ admits a finest totally bounded group topology $\tau^+$ with $\tau^+ \leqslant \tau$. In particular, every group $G$
+            admits a finest totally bounded group topology $\mathcal{P}_G$.
+
+        \end{itemize}
 
 \end{document}
