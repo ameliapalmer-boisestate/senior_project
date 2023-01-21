@@ -213,4 +213,192 @@ locally compact abelian groups}
     b_2 + b_3 - b_4 + c$. Now $c = a - b_1 + b_2 - b_3 + b_4 \in (A_n)_{(4)} + A_n$ implies $|c_i| \leqslant 5_n$ for each $i$. So $c = 0$, in case $t \geqslant 3$, as $2tn|c_i$
     for each $i$. Thus $a \in B_{(4)}$ when $t \geqslant 3$. Otherwise, from $2tn|c_i$ for every $i$ and $|c_i| \leqslant 5n$, we conclude that $c_i \in {0,\pm 2n \pm 4n}$
     for $i = 1, 2,...,r$. 
+
+
+        For every big set $E$ containing a big set of the form $U_G (\chi_1,...,\chi_n; \delta)$ in a group $G$, one can find a big set $V$ (namely
+    $V = U_G (\chi_1,...,\chi_n; \delta/8))$, such that $V_{(8)} \subseteq E$. The main result of this section shows that this property can be inverted in
+    the following sense (see also Corollary 3.5):
+
+
+    \textbf{Lemma 2.3} (Folner's lemma). Let $A$ be an abelian group. If $k$ is a positive integer and $V$ is a $k$-big subset of $A$, then there exist
+    $\chi_1,...,\chi_m \in A^*$, where $m = k^2$, such that $U_A (\chi_1,...,\chi_m; \frac{\pi}{2}) \subseteq V_{(8)}$.
+    
+    
+        For $A = \mathbb{Z}$ Lemma 2.3 is due to Bogoliouboff [2]. He proved that in this case $V_{(8)}$ can be replaced by the smaller set $V_{(4)}$.
+    In the general case the lemma was proved by Folner [11]. In [12] he (as well as Ellis and Keynes [9]) proved that also in
+    this case $V_{(8)}$ can be replaced by the smaller set $V_{(4)}$, but this proof uses integrals (mean values). We are not aware if this
+    fact can be proved without any recourse to such tools.
+    
+    
+        The first step is the following elementary lemma due to Bogoliouboff [2] for cyclic groups, the general case is due to
+    Folner [11]. A proof of this lemma can be found also in Maak [19] or [8, Lemma 1.2.3].
+
+
+    \textbf{Lemma 2.4} (Bogoliouboff lemma). If $G$ is a finite abelian group and $E$ is a non-empty subset of $G$, then there exist $\chi_1,...,\chi_m \in G^*$,
+    where $m = [{(\frac{|G|}{|E|})}^2]$, such that $U(\chi_1,...,\chi_m; \frac{\pi}{2} ) \subseteq E_{(4)}$.
+    
+    
+        Let us note that the estimate for the number $m$ of characters is certainly non-optimal when $E$ is too small. For example,
+    when $E$ is just the singleton $\{0\}$, the upper bound given by the lemma is just $|G|^2$, while one can certainly find at most
+    $m = |G| - 1$ characters $\chi_1,...,\chi_m$ (namely, all non-trivial $\chi_i \in G^*$) such that $U(\chi_1,...,\chi_m; \frac{\pi}{2} ) = \{0\}$. For certain groups
+    (e.g., $G = \mathbb{Z}^k_2$) one can find even a much smaller number (say $m = \log_2 |G|)$. Nevertheless, in the cases relevant for the proof
+    of Følner's theorem, namely when the subset $E$ is relatively large with respect to $G$, this estimate seems more reasonable.
+    
+    
+        The next step is to extend Bogoliouboff's lemma to finitely generated abelian groups:
+
+
+    \textbf{Lemma 2.5} (Bogoliouboff-Folner's lemma). Let $A$ be a finitely generated abelian group and let $r = r_0 (A)$ be the rank of $A$. If $k$ is
+    a positive integer and $V$ is a $k$-big subset of $A$, then there exist $\varrho_1,...,\varrho_s \subseteq A^*$, where $s = 3^{2r} k^2$, such that $U_A (\varrho_1,...,\varrho_s; \frac{\pi}{2}) \subseteq V_{(4)}$.
+
+
+    \textbf{Proof.}. Fix $\varepsilon > 0$ sufficiently small to have $[\frac{3^{2r} k^2}{(1-k \epsilon)^2}] = 3^{2r} k^2$. Let $A = \mathbb{Z}^r \times F$, where $F$ is a finite abelian group and put
+    $A_n = (-n,n]^r \times F$ . It is easy to prove that for $a = (a_1,...,a_r; f ) \in \mathbb{Z}^r \times F$ there exists n0 ∈ N such that
+
+    
+        $|(An - a) \cap A_n| \geqslant  |F| · \Pi^r_{i=1} (2n - |a_i|)$ 
+
+
+    for all $n > n_0$. From $|A_n|=|F|(2n)^r$, one easily gets
+
+
+        $lim_{n \to \infty} \frac{|(A_n - a) \cap A_n|}{|A_n|} = 1 $  (1)
+
+
+    for every $a ∈ A$. Let us see that this yields
+
+
+        $|V \cap A_n| > (\frac{1}{k} - \varepsilon)|An|$  (2)
+
+
+    for all sufficiently large $n$. Let $\bigcup^{k}_{i=1} (a_i + V) = A$ for $a_1,...,a_k \in A$. From (1) there exists $N > n_0$ such that
+    $|(A_n - a_i) \bigcap A_n| > (1 - \varepsilon)|A_n|$ for every $n \geqslant N$ and consequently,
+
+
+        $|(A_n - a_i) \ A_n| < \varepsilon|A_n|$  (3)
+
+
+    for every $i = 1,...,k$. Since $A_n = \bigcup^k_{i=1}(a_i + V ) \cap A_n$, for every $n$ there exists $i_n \in {1,...,k}$ such that
+
+
+        $\frac{1}{k}|A_n| \leqslant |(a_{i_n} + V ) \cap A_n| = |V \cap (A_n - a_{i_n})|$.
+
+
+    Since $V \cap (A_n - a_{i_n} ) \subseteq (V \cap A_n) \cup ((A_n - a_{i_n} ) \ A_n)$, (3) yields
+
+
+        $\frac{1}{k}|A_n| \leqslant | V \cap (A_n - a_{i_n} ) \leqslant |V \cap A_n| + |(A_n - a_{i_n} ) \ A_n | < |V \cap A_n| + \varepsilon|A_n|.$
+
+
+    This proves (2).
+
+
+        For $n$ with (2) let $G = A/(6n \mathbb{Z}^r)$ and $E = q(V \cap A_n)$ where $q$ is the canonical projection of $A$ onto $G$. Observe that $q  \upharpoonright {A_n}$
+    is injective, as $(A_n - A_n) \cap ker q = {0}$. Then (2) gives
+
+
+        $|E|=|V \cap A_n| > (\frac{1}{k} - \varepsilon) |An| = (\frac{1}{k} - \varepsilon)(2n)^r|F|$
+
+
+    and so
+
+
+        $\frac{|G|}{|E|} \leqslant \frac{(6n)^r |F|}{(\frac{1}{k} - \varepsilon) (2n)^r |F|} = \frac{3^r k}{1 - k \varepsilon}$
+
+
+    By the choice of $\varepsilon$, this yields $[(\frac{|G|}{|E|})^2] \leqslant  s$. Pick $n > $N to have (2). Apply Lemma 2.4 to find $s$ characters $\xi_{1,n},...,\xi_{s,n} ∈ G^*$
+    such that
+
+
+        $U_G (\xi_{1,n},...,\xi_{s,n}; \frac{\pi}{2}) \subseteq E_{(4)}$.
+
+
+    For $j = 1,..., s$ let $\varrho_{j,n} = \xi_{j,n} \circ q \in A^*$. If $a \in A_n \cap U A(\varrho_1,n,...,\varrho_s,n; \frac{\pi}{2} )$ then
+
+
+        $q(a) \in U_G (\xi_{1,n},...,\xi_{s,n}; \frac{\pi}{2}) \subseteq E_{(4)} = q(V \cap A_n)_{(4)}$.
+
+
+    So for $B = V \cap A_n$ and $t = 3$ we can apply Lemma 2.2 to get $a \in V_{(4)}$. Therefore, $A_n \cap U_A(\varrho_{1,n},...,\varrho_{s,n}; \frac{\pi}{2} ) \subseteq V_{(4)}$ for all $n$
+    satisfying (2).
+
+
+        By the compactness of the metrizable group $A^*$, there exist $\varrho_1,...,\varrho_s \in A^*$ and a subsequence $\{n_l\}_l$ of $\{n\}_{n \in \mathbb{N}_+}$ such that
+    $\varrho_i(a) = lim_l \varrho_{i,nl} (a)$ for every $i = 1,..., s$ and $a \in A$. Then
+
+
+    $U_A (\varrho_1,...,\varrho_s ;\frac{\pi}{2}) \subseteq V_{(4)}$. (4)
+
+
+        Indeed, take $a \in U_A(\varrho_1,...,\varrho_s; \frac{\pi}{2})$. Since $A = \bigcup^{\infty}_{l=m} A_{n_l}$ for every $m \in \mathbb{N}_+$, there exists $n_0 > N$ and $a \in A_{n_0}$. As
+    $\varrho_i(a) = lim_l \varrho_{i,n_l}(a)$ for every i$ = 1,..., s$, we can pick $l$ to have $n_l \leqslant n_0$ and $|Arg(\varrho_{i,n_l} (a))| < \pi/2$ for every $i = 1,..., s$, i.e.,
+    $a \in A_{n_l} \cap U_A(\varrho_1,n_l,...,\varrho_s,n_l; \frac{\pi}{2} ) \subseteq V_{(4)}$. This proves (4). 
+
+
+        Now we see that by a more careful application of the same argument one can eliminate the dependence of the number $s$
+    of characters on the free rank $r$ of the group $A$ in Bogoliouboff-Folner's lemma. The price to pay for this is taking the larger
+    set $V_{(8)}$ instead of $V_{(4)}$. However, this is irrelevant since we obtain the special case of Lemma 2.3 for \emph{finitely generated} groups.
+
+
+    \textbf{Corollary 2.6.} Lemma 2.3 holds true for finitely generated groups.
+
+
+    \textbf{Proof.} Let $A$ be a finitely generated abelian group, let $k$ be a positive integer and $m = k^2$. We have to prove that if $V$ is a
+    $k$-big subset of $A$, then there exist $\chi_1,...,\chi_m \in A^*$, such that $U_A(\chi_1,...,\chi_m; \frac{\pi}{2} ) \subseteq V_{(8)}$.
+
+
+    Let $r = r_0 (A)$ and $s = 3^{2r}k^2$. By Lemma 2.5 there exist $\varrho_1,...,\varrho_s \in A^*$ such that
+
+
+        $U_A (\varrho_1,...,\varrho_s; \frac{\pi}{2}) \subseteq V_{(4)}$.
+
+
+    Since $A$ is finitely generated, we can identify $A$ with $\mathbb{Z}^r \times F$, where $F$ is a finite abelian group. For $t \in {1,...,r}$ define a
+    monomorphism $i_t : \mathbb{Z} \to A$ by letting
+
+
+    $i_t (n) = (\underbrace{0,..., 0,n}_{t}, 0,..., 0; 0) \in A$.
+    
+
+    Then each $κ_{j,t} = \varrho_j \circ i_t$, where $j \in {1,..., s}$, $t \in {1,...,r}$, is a character of $\mathbb{Z}$. By Example 2.1 the subset
+
+
+        $L = U_{\mathbb{Z}} ({κ_{j,t}: j = 1,..., s, t = 1,...,r}; \frac{\pi}{8r})$
+
+    
+    of $\mathbb{Z}$ is big, so infinite. Let $L^0 = \bigcup^{r}_{t=1} i_t (L)$, i.e., this is the set of all elements of $A$ of the form $i_t (n)$ with $n \in \mathbf{L}$ and
+    $t \in {1,...,r}$. Obviously, $L^0 \subseteq U_A(\varrho_1,...,\varrho_s; \frac{\pi}{8r} )$, so
+
+
+        $L^0_{(4r)} \subseteq U_A(\varrho_1,...,\varrho_s; \frac{\pi}{2}) \subseteq V_{(4)}$.
+
+
+    Define $A_n = (-n,n]^r \times F$ and pick $\varepsilon > 0$ such that $\varepsilon < \frac{1}{6k^4}$ . Then $[( \frac{k}{1-k\epsilon} )^2] = k^2$, and as in the proof of (2), we get
+    $|V \cap A_n| > ( \frac{1}{k} - \varepsilon)|A_n|$ for sufficiently large $n$. Moreover, we choose this sufficiently large $n$ from $L$. Let
+    $G_n = A/(2n \mathbb{Z}^r) \cong Z^r_{2n} \times F$ and $E = q(A_n \cap V)$ where $q$ is the canonical projection $A \to G_n$. Then $q\upharpoonright_{A_n}$ is injective as $(A_n - A_n) \cap ker q = 0$.
+    So $q$ induces a bijection between $A_n$ and $G_n$ on one hand, and between $V \cap A_n$ and $E$. Thus $|A_n|=|G_n| = (2n)^r|F|$, $|E| =|V \cap A_n| > ( \frac{1}{k} - \varepsilon)|A_n|$ and so
+
+
+        $(\frac{|G_n|}{|E|})^2 \leqslant (\frac{k}{1-k \varepsilon})^2$, hence $[(\frac{|G_n|}{|E|})^2]\leqslant[(\frac{k}{1-k \varepsilon})^2]=k^2$.
+    
+
+    To the finite group $G_n$ apply Lemma 2.4 to get $\xi_{1,n},...,\xi_{m,n} \in G^*_n$, with $m = k^2$, such that
+
+
+        $U_{G_n}(\xi_{1,n}, . . . , \xi_{m,n}; \frac{\pi}{2}) \subseteq E_{(4)}$;
+
+
+    Let $\chi_{j,n} = \xi_{j,n} \circ q \in A^*$. If $a \in A_n \cap U_A(\chi_{1,n},...,\chi_{m,n}; \frac{\pi}{2} )$, then $q(a) \in U_{G_n} (\xi_{1,n},...,\xi_{m,n}; \frac{\pi}{2} ) \subseteq E_{(4)} = q(V \cap A_n)_{(4)}$. From
+    Lemma 2.2 we deduce $a \in (V \cap A_n)_{(4)} + \{0,\pm 2n \pm 4n\}^r$. As $\{0,\pm 2n \pm 4n\}^r \subseteq L^0_{(4r)}$ (by our choice $n \in L$), and $L^0_{(4r)} \subseteq V_{(4)}$
+    by (5), we get $a \in V_{(8)}$. Therefore
+
+
+        $A_n \cap U_A (\chi_{1,n},\ldots ,\chi_{m,n}; \frac{\pi}{2}) \subseteq V_{(8)}$
+
+    
+    for sufficiently large $n \in L$. By the compactness of $A^*$, there exist $\chi_1,...,\chi_m \in A^*$ and a subsequence $\{n_l\}_l$ of ${n}_{n \in \mathbb{N}_+}$ such
+    that $\chi_j (a) = lim_l \chi_{j,n_l}(a)$ for every $j = 1,...,m$ and for every $a \in A$. Using $A = \bigcup{A_{n_l}: l > k, n_l ∈ L}$ for every $k \in {N}_+$ we
+    can conclude as in the above proof that $U_A (\chi_1,...,\chi_m; \frac{\pi}{2}) \subseteq V_{(8)}$.
+
+
 \end{document}
