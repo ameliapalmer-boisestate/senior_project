@@ -1546,6 +1546,7 @@ that:
     $z = h(x) \neq x$, so $x \notin \{z, y\}$. There exists $g \in S(X)$ such that $g(x) = x, g(y) = z$ and $g(z) = y$. Then
     $g \in S_x \subseteq H$ and $f(x) = g(h(x)) = y$, so $h^{-1} g^{-1}f(x) = x$ and $h^{-1} g^{-1}f \in S_x \cap G \subseteq H$. So $f \in ghH = H$.
 
+
     \textbf{Claim 3.57}. Let $T$ be a Hausdorff group topology on $S(X)$. If a subgroups of $S(X)$ of the form $S_x$ is T-closed,
     then it is also T-open.
 
@@ -1554,4 +1555,192 @@ that:
     So there exists a symmetric neighborhood $W$ of 1 in $T$ such that $W.W \subseteq V_y$. By the definition of $V_y$ this gives
     $W x \times \cap W y = \emptyset$. Then either $|X \ Wx| = |X|$ or $|X \ W y| = |X|$. Suppose this occurs with $x$, i.e., $|X \ W x| = |X|$.
 
-    \end{document}
+
+        Then one can find a permutation $f \in S(X)$ that sends $W x / \{x\}$ to the complement of $W x$ and $f(x) = x$. Such
+    an $f$ satisfies:
+
+
+        $fW f^{-1} \cap W \subseteq S_x$
+
+
+        as $fW f^{-1}(x)$ meets $W x$ precisely in the singleton $\{x\}$ by the choice of $f$. This proves that $S_x$ is $T$-open.
+    Analogous argument works for $S_y$ when $|X/W y| = |X|$.
+
+
+    \textbf{Corollary 3.58} If $T$ be a Hausdorff group topology on $S(X)$ that does not contain $\tau_X$, then all subgroups of
+    $S(X)$ of the form $S_x$ are T-dense.
+
+
+        \emph{Proof.} Since the subgroups $S_x$ of $S(X)$ form a prebase of the filter of neighborhoods of $id_X$ in $S(X)$, out
+    hypothesis implies that some subgroup $S_x$ is not $T$-open. By Claim 3.57 $S_x$ is not $T$-closed either. By Fact
+    3.56 $S_x$ is $T$-dense. Since all subgroups of the form $S_y$ are conjugated, this implies that stabilizers $S_y$ are
+    $T$-dense.
+
+
+        This was the first step in the proof. The next step will be establishing that $S_{x,y}$ are never dense in any
+    Hausdorff group topology on $S(X)$ (Corollary 3.62).
+
+
+        In the sequel we need the subgroup $\tilde{S}_{x,y} := S_{x,y} \times S(\{x, y\})$ of $S(X)$ that contains $S_{x,y}$ as a subgroup of
+    index 2. Note that $\tilde{S}_{x,y}$ is precisely the subgroup of all permutations in $S(X)$ that leave the doubleton $\{x, y\}$
+    set-wise invariant.
+
+
+    \textbf{Fact 3.59} For any doubleton $x, y$ in $X$ the following holds true:
+
+
+    \begin{itemize}
+
+        \item (a) the subgroup $\tilde{S}_{x,y}$ of $S(X)$ is maximal;
+
+        \item (b) every proper subgroup of $S(X)$ properly containing $S_{x,y}$ coincides with one of the subgroups $S_x$, $S_y$ or $\tilde{S}_{x,y}$.
+
+    \end{itemize}
+
+
+    \textbf{Claim 3.60} Let $T$ be a Hausdroff group topology on $S(X)$, then there exists a $T$-nbd of 1 that is not 2-transitive.
+
+
+        \emph{Proof.} Assume for a contradiction that all $T$-neighborhoods of $id_X$ that are 2-transitive. Fix distinct
+    $u, v, w \in X$. We show now that the 3-cycle $(u, v, w) \in V$ for every arbitrarily fixed $T$-neighborhood of $id_X$. Indeed,
+    choose a symmetric $T$-neighborhood $W$ of $id_X$ such that $W^2 \subseteq V$ . Let $f$ be the transposition $(uv)$. Then
+    $U = fW f \cap W \in T$ is a neighborhood of 1 and $fUf = U$. Since $U$ is 2-transitive there exists $g \in U$ such that
+    $g(u) = u$ and $g(v) = w$. Then $(u, v, w) = gfg^{-1}f \in W · (fUf) \subseteq W^2 \subseteq V$.
+
+
+    \textbf{Claim 3.61} Let $T$ be a group topology on $S(X)$. Then
+
+
+    \begin{itemize}
+
+        \item (a)  every $T$-nbd $V$ of $id_X$ in $S(X)$ is transitive iff every stabilizer $S_x$ is $T$-dense;
+        
+        \item (b)  every $T$-nbd $V$ of $id_X$ in $S(X)$ is $m$-transitive iff every stabilizer $S_F$ with $|F| \leq m$ is $T$-dense.
+    
+    \end{itemize}
+
+
+    \emph{Proof} Assume that some (hence all) $S_z$ is $T$-dense in $S(X)$. To prove that $V$ is transitive consider a pair
+    $x, y \in X$. Let $t = (xy)$. By the $T$-density of $S_x$ the $T$-nbd $t^{-1}V$ of $t^{-1}$ meets $S_x$, i.e., for some $v \in V$ one has
+    $t^{-1}v \in S_x$. Then $v \in tS_x$ obviously satisfies $vx = y$.
+    
+
+        A similar argument proves that transitivity of each $T$-nbd of 1 entails that every stabilizer $S_x$ is $T$-dense.
+    (b) The proof in the case $m > 1$ is similar.
+    
+    
+        What we really need further on (in particular, in the next corollary) is that the density of the stabilizers
+    $S_{x,y$} imply that every $T$-nbd $V$ of $id_X$ in $S(X)$ is 2-transitive.
+
+
+    \textbf{Corollary 3.62} Let $T$ be a Hausdroff group topology on $S(X)$. Then $S_{x,y}$ is $T$-dense for no pair $x, y$ in $X$.
+    
+    
+    \emph{Proof.} Follows from claims 3.60 and 3.61
+
+
+    \textbf{Proof of Theorem 3.55}. Assume for a contradiction that $T$ is a Hausdroff group topology on $S(X)$ that does
+    not contain $\tau_X$. Then by corollaries 3.58 and 3.62 all subgroups of the form $S_x$ are $T$-dense and no subgroup
+    of the form $S_{x,y}$ is $T$-dense. Now fix a pair $x, y \in X$ and let $G_{x,y}$ denote the $T$-closure of $S_{x,y}$. Then $G_{x,y}$ is a
+    proper subgroup of $S(X)$ containing $S_{x,y}$. Since $S_x$ is dense, $G_{x,y}$ cannot contain $S_x$, so $S_x \cap G_{x,y}$ is a proper
+    subgroup of $S_x$ containing $S_{x,y}$. By Claim 3.56 applied to $S_x = S(X / \{x\})$ and its subgroup $S_{x,y}$ (the stabilizer
+    of $y$ in $S_x$), we conclude that $S_{x,y}$ is a maximal subgroup of $S_x$. Therefore, $S_x \cap G_{x,y} = S_{x,y}$. This shows that
+    $S_{x,y}$ is a $T$-closed subgroup of $S_x$. By Claim 3.57 applied to $S_x = S(X / \{x\})$ and its subgroup $S_{x,y}$, we conclude
+    that $S_{x,y}$ is a $T$-open subgroup of $S_x$. Since $S_x$ is dense in $S(X)$, we can claim that $G_{x,y}$ is a $T$-open subgroup
+    of $S(X)$. Since $S_x$ is a proper dense subgroup of $S(X)$, it is clear that $S_x$ cannot contain $G_{x,y}$. Analogously, $S_y$
+    cannot contain $G_{x,y}$ either. So $G_{x,y} \neq S_{x,y}$ is a proper subgroup of $S(X)$ containing $S_{x,y}$ that does not coincide
+    with $S_x$ or $S_y$. Therefore $G_{x,y} = \tilde{S}_{x,y}$ by Fact 3.59. This proves that $\tilde{S}_{x,y}$ is $T$-open. Since all subgroups of the
+    form $\tilde{S}_{x,y}$ are pairwise conjugated, we can claim that all subgroups $\tilde{S}_{x,y}$ is $T$-open.
+
+
+        Now we can see that the stabilizers $S_F$ with $|F| > 2$ are $T$-open, as
+
+
+        $S_F = \bigcap \{\tilde{S}_{x,y} : x, y \in F, x \neq y\}$.
+
+
+        This proves that all basic neighborhoods $S_F$ of 1 in $\tau_X$ are $T$-open. In particular, also the subgroups $S_x$ are
+    $T$-open, contrary to our hypothesis.
+
+
+    \subsubsection{Existence of Hausdorff group topologies}
+
+
+        According to Proposition 3.31 every infinite abelian group admits a non-discrete Hausdorff group topology, for
+    example the Bohr topology. This gives immediately the following
+
+
+    \textbf{Corollary} Every group with infinite center admits a non-discrete Hausdorff group topology
+
+
+    \emph{Proof} The center $Z(G)$ of the group $G$ has a non-discrete Hausdorff group topology $\tau$ by the above remark.
+    Now consider the family $\mathcal{B}$ of all sets of the form $aU$, where $a \in G$ and $U$ is a non-empty $\tau$-subset of $Z(G)$. It
+    is easy to see that it is a base of a non-discrete Hausdorff group topology on $G$.
+
+
+        In 1946 Markov set the problem of the existence of a (countably) infinite group $G$ that admits no Hausdorff
+    group topology beyond the discrete one. Let us call such a group a \emph{Markov group}. Obviously, $G$ is a Markov
+    group precisely when $\mathfrak{M}_G$ is discrete. A Markov group must have finite center by Corollary 3.63.
+    
+
+        According to Proposition 3.26, the closure of the neutral element of every topological group is always a
+    normal subgroup of $G$. Therefore, a simple topological group is either Hausdorff, or indiscrete. So a simple
+    Markov group $G$ admits only two group topologies, the discrete and the indiscrete ones.
+
+
+        The equality $\mathfrak{Z}_G = \mathfrak{M}_G$ established by Markov in the countable case was intended to help in finding a
+    countably infinite Markov group $G$. Indeed, a countable group $G$ is Markov precisely when $\mathfrak{Z}_G$ is discrete.
+    Nevertheless, Markov failed in building a countable group $G$ with discrete Zariski topology; this was done much
+    later, in 1980, by Ol0shanskii [78] who made use of the so called \emph{Adian groups} $A = A(m, n)$ (constructed by
+    Adian to negatively resolve the famous 1902 Burnside problem on finitely generated groups of finite exponent).
+    Let us sketch here Ol0shanskii's elegant short proof.
+
+
+    \textbf{Example 3.64} [78] Let $m$ and $n$ be odd integers $\geq 665$, and let $A = A(m, n)$ be Adian’s group having the
+    following properties
+
+
+    \begin{itemize}
+
+        \item (a) $A$ is generated by $n$-elements;
+
+        \item (b) $A$ is torsion-free;
+
+        \item (c) the center $C$ of $A$ is infinite cyclic
+
+        \item (d) the quotient $A/C$ is infinite, of exponent $m$, i.e., $y^m \in C$ for every $y \in A$.\footnote[6]{i.e., the finitely generated infinite quotient A/C negatively resolves Burnside's problem.}
+    
+    \end{itemize}
+
+
+        By (a) the group $A$ is countable. Denote by $C^m$ the subgroup ${c^m : c \in C}$ of $A$. Let us see that (b), (c) and
+    (d) jointly imply that the Zariski topology of the infinite quotient $G = A/C^m$ is discrete (so $G$ is a countably
+    infinite Markov group). Let $d$ be a generator of $C$. Then for every $x \in A/C$ one has $x^m \in C/C^m$. Indeed, if
+    $x^m = d^{ms}$, then $(xd^{-s})^m = 1$ for some $s \in \mathbb{Z}$, so $xd^{-s} = 1$ and $x \in C$ by (b). Hence
+
+
+    for every $u \in G / \{1\}$ there exists $a \in C/C^m$, such that either $u = a$ or $u^m = a$. (3)
+
+
+        As $|C/C^m| = m$, every $u \in G/{1}$ is a solution of some of the $2(m - 1)$ equations in (3). Thus, $G/\{e\}$ is closed
+    in the Zariski topology $\mathfrak{Z}_G$ of $G$. Therefore, $\mathfrak{Z}_G$ is discrete.
+
+
+        Now we recall an example, due to Shelah [92], of an uncountable group which is non-topologizable. It
+    appeared about a year or two earlier than the ZFC-example of Ol'shanskii exposed above.
+
+
+    \textbf{Example 3.65}. [92] Under the assumption of \textbf{CH} there exists a group $G$ of size $\omega_1$ satisfying the following
+    conditions (a) (with $m = 10000$) and (b) (with $n = 2$):
+    
+
+    \begin{itemize}
+
+        \item (a) there exists $m \in N$ such that $A^m = G$ for every subset $A$ of $G$ with $|A| = |G|$;
+
+        \item (b) for every subgroup $H$ of $G$ with $|H| < |G|$ there exist $n \in \mathbb{N}$ and $x_1, . . . , x_n \in G$ such that the intersection
+        $\bigcup^n_{i=1} x^{-1}_i Hx_i$ is finite.
+
+    \end{itemize}
+
+\end{document}
