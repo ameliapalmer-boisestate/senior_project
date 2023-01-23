@@ -1743,4 +1743,472 @@ that:
 
     \end{itemize}
 
+
+    Let us see that $G$ is a Markov group (i.e., $\mathfrakM_G$ is discrete)\footnote[7]{Hesse [66] showed that the use of CH in Shelah's construction of a Markov group of size $\omega_1$ can be avoided.}. Assume $\mathcal{T}$ be a Hausdorff group topology on $G$. There
+exists a $\mathcal{T}$-neighbourhood $V$ of $e_G$ with $V \neq G$. Choose a $\mathcal{T}$-neighbourhood $W$ of $e_G$ with $W^m \subseteq V$. Now $V \neq G$
+and (a) yield $|W| < |G|$. Let $H = \langle W \rangle$. Then $|H| = |W| · \omega < |G|$. By (b) the intersection $O = \bigcap^n_{i=1} x^{-1}_i Hx_i$ is
+finite for some $n \in N$ and elements $x_1, . . . , x_n \in G$. Since each $x^{-1}_i Hx_i$ is a $\mathcal{T}$-neighbourhood of $e_G$, this proves
+that $e_G \in O \in \mathcal{T}$ . Since $T$ is Hausdorff, it follows that $\{e_G\}$ is $\mathccal(T)$-open, and therefore $\mathccal(T)$ is discrete.
+
+
+    One can see that even the weaker form of (a) (with $m$ depending on $A \in [G]^{|G|}$), yields that every proper
+subgroup of $G$ has size $< |G|$. In the case $|G| = \omega_1$, the groups with this property are known as Kurosh groups (in
+particular, this is a \emph{Jonsson semigroup} of size $\omega_1$, i.e., an uncountable semigroup whose proper subsemigroups
+are countable).
+
+
+    Finally, this remarkable construction from [92] furnished also the first consistent example to a third open
+problem. Namely, a closer look at the above argument shows that the group $G$ is simple. As $G$ has no maximal
+subgroups, it shows also that taking Frattini subgroup\footnote[8]{the Frattini subgroup of a group $G$ is the intersection of all maximal subgroups of $G$.} “does not commute” with taking finite direct products
+(indeed, $Fratt(G) = G$, while $Fratt(G \times G) = \Delta_G$ the “diagonal” subgroup of $G \times G$).
+
+
+\subsubsection{Extension of group topologies}
+    The problem of the existence of (Hausdorff non-discrete) group topologies can be considered also as a problem
+of extension of (Hausdorff non-discrete) group topologies.
+
+
+    The theory of extension of topological spaces is well understood. If a subset $Y$ of a set $X$ carries a topology
+$\tau$, then it is easy to extend $\tau$ to a topology $\tau^*$ on $X$ such that $(Y, \tau)$ is a subspace of $(X, τ^*)$. The easiest way
+to do it is to consider $X = Y \cup (X / Y )$ as a partition of the new space $(X, \tau^*)$ into clopen sets and define
+the topology of $X / Y$ arbitrarily. Usually, one prefers to define the extension topology $\tau^*$ on $X$ in such a way
+to have $Y$ dense in $X$. In such a case the extensions of a given space $(Y, \tau)$ can be described by means of
+appropriate families of open filters of $Y$ (i.e., filters on $Y$ having a base of $\tau$-open sets).
+
+
+    The counterpart of this problem for groups and group topologies is much more complicated because of the
+presence of group structure. Indeed, let $H$ be a subgroup of a group $G$ and assume that $\tau$ is a group topology
+of $H$. Now one has to build a group topology $\tau^*$ on $G$ such that $(H, \tau)$ is a topological subgroup of $(G, τ^*)$.
+The first idea to extend $\tau$ is to imitate the first case of extension considered above by declaring the subgroup $H$
+a $τ^*$-open topological subgroup of the new topological group $(G, τ^*)$. Let us note that this would immediately
+determine the topology $τ^*$ in a unique way. Indeed, every coset $gH$ of $H$ must carry the topology transported
+from $H$ to $gH$ by the translation $x \mapsto gx$, i.e., the $\tau^*$-open subsets of $gH$ must have the form $gU$, where $U$ is
+an open subset of $(H, \tau )$. In other words, the family $\{gU : \emptyset \neq U \in \tau\}$ is a base of $τ^*$. This idea has worked in
+the proof of Corollary 3.63 where $H$ was the center of $G$. Indeed, this idea works in the following more general
+case.
+
+
+\textbf{Lemma 3.66} Let $H$ be a subgroup of a group $G$ such that $G = Hc_G (G)$. Then for every group topology $\tau$ on
+$H$ the above described topology $\tau^*$ is a group topology of $G$ such that $(H, \tau)$ is a topological subgroup of $(G, \tau^*)$.
+
+
+    Proof. The first two axioms on the neighborhood base are easy to check. For the third one pick a basic $τ^*$-
+neighborhood $U$ of 1 in $G$. Since $H$ is $\tau^*$-open, we can assume wlog that $U \subseteq H$, so $U$ is a τ -neighborhood of
+1. Let $x \in G$. We have to produce a $τ^*$-neighborhood $V$ of 1 in $G$ such that $x^{-1} V x \subseteq U$. By our hypothesis
+there exist $h \in H$, $z \in c_G (G)$, such that $x = hz$. Since $\tau$ is a group topology on $H$ there exist $V \in V_{H,\tau}$ (1) such
+that $h^{-1} Vh \subseteq U$. Then
+
+
+    $x^{-1} Vx = z^{-1} h^{-1} Vhz \subseteq z^{-1} Uz = U$
+
+
+as $z \in c_G (G)$. This proves that $\tau^*$ is a group topology of $G$.
+
+
+Clearly, the condition $G = Hc_G (G)$ is satisfied when $H$ is a central subgroup of $G$. It is satisfied also when
+$H$ is a direct summand of $G$. On the other hand, subgroups $H$ satisfying $G = Hc_G (G)$ are normal.
+
+
+    Two questions are in order here:
+
+
+    \begin{itemize}
+
+        \item is the condition $G = Hc_G (G)$ really necessary for the extension problems;
+
+        \item is it possible to definite the extension $τ^*$ in a different way in order to have \emph{always} the possibility to
+        extend a group topology?
+
+    \end{itemize}
+
+
+    Our next theorem shows that the difficulty of the extension problem are not hidden in the special features
+of the extension $\tau^*$.
+
+
+\textbf{Theorem 3.67}. Let $H$ be a normal subgroup of the group $G$ and let $\tau$ be a group topology on $H$. Then the
+following are equivalent:
+
+
+    \begin{itemize}
+
+        \item (a) the extension $τ^*$ is a group topology on $G$;
+
+        \item (b) $\tau$ can be extended to a group topology of $G$;
+
+        \item (c) for every $x \in G$ the automorphism of $H$ induced by the conjugation by $x$ is $\tau$-continuous.
+
+    \end{itemize}
+
+
+\emph{Proof} The implication $(a) \to (b)$ is obvious, while the implication $(b) \to (c)$ follows from the fact that the
+conjugations are continuous in any topological group. To prove the implication $(c) \to (a)$ assume now that
+all automorphisms of $N$ induced by the conjugation by elements of $G$ are $\tau$-continuous. Take the filter of all
+neighborhoods of 1 in $(H, τ^*)$ as a base of neighborhoods of 1 in the group topology $τ^*$ of $G$. This works since
+the only axiom to check is to find for every $x \in G$ and every $\tau$-nbd $U$ of 1 a $τ^*$-neighborhood $V$ of 1 such that
+$V^x:= x^{-1} V x \subseteq U$. Since we can choose $U, V$ contained in $H$, this immediately follows from our assumption of
+$\tau$-continuity of the restrictions to $H$ of the conjugations in $G$.
+
+
+    Now we give an example showing that the extension problem cannot be resolved for certain triples $G, H, \tau$
+of a group $G$, its subgroup $H$ and a group topology $\tau$ on $H$.
+
+
+\textbf{Example 3.68}. In order to produce an example when the extension is not possible we need to produce a triple
+$G, H, \tau$ such that at least some conjugation by an element of $G$ is not $\tau$-continuous when considered as an
+automorphism of $H$. The best tool to face this issue is the use of semi-direct products.
+
+
+    Let us recall that for groups $K, H$ and a group homomorphism $\theta : K \to Aut(H)$ one defines the semi-direct
+product $G = H \rtimes_\theta K$, where we shall identify $H$ with the subgroup $H \times \{1\}$ of $G$. In such a case, the conjugation  
+in $G$ by an element $k$ of $K$ restricted to $H$ is precisely the automorphism $\theta(k)$ of $H$. Now consider a group
+topology $\tau$ on $H$. According to Theorem 3.67 $\tau$ can be extended to a group topology of $G$ iff for every $k \in K$
+the automorphism $\theta(k)$ of $H$ is $\tau$-continuous. (Indeed, every element $x \in G$ has the form $x = hk$, where $h \in H$
+and $k \in K$; hence it remains to note that the conjugation by $x$ is composition of the (continuous) conjugation
+by $h$ and the conjugation by $k$. )
+
+
+    In order to produce the required example of a triple $G, H, \tau$ such that $\tau$ cannot be extended to $G$ it suffices
+to find a group $K$ and a group homomorphism $\theta : K \to Aut(H)$ such that at least one of the automorphisms
+$\theta(k)$ of $H$ is $\tau$-discontinuous. Of course, one can simplify the construction by taking the cyclic group $K_1 = \langle k \rangle$
+instead of the whole group $K$, where $k \in K$ is chosen such that the automorphisms $\theta(k)$ of $H$ is $\tau$-discontinuous.
+A further simplification can be arranged by taking $k$ in such a way that the automorphism $f = \theta(k)$ of $H$ is
+also an involition, i.e., $f^2 = id_H$. Then $H$ will be an index two subgroup of $G$.
+
+
+    Here is an example of a topological abelian group $(H, \tau)$ admitting a $\tau$-discontuous involition $f$. Then the
+triple $G, H, \tau$ such that τ cannot be extended to $G$ is obtained by simply taking $G = H \rtimes \rangle f \langle$, where the involition
+$f$ acts on $H$. Take as $(H, \tau)$ the torus group $\mathbb{T}$ with the usual topology. Then $\mathbb{T}$ is algebraically isomorphic to
+$(\mathbb{Q}/\mathbb{Z}) \oplus_c \bigoplus \mathbb{Q}$, so $\mathbb{T}$ has $2^c$ many involutions. Of these only the involutions $\pm id_\mathbb{T}$  of Then $\mathbb{T}$  are continuous.
+
+
+    Let us conclude now with a series of examples when the extension problem has always a positive solution.
+
+
+\textbf{Example 3.69}. Let $p$ be a prime number. If the group of $p$-adic integers $N = \mathbb{Z}_p$ is a normal subgroup of
+some group $G$, then the $p$-adic topology of $N$ can be extended to a group topology on $G$. Indeed, it suffices to
+note that if $\xi : N \to N$ is an automorphism of $N$, then $\xi(p^n N) = p^n N$. Since the subgroups $p^n N$ define the
+topology of $N$, this proves that every automorphism of $N$ is continuous. Now Theorem 3.67 applies.
+
+
+    Clearly, the $p$-adic integers can be replaced by any topological group $N$ such that every automorphism of $N$
+is continuous (e.g., products of the form $\Pi_p \mathbb{Z}^{kp}_p \times F_p$, where $k_p < \omega$ and $F_p$ is a finite abelian $p$-group)
+
+
+\subsection{Cardinal invariants of topological groups}
+Here we shall be interested in measuring the minimum size of a base (of neighborhoods of 1) in a topological
+group $H$, as well as other cardinal functions related to $H$.
+
+
+    It is important to relate the bases (of neighborhoods of 1) in $H$ to those of a subgroup $G$ of $H$.
+
+\textbf{Exercise 3.70} If $G$ is a subgroup of a topological group $H$ and if $\mathcal{B}$ is a base (of neighborhoods of 1) in $H$ then
+a base (of neighborhoods of 1) in $G$ is given by $\{U \cap G : U \in \mathcal{B}\}$.
+
+
+    Now we consider the case when $G$ is a dense subgroup of $H$.
+
+
+\textbf{Lemma 3.71} If G is a dense subgroup of a topological group $H$ and $\mathcal{B}$ is a base of neighborhoods of 1 in $G$,
+then ${\bar{U}^H: U \in \mathcal{B}}$ is a base of neighborhoods of 1 in $H$.
+
+
+\emph{Proof} Since the topological group $H$ is regular, the closed neighborhoods form a base at 1 in $H$. Hence for
+a neighborhood $V \ni 1$ in $H$ one can find another neighborhood $V_0 \ni 1$ such that $\bar{V}_0 \subseteq V$. Since $G \cap V_0$ is a
+neighborhood of 1 in $G$, there exists $U \in \mathcal{B}$ such that $U \subseteq G \cap V_0$. There exists also an open neighborhood $W$
+of 1 in $H$ such that $U = W \cap G$. Obviously, one can choose $W \subseteq V_0$. Hence $\bar{U}^H = \bar{W}$ as $G$ is dense in $H$ and
+$W$ is open in $H$. Thus $\bar{U}^H = \bar{W} \subseteq \bar{V}_0 \subseteq V$ is a neighborhood of 1 in $H$.
+
+
+\textbf{Lemma 3.72} Let $G$ be a dense subgroup of a topological group $H$ and let $\mathcal{B}$ be a base of neighborhoods of 1 in
+$H$. Then $\{gU : U \in \mathcal{B}, g \in G\}$ is a base of the topology of $H$.
+
+
+\emph{Proof}. Let $x \in H$ and let $x \in O$ be an open set. Then there exists a $U \in \mathcal{U}$ symmetric with $xU^2 \subseteq O$. Pick a
+$g \in G \cap xU$. Then $x \in gU \subseteq O$.
+
+
+    For a topological group $G$ set $d(G) = min\{|X| : X \text{ is dense in } G\}$,
+
+
+        $w(G) = min\{|\mathcal{B}| : \mathcal{B} \text{ is a base of } G\}$ and $\chi(G) = min\{|\mathcal{B}| : \mathcal{B} \text{ a base of neighborhoods of 1 in } G\}$.
+
+
+\textbf{Lemma 3.73} Let $H$ be a subgroup of a topological group $G$. Then:
+    \begin{itemize}
+
+        \item (a) $w(H) \leq w(G)$ and $\chi(H) \leq \chi(G)$;
+        
+        \item (b) if $H$ is dense in $G$, then $w(G) = w(H)$ and $\chi(G) = \chi(H)$.
+
+    \end{itemize}
+
+\textbf{Lemma 3.74}. $w(G) = \chi(G) · d(G)$ for every topological group $G$.
+
+
+\wmph{Proof} The inequality $w(G) \leq \chi(G)$ is obvious. To see that $w(G) \leq d(G)$ choose a base $\mathcal{B}$ of size $w(G)$ and for
+every $U \in B$ pick a point $d_U \in U$. Then the set $D = {d_U : U \in \mathca;{B}}$ is dense in $G$ and $|D| \leq w(G)$. This proves
+the inequality $w(G) \leq \chi(G) · d(G)$.
+
+
+    The inequality $w(G) \leq \chi(G) · d(G)$ follows from the previous lemma.
+
+
+    The cardinal invariants of the topological groups are cardinal numbers, say $\rho(G)$, associated to every
+topological group $G$ such that if $G$ istopologically isomorphic to the topological group H, then $\rho(G) = \rho(H)$. For
+example, the size $|G|$ is the simplest cardinal invariant of a topological group, it does not depend on the topology
+of $G$. Other cardinal invariants are the weight $w(G)$, the character $\chi(G)$ and the density character $d(G)$ defined
+above. Beyond the equality $w(G) = \chi(G) · d(G)$ proved in Lemma 3.74, one has also the following inequalities:
+
+
+\textbf{Lemma 3.75} Let $G$ be a topological group. Then:
+
+\begin{itemize}
+
+    \item (a) $d(G) \leq q(G) \leq 2^{d{G}}$;
+    
+    \item (b) $G| \leq 2^{w(G)}$ if $G$ is  Hausdorff.
+
+\end{itemize}
+
+
+\emph{Proof.} (a) $d(G) ≤ w(G)$ has already been proved in Lemma 3.74 (a). To prove $w(G) \leq 2^{d(G)}$ note that $G$ is
+regular, hence every open base $\mathcal{B}$ on $G$ contains a base $\mathcal{B}_r$ of the same size consisting of regular open sets \footnote[9]{an open set is said to be regular open if it coincides with the interior of its closure.}.
+Let $\mathcal{B}$ be a base of $G$ of regular open sets and let $D$ be a dense subgroup of $G$ of size $d(G)$. If $U, V \in B$, with
+$U \cap D = V \cap D$, then $\bar{U} = \bar{U \cap D} = \bar{V \cap D} = \bar{V}$. Being $U$ and $V$ regular open, the equality $\bar{U} = \bar{V}$ implies
+$U = V$. Hence the map $U \mapsto U \cap D$ from $\mathcal{B}$ to the power set $P(D)$ is injective. Therefore $w(G) \leq 2^{d(G)}$.
+
+
+    (b) To every point $x \in G$ assign the set $O_x = \{U \in B : x \in U\}$. Then the axiom $T_2$ guarantees that map
+$x \mapsto O_x$ from $G$ to the power set $P(\mathcal{B})$ is injective. Therefore, $|G| \leq 2^{w(G)}$.
+
+
+\textbf{Remark 3.76.} Two observations related to item (b) of the above lemma are in order here.
+
+
+\begin{itemize}
+
+    \item The equality in item (b) can be attained (see Theorem 4.46).
+    
+    \item One cannot remove Hausdorffness in item (b) (any large indiscrete group provides a counter-example).
+    This dependence on separation axioms is due to that the presence of the size of the group in (b). We see
+    in the next exercise that the Hausdorff axiom is not relevant as far as the other cardinal invariants are
+    involved.
+
+\end{itemize}
+
+
+\textbf{Exercise 3.77} Let $G$ be a topological group. Prove that:
+
+\begin{itemize}
+
+    \item $w(G) = w(G/ \bar{\{1\}}), \chi(G) = \chi(G/ \bar{\{1\}})$ and $d(G) = d(G / \bar{\{1\}})$;
+    
+    \item $d(U) = D(G)$ for every non-empty open set $U$, if $G$ is Lindel¨off;
+
+    \item $w(G) = \chi(G)$ if locally compact and $\sigma$-compact.
+
+\end{itemize}
+
+
+\subsection{Completeness and completion}
+
+
+    A net $\{ g_\alpha \} \alpha \in A$ in a topological group $G$ is a Cauchy net if for every neighborhood $U$ of 1 in $G$ there exists
+$\alpha_0 \in A$ such that $g^{-1}_\alpha g_\beta \in U$ and $g_\beta g^{-1}_\alpha \in U$ for every $\alpha, \beta > \alpha_0$.
+
+
+\textbf{Exercise 3.78} Let $G$ be a dense subgroup of a topological group $H$. If $(g_\alpha)$ is a net in $G$ that converges to
+some element $h \in H$, then $(g_\alpha)$ is a Cauchy net.
+
+
+By the previous exercise, the convergent nets are Cauchy nets. A topological group $G$ is complete (in the
+sense of Raikov) if every Cauchy net in $G$ converges in $G$. We omit the tedious proof of the next theorem.
+
+
+\textbf{Theorem 3.79} For every topological Hausdorff group $G$ there exists a complete topological group $\tilde{G}$ and a
+topological embedding $i : G \to \tilde{G}$ such that $i(G)$ is dense in $\tilde{G}$. Moreover, if $f : G \to H$ is a continuous
+homomorphism and $H$ is a complete topological group, then there is a unique continuous homomorphism 
+$\tilde{f} : \tilde{G} \to H$ with $f = \tilde{f} \circ i$.
+
+
+Therefore every Hausdorff topological abelian group has a unique, up to topological isomorphisms, (Raikov-
+)completion ($\tilde{G}, i$) and we can assume that $G$ is a dense subgroup of $\tilde{G}$.
+
+
+\textbf{Definition 3.80} A net ${g_\alpha}_{\alpha \in A}$ in $G$ is a left [resp., right] Cauchy net if for \emph{every neighborhood} $U$ of 1 in $G$
+there exists $\alpha_0 \in A$ such that $g^{-1}_\alpha g_\beta \in U$ [resp., $g^{-1}_\alpha g_\beta \in U$] for every $\alpha, \beta > \alpha_0$.
+
+
+\textbf{Lemma 3.81} Let $G$ be a Hausdorff topological group. Every left (resp., right) Cauchy net in $G$ with a
+convergent subnet is convergent.
+
+
+\emph{Proof}. Let $\{g_\alpha \}_{\alpha \in A}$ be a left Cauchy net in $G$ and let $\{g_\beta\}_{\beta \in B}$ be a subnet convergent to $x \in G$, where $B$ is a
+cofinal subset of $A$. Let $U$ be a neighborhood of 1 in $G$ and $V$ a symmetric neighborhood of 1 in $G$ such that
+$V V \subseteq U$. Since $g_\beta \to x$, there exists $\beta_0 \in B$ such that $g_\beta \in xV$ for every $\beta > \beta_0$. On the other hand, there
+exists $\alpha_0 \in A$ such that $\alpha_0 \geq \beta_0$ and $g^{-1}\alpja g\gamma \in V$ for every $\alpha, \gamma > \alpha_0$. With $\gamma = \beta_0$ we have $g_\alpha \in xV V \subseteq xU$ for
+every $\alpha > \alpha_0$, that is $g_\alpha \to x$.
+
+
+    A topological group $G$ is \emph{complete in the sense} of Weil if every left Cauchy net converges in $G$.
+
+
+    Every Weil-complete group is also complete, but the converse does not hold in general. It is possible to
+define the Weil-completion of a Hausdorff topological group in analogy with the Raikov-completion.
+
+
+\textbf{Exercise 3.82} Prove that if a Hausdorff topological group $G$ admits a Weil-completion, then in $G$ the left
+Cauchy and the right Cauchy nets coincide
+
+
+\textbf{Exercise 3.83} Let X be an infinite set and let G = S(X) equipped with the topology described in §3.2.4. Prove
+that:
+
+
+\begin{itemize}
+
+    \item a net  $\{f\alpha\}_{\alpha \in A}$ in $G$ is left Cauchy iff there exists $f \in XX$ so that $f_\alpha \to f$ in $X^X$, prove that such an $f$
+    must necessarily be injective;
+    
+    \item  a net $\{f\alpha\}_{\alpha \in A}$ in $G$ is right Cauchy iff there exists $g \in X^X$ so that $f^{-1}_\alpha\to g$ in $X^X$;
+
+    \item  the group $S(X)$ admits no Weil-completion. (Hint. Build a left Cauchy net in $S(X)$ that is not right
+    Cauchy and use items (a) and (b), as well as the previous exercise.)
+
+    \item $S(X)$ is Raikov-complete. (Hint. Use items (a) and (b).)
+    
+
+\end{itemize}
+
+
+\textbf{Exercise 3.84} (a) Let $G$ be a linearly topologized group and let $\{N_i: i \in I\}$ be its system of neighborhoods
+of 1 consisting of open normal subgroups. Then the completion of $G$ is isomorphic to the inverse limit
+$lim_{\leftarrow} G/N_i$ of the discrete quotients $G/N_i$.
+
+
+(b) Show that the completion in (a) is compact iff all $N_i$ have finite index in $G$.
+
+
+\section{Compactness and local compactness in topological groups}
+
+
+    Clearly, a topological group $G$ is locally compact if there exists a compact neighborhood of $e_G$ in $G$ (compare
+with Definition 2.10). We shall assume without explicitly mentioning it, that all locally compact groups are
+Hausdorff.
+
+
+    As an immediate consequence of Tychonov's theorem of compactness of products we obtain the following
+the first example of a compact abelian group (it will become clear with the duality theorem that this is the
+most general one).
+
+
+\textbf{Remark 4.1}. Let us see that for every abelian group $G$ the group $G^* = Hom (G, \mathbb{S})$ is closed in the product
+$S^G$, hence $G^*$ is compact. Consider the projections $π_x : \mathbb{S}^G \to \mathbb{T}$ for every $x \in G$ and the following equalities
+
+
+    $G^* = \bigcap_{h,g \in G} \{f \in \mathbb{S}^G : f(h + g) = f(h)f(g)\} = \bigcap_{h,g \in G} \{f \in \mathbb{S}^G : \pi_{h+g}(f) = \pi_h(f) \pi_g (f)\}$
+
+
+        $= \bigcap_{h,g \in G} \{f \in \mathbb{S}^G : (\pi^{-1}_{h+g} \pi_h \pi_g)(f) = 1\} = \bigcap_{h,g \in G} ker(\pi^{-1}_{h+g} \pi_h \pi_g)$
+
+
+Since $\pi_x$ is continuous for every $x \in G$ and {1} is closed in $\mathbb{S}$, then all $ker(\pi^{-1}_{h+g} \pi_h \pi_g)$ are closed; so $Hom (G, \mathbb{S})$
+is closed too.
+
+
+The next lemma contains a well known useful fact - the existence of a “diagonal subnet”.
+
+
+\textbf{Lemma 4.2} Let $G$ be an abelian group and let $N = {\chi_\alpha}_\alpha$ be a net in $G^*$. Then there exist χ ∈ G∗ and a
+subnet $S = \{\chi_{\alpha\beta}\}_\beta$ of $N$ such that $χαβ(x) → χ(x)$ for every $x \in G$.
+
+
+\emph{Proof.} By Tychonov's theorem, the group $\mathbb{S}^G$ endowed with the product topology is compact. Then $N$ has a
+convergent (to $\chi$) subnet $\mathbb{S}$. Therefore $\chi_{\alpha \beta}(x) → \chi(x)$ for every $x \in G$ and $χ \in G^*$, because $G^*$ is closed in $\mathbb{S}^G$
+by 4.1.
+
+
+\subsection{Specific properties of (local) compactness}
+
+
+Here we shall see the impact of local compactness in various directions (the open mapping theorem, preoperties
+related to connectedness, etc.).
+
+
+\textbf{Lemma 4.3}. Let $G$ be a topological group and let $C$ and $K$ be closed in subsets of $G$:
+
+
+\begin{itemize}
+
+    \item if $K$ is compact, then both $CK$ and $KC$ are closed
+    
+    \item if both $C$ and $K$ are compact, then $CK$ and $KC$ are compact;
+
+    \item if $K$ is contained in an open subset $U$ of $G$, then there exists an open neighborhood $V$ of 1 such that
+    $KV \subseteq U$.
+    
+\end{itemize}
+
+
+\emph{Proof.} (a) Let $\{x_\alpha\}_{\alpha \in A}$ be a net in $CK$ such that $x_\alpha \to x_0 \in G$. It is sufficient to show that $x_0 \in CK$. For
+every $\alpha \in A$ we have $x_\alpha = y_\alpha z_\alpha$, where $y_\alpha \in C$ and $z_\alpha \in K$. Since $K$ is compact, then there exist $z_0 \in K$
+and a subnet $\{z_{\alpha \beta}\}_{\beta \in B}$ such that $z_{\alpha \beta} \to z_0$. Thus $(x_{\alpha \beta}, z_{\alpha \beta})_{\beta \in B}$ is a net in $G \times G$ which converges to $(x_0, z_0)$.
+Therefore $y_{\alpha \beta} = x_{\alpha \beta} z^{-1}_{\alpha \beta}$ converges to $x_0 z^{-1}_0$ because the function $(x, y) \mapsto xy^{-1}$ is continuous. Since $y_{\alpha \beta} \in C$
+for every $\beta \in B$ and $C$ is closed, $x_0 z^{-1}_0 \in C$. Now $x_0 = (x_0 z^{-1}_0) z_0 \in CK$. Analogously it is possible to prove
+that $KC$ is closed.
+        
+
+    (b) The product $C \times K$ is compact by the Tychonov theorem and the function $(x, y) \mapsto xy$ is continuous
+and maps $C \times K$ onto $CK$. Thus $CK$ is compact.
+
+
+    (c) Let $C = G / U$. Then $C$ is a closed subset of $G$ disjoint with $K$. Therefore, for the compact subset $K^{-1}$
+of $G$ one has $1 \notin K^{-1}C$. By (a) $K^{-1}C$ is closed, so there exists a symmetric neighborhood $V$ of 1 that misses
+$K{-1}C$. Then $KV$ misses $C$ and consequently $KV$ is contained in $U$.
+
+
+    Compactness of $K$ cannot be omitted in item (a). Indeed, $K = \mathbb{Z}$ and $C = \langle \sqrt{2} \rangle$ are closed subgroups of
+$G = \mathbb{R}$ but the subgroup $K + C$ of $\mathbb{R}$ is dense (see Exercie 3.20 or Proposition 4.45).
+
+
+\textbf{Lemma 4.4} Let $G$ be a topological group and $K$ a compact subgroup of $G$. Then the canonical projection
+$\pi : G \to G/K$ is closed.
+
+
+\emph{Proof.} Let $C$ be a closed subset of $G$. Then $CK$ is closed by Lemma 4.3 and so $U = G / CK$ is open. For every
+$x \neq C$K, that is $\pi(x) \notin \pi(C), \pi(U)$ is an open neighborhood of $\pi(x)$ such that $\pi(U) \cap \pi(C)$ is empty. So $\pi(C)$
+is closed.
+
+
+\textbf{Lemma 4.5} Let $G$ be a topological group and let $H$ be a closed subgroup of $G$
+
+
+\begin{enumerate}
+
+    \item If $G$ is compact, then $G/H$ is compact.
+
+    \item If $H$ and $G/H$ are compact, then $G$ is compact.
+
+\end{enumerate}
+
+\emph{Proof} (1) is obvious.
+
+
+    (2) Let $\mathcal{F} = {F_\alpha : \alpha \in A}$ be a family of closed sets of $G$ with the finite intersection property. If $\pi : G \to G/H$
+    is the canonical projection, $\pi(F)$ is a family of closed subsets with the finite intersection property in $G/H$ by
+    Lemma 4.4. By the compactness of $G/H$ there exists $\pi (x) \in \pi (F_\alpha)$ for every $\alpha \in A$. So $x \in \bigcap_{\alpha \in A} F_\alpha H$. Let
+    $x = f_\alpha h_\alpha$ with $h_\alpha \in H$ and $f_\alpha \in F_alpha$. It is not restrictive to assume that $F$ is closed for finite intersections.
+    Define a partial order on $A$ by $\alpha \leq \alpha'$ if $F_\alpha \supseteq F_{\alpha'} $. Then $(A, \leq)$ is a right-filtered partially ordered set and so
+    $\{f_\alpha\}_{\alpha \in A}$ is a net in $G$. By the compactness of $H$ we can assume wlog that $h_\alpha$ converges to $h \in H$ (otherwise
+    pass to a convergent subnet). But then $f_\alpha = xh^{-1}_\alpha \to xh^{-1}$. Since $f_\alpha$ is contained definitively in $F_\alpha$, also the
+    limit $xh^{-1} \in F_\alpha$. So the intersection of all $F_\alpha$ is not empty.
+
+
+\textbf{Lemma 4.6}
+
+
+
+
+
 \end{document}
