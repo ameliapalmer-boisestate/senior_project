@@ -2196,16 +2196,238 @@ is closed.
 
 
     (2) Let $\mathcal{F} = {F_\alpha : \alpha \in A}$ be a family of closed sets of $G$ with the finite intersection property. If $\pi : G \to G/H$
-    is the canonical projection, $\pi(F)$ is a family of closed subsets with the finite intersection property in $G/H$ by
-    Lemma 4.4. By the compactness of $G/H$ there exists $\pi (x) \in \pi (F_\alpha)$ for every $\alpha \in A$. So $x \in \bigcap_{\alpha \in A} F_\alpha H$. Let
-    $x = f_\alpha h_\alpha$ with $h_\alpha \in H$ and $f_\alpha \in F_alpha$. It is not restrictive to assume that $F$ is closed for finite intersections.
-    Define a partial order on $A$ by $\alpha \leq \alpha'$ if $F_\alpha \supseteq F_{\alpha'} $. Then $(A, \leq)$ is a right-filtered partially ordered set and so
-    $\{f_\alpha\}_{\alpha \in A}$ is a net in $G$. By the compactness of $H$ we can assume wlog that $h_\alpha$ converges to $h \in H$ (otherwise
-    pass to a convergent subnet). But then $f_\alpha = xh^{-1}_\alpha \to xh^{-1}$. Since $f_\alpha$ is contained definitively in $F_\alpha$, also the
-    limit $xh^{-1} \in F_\alpha$. So the intersection of all $F_\alpha$ is not empty.
+is the canonical projection, $\pi(F)$ is a family of closed subsets with the finite intersection property in $G/H$ by
+Lemma 4.4. By the compactness of $G/H$ there exists $\pi (x) \in \pi (F_\alpha)$ for every $\alpha \in A$. So $x \in \bigcap_{\alpha \in A} F_\alpha H$. Let
+$x = f_\alpha h_\alpha$ with $h_\alpha \in H$ and $f_\alpha \in F_alpha$. It is not restrictive to assume that $F$ is closed for finite intersections.
+Define a partial order on $A$ by $\alpha \leq \alpha'$ if $F_\alpha \supseteq F_{\alpha'} $. Then $(A, \leq)$ is a right-filtered partially ordered set and so
+$\{f_\alpha\}_{\alpha \in A}$ is a net in $G$. By the compactness of $H$ we can assume wlog that $h_\alpha$ converges to $h \in H$ (otherwise
+pass to a convergent subnet). But then $f_\alpha = xh^{-1}_\alpha \to xh^{-1}$. Since $f_\alpha$ is contained definitively in $F_\alpha$, also the
+limit $xh^{-1} \in F_\alpha$. So the intersection of all $F_\alpha$ is not empty.
 
 
-\textbf{Lemma 4.6}
+\textbf{Lemma 4.6} Let $G$ be a locally compact group, $H$ be a closed subgroup of $G$ and $\pi : G \to G/H$ be the canonical
+projection. Then:
+
+
+\begin{enumerate}
+
+    \item $G/H$ is locally compact too;
+
+    \item If $C$ is a compact subset of $G/H$, then there exists a compact subset $K$ of $G$ such that $\pi(K) = C.$
+
+\end{enumerate}
+
+
+\emph{Proof} Let $U$ be an open neighborhood of 1 in $G$ with compact closure. Consider the open neighborhood $\pi (U)$
+of 1 in $G/H$. Then $\pi \bar{(U)} \subseteq \bar{\pi (U)}$ by the continuity of $\pi$. Now $\pi \bar{(U)}$ is compact in $G/H$, which is Hausdorff,
+and so $\pi \bar{(U)}$ is closed. Since $\pi(U)$ is dense in $\pi \bar{(U)}$, we have $\bar{\pi (U)} = \bar{\pi \bar{(U)}} = \pi(U)$. So $G/H$ is locally compact.
+
+
+    (b) Let $U$ be an open neighborhood of 1 in $G$ with compact closure. Then $\{\pi(sU) : s \in G\}$ is an open
+covering of $G/H$. Since $C$ is compact, a finite subfamily $\{\pi (s_i U) : i = 1, . . . , m\}$ covers $C$. Then we can take
+$K = (s_1 U \cup · · · \cup s_m U) \cap \pi^{-1} (C)$.
+
+
+\textbf{Lemma 4.7} A locally compact group is Weil-complete
+
+
+\emph{Proof.} Let $U$ be a neighborhood of 1 in $G$ with compact closure and let ${g_\alpha}_{\alpha \in A}$ be a left Cauchy net in $G$.
+Then there exists $\alpha_0 \in A$ such that $g^{-1}_\alpha g_\beta \in U$ for every $\alpha, \beta \leq \alpha_0$. In particular, $g_\beta \in g_{\alpha_0} U$ for every $\beta > \alpha_0$.
+By the compactness of $g_{\alpha_0} \bar{U}$, we can conclude that there exists a convergent subnet $\{g_\beta\}_{\beta \in B}$ (for some cofinal
+$B \subseteq A$) such that $g_\beta \to g \in G$. Then also $g_\alpha$ converges to $g$ by Lemma 3.81.
+
+
+\textbf{Lemma 4.8} A locally compact countable group is discrete.
+
+
+Proof. By the Baire category theorem 2.16 $G$ is of second category. Since $G = {g_1, . . . , g_n, . . . } = \bigcup^{\infty}_{n=1} \{g_n\}$, 
+there exists n ∈ N+ such that Int $\{g_n\}$ is not empty and so $\{g_n\}$ is open.
+
+
+    Now we prove the open mapping theorem for topological groups.
+
+
+\textbf{Theorem 4.9 (Open mapping theorem).} Let $G$ and $H$ be locally compact topological groups and let $f$ be a
+continuous homomorphism of $G$ onto $H$. If $G$ is $\sigma$-compact, then $f$ is open.
+
+
+\emph{Proof}. Let $U$ be an open neighborhood of 1 in $G$. There exists an open symmetric neighborhood $V$ of 1 in
+$G$ such that $\bar{VV} \subseteq U$ and $\bar{V}$ is compact. Since $G =\bigcup_{x \in G} xV$ and $G$ is Lindel¨off by Lemma 2.17, we have
+$G =\bigcup^{\infty}_{n=1} x_n V$. Therefore $H =\bigcup^{\infty}_{n=1} h(x_n \bar{V})$, because $h$ is surjective. Put $y_n = h(x_n)$, hence $H = \bigcup^{\infty}_{n=1} y_n h(\bar{V})$
+where each $h(V)$ is compact and so closed in $H$. Since $H$ is locally compact, Theorem 2.16 yields that there
+exists $n \in \mathbb{N}_+$ such that Int $h(\bar{V})$ is not empty. So there exists a non-empty open subset $W$ of $H$ such that
+$W \subseteq h(\bar{V})$. If $w \in W$, then $w \in h(\bar{V})$ and so $w = h(v)$ for some $v \in \bar{V} = \bar{V}^{-1}$. Hence
+
+
+    $1 \in w^{-1}W \subseteq w^{-1}h(\bar{V}) = h(v^{-1})h(\bar{V}) \subseteq h(\bar{VV}) \subseteq h(U)$
+
+
+and this implies that $h(U)$ is an open neighborhood of 1 in $H$.
+
+
+    The following immediate corollary is frequently used:
+
+
+\textbf{Corollary 4.10} If $f : G \to H$ is a continuous surjective homomorphism of Hausdorff topological groups and
+$G$ is compact, then $f$ is open.
+
+
+Now we introduce a special class of $\sigma$-compact groups that will play an essential role in determining the
+structure of the locally compact abelian groups.
+
+
+\textbf{Definition 4.11.} A group $G$ is compactly generated if there exists a compact subset $K$ of $G$ which generates
+$G$, that is $G = \langle K \rangle =\bigcup^{\infty}_{n=1}(K \cup K^{-1})^n$.
+
+
+\textbf{Lemma 4.12} If $G$ is a compactly generated group then $G$ is $\sigma$-compact.
+
+
+\emph{Proof.} By the definition $G =\bigcup^{\infty}_{n=1}(K \cup K^{-1})^n$, where every $(K \cup K^{-1})^n$ is compact, since $K$ is compact.
+
+
+    It should be emphasized that while $\sigma$-compactness is a purely topological property, being compactly
+    generated involves essentially the algebraic structure of the group.
+
+
+\textbf{Excercise 4.13.} (a) Give examples of $\sigma$-compact groups that are not compactly generated.
+
+
+(b) Show that every connected locally compact group is compactly generated
+
+
+\textbf{Lemma 4.14.} Let $G$ be a locally compact group.
+
+
+\begin{enumerate}
+
+    \item If $K$ a compact subset of $G$ and $U$ an open subset of $G$ such that $K \subseteq U$, then there exists an open
+    neighborhood $V$ of 1 in $G$ such that $(KV) \cup (VK) \subseteq U$ and $\bar{(KV) \cup (VK)}$ is compact.
+    
+    \item If $G$ is compactly generated, then there exists an open neighborhood $U$ of 1 in $G$ such that $\bar{U}$ is compact
+    and $U$ generates $G$.
+
+\end{enumerate}
+
+
+\emph{Proof.} (a) By Lemma 4.3 (c) there exists an open neighborhood $V$ of 1 in $G$ such that $(KV) \cup (VK) \subseteq U$.
+Since $G$ is locally compact, we can choose $V$ with compact closure. Thus $K\bar{V}$ is compact by Lemma 4.3. Since
+$KV \subseteq K\bar{V}$ , then $\bar{KV} \subseteq K \bar{V}$ and so $\bar{KV}$ is compact. Analogously $\bar{KV}$ is compact, so $\bar{(KV) \cup (VK)} = \bar{KV} \cup \bar{VK}$
+is compact.
+
+
+    (b) Let $K$ be a compact subset of $G$ such that $K$ generates $G$. So $K \cup \{1\}$ is compact and by (a) there exists
+an open neighborhood $U$ of 1 in $G$ such that $U \supseteq K \cup \{1\}$ and $\bar{U}$ is compact.
+
+
+    In the case of first countable topological groups Fujita and Shakmatov [49] have described the precise
+relationship between $\sigma$-compactness and the property of being compactly generated.
+
+
+\textbf{Theorem 4.15.} A metrizable topological group $G$ is compactly generated if and only if $G$ is $\sigma$-compact and, for
+every open subgroup $H$ of $G$, there exists a finite set $F \subseteq G$ such that $F \cup H$ algebraically generates $G$ [49].
+
+
+    This gives the following:
+
+
+\textbf{Corollary 4.16} . A $\sigma$-compact metrizable group $G$ is compactly generated in each of the following cases (for the
+definition of total boundedness see Definition 4.25):
+
+
+\begin{itemize}
+
+    \item $G$ has no open subgroups
+
+    \item the completion $\tilde{G}$ is connected;
+
+    \item $G$ is totally bounded.
+
+\end{itemize}
+
+
+    Moreover,
+
+
+\textbf{Theorem 4.17.} A countable metrizable group is compactly generated iff it is algebraically generated by a
+sequence (possibly eventually constant) converging to its neutral element.
+
+
+    Examples showing that the various conditions above cannot be omitted can be found in [49].
+The question when will a topological group contain a compactly generated dense subgroup is considered in
+[50].
+
+
+    Now we see that linearity and total disconnectedness of group topologies coincide for compact groups and
+for locally compact abelian groups
+
+
+\textbf{Theorem 4.18.} Every locally compact totally disconnected group has a base of neighborhoods of 1 consisting
+of open subgroups. In particular, a locally compact totally disconnected group that is either abelian or compact
+has linear topology.
+
+
+    This can be derived from the followis more precise result:
+
+
+\textbf{Theorem 4.19.} Let $G$ be a locally compact topological group and let $C = c(G)$. Then :
+
+
+    \begin{itemize}
+
+    \item (a) $C$ coincides with the intersection of all open subgroups of $G$;
+    
+    \item (b) if $G$ is totally disconnected, then every neighborhoodof 1 contains an open subgroup of $G$.
+
+    \end{itemize}
+
+
+    If $G$ is compact, then the open subgroups in items (a) and (b) can be chosen normal.
+
+
+    \emph{Proof.} (a) follows from (b) as $G/C$ is totally disconnected hence the neutral element of $G/C$ is intersection of
+open (resp. open normal) subgroups of $G/C$. Now the intersection of the inverse images, w.r.t. the canonical
+homomorphism $G \to G/C$, of these subgroups coincides with $C$.
+
+
+    (b) Let $G$ be a locally compact totally disconnted group. By Vedenissov's Theorem $G$ has a base $\mathcal{O}$ of clopen
+symmetric compact neighborhoods of 1. Let $U \in \mathcal{O}$. The $U = \bar{U} = \bigcap_{V \in \mathcal{O}} UV$. Then every set $U · V$ is compact
+by Lemma 4.3, hence closed. According to Lemma 2.14 there exist $V_1, . . . , V_n \in \mathcal{O}$ such that $U = \bigcap^n_{k=1} UV_k$.
+Then for $V := U \cap \bigcap^n_{k=1} V_k$ one has $UV = U$. This implies also $VV \subseteq U$, $VVV \subseteq U$ etc. Since $V$ is symmetric,
+the subgroup $H = \langle V \rangle$ is contained in $U$ as well. From $V \subseteq H$ one can deduce that $H$ is open (cf. 3.16). In
+case $G$ is compact, note that the heart $H_G =\bigcap_{x \in G} x^{-1}Hx$ of $H$ is an open normal subgroup as the number of
+all conjugates $x^-{1}Hx$ of $H$ is finite (being equal to $[G : N_G (H)] \leq [G : H] < \infty$). Hence $H_G$ is an open normal
+subgroup of $G$ contained in $H$, hence also in $U$.
+
+
+\textbf{Corollary 4.20} The quotient of a locally compact totally disconnected group is totally disconnected.
+
+
+    \emph{Proof.} Let $G$ be a locally compact totally disconnected group and let $N$ be a closed normal subgroup of $G$. It
+follows from the above theorem that $G$ has a linear topology. This yields that the quotient $G/N$ has a linear
+topology too. Thus $G/N$ is totally disconnected.
+
+
+\textbf{Corollary 4.21} The continuous homomorphic images of compact totally disconnected groups are totally disconnected.
+
+
+    \emph{Proof.} Follows from the above corollary and the open mapping theorem.
+
+
+    According to Example 3.46 none of the items (a) and (b) of the theorem remain true without the hypothesis
+“locally compact”.
+
+
+\textbf{Corollary 4.22} Let $G$ be a locally compact group. Then $Q(G) = c(G)$.
+
+
+    \emph{Proof.} By item (a) of the above theorema $C(G)$ is an intersection of open subgroups, that are clopen being open
+subgroups (cf. Proposizione 3.16). Hence $c(G)$ contains $Q(G)$ which in turn coincides with the intersection of
+\emph{all} clopen sets of $G$ containing 1. The inclusion $C(G) \subseteq Q(G)$ is always true.
+
+
+
+
 
 
 
