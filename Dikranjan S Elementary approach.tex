@@ -456,4 +456,262 @@ locally compact abelian groups}
 
         \end{itemize}
 
+
+\textbf{Proof.} The proof of (a) is straightforward and (b) follows from (a).
+
+
+    A topological group $(G, \tau)$ is said to be maximally almost periodic, if the topology $\tau^+$ is Hausdorff. The assignment
+$(G, \tau) \mapsto (G, \tau^+)$ is a functor from the category of all topological groups to the subcategory of all totally bounded groups. It
+sends maximally almost periodic groups to precompact groups.
+
+
+    If $H$ is a family of characters of an abelian group $G$, then the family $\{U_G(\chi_1,...,\chi_n; \delta): \delta > 0, \chi_i \in H, i = 1,...,n\}$,
+taken as a pre-base of the filter of neighborhoods of 0, generates of a group topology $\mathcal{T}_H$ on $G$. This is the coarsest
+group topology on $G$ that makes every character from $H$ continuous. One calls $T_{G^*}$ Bohr topology of $G$. It follows from
+Example 2.1 that all group topologies of the form $\mathcal{T}_H$ on $G$ are totally bounded. So in particular, $\mathcal{P}_G \geqslant \mathcal{T}_{G^*}$ (see also Corollary 3.6).
+
+
+    We say that the characters of $H$ separate the points of $G$ iff for every $x \in G$, $x \neq 0$, there exists a character $\chi \in H$ with
+$\chi(x) \neq 1$. Clearly, the characters of $H$ separate the points of $G$ iff $\mathcal{T}_H$ is Hausdorff. In such a case, $\mathcal{T}_H$ coincides with
+the topology induced by the natural embedding $G \hookrightarrow T^H$. The next proposition summarizes some of the above comments:
+
+
+\textbf{Proposition 3.4} Let $G$ be an abelian group
+
+
+    \begin{itemize}
+        
+        \item (a) All topologies of the form $\mathcal{T}_H$, where $H \leqslant G^*$, are totally bounded    
+        
+        \item (b) $\mathcal{T}_H$ is precompact iff $H$ separates the points of $G$. In particular, $\mathcal{T}_{G^*}$ is precompact.
+        
+    \end{itemize}
+
+
+\textbf{Proof.} (a) follows from Example 2.1. For the second assertion in (b) observe that $G^*$ separates the points of $G$
+
+
+    It requires a considerable effort to prove that, conversely, every totally bounded group topology has the form $\mathcal{T}_H$ for
+some $H$ (see Theorem 5.2). At this stage we can prove it only for $\mathcal{P}_G$. In order to do this we need the following corollary of
+Folner's lemma providing also an internal description of the neighborhoods of 0 in the Bohr topology of $A$.
+
+
+\textbf{Corollary 3.5} For a subset E of an abelian group $A$ the following are equivalent:
+
+
+    \begin{itemize}
+            
+        \item (a) $E$ contains $V_{(8)}$ for some big subset $V$ of $A$;
+        
+        \item (b) for every $n \in \mathbb{N}_+$, $E$ contains $V_{(2n)}$ for some big subset $V$ of $A$;
+
+        \item (c) $E$ is a neighborhood of 0 in the Bohr topology of $A$.
+
+    \end{itemize}
+
+
+\textbf{Proof.} The implication $(a) \Rightarrow (c)$ follows from Folner's lemma. The implication $(c) \Rightarrow (b)$ follows from Proposition 3.4.
+
+
+    So far we have only the inequality $\mathcal{P}_G \geqslant \mathcal{T}_{G^*}$ between the finest totally bounded group topology PG and the Bohr
+topology $\mathcal{T}_{G^*}$ of an abelian group (the latter is precompact, by item (b) of Proposition 3.4). The equivalence of items (a)
+and (c) of Corollary 3.5 proves that these two topologies coincide.
+
+
+\textbf{Corollary 3.6.} For an abelian group $G$ the Bohr topology $\mathcal{T}_{G^*}$ coincides with the finest precompact group topology $\mathcal{P}_G$.
+
+
+    The following old problems concerning the group $\mathbb{Z}$ is still open (see Cotlar and Ricabarra [6], Ellis and Keynes [9],
+Følner [12], Glasner [14] or Pestov [24, Question 1025]):
+
+
+\textbf{Question 3.7} Does there exist a big set $V \subseteq \mathbb{Z}$ such that $V - V$ is not a neighborhood of 0 in the Bohr topology of $\mathbb{Z}$?
+
+
+    It is known that every infinite abelian group $G$ admits a big set with empty interior with respect to the Bohr topology [1]
+(more precisely, these authors prove that every totally bounded group has a big subset with empty interior).
+
+
+    It is easy to see that $\widehat{(G, \tau)} = \widehat{(G, \tau^+)}$ for every topological abelian group $\widehat{(G, \tau)}$. Actually, the group $G$ admits a
+“universal” precompact continuous surjective homomorphic image $q : G \to G^+$:
+
+
+\textbf{Proposition 3.8} For a topological group $(G, \tau)$ denote by $G^+$ the quotient group $G/\bar{\{0\}}^{\tau^+}$of $(G, \tau^+)$. Then $G^+$ is precompact and
+every continuous homomorphism $f : G \to P$, where $P$ is a precompact group, factors through the canonical homomorphism $q : G \to G^+$.
+
+
+\textbf{Proof.} The precompactness of $G^+$ is obvious. If $f : G \to P$ is a continuous homomorphism, where $P$ is a totally bounded
+group, then $f$ factors through the identity homomorphism $id_G :(G, \tau) \to (G, \tau^+)$. In case $P$ is precompact, then the continuous
+homomorphism $f :(G, \tau^+) \to P$ factors uniquely through the canonical homomorphism $q : G \to G^+ as f (\bar{\{0\}}^{\tau^+}) = 0$.
+
+
+    It can be easily deduced from of the above proposition, that the assignment $G \mapsto G^+$ is a functor from the category of
+all topological groups to the subcategory of all precompact groups, namely the composition of the functor $(G, \tau) \mapsto (G, \tau^+)$
+and the canonical $T_0$-reflector $G \to G/\bar{\{0\}}$.
+
+
+    Letting $bG$ denote the compact completion of $G^+$ we obtain:
+
+
+\textbf{Theorem 3.9.} Every topological group $G$ admits a compact group $bG$ and a continuous homomorphism $b_G : G \to bG$ of $G$ with dense
+image, such that for every continuous homomorphism $f : G \to K$ into a compact group K there exists a (unique) continuous
+homomorphism $f' : bG \to K$ with $f' \circ b_G = f $.
+
+
+    The compact group $bG$ and the homomorphism $b_G : G \to bG$ from the above theorem are called Bohr compactification
+of the topological group $G$. Clearly, the assignment $G \mapsto bG$ is a functor from the category of all topological groups to
+the subcategory of all compact groups. In some sense the Bohr compactification of a topological group $G$ is the compact
+group $bG$ that best approximates $G$ in the sense of Theorem 3.9.
+    
+
+    The terms Bohr topology and Bohr compactification have been chosen as a reward to Harald Bohr for his work [3]
+on almost periodic functions closely related to the Bohr compactification (see Theorems 6.6 and 6.9). Otherwise, Bohr
+compactification is due to $A$. Weil. More general results were obtained later by Holm [17] and Prodanov [26].
+
+
+\section{Prodanov's lemma and a first applications to independence of characters}
+
+
+\subsection{Prodanov's lemma}
+
+
+    The next lemma is due to Prodanov [27]. In [8, Lemma 1.4.1] it is proved for abelian groups $G$ that carry a topology $\tau$
+such that for every $g \in G$ and $n \in \mathbb{Z}$ the functions $x \mapsto x + g$ and $x \mapsto nx$ are continuous in $(G, \tau)$. The fact that this topology
+is not assumed to be Hausdorff will be crucial in the applications of the lemma.
+
+
+\textbf{Lemma 4.1} (Prodanov's lemma). Let $G$ be a topological abelian group, let $U$ be an open subset of $G$, $f$ a complex-valued continuous
+function on $U$ and $M$ a convex closed subset of $\mathbb{C}$. Let $k \in \mathbb{N}_+$ and $\chi_1,...,\chi_k \in G^*$. Suppose that $c_1,..., c_k \in C$ are such that
+$\sum^k_{j=1} c_j \chi_j(x) - f(x) \in M$ for every $x \in U$. If $\{\chi_1,...,\chi_n\}=\{\chi_1,...,\chi_k\} \cap \widehat{G}$, with $n \leqslant k$, then $\sum^n_{i=1} c_i \chi_i(x) - f (x) \in M$ for every
+$x \in U$.
+
+
+\textbf{Proof.} If all characters $\chi_1,...,\chi_n$ are continuous there is nothing to prove. Assume that $\chi_k \in G^*$ is discontinuous. Then
+there exists a net ${x_\gamma}_\gamma$ in $G$ such that $lim_\gamma x_\gamma = 0$ and there exist $y_j = lim_\gamma \chi_j (x_\gamma)$ (so $|y_j| = 1$) for all $j = 1,...,k$, but
+$y_k \neq 1$. Moreover, $y_j = lim_\gamma \chi_j (x_\gamma )= 1$ when $\chi_j$ is continuous.
+
+
+    Consider $\sum^k_{j=1} c_j \chi_j (x + tx_\gamma) - f (x + tx_\gamma)$, where $t \on \mathbb{Z}$. Since $lim_\gamma x_\gamma = 0$, we have $x + tx_\gamma \in U$ for every $x \in U$ and
+for every sufficiently large \gamma. Thus $\sum^k_{j=1} c_j \chi_j (x) \chi_j(x\gamma)^t - f(x + tx_\gamma) \in M$ and so passing to the limit $\sum^k_{j=1} c_j \chi_j (x) \chi_j(x)y^t_j - f(x) \in M$
+because $f$ is continuous and $M$ is closed.
+
+
+    Take an arbitrary $n \in \mathbb{N}$. By the convexity of $M$, for $t = 0,...,n$, we obtain
+
+
+    $\frac{1}{n + 1} \sum^n_{t=0} (\sum^k_{j=1} c_j \chi_j (x)y^t_j - f (x)) \in M$.
+
+
+    Then $\sum^n_{t=0} y^t_k = \frac{y^{n+1}_k -1}{y_k-1}$ because $y_k \neq 1$. Hence $\sum_{j=1}^{k-1} c_{jn} \chi_j(x) + \frac{c_k}{1+n} \frac{1-y^{n+1}_k}{1-y_k} \chi_k(x) - f (x) \in M$ for all $x \in U$, where 
+$c_{jn} = \frac{\sum^{n}_{t=0} c_j y^t_j}{n+1}$. Now for every $j = 1, 2,...,k - 1$
+
+
+\begin{itemize}
+
+    \item $|c_{jn}| \leqslant |c_j| \frac{\sum^{n}_{t=0} |y_k|^t}{n+1} = |c_j|$ (because $|y_j| = 1$), and
+
+    \item if $y_j = 1$ then $c_{jn} = c_j$.
+
+\end{itemize}
+
+
+By the boundedness of the sequences $\{c_{jn}\}^{\infty}_{n=1}$ for $j = 1,...,k - 1$, there exists a subsequence $\{n_m\}^{\infty}_{m=1}$ such that all limits
+$c'_j = lim_m c_{jn_m}$ exist for $j = 1,...,k - 1$. On the other hand, $|yk| = 1$, so
+
+    $\lim_{n} \frac{c_k}{n+1}, \frac{1-y^{n+1}_k}{1-y_k} = 0$.
+
+
+Taking the limit for $m \to \infty$ in
+
+
+    $\sum_{j=1}^{k-1} c_{jn_m} \chi_j(x) + \frac{c_k}{1+n_m} \times \frac{1-y^{n_m + 1}_{k}}{1 - y_k} \chi_k (x) - f(x) \in M$
+
+
+gives
+
+
+    $\sum_{j=1}^{k-1} c'_j \chi_j (x) - f(x) \in M$ for $x \in U$;
+
+
+moreover $c'_j = c_j$ for every $j = 1,...,k - 1$, such that $\chi_j$ is continuous
+
+
+    The condition (1) is obtained by the hypothesis, removing the discontinuous character $\chi_k$ in such a way that the coefficients
+of the continuous characters remain the same. Iterating this procedure, we can remove all discontinuous characters
+among $\chi_1,...,\chi_k$ leaving unchanged the coefficients of the continuous ones.
+
+
+    This lemma allows to “produce continuity out of nothing” in the process of approximation.
+
+
+\textbf{Corollary 4.2} Let $G$ be a topological abelian group, $f \in C(G)$ and $\varepsilon > 0$. If $||\sum^{k}_{j=1} c_j \chi_j - f || \leqslant \varepsilon$ for some $k \in \mathbb{N}_+, \chi_1,...,\chi_k \in G^*$
+and $c_1,..., c_k \in \mathbb{C}$, then also $|| \sum^{s}_{i=1} c_{m_i} \chi_{m_i} - f || \leqslant \varepsilon$, where $\{\chi_{m_1} ,...,\chi_{m_s} \} = \{\chi_1,...,\chi_n\} \cap \widehat{G}$, with $m_1 < ··· < m_s$.
+
+
+    In particular, if $f = \sum^{k}_{j=1} c_j \chi_j$ for some $k \in \mathbb{N}_+, \chi_1,...,\chi_k \in G^*$ and $c_1,..., c_k \in \mathbb{C}$, then also $f = \sum^{s}_{i=1} c_{m_i} \chi_{m_i}$ where
+$\{\chi_{m_1} ,...,\chi_{m_s}\}$ are the continuous characters in the linear combination. In other words, C(G) ∩ X(Gd) coincides with the
+$\mathbb{C}$-subalgebra $\mathfrak{X}(G$) of $B(G)$ generated by $\widehat{G}$. For further use in the sequel we isolate also the following equality
+$C(G) \cap \mathfrak{X}(G_d) = \mathfrak{X}(G)$, i.e.,
+
+
+\textbf{Corollary 4.3}. $C(G) \cap \mathfrak{A}(G_d) = \mathfrak{A}(G)$ for every topological abelian group $G$.
+
+
+In other words, as far as continuous functions are concerned, in the definition of $\mathfrak{A}(G)$ it is irrelevant whether one
+approximates via (linear combinations of) continuous or discontinuous characters.
+
+
+4.2. Local forms of Stone-Weierstraß theorem
+
+
+\textbf{Theorem 4.4.} (Stone–Weierstraß theorem). Let $X$ be a compact topological space. A $\mathbb{C}$-subalgebra $\mathcal{A}$ of $C(X)$ containing all constants
+and closed under conjugation is dense in $C(X)$ for the norm $|| ||$ if and only if $\mathcal{A}$ separates the points of $X$.
+
+
+    We shall need in the sequel the following local form of Stone-Weierstrab theorem.
+
+
+\textbf{Corollary 4.5.} Let $X$ be a compact topological space and $f \in C(X)$. Then $f$ can be uniformly approximated by a $\mathbb{C}$-subalgebra $\mathcal{A}$
+of $C(X)$ containing all constants and closed under the complex conjugation if and only if $\mathcal{A}$ separates the points of $X$ separated by
+$f \in C(X)$.
+
+
+\textbf{Proof.} Denote by $G : X \to \mathbb{C}^{\mathcal{A}}$ the diagonal map of the family $\{g: g \in \mathcal{A}\}$. Then $Y = G(X)$ is a compact subspace of $\mathbb{C}^{\mathcal{A}}$ and
+by the compactness of $X$, its subspace topology coincides with the quotient topology of the map $G : X \to Y$. The equivalence
+relation $\sim$ in $X$ determined by this quotient is as follows: $x ~ y$ for $x, y \in X$ if and only if $G(x) = G(y)$ (if and only if
+$g(x) = g(y)$ for every $g \in \mathcal{A}$). Clearly, every continuous function $h : X \to \mathbb{C}$, such that $h(x) = h(y)$ for every pair $x, y$ with
+$x \sim y$, can be factorized as $h = \bar{h} \circ G$, where $\bar{h} \in C(Y)$. In particular, this holds true for all $g \in A$ and for $f$ (for the latter case
+this follows from our hypothesis). Let $\bar{A}$ be the $\mathbb{C}$-subalgebra $\{h: h \in \mathcal{A}\}$ of $\mathcal{C}(Y, \mathbb{C})$. It is closed under complex conjugation
+and contains all constants. Moreover, it separates the points of $Y$. (If $y \neq y'$ in $Y$ with $y = G(x)$, $y' = G(x')$, $x, x' \in X$, then
+$x \nsim x'$. So there exists $h \in \mathcal{A}$ with $\bar{h}(y) = h(x) \neq h(x') = \bar{h}(y')$. Hence $\bar{\mathcal{A}}$ separates the points of $Y$ .) Hence we can apply
+Stone-Weierstrab Theorem 4.4 to $Y$ and $\bar{\mathcal{A}}$ to deduce that we can uniformly approximate the function $\bar{f}$ by functions of $\bar{\mathcal{A}}$.
+This produces uniform approximation of the function $f$ by functions of $\bar{\mathcal{A}}$. 
+
+
+    Now we give an apparently topology-free local form of the Stone-Weierstrab theorem for subsets of an abelian group.
+
+
+\textbf{Proposition 4.6.}Let $G$ be an abelian group and $H$ be a group of characters of $G$. If $X$ is a subset of $G$ and $f$ is a complex-valued
+bounded function on $X$ then the following conditions are equivalent:
+
+    \begin{itemize}
+
+        \item (a) $f$ can be uniformly approximated on $X$ by a linear combination of elements of $H$ with complex coefficients;
+
+        \item (b) for every $\varepsilon > 0$ there exist $\delta > 0$ and $\chi_1,...,\chi_m \in H$ such that $x - y \in U_G (\chi_1,...,\chi_m; \delta)$ yields $|f (x) - f (y)| < \varepsilon$ for every
+            $x, y \in X$.
+
+    \end{itemize}
+
+\textbf{Proof} (a) $\Rangle$ (b) Let $\varepsilon > 0$. By (a) there exist $c_1,...,c_m \in \mathbb{C}$ and $\chi_1,...,\chi_m \in H$ such that $|| \sum^{m}_{i=1} c_i \chi_i - f || < \frac{\epsilon}{4}$, that is
+$|\sum^{m}_{i=1} c_i \chi_i (x) -f(x)| < \frac{\epsilon}{4}$ for every $x \in X$.
+
+
+    On the other hand note that $|\sum^{m}_{i=1} c_i \chi_i (x) - \sum^{m}_{i=1} c_1 \chi_1 (y)| \leqslant \sum^{m}_{i=1} |c_i| \times |\chi_i (x) - \chi_i (y)|$ and that
+    $|\chi_i (x-y)-1| = |\chi_i (x) \chi_i (y)^{-1}-1|=|\chi_1 (x) - \chi_i(y)|$. If we take
+
+
+        $\delta = \frac{\varepsilon}{2m \max_{i=1,...,m} |c_i|}$
+
+
 \end{document}
