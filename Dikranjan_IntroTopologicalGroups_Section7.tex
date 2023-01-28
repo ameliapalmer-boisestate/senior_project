@@ -1,0 +1,342 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage{mathrsfs}
+\usepackage{amssymb}
+
+\title{Introduction to Topological Groups}
+\author{Dikran Dikranjan}
+
+\begin{document}
+
+\section{Pontryagin-van Kampen duality}
+
+\subsection{The Dual Group}
+
+
+In the sequel we shall write the circle additively as $(\mathbb{T}, +)$ and we denote by $q_0 : \mathbb{R} \to \mathbb{T} = \mathbb{R}/\mathbb{Z}$ the canonical
+projection. For every $k \in \mathbb{N}_+$ let $\wedge_k = q_0((\frac{-1}{3k},\frac{1}{3k}))$. Then ${\wedge_k : k \in \mathbb{N}_+}$ is a base of the neighborhoods of 0
+in $\mathbb{T}$, because ${(\frac{-1}{3k}, \frac{1}{3k}) : k \in \mathbb{N}_+}$ is a base of the neighborhoods of 0 in $\mathbb{R}$.
+
+
+    For every abelian group $G^* = Hom (G,\mathbb{T})$. For a subset $K$ of $G$ and a subset $U$ of $\mathbb{T}$ let
+
+
+        $W_{G^*} (K, U) = \{\chi \in G : \chi(K) \subseteq U\}$.
+
+
+    For any subgroup $H$ of $G^*$ we abbreviate $H \cap W(K, U)$ to $W_H (K, U)$. When there is no danger of confusion
+we shall write only $W(K, U)$ in place of $W_{G^*} (K, U)$. The group $G^*$ will be considered only with one topology,
+namely the induced from ${T}^G$ compact topology (see Remark 4.1).
+
+
+    If $G$ is a topological abelian group, $\hat{G}$ will denote the subgroup of $G^*$ consisting of continuous characters.
+
+
+    The group $\hat{G}$ will carry the compact open topology that has as basic neighborhoods of 0 the sets $W_{\hat{G}}(K, U)$,
+where $K$ is a compact subset of $G$ and $U$ is neighborhood of 0 in $\mathbb{T}$. We shall see below that when $U \subseteq \wedge_1$,
+then $W_{\hat{G}}(K, U)$ coincides with $W_{G^*} (K, U)$ in case $K$ is a neighborhood of 0 in $G$. Therefore we shall use mainly
+the notation $W(K, U)$ when the group $G$ is clear from the context.
+
+
+    Let us start with an easy example.
+
+
+\textbf{Example 7.1.} Let $G$  be an abelian topological group.
+
+
+    \begin{enumerate}
+
+        \item If $G$ is compact, then $\hat{G}$ is discrete.
+
+        \item If $G$ is discrete, then $\hat{G}$ is compact.
+
+    \end{enumerate}
+
+
+    Indeed, to prove (1) it is sufficient to note that $W_{\hat{g}}(G,\wedge_1) = {0}$ as $\wedge_1$ contains no subgroup of $\mathbb{T}$ beyond 0
+
+
+    (2) Suppose that $G$ is discrete. Then $\hat{G} = Hom(G,\mathbb{T})$ is a subgroup of the compact group $T^G$. The 
+compactopen topology of $\hat{G}$ coincides with the topology inherited from $\mathbb{T}^G$: let $F$ be a finite subset of $G$ and $U$ an open
+neighborhood of 0 in $\mathbb{T}$, then
+
+
+    $\bigcap_{x \in F} π^{-1}_x (U) \cap Hom (G,T) = {\chi \in Hom(G,\mathbb{T}) : \pi_x \in U \text{ for every } x \in F}$
+
+
+        $= {\chi \in Hom (G,\mathbb{T}) : \chi(x) \in U \text{ for every } x \in F} = W(F, U)$.
+
+
+    Moreover $Hom (G,\mathbb{T})$ is closed in the compact product $\mathbb{T}^G$ by Remark 4.1 and we can conclude that $\hat{G}$ is
+compact.
+
+
+    Now we prove that the dual group is always a topological group. If the group $G$ is locally compact, then its
+dual is locally compact too. This is the first step of the Pontryagin-van Kampen duality theorem.
+
+
+\textbf{Theorem 7.2}. For an abelian topological group $G$ the following assertions hold true:
+
+
+    \begin{itemize}
+
+        \item (a) if $x \in \mathbb{T}$ and $k \in \mathbb{N}_+$, then $x \in \wedge_k$ if and only if $x, 2x, . . . , kx \in \wedge_1$;
+        
+        \item (b) $\chi \in Hom (G,T)$ is continuous if and only if $\chi^{-1} (\wedge_1)$ is a neighborhood of 0 in $G$;
+        
+        \item (c) $\{W_{\hat{G}}(K,\wedge_1) : K \text{ compact } \subseteq G\}$ is a base of the neighborhoods of 0 in $\hat{G}$, in particular $\hat{G}$ is a topological
+        group.        
+        
+        \item (d) $W_{\hat{G}}(A,\wedge_s) + W_{\hat{G}}(A,\wedge_s) \subseteq W_{\hat{G}}(A,\wedge_{s-1})$ and $W_{\hat{G}}(\bar{A},\wedge_s) + W_{\hat{G}}(\bar{A},\wedge_s) ⊆ W_{\hat{G}}(\bar{A},\wedge_{s-1})$ for every $A \subseteq G$
+        and $s > 1$.        
+        
+        \item (e) if $F$ is a closed subset of $\mathbb{T}$, then for every $K \subseteq G$ the subset $W_{G^*}(K, F)$ of $G^*$ is closed (hence, compact);        
+        
+        \item (f) if $U$ is neighborhood of 0 in $G$, then
+            
+            \item (f_1) $W_{G^*}(\bar{U}, V) = W_{G^*} (\bar{U}, V)$ for every neighborhood of 0 $V \subseteq \wedge_1$ in $T$;
+            
+            \item (f_2) $W(\bar{U},\wedge_4)$ has compact closure;
+            
+            \item (f_3)  if $U$ has compact closure, then $W(\bar{U},\wedge_4)$ is a neighborhood of 0 in $\hat{G}$ with compact closure, so $\hat{G}$ is
+            locally compact.
+
+    \end{itemize}
+
+
+    \emph{Proof.} (a) Note that for $s \in \mathbb{N}$, $sx \in \wedge_1$ if and only if $x \in A_{s,t} = \wedge_s+\pi_{\mathbb{T}}(\frac{t}{s})$ for some integer $t$ with $0 \leq t \leq s$. On
+the other hand, $A_s, 0 = \wedge_s$ and $\wedge_s \cap A_{s+1,t}$ is non-empty if and only if $t = 0$. Hence, if $x \in \wedge_s$ and $(s+ 1)x \in \wedge_1$,
+then $x \in \wedge_{s+1}$ and this holds in particular for $1 \leq s < k$. This proves that $sx \in \wedge_1$ for $s = 1, . . . , k$ if and only
+if $x \in \wedge_k$.
+
+
+    (b) Suppose that $\chi^{-1}(\wedge_1)$ is a neighborhood of 0 in $G$. So there exists an open neighborhood $U$ of 0 in $G$
+such that $U \subseteq \chi_{-1}(\wedge_1)$. Moreover, there exists an other neighborhood $V$ of 0 in $G$ with $\underbrace{V + · · · + V}_k \subseteq U$ where
+$k \in \mathbb{N}_+$. Now $\chi(y) \in \wedge_1$ for every $y \in V$ and $s = 1, . . . , k$. By item (a) $\chi(y) \in \wedge_k$ and so $\chi(V) \subseteq \wedge_k$.
+
+
+    (c) Let $k \in \mathbb{N}_+$ and $K$ be a compact subset of $G$. Define $L = \underbrace{K + · · · + K}_k$, which is a compact subset of
+$G$ because it is a continuous image of the compact subset $K^k$ of $G^k$. Take $\chi \in W(L,\wedge_1)$. For every $x \in K$ we
+have $s\chi(x) \in \wedge_1$ for $s = 1, . . . , k$ and so $\chi(x) \in \wedge_k$ by item (a). Hence $W(L,\wedge_1) \subseteq W(K,\wedge_k)$.
+
+
+    (d) obvious.
+
+
+    (e) If $\pi_x : \mathbb{T}^G \to \mathbb{T}$ is the projection defined by the evaluation at $x$, for $x \in G$, then obviously
+
+
+    $W_{G^*} (K, F) = \bigcap_{x \in K} \{\chi \in G^*: \chi(x) \in F\} = \bigcap_{x \in K}\pi^{-1}_{x}(F)$
+
+
+is cloased as each $\pi^{-1}_{x}(F)$ is closed in $G^*$.
+
+
+    (f1) follows immediately from item (c).
+
+
+    (f2) To prove that the closure of $W0 = W(U,Λ4)$ is compact it is sufficient to note that $W_0 \subseteq W_1 := W(\bar{U},\bar{\wedge_4})$
+and prove that $W_1$ is compact. Let $\tau_s$ denote the subspace topology of W1 in Gb. We prove in the sequel that
+(W1, τs) is compact.
+
+
+    Consider on the set $W_1$ also the weaker topology $\tau$ induced from $G^*$ and consequently from $\mathbb{T}^G$. By (e)
+$(W_1, \tau)$ is compact.
+
+
+    It remains to show that both topologies $\tau_s$ and $\tau$ of $W_1$ coincide. Since $\tau_s$ is finer than $\tau$ , it suffices to show
+that if $\alpha \in W_1$ and $K$ is a compact subset of $G$, then $(\alpha + W(K,\wedge_1)) \cap W_1$ is also a neighborhood of $\alpha$ in
+$(W_1, \tau)$
+
+
+    Since $\bigcup{a + U : a \in K} \supseteq K$ and $K$ is compact, $K \subseteq F + U$, where $F$ is a finite subset of $K$. We prove
+now that
+
+
+    $(\alpha + W(F,\wedge_2)) \cap W_1 \subseteq (\alpha + W(K,\wedge_1)) \cap W_1$. (*) 
+
+
+    Let $\xi \in W(F,\wedge_2)$, so that $\alpha + \xi' \in W_1 = W(\bar{U},\bar{\wedge_4})$. As $\alpha \in W_1$ as well, we deduce from items (c) and (d) that
+$\xi = (\alpha + \xi') - \alpha \in W_1 - W_1$. Hence $\xi(\bar{U}) \subseteq Λ_2$ and consequently
+    
+
+    $\xi(K) \subseteq \xi(F + U) \subseteq \wedge_2 + \bar{\wedge_2} \subseteq \wedge_1.$
+
+
+This proves $\xi \in W(K,\wedge_1)$ and (*).
+
+
+    (f3) Follows obviously from (f2) and the definition of the compact open topology
+
+
+    The above proof shows another relevant fact. The neighborhood $W(\bar{U},\wedge_4)$ of 0 in the dual group $\hat{G}$ carries
+the same topology in $\hat{G}$ and $G^*$, nevertheless the inclusion map $j : \hat{G} , \hookrightarrow G^*$ need not be an embedding:
+    
+
+\textbf{Corollary 7.3}. For a locally compact abelian group $G$ the following are equivalent:
+
+
+    \begin{itemize}
+
+        \item the inclusion map $j : \hat{G} , b \to G^*$ is an embedding;
+
+        \item $G$ is discrete;
+
+        \item $\hat{G} = G^*$ is compact
+
+    \end{itemize}
+
+
+Proof. Since $G^*$ is compact, $j$ can be an embedding iff $\hat{G}$ itself is compact. According to Example 7.1 this
+occurs precisely when $G$ is discrete. In that case $\hat{G} = G^*$ is compact.
+
+
+    Actually, it can be proved, once the duality theorem is available, that $j : \hat{G}, \hookrightarrow G^*$ need not be even a local
+homeomorphism. (If $j$ is a local homeomorphism, then the topological subgroup $j(\hat{G})$ of $G^*$ will be locally
+compact, hence closed in $G^*$. This would yield that $j(G^*)$ is compact. On the other hand, the topology of
+$j(G^*)$ is precisely the initial topology of all projections $p_x$ restricted to $\hat{G}$. By the Pontryagin duality theorem,
+these projections form the group of all continuous characters of $\hat{G}$. So this topology coincides with $T_{\hat{\hat{G}}}$. By a
+general theorem of Glicksberg, a locally compact abelian groups $H$ and $(H, \mathcal{T}_{\hat{H}})$ have the same compact sets.
+In particular, compactness of $(H, \mathcal{T}_{\hat{H}})$ yields compactness of $H$. This proves that if $j : \hat{G}, \hookrightarrow G^*$ is a local
+homeomorphism, then $\hat{G}$ is compact and consequently $G$ is discrete.)
+
+
+\subsection{Computation of some dual groups}
+
+
+In the next proprosition we show, roughly speaking, that the projective order between continuous surjective
+open homomorphisms with the same domain corresponds to the order by inclusion of their kernels.
+
+
+\textbf{Proposition 7.4} Let $G$, $H_1$ and $H_2$ be topological abelian groups and let $\chi_i: G \to H_i, i = 1, 2$, be continuous
+surjective open homomorphisms. Then there exists a continuous homomorphism $\iota : H_1 \to H_2$ such that $\chi_2 = \iota \circ \chi_1 $
+iff ker $\chi_1 \leq ker \chi_2$. If ker $\chi_1 = ker \chi_2$ then $\iota$ will be a topological isomorphism.
+
+
+    Proof. The necessity is obvious. So assume that ker $\chi_1 \leq ker \chi_2$ holds. By the homomorphism theorem applied
+to $\chi_i$ there exists a topological isomorphisms $j_i: G/ ker \chi_i \to H_i$ such that $\chi_i = j_i \circ q_i$, where $q_i: G \to G/ ker \chi_i$
+is the canonical homomorphism for $i = 1, 2$. As $ker \chi_1 \leq ker \chi_2$ we get a continuous homomorphism $t$ that
+makes commutative the following diagram
+
+%Note from Skarlet: This diagram is a little difficult to type out so I had to describe it a bit, feel free to contact me for clarification
+At the top of the diagram, there is $G$, and $G$ points to all of the elements in the line below like so $G \to^{\chi_1} H_1$, $G \to^{q_1} G / ker \chi_1$, $G \to^{q_2} G / ker \chi_2$, $G \to^{\chi_2} H_2$
+$H_1 \leftarrow^{j_1} G / ker \chi_1 \dashrightarrow^t G / ker \chi_2 \rightarrow^{j_2} H_2$
+Along the bottom of the diagram, there is an arrow arching from one end to the other $H_1 \to_\iota H_2$
+
+
+Obviously $\iota = j_2 \circ t \circ j^{-1}_1$ works. If $ker \chi_1 = ker \chi_2$, then t is a topological isomorphism, hence $\iota$ will be a
+topological isomorphism as well.
+
+
+    In the sequel we denote by $k · id_G$ the endomorphism of an abelian group $G$ obtained by the map $x \mapsto kx$,
+for a fixed $k \in \mathbb{Z}$. The next lemma will be used for the computation of the dual groups in Example 7.7.
+
+
+\prrof{Proof.} We prove first that the only topological isomorphisms $\chi : \mathbb{T} \to \mathbb{T}$ are $\pm id_{\mathbb{T}}$. The proof will exploit the
+fact that the arcs are the only connected sets of $\mathbb{T}$. Hence $\chi$ sends any arc of $\mathbb{T}$ to an arc, sending end points to
+end points. Denote by $\varphi$ the canonical homomorphism $\mathbb{R} \to \mapsto{T}$ and for $n \in \mathbb{N}$ let $c_n = \varphi(1/2^n)$ be the generators
+of the Pr¨ufer subgroup $\mathbb{Z}(2^{\infty})$ of $\mathbb{T}$. Then, $c_1$ is the only element of $\mathbb{T}$ of order 2, hence $g(c_1) = c_1$. Therefore,
+the arc $A_1 = \varphi([0, 1/2])$ either goes onto itself, or goes onto its symmetric image $-A_1$. Let us consider the first
+case. Clearly, either $g(c_2) = c_2$ or $g(c_2) = -c_2$ as $o(g(c_2)) = 4$ and being $\pm c_2$ the only elements of order 4 of $\mathbb{T}$.
+By our assumption $g(A_1) = A_1$ we have $g(c_2) = c_2$ since $c_2$ is the only element of order 4 on the arc $A_1$. Now
+the arc $A_2 = [0, c_2]$ goes onto itself, hence for $c_3$ we must have $g(c_3) = c_3$ as the only element of order 8 on the
+arc $A_2$, etc. We see in the same way that $g(c_n) = c_n$. Hence $g$ is identical on the whole subgroup $\mathbb{Z}(2^{\infty})$. As
+this subgroup is dense in $\mathbb{T}$, we conclude that $g$ coincides with $id_{\mathbb{T}}$. In the case $g(A_1) = -A_1$ we replace $g$ by
+$-g$ and the previous proof gives $-g = id_{\mathbb{T}}$, i.e., $g = -id_{\mathbb{T}}$.
+
+
+    For $k \in \mathbb{N}_+$ let $\pi_k = k · id_{\mathbb{T}}$. Then $ker \pi_k = \mathbb{Z}_k$ and $\pi_k$ is surjective. Let now $χ : \mathbb{T} \to \mathbb{T}$ be a non-trivial
+continuous homomorphism. Then $ker \chi$ is a closed proper subgroup of $\mathbb{T}$, hence $ker \chi = \mathbb{Z}_k$ for some $k \in N_+$.
+Moreover, $\chi(\mathbb{T})$ is a connected non-trivial subgroup of $\mathbb{T}$, hence $\chi(\mathbb{T}) = \mathbb{T}$. By Proposition 7.4 $\chi = \pm \pi_k$.
+
+
+    Obviously, $\chi = \pm \xi$ for characters $\chi, \xi : G \to \mathbb{T}$ implies $ker \chi = ker \xi$ and $\chi (G) = \xi (G)$. More generally,
+if $\chi = k · \xi$ for some $k \in \mathbb{Z}$, then $ker \chi \geq ker \xi$ and $\chi (G) \leq \xi (G)$. Now we see that this implication can be
+(partially) inverted under appropriate hypotheses.
+
+
+\textbf{Corollary 7.6.} Let $G$ be a $\sigma$-compact locally compact abelian group and let $\chi, \xi : G \hookrightarrow T$ be continuous
+characters such that $ker \chi \geq ker \xi$ and $\chi (G) \leq \xi (G)$.
+
+
+\begin{itemize}
+
+    \item (a) If $\chi(G) = \xi(G) \mathbb{T}$ then $\chi = k · \xi$ for some $k \in \mathbb{Z}$; moreover, $ker \chi = ker \xi$ iff $\chi = \pm \xi$
+
+    \item (b) If $G$ is compact and $|\xi (G)| = m$ for some $m \in \mathbb{N}_+$, then $\chi = k \xi$ for some $k \in \mathbb{Z}$; moreover, $ker \chi = ker \xi$
+    iff $\chi(G) = \xi(G)$, in such a case $k$ must be coprime to $m$.
+
+    \item (c) If $ker \xi = ker \xi$ is open and H = χ(G) = ξ(G), then χ = ι ◦ ξ, where ι : H → H is an arbitrary
+    automorphism of the subgroup H of T equipped with the discrete topology.    
+
+\end{itemize}
+
+
+\emph{Proof.} (a) As $\chi (G) = \xi (G) = T$ and $G$ is $\sigma$-compact, we can apply Lemma 7.4 and observe that the only $\iota$ given
+by the lemma can be $k · id_{\mathbb{T}}$ for some $k \in \mathbb{Z}$ in view of the previous lemma. The same lemma yields $k = \pm 1$
+when ker $\chi = ker \xi$.
+
+
+    (b) If $G$ is compact and $|\xi (G)| = m$ for some $m \in \mathbb{N}_+$, $\xi (G)$ is a cyclic subgroup of $\mathbb{T}$ of order $m$. Note that
+$\mathbb{T}$ has a unique such cyclic subgroup. By Proposition 7.4 there exists a homomorphism $\iota : \xi (G) \to \chi (G)$ such
+that $\chi = \iota \circ \xi$. The hypothesis $\chi (G) \leq \xi (G)$ implies that there such a $\iota$ must by the multiplication by some
+$k \in \mathbb{Z}$. In case $\chi (G) = \xi (G)$ this $k$ is coprime to $m$.
+
+
+    (c) Obvious.
+
+
+\textbf{Example 7.7} Let $p$ be a prime. Then $\hat{Z(p^{\infty})} \cong \mathbb{J}_p, \hat{\mathbb{J}_p} \cong \mathbb{Z}(p^{\infty}), \hat{\mathbb{T}} \cong \mathbb{Z}, \hat{\mathbb{Z}} \cong \hat{\mathbb{T}}$ and $\hat{\mathbb{R}} \cong \mathbb{R}$.
+
+
+Proof. The first isomorphism $\hat{\mathbb{Z}(p^{\infty})} = \mathbb{J}_p$ follows from our definition $\mathbb{J}_p = End(\mathbb{Z}(p^{\infty})) = Hom(\mathbb{Z}(p^{\infty}),\mathbb{T}) = \hat{\mathbb{Z}(p^{\infty})}$.
+
+
+    To verify the isomorphism $\hat{\mathbb{J}_p} \cong Z(p^{\infty})$ consider first the quotient homomorphism $\eta_n : \mathbb{J}_p \to \mathbb{J}_p / p^n \mathbb{J}_p\cong \mathbb{Z}_{p^n} \leq \mathbb{T}$.
+With this identifications we consider $\eta_n \in \hat{\mathbb{J}_p}$. It is easy to see that under this identification $p\eta_n = \eta_{n-1}$.
+Therefore, the subgroup $H$ of $\hat{\mathbb{J}_p}$ generated by the characters $\eta_n$ is isomorphic to $\mathbb{Z}(p^\infty)$. Let us see that $H = \hat{\mathbb{J}_p}$.
+Indeed, take any non-trivial character $\chi : \mathbb{J}_p \to \mathbb{T}$. Then $\mathbb{N} = ker \chi$ is a closed proper subgroup of $\mathbb{J}_p$. Moreover,
+$N \neq 0$ as $\mathbb{J}_p$ is not isomorphic to a subgroup of $\mathbb{T}$ by Exercise 4.49. Thus $N = p^n \mathbb{J}_p$ for some $n \in \mathbb{N}_+$. Since
+N = ker ηn, we conclude with (b) of Corollary 7.6 that χ = kηn for some k ∈ Z. This proves that χ = H and
+consequently $\hat{\mathbb{J}_p} \cong \mathbb{Z}(p^{\infty})$.
+
+
+    The isomorphism g : Zb → T is obtained by setting g(χ) := χ(1) for every χ : Z → T. It is easy to check that
+this isomorphism is topological.
+
+
+    According to 7.5 every χ ∈ Tb has the form χ = k · idT for some k ∈ Z. This gives a homomorphism Tb → Z
+assigning χ 7→ k. It is obviously injective and surjective. This proves Tb ∼= Z since both groups are discrete.
+To prove Rb ∼= R consider the character χ1 : R → T obtained simply by the canonical map R → R/Z. For
+every non-zero r ∈ R consider the map ρr : R → R defined by ρr(x) = rx. Then its composition χr = χ1 ◦ ρr
+with χ1 gives a continuous character of R that is surjective and ker χr = h1/ri. Now consider any continuous
+non-trivial character χ ∈ Rb. Then χ is surjective and N = ker χ is a proper closed subgroup of R. Hence N
+is cyclic by Exercise 3.20. Let N = h1/ri. Then ker χ = ker χr, so that Corollary 7.6 yields χ = ±χr. The
+assignment χ 7→ ±r defines a homomorphism Rb → R that is obviously injective and surjective. Its continuity
+immediately follows from the definition of the compact-open topology of Rb. As R is σ-compact, this isomorphism
+is also open by the open mapping theorem.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\maketitle\end{document}
