@@ -503,4 +503,86 @@ non-zero torsion character. This proves the implication left open by item (a).
     Let $G$ and $H$ be abelian topological groups. If $f : G \to H$ is a continuous homomorphism, define $\hat{f}: \hat{H} \to \hat{G}$
 putting $\hat{f}(\chi) = \chi \circ f$ for every $\chi \in \hat{H}$.
 
+
+\textbf{Lemma 7.16.} If $f:G \to H$ is a continuous homomorphism of topological abelian group, then $\hat{f} : \hat{H} \to \hat{G}$ is
+a continuous homomorphism as well.
+
+
+\begin{itemize}
+
+    \item (a) If $f(G)$ is dense in $H$, then $\hat{f}$ is injective.
+
+    \item (b) If $f$ is injective and $f(G)$ is either open or dense in $H$, then $\hat{f}$ is surjective.
+
+    \item (c) if $f$ is a surjective homomorphism, such that every compact subset of $H$ is covered by some compact subset
+    of $G$, then $\hat{f}$ is an embedding.
+
+    \item (d) if $f$ is a quotient homomorphism and $G$ is locally compact, then $\hat{f}$ is an embedding.
+
+    \item (e) If $f$ is a topological isomorphism, then $\hat{f}$ is a topological isomorphism too.
+
+\end{itemize}
+
+
+\emph{Proof.} Assume $K$ is a compact subset of $G$ and $U$ a neighborhood of 0 in $\mathbb{T}$. Then $f(K)$ is a compact set in $H$,
+so $W = W_{\hat{G}}(f(K), U)$ is a neighborhood of 0 in $\hat{H}$ and $\hat{f}(W) \subseteq W(K, U)$. This proves the continuity of $\hat{f}$.
+
+
+\begin{itemize}
+
+    \item (a) If $\hat{f}(\chi) = 0$, then $\chi \circ f = 0$. By the density of $f(G)$ in $H$ this yields $\chi = 0$.
+
+    \item (b) Let $\chi \in \hat{G}$. If $f(G)$ is open in $H$, then any extension $\xi : H \to \mathbb{T}$ of $\chi$ will be continuous on $f(G)$. There
+    exists at least one such extension $\xi$ by Corollary 2.6. Hence $\xi \in Hb$ and $\chi = \hat{f}(\xi)$. Now consider the case
+    when $f(G)$ is dense in $H$. Then $\tilde{H} = \tilde{G}$ and the characters of $H$ can be extended to characters of $G$ (see
+    Theorem 3.79).
+
+    \item (c) Assume $L$ is a compact subset of $G/H$ and $U$ a neighborhood of 0 in $\mathbb{T}$. Let $K$ be a compact set in $G$
+    such that $f(K) = L$. Then $\hat{f}(W_{\hat{H}} (L, U)) = Im \hat{f} \cap W_{\hat{G}} (K, U)$, so $\hat{f}$ is an embedding.    
+
+    \item (d) Follows from (c) and Lemma 4.6.
+
+    \item (e) Obvious.
+
+\end{itemize}
+
+
+\textbf{Exercise 7.17.} Prove that $\hat{\mathbb{G}/\mathbb{Z}} \cong \Pi_p \mathbb{J}_p$
+
+
+(Hint. Use the isomorphism $\mathbb{Q}/\mathbb{Z} \cong \oplus_p \mathbb{Z}(p^{\infty})$, Example 7.7 and Theorem 7.14.)
+Now we shall see that the group $\mathbb{Q}$ satisfies the duality theorem (see item (b) below).
+
+
+\textbf{Example 7.18.} Let $K$ denote the compact group $\hat{\mathbb{Q}}$. Then: 
+
+
+    (a) $K$ contains a closed subgroup $H$ isomorphic to $\hat{\mathbb{Q}/\mathbb{Z}}$ such that $K/H \cong \mathbb{T}$;
+
+    (ii) $\hat{K} \cong \mathbb{Q}$
+
+
+    (a) Denote by $H$ the subgroup of all $\chi \in K$ such that $\chi{\mathbb{Z}} = 0$. To prove that $H$ is a closed subgroup of $K$ such
+that $K/H$ is isomorphic to $\mathbb{T}$. To this end consider the continuous map $\rho : K \to \hat{Z}$ obtained by the restriction
+to $\mathbb{Z}$ of every $\chi \in K$. Obviously, $ker \rho = H$, so $\mathbb{T} \cong \hat{\mathbb{Z}} \cong K/H$. To see that $H \cong \hat{\mathbb{Q}/\mathbb{Z}}$ note that the characters
+of $\mathbb{Q}/\mathbb{Z}$ correspond precisely to those characters of $\mathbb{Q}$ that vanish on $\mathbb{Z}$, i.e., precisely $H$.
+
+    
+    (b) By Exercise 7.8 $K$ is a divisible torsion-free group, every non-zero $r \in \mathbb{Q}$ defines a continuous automorphism
+$\lambda_r$ of $K$ by setting $\lambda_r(x) = rx$ for every $x \in K$. Then the composition $\rho \circ \lambda_r : K \to T$ defines a character
+$\chi_r \in \hat{K}$ with $ker \chi_r = r^{-1} H$. For the sake of completeness let $\chi_0 = 0$. By Exercise 7.17 $\hat{\mathbb{Q}/\mathbb{Z}} \cong \Pi_p \mathbb{J}_p$ is totally
+disconnected, so by Corollary 6.21 H has no surjective characters $\chi : H \to \mathbb{T}$. Now let $\chi \xi \hat[K]$ be non-zero.
+Then $\chi(K)$ will be a non-zero closed divisible subgroup of $\mathbb{T}$, hence $\chi(K) = \mathbb{T}$. On the other hand, $N = ker \chi$ is
+a proper closed subgroup of $K$ such that $N + H \neq \mathbb{T}$, as $\chi(H)$ is a proper closed subgroup of $\mathbb{T}$ by the previous
+argument. Hence, $\chi(H)$ is finite, say of order $m$. Then $N + H$ contains $N$ is a finite-index subgroup, more
+precisely $[H : (N \cap H)] = [(N + H) : N] = m$. Then $mH \leq \mathbb{N}$. Consider the character $\chi_{m-1}$ of $K$ having
+ker $\chi_{m-1} = mH \leq \mathbb{N}$. By Corollary there exists $k \in \mathbb{Z}$ such that $\chi = k\chi_{m-1} = \chi_r$, where $r = km^{-1} \in \mathbb{Q}$. This
+shows that $\mathbb{K} = {\chi_r : r \in \mathbb{Q}} \cong \mathbb{Q}$.
+
+
+    The compact group $\hat{\mathbb{Q}}$ is closely related to the adele rings of the field $\mathbb{Q}$, more detail can be found in
+[34, 38, 75, 97].
+    
+
+\textbf{Exercise 7.19.} Prove that a discrete abelian group $G$ satisfies $\hat{\hat{G}} \cong G$ whenever
 \maketitle\end{document}
