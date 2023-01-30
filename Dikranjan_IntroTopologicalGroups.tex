@@ -2426,10 +2426,120 @@ subgroups (cf. Proposizione 3.16). Hence $c(G)$ contains $Q(G)$ which in turn co
 \emph{all} clopen sets of $G$ containing 1. The inclusion $C(G) \subseteq Q(G)$ is always true.
 
 
+\subsection{Subgroups of the compact groups}
+For a subset $E$ of an abelian group $G$ we set $E_{(2)} = E - E, E_{(4)} = E - E + E - E, E_{(6)} = E - E + E - E + E - E$
+and so on.
 
 
+    A subset $X$ of an abelian group $(G, +)$ is big\footnote[10]{Some authors use also the terminology large, relatively dense, or syndetically dense. This notion can be given for non-abelian
+groups as well, but then both versions, left large and right large, do not coincide. This creates some technical difficulties that we
+prefer to avoid since the second part of this section is relevant only for abelian groups. The first half, including the characterization
+4.29, remains valid in the non-abelian case as well (since, fortunately, the “left” and “right” versions of total boundedness coincide).}
+if there exists a finite subset $F$ of $G$ such that $G = X + F$.
+Obviously, every non-empty set of a finite group is big; on the other hand, every big set in an infinite group is
+necessarily infinite.
 
 
+\textbf{Exercise 4.23} Let $B$ be an infinite subset of $\mathbb{Z}$. Show that $B$ is big iff the following two conditions hold:
+
+
+\begin{itemize}
+
+    \item $B$ is unbounded from above and from below;
+
+    \item  if $B = \{b_n\}^{\infty}_{n=-\infty}$ is a one-to-one monotone enumeration of $B$ then the differences $b_{n+1} - b_n$ are bounded.
+
+\end{itemize}
+
+
+\textbf{Exercise 4.24.} (a) Assume $B_\nu$ is a big set of the group $G_\nu$ for $\nu = 1, 2, . . . , n$. Prove that $B_1 \times . . . \times B_n$ is
+a big set of $G_1 \times . . . \tiems G_n$.
+
+
+    (b) if $f : G \to H$ is a surjective group homomorphism and $B$ is a big subset of $H$, then $f^{-1}(B)$ is a big subset
+    of $G$.
+
+
+\textbf{Definition 4.25} A topological group $G$ is totally bounded if every open non-empty subset $U$ of $G$ is big. A
+Hausdorff totally bounded group will be called precompact.
+
+
+    Clearly, compact groups are precompact.
+
+
+    Note that if $f$ in item (b) of 4.24 is not surjective, then the property may fail. The next proposition gives
+an easy remedy to this.
+
+
+\textbf{Proposition 4.26}. Let $A$ be an abelian group and let $B$ be a big subset of $A$. Then $(B - B) \cap H$ is big with
+respect to $H$ for every subgroup $H$ of $A$.
+
+
+    If $a \in A$ then there exists a sufficiently large positive integer $n$ such that $na \in B - B$.
+
+
+    \emph{Proof.} There exists a finite subset $F$ of $A$ such that $B + F = A$. For every $f \in F$, if $(B + f) \cap H$ is not empty,
+choose $a_f \in (B + f) \cap H$, and if $(B + f) \cap H$ is empty, choose an arbitrary $a_f \in H$. On the other hand, for
+every $x \in H$ there exists $f \in F$ such that $x \in B + f$; since $a_f \in B + f$, we have $x - a_f \in B - B$ and so
+$H \subseteq (B - B) \cap H + {a_f : f \in F}$, that is $(B - B) \cap H$ is big in $H$.
+
+
+    For the last assertion it suffices to take $H = \langle a \rangle$. If $H$ is finite, then there is nothing to prove as $0 \in B - B$.
+Otherwise $H \cong \mathbb{Z}$ so the first item of Exercise 4.23 applies.
+
+
+Combining this proposition with item (b) of 4.24 we get:
+
+
+\textbf{Corollary 4.27}. For every group homomorphism $f : G \to H$ and every big subset $B$ of $H$, the subset $f^{-1}(B-B)$
+of $G$ is a big.
+
+
+    Here comes the most important consequence of the above proposition.
+
+
+\textbf{Corollary 4.28}. Subgroups of precompact groups are precompact. In particular, all subgroups of compact groups
+are precompact.
+
+
+    One can show that the precompact groups are precisely the subgroups of the compact groups. This requires
+two steps as the next theorem shows:
+
+
+\textbf{Theorem 4.29}. (a) A group having a dense precompact subgroup is necessarily precompact.
+
+
+    (b) The compact groups are precisely the complete precompact groups.
+
+
+    \emph{Proof.} (a) Indeed, assume that $H$ is a dense precompact subgroup of a group $G$. Then for every $U \in V_G(0)$
+choose an open $V \in \mathcal{V}_G(0)$ with $V + V \subseteq U$. By the precompactness of $H$ there exists a finite set $F \subseteq H$ such
+that $H = F + V \cap H$. Then
+    
+
+    $G = V + H \subseteq V + F + V \cap H \subseteq F + V + V \subseteq F + U$.
+
+
+    (b) Compact groups are complete and precompact. To prove the other implication take a complete
+precompact group $G$. To prove that $G$ is compact it sufficies to prove that every ultrafilre on $G$ converges. Assume
+$\mathcal{U}$ is such an ultrafiler. We show first that it is a Cauchy filter. Indeed, if $U \in \mathcal{V}_G(0)$, then $U$ is a big set of $G$
+so there exists $g_1, g_2, . . . , g_n \in G$ such that $G =\bigcup^n_{i=1} g_i + U$. Since $\mathcal{U}$ is an ultrafilter, $g_i + U \in \mathcal{U}$ for some $i$.
+Hence $\mathcal{U}$ is a is a Cauchy filter. According to Exercise 3.86 $\mathcal{U}$ converges.
+
+
+    In this way we have described the precompact groups internally (as the Hausdorff topological groups having
+big non-empty open sets), or externally (as the subgroups of the compact groups).
+
+
+    Now we adopt a different approach to describe the precompact groups, based on the use of characters. Our
+first aim will be to see that the topologies induced by characters are always totally bounded.
+
+
+\textbf{Proposition 4.30} If $A$ is an abelian group, $\delta > 0$ and $\chi_1, . . . , \chi_s \in A^*(s \in \mathbb{N}_+)$, then $U(\chi_1, . . . , \chi_s; \delta)$ is big in
+A. Moreover for every $a \in A$ there exists a sufficiently large positive integer $n$ such that $na \in U(\chi_1, . . . , \chi_s; \delta)$.
+
+
+    \emph{Proof.} Define $h : A \to \mathbb{T}^s$ such that $h(x) = (\chi_1(x), . . . , \chi_s(x))$ and
 
 
 
