@@ -836,15 +836,198 @@ V = bi(W) = WHb (K,Λ4) is a neighborhood of 0 in $\hat{H}$. Now $M = \langle W 
 generated subgroups respectively of $\hat{G}$ and $\hat{H}$, and $\hat{i}(M) = M_1$. Since $M$ is $\sigma$-compact by Lemma 4.12, we can
 apply Theorem 4.9 to the continuous surjective homomorphism $\hat{i} \upharpoonright_M: M \to M_1$ and so also bi is open.
 
-
-\textbf{Corollary 7.29.}
-
-
-\textbf{Corollary 7.30.}
+ 
+\textbf{Corollary 7.29.} Let $G$ be a locally compact abelian group and let $H$ be a closed subgroup of $G$. Then
+$\hat{G/H} \cong A_{\hat{G}}(H)$. Moreover, if $H$ is open or compact, then $\hat{H} \cong \hat{G}/A_{\hat{G}}(H)$.
 
 
-\textbf{Theorem 7.31.}
+    The next corollary says that the duality functor preserves proper exactness for some sequences.
 
 
+\textbf{Corollary 7.30.} If the sequence $0 \to G_1 \to^f G \to^h G_2 → 0$ in $\mathcal{L}$ is proper exact, with $G_1$ compact or $G_2$ discrete,
+then $0 \to \hat{G_2} \to^{\hat{h}} \hat{G} \to^{\hat{f}} \hat{G_1} \to 0$ is proper exact with the same property.
+
+
+    Now we can prove prove the Pontryagin-van Kampen duality theorem, namely $\omega$ is a natural equivalence
+from id_$\mathcal{L}$ to $\hat{\hat{}}: \mathcal{L} \to \mathcal{L}$.
+
+
+
+\textbf{Theorem 7.31.} If $G$ is a locally compact abelian group, then $\omega_G$ is a topological isomorphism of $G$ onto $\hat{\hat{G}}$.
+
+
+\emph{Proof.} We know by Proposition 7.23 that $\omega$ is a natural transformation from $id_\mathcal{L}$ to $\hat{\hat{}}: \mathcal{L} \to \mathcal{L}$. Our plan is to
+chase the given locally compact abelian group G into an appropriately chosen proper exact sequence
+
+
+    $0 \to G_1 \to^t G \to^h G_2 \to 0$
+
+
+in $\mathcal{L}$, with $G_1$ compact or $G_2$ discrete, such that $G_1$ and $G_2$ satisfy the duality theorem. By Corollary 7.30 the
+sequences
+
+
+    $0 \to \hat{G_2} \to^{\hat{h}} \to \hat{G} \to^{\hat{f}} \to \hat{G_2} \to 0$ and $0 \to \hat{\hat{G_1}} \to^{\hat{\hat{f}}} \hat{\hat{G}} \to^{\hat{\hat{h}}} \hat{\hat{G_2}} \to 0$
+
+
+are proper exact. According to Proposition 7.23 the following diagram commutes:
+
+
+% The following diagram consists of the first sequence above the third sequences from Theorem 7.31, and the G's have arrows from the top down
+
+% The following sequence is along the top
+
+$0 \to G_1 \to^t G \to^h G_2 \to 0$
+
+% The following sequence is along the bottom
+
+$0 \to \hat{\hat{G_1}} \to^{\hat{\hat{f}}} \hat{\hat{G}} \to^{\hat{\hat{h}}} \hat{\hat{G_2}} \to 0$
+
+% These are the following arrows from the top to bottom, from left to right
+
+$G_1 \to^{\omega_{G_1}} \hat{\hat{G_1}}$
+
+$G \to^{\omega_G} \hat{\hat{G}}$
+
+$G_2 \to^{\omega_{G_2}} \hat{\hat{G_2}}$
+
+
+According to Theorem 6.19, $\omega_{G_1}$, $\omega_G$, $\omega_{G_2}$ are injective. Moreover, $\omega_{G_1}$ and $\omega_{G_2}$ are surjective by our
+choice of $G_1$ and $G_2$. Then $\omega_G$ must be surjective too. (Indeed, if $x \in ker \hat{\hat{h}}$, then there exists $y \in \omega_G(G)$ with
+$\hat{\hat{h}}(x) = \hat{\hat{h}}(y)$, because $\hat{\hat{h}}(\omega_G(G)) = \hat{\hat{G_2}}$. Now $y - x \in ker \hat{\hat{h}} \subseteq \omega_G(G)$ and so $x \in y + \omega_G(G) = \omega_G(G)$.)
+If $G$ is locally compact abelian and compactly generated, by Proposition 6.18 we can choose $G_1$ compact
+and $G_2$ elementary locally compact abelian. Then $G_1$ and $G_2$ satisfy the duality theorem by Theorems 7.25
+and 7.26, hence $\omega_G$ is surjective. Since $\omega_G$ is a continuous isomorphism and $G$ is $\sigma$-compact, we conclude with
+Theorem 4.9 that $\omega_G$ is a topological isomorphism.
+
+
+    In the general case of locally compact abelian group $G$, we can take an open compactly generated subgroup
+$G_1$ of $G$. This will produce a proper exact sequence $0 \to G_1 \to^f G \to^h G_2 \to 0$ with $G_1$ compactly generated and
+$G_2 \cong G/G_1$ discrete. By the previous case $\omega_{G_1}$ is a topological isomorphism and $\omega_{G_2}$ is an isomorphism thanks
+to Theorem 7.25. Therefore $\omega_G$ is a continuous isomorphism.
+
+
+    Moreover $\omega_G \upharpoonright_{f(G_1)}: f(G_1) \to \hat{\hat{f}}(\hat{\hat{G_1}})$ is a topological isomorphism (as $\omega_{G_1}, f : G_1 \to f(G_1)$
+and $\hat{\hat{f}} : \hat{\hat{G_1}} \to \hat{\hat{f}}(\hat{\hat{G_1}})$ are topological isomorphisms) and $f(G_1)$ and $\hat{\hat{f}}(\hat{\hat{G_1}})$ are open subgroups respectively of $G$ and $\hat{\hat{G}}$. Thus
+$\omega_G$ is a topological isomorphism.
+
+
+    Our last aim is to prove that the annihilators define an inclusion-inverting bijection between the family of
+all closed subgroups of a locally compact group $G$ and the family of all closed subgroups of $\hat{G}$. We use that fact
+that one can identify $G$ and $\hat{\hat{G}}$ by the topological isomorphism $\omega_G$. In more precise terms:
+
+
+\textbf{Exercise 7.32.} Let $G$ be a locally compact abelian group and $Y$ be a subset of $\hat{G}$. Then $A_{\hat{\hat{G}}}(Y ) = \omega_G(A_G(Y ))$.
+
+
+\textbf{Lemma 7.33.} Let G be a locally compact abelian group and $H$ a closed subgroup of $G$. If $a \in G \ H$ then there
+exists $\chi \in A(H)$ such that $\chi(x) \neq 0$.
+
+
+\emph{Proof.} Let $\rho : \hat{G/H} \to A(H)$ be the topological isomorphism of Corollary 7.29. By Theorem 6.19 there exists
+$\psi \in \hat{G/H}$ such that $\psi(a + H) \neq 0$. Therefore $\chi = \rho(\psi) \in A(H)$ and $\chi(a) = \rho(\psi)(a) = \psi(a + H) \neq 0$.
+
+
+\textbf{Corollary 7.34.} If $G$ is a locally compact abelian group and $H$ a closed subgroup of $G$, then
+
+
+    $H = A_G (A_{\hat{G}}(H)) = \omega_G^{-1}(A_{\hat{\hat{G}}}(A_{\hat{G}}(H)))$
+
+
+\emph{Proof.} The first equality follows immediately from the above lemma.
+The last equality follows from the equality $H = A_G (A_{\hat{G}}(H))$ and Exercise 7.32.
+
+
+    By Lemma 7.29 the equality $H = A_G (A_{\hat{G}}(H))$ holds if and only if $H$ is a closed subgroup of $G$.
+
+
+\textbf{Proposition 7.35.} Let $G$ be a locally compact abelian group and $H$ a closed subgroup of $G$. Then $\hat{H} \cong \hat{G} / A(H)$
+
+
+\eemph{Proof.} Since $H = \omega_G^{-1}(A_{\hat{\hat{G}}}(A_{\hat{G}}(H)))$  by Lemma 7.34 we have a topological isomorphism $\phi$ from $H$ to $\hat{\hat{G} / A(H)}$
+given by $\phi(h)(\alpha + A(H))=\alpha(h)$ for every $h \in H$ and $\alpha \in \hat{G}$. This gives rise to another topological isomorphism
+$\hat{\phi} : \hat{\hat{\hat{G} / A(H)}} \to \hat{H}$.  By Pontryagin's duality theorem 7.31 $\omega_{\hat{G}/A(H)}$ is a topological isomorphism from $\hat{G}/A(H)$
+to $\hat{\hat{\hat{G} / A(H)}}$. The composition gives the desired isomorphism.
+
+
+Finally, let us resume for reader's benefit some of the most relevant points of Pontryagin-van Kampen duality
+theorem established so far:
+
+
+\textbf{Theorem 7.36.} Let $G$ be a locally compact abelian group. Then $\hat{G}$ is a locally compact abelian group and:
+
+
+\begin{itemize}
+
+    \item (a) the correspondence $H \mapsto A_{\hat{G}}(H)$, $N \mapsto A_G(N)$, where $H$ is a closed subgroup of $G$ and $N$ is a closed
+    subgroup of $\hat{G}$, defines an order-inverting bijection between the family of all closed subgroups of $G$ and the
+    family of all closed subgroups of $\hat{G}$;
+
+    \item (b) for every closed subgroup $H$ of $G$ the dual group $\hat{H}$ is isomorphic to $\hat{G}/A (H)$, while $A(H)$ is isomorphic
+    to the dual $\hat{G/H}$;
+
+    \item (c) $\omega_G : G \to \hat{\hat{G}}$ is a topological isomorphism;
+
+    \item (d) $G$ is compact (resp., discrete) if and only if $\hat{G}$ is discrete (resp., compact);
+
+\end{itemize}
+
+
+\emph{Proof} The first sentence is proved in Theorem 7.2. (a) is Corollary 7.34 while (b) is Proposition 7.35. (c) is
+Theorem 7.31. To prove (d) apply Theorem 7.31 and Lemma 7.1.
+
+
+    Using the full power of the duality theorem one can prove the following structure theorem on compactly
+generated locally compact abelian groups.
+
+
+\textbf{Theorem 7.37.} Let G be a locally compact compactly generated abelian group. Prove that $G \cong \mathbb{R}^n \times \mathbb{Z}^m \times K$,
+where $n, m \in N$ and $K$ is a compact abelian group.
+
+
+\emph{Proof.} According to Theorem 6.18 there exists a compact subgroup $K$ of $G$ such that $G/K$ is an elementary
+locally compact abelian group. Taking a bigger compact subgroup one can get the quotient $G/K$ to be of the
+form $\mathbb{R}^n \times \mathbb{Z}^m$ for some $n, m \in \mathbb{N}$. Now the dual group $\hat{G}$ has an open subgroup $A(K) \cong \hat{G/K} \cong \mathbb{R}^n \times \mathbb{T}^m$.
+Since this subgroup is divisible, one has $\hat{G} \cong \mathbb{R}^n \times \mathbb{T}^m \times D$, where $D \cong \hat{G}/A (K)$ is discrete and $D \cong \hat{K}$. Taking
+duals gives $G \cong \hat{\hat{G}} \cong \mathbb{R}^n \times \mathbb{Z}^m \times K$.
+
+
+    Making sharp use of the annihilators one can prove the structure theorem on locally compact abelian groups
+(see [67, 36] for a proof).
+
+
+\textbf{Theorem 7.38.} Let $G$ be a locally compact abelian group. Then $G \cong \textbf{R}^n \times G_0$, where $G_0$ is a closed subgroup
+of $G$ containing an open compact subgroup $K$.
+
+
+    As a corollary one can prove:
+
+
+\textbf{Corollary 7.39.} Every locally compact abelian group is isomorphic to a subgroup of a group of the form
+$\mathbb{R}^n \times D \times K$, where $n \in \mathbb{N}, D$ is a discrete abelian group and $K$ is a compact abelian group.
+
+
+\textbf{Exercise 7.40} Let $G$ be a locally compact abelian group. Prove that for $\chi_1, . . . , \chi_n \in \hat{G}$ and $\delta > 0$ one has
+
+
+    $U_G (\chi_1, . . . , \chi_n; \delta) = \omega^{-1}_G (W_{\hat{\hat{G}}} ({\chi_1, . . . , \chi_n}, U)),$,
+
+
+where $U$ is the neighborhood of 0 in $\mathbb{T} \cong \mathbb{S}$ determined by $|Argz| < \delta$.
+
+
+\textbf{Exercise 7.41.} Let $G$ be a compact connected abelian group. Prove that $t(G)$ is dense in $G$ iff $\hat{G}$ is reduced.
+Deduce that every compact connected abelian group $G$ has the form $G \cong G_1 \times \mathbb{Q}^\alpha$ for some cardinal $\alpha$, where
+the compact subgroup $G_1$ coincides with the closure of the subgroup $t(G)$ of $G$.
+
+
+(Hint. Note first that $\hat{G}$ is torsion-free. Deduce that $\hat{G}$ is reduced iff $\bigcap^{\infty}_{n=1} n \hat{G} = 0$. Show that this equality
+is equivalent to density of $t(G) = \bigcup^{\infty}_{n=1} G[n]$ in $G$. To prove the second assertion consider the torsion-free dual
+$\hat{G}$ and its decomposition $\hat{G} = d(\hat{G}) \times R$, where R is a reduced subgroup of $\hat{G}$. Now apply the first part and the
+isomorphism $G \cong \hat{\hat{G}}$.)
+
+
+\textbf{Exercise 7.42.} . Give example of a reduced abelian group $G$ such that $\bigcap^{\infty}_{n=1} n \hat{G} \neq 0$.
+(Hint. Fix a prime number p and take an appropriate quotient of the group $\bigoplus^{\infty}_{n=1} \mathbb{Z}(p^n)$).
 
 \end{document}
