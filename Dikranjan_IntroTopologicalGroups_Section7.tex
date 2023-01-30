@@ -585,4 +585,266 @@ shows that $\mathbb{K} = {\chi_r : r \in \mathbb{Q}} \cong \mathbb{Q}$.
     
 
 \textbf{Exercise 7.19.} Prove that a discrete abelian group $G$ satisfies $\hat{\hat{G}} \cong G$ whenever
-\maketitle\end{document}
+
+\begin{itemize}
+
+    \item (a) $G$ is divisible;
+
+    \item (b) $G$ is free;
+
+    \item (c) $G$ is of finite exponent;
+
+    \item (d) $G$ is torsion and every primary component of $G$ is of finite exponent.
+
+\end{itemize}
+
+    (Hint. (a) Use Examples 7.7 and 7.18 (b) and the fact that every divisible group is a direct sum of copies of
+Q and the groups $\mathbb{Z}(p^{\infty})$.
+
+
+    (c) and (d) Use that fact that every abelian group of finite exponent is a direct sum of cyclic subgroups (i.e.,
+Prufer's theorem, see (d) of Example 2.3)).
+
+
+\subsection{The natural transformation $\omega$}
+
+
+Let $G$ be a topological abelian group. Define $\omega_G : G \to \hat{\hat{G}}$ such that $\omega_G(x)(\chi) = \chi(x)$, for every $x \in G$ and for
+every $\chi \in \hat{G}$. We show now that $\omega_G (x) \in \hat{\hat{G}}$.
+
+
+\textbf{Proposition 7.21.} If $G$ is a topological abelian group. Then $\omega_G (x) \in \hat{\hat{G}}$ and $\omega_G : G \to \hat{\hat{G}}$ is a homomorphism.
+If $G$ is locally compact, then the homomorphism $\omega_G$ is a continuous.
+
+
+\emph{Proof.} In fact, 
+
+    
+    $\omega_G(x)(\chi + \psi) = (\chi + \psi)(x) = \chi (x) + \psi (x) = \omega_G(x)(\chi) + \omega_G(x)(\psi)$,
+
+
+for every $\chi, \psi \in \hat{G}$. Moreover, if $U$ is an open neighborhood of 0 in $\mathbb{T}$, then $\omega_G(x)(W(\{x\}, U)) \subseteq U$. This
+proves that $\omega_G(x)$ is a character of $\hat{G}$, i.e., $\omega_G(x) \in \hat{\hat{G}}$. For every $x, y \in G$ and for every $\chi \in \hat{G}$ we have
+$\omega_G(x + y)(\chi) = (\chi)(x + y) = \chi(x) + \chi(y) = \omega_G(\chi)(x) + \omega_G(\chi)(y)$ and so $\omega_G$ is a homomorphism.
+
+
+    Now assume $G$ is locally compact. To prove that $\omega_G$ is continuous, pick an open neighborhood $A$ of 0 in $\mathbb{T}$ and
+a compact subset $K$ of $\hat{G}$. Then $W(K, A)$ is an open neighborhood of 0 in $\hat{\hat{G}}$. Let $U$ be an open neighborhood of
+0 in $G$ with compact closure. Take an open symmetric neighborhood $B$ of 0 in $\mathbb{T}$ with $B+B \subseteq A$. Thus $W(\bar{U}, B)$
+is an open neighborhood of 0 in $\hat{G}$. Since $K$ is compact, there exist finitely many characters $\chi_1, . . . , \chi_m$ of $G$
+such that $K \subseteq (\chi_1 + W(\bar{U}, B)) \cup · · · \cup (\chi_m + W(\bar{U}, B))$. For every $i = 1, . . . , m$ there is an open neighborhood
+$V_i$ of 0 in $G$ such that $\chi_i(V_i) \subseteq B$. Define $V = U \cap V_1 \cap · · · \cap V_m \subesteq U$ and note that $\chi_i(V ) \subseteq B$ for every
+$i = 1, . . . , m$. Thus $\omega_G(V ) \subseteq W(K, A)$. Indeed, if $x \in V$ and $\chi \in K$, then $\chi_i(x) \subseteq B$ for every $i = 1, . . . , m$ and
+there exists $i_0 \in {1, . . . , m}$ such that $\chi \in \chi_{i_0} + W(\bar{U}, B)$; so $\chi(x) = \chi_{i_0} (x) + \psi (x)$ with $\psi \in W(\bar{U}, B)$ and then
+$\omega_G(x)(\chi) = \in(x) \in B + B \subseteq A$.
+
+
+    In this chapter we shall have a precise approach, by saying that a group $G$ satisfies the Pontryagin-van
+Kampen duality theorem when ωG is a topological isomorphism.
+
+
+\textbf{Lemma 7.22.} If the topological abelian groups $G_i$ satisfy Pontryagin-van Kampen duality theorem for
+$i = 1, 2, . . . , n$, then also $G =\Pi^{n}_{i=1} G_i$ satisfies Pontryagin-van Kampen duality theorem.
+
+
+    Proof. Apply Lemma 7.12 twice to obtain an isomorphism $j : \Pi_n_{i=1} \hat{\hat{G}}_i \to \hat{\hat{G}}$. It remains to verify that the
+product $\pi : G \to \Pi^n_{i=1} \hat{\hat{G}}_i$ of the isomorphisms $\omega_{G_i}: G_i \to \Pi^n_{i=1} \hat{\hat{G}}_i$ given by our hypothesis composed with the
+isomorphism $j$ gives precisely $\omega_G$.
+
+
+    Consider two categories $\mathcal{A}$ and $\mathcal{B}$. A covariant [contravariant] functor $F : \mathcal{A} \to \mathcal{B}$ assigns to each object
+$A \in \mathcal{A}$ an object $F A \in \mathcal{B}$ and to each arrow $f : A \to A'$ in $\mathcal{A}$ an arrow $F f : F A \to F A'[F f : F A' \to F A]$ such
+that $F id_A = id_{FA}$ and $F(g \circ f) = F g \circ F f [F(g \circ f) = F f \circ F g]$ for every arrow $f : A \to A'$ and $g : A' → A''$
+in $\mathcal{A}$.
+
+
+Let $F, F': A \to B$ be covariant functors. A natural transformation $\gamma$ from $F$ to $F'$ assigns to each $A \in \mathcal{A}$
+an arrow $\gamma A : F A \to F'A$ such that for every arrow $f : A \to A'$ in $\mathcal{A}$ the following diagram is commutative
+
+
+%The following diagram is in the shape of a square, but like the last one I will have to describe it%
+
+$FA \to^{Ff} FA'$ %Is along the top%
+
+$F'A \to^{F'f} F'A'$ %Is along the bottom%
+
+%Down the sides are the following arrows%
+
+$FA \to^{\gamma_{A}} F'A$
+
+$FA' \to^{\gamma_{A'}} F'A'$
+
+
+    A \emph{natural equivalence} is a natural transformation $\gamma$ such that each $\gamma_A$ is an isomorphism.
+
+
+    If $\mathcal{H}$ denote the category of all Hausdorff abelian topological groups, the \emph{Pontryagin-van Kampen duality
+functor}, defined by
+
+
+    $G \mapsto \hat{G}$ and $f \mapsto \hat{f}$
+
+
+for objects $G$ and morphisms $f$ of $\mathcal{H}$, is a contravariant functor $\hat{}: \mathcal{H} \to \mathcal{H}$. Let $\mathcal{L}$ be the full subcategory of $\mathcal{H}$
+having as objects all locally compact abelian groups. According to Proposition 7.2, the functor $\hat{}$ sends $\mathcal{L}$ to
+itself, i.e., defines a functor $\hat{}: \mathcal{L} \to \mathcal{L}$. The Pontryagin-van Kampen duality theorem states that $\omega$ is a natural
+equivalence from id_$\mathcal{L}$ to $\hat{\hat{}}: \mathcal{L} \to \mathcal{L}$. We start by proving that $\omega$ is a natural transformation.
+
+
+\textbf{Proposition 7.23.} $\omega$ is a natural transformation from id_${\mathcal{L}}$ to $\hat{\hat{}}: \mathcal{L} \to \mathcal{L}$
+
+
+\emph{Proof.} By Proposition 7.21 $\omega_G$ is continuous for every $G \in \mathcal{L}$. Moreover for every continuous homomorphism
+$f : G \to H$ the following diagram commutes:
+
+
+%The following diagram is also in the shape of a square, so I will describe it%
+
+$G \to^{f} H$ %Is along the top%
+
+$\hat{\hat{G}} \to^{\hat{\hat{f}}} \hat{\hat{H}}$ %Is along the bottom%
+
+%Down the sides are the following arrows%
+
+$G \to^{\omega_G} \hat{\hat{G}}$ 
+
+$H \to^{\omega_H} \hat{\hat{H}}$ 
+
+
+In fact, if $x \in G$ and $\xi \in \hat{H}$, then $\omega_H(f(x))(\xi) = \xi(f(x))$. On the other hand,
+
+
+    $(\hat{\hat{f}}(\omega_G(x)))(\xi) = (\omega_G(x) \circ \hat{f})(ξ) = ω_G(x)(\hat{f}(\xi)) = \omega_G(x)(\xi \circ f) = \xi(f(x))$.
+
+
+Hence $\omega_H(f(x)) = \hat{\hat{f}}(\omega_G(x))$ for every $x \in G$.
+
+
+\textbf{Remark 7.24}  Note that $\omega_G$ is a monomorphism if and only if $\hat{G}$ separates the points of $G$. Moreover, $\omega_G(G)$
+is a subgroup of $\hat{\hat{G}}$ that separates the points of $\hat{G}$.
+
+
+    Now we can prove the Pontryagin-van Kampen duality theorem in the case when $G$ is either compact or
+discrete.
+
+
+\textbf{Theorem 7.25.} If the abelian topological group $G$ is either compact or discrete, then $\omega_G$ is a topological
+isomorphism.
+
+
+\emph{Proof.} If $G$ is discrete, then $\hat{G}$ separates the points of $G$ by Corollary 2.7 and if $G$ is compact, then $\hat{G}$ separates
+the points of $G$ by the Peter-Weyl Theorem 6.4. Therefore $\omega_G$ is injective by Remark 7.24. If $G$ is discrete,
+then $\hat{G}$ is compact and $\omega_G(G) = \hat{\hat{G}}$ by Corollary 6.6. Since $\hat{\hat{G}}$ is discrete, $\omega_G$ is a topological isomorphism.
+
+
+    Let now $G$ be compact. Then $\omega_G$ is open thanks to Theorem 4.9. Suppose that $\omega_G(G)$ is a proper subgroup
+of $\hat{\hat{G}}?$. By the compactness of $G, \hat{\hat{G}}$ is compact, hence closed in $\hat{\hat{G}}$. By the Peter-Weyl Theorem 6.4 applied
+to $\hat{\hat{G}}/\omega_G(G)$, there exists $\xi \in \hat{\hat{\hat{G}}} / \{0\}$ such that $\xi(\omega_G(G)) = \{0\}$. Since $\hat{G}$ is discrete, $\omega_{\hat{G}}$ is a topological
+isomorphism and so there exists $\chi \in \hat{G}$ such that $\omega_{\hat{G}}(\chi) = \xi$. Thus for every $x \in G$ we have
+$0 = \xi(\omega_G(x)) = \omega_{\hat{G}}(\chi)(\omega_G(x)) = \omega_G(x)(\chi) = \chi(x)$. It follows that $\chi ≡ 0$ and so that also $\xi ≡ 0$, a contradiction.
+
+
+    Our next step is to prove the Pontryagin-van Kampen duality theorem when $G$ is elementary locally compact
+abelian:
+
+
+\textbf{Theorem 2.76.} If $G$ is an elementary locally compact abelian group, then $\omega_G$ is a topological isomorphism of
+$G$ onto $\hat{\hat{G}}$.
+
+
+\emph{Proof.} According to Lemma 7.22 and Theorem 7.25 it suffices to prove that $\omega_{\mathbb{R}}$ is a topologically isomorphism.
+Of course, by the fact that $\hat{\mathbb{R}}$ is topologically isomorphic to $\mathbb{R}$, one concludes immediately that also $\mathbb{R}$ and $\hat{\hat{\mathbb{R}}}$
+are topologically isomorphism. A more careful analysis of the dual $\hat{\mathbb{R}}$ shows the crucial role of the ($\mathbb{Z}$-)bilnear
+map $\lambda : \mathbb{R} \times \mathbb{R} \to \mathbb{T}$ defined by $λ(x, y) = \chi__1(xy)$, where $\chi_1 : \mathbb{R} \to \mathbb{T}$ is the character determined by the canonical
+quotient map $\mathbb{R} \to \mathbb{T} = \mathbb{R}/\mathbb{Z}$. Indeed, for every $y \in \mathbb{R}$ the map $\chi_y : \mathbb{R} \to \mathbb{T}$ defined by $x \mapsto \lambda(x, y)$ is an element
+of $\hat{\mathbb{R}}$. Hence the second copy $\{0\} \times \mathbb{R}$ of $\mathbb{R}$ in $\mathbb{R} \times \mathbb{R}$ can be identified with $\hat{\mathbb{R}}$. On the other hand, every element
+$x \in \mathbb{R}$ gives a continuous character $\mathbb{R} \to \mathbb{T}$ defined by $y \mapsto \lambda(x, y)$, so can be considered as the element $\omega_R(x)$ of
+$\hat{\hat{R}}$. We have seen that every $\xi \in \hat{\hat{R}}$ has this form. This means that $\omega_{\mathbb{R}}$ is surjective. Since continuity of $\omega_{\mathbb{R}}$, as
+well as local compactness of $\hat{\hat{\mathbb{R}}}$ are already established, $\omega_{\mathbb{R}}$ is a topological isomorphism by the open mapping
+theorem.
+
+
+    For a subset $X$ of $G$ the annihilator of $X$ in $\hat{G}$ is $A_{\hat{G}}(X) = \{\chi \in \hat{G} : \chi(A) = {0}\}$ and for a subset $Y$ of $\hat{G}$
+the annihilator of $Y$ in $G$ is $A_G(Y ) = {x \in G : \chi(x) = 0 \text{ for every } x \in Y }$. When no confusion is possible we
+shall omit the subscripts $_{\hat{G}}$ and $_G$.
+
+
+    The next lemma will help us in computing the dual of a subgroup and a quotient group.
+
+
+\textbf{Lemma 7.27} Let $G$ be a locally compact abelian group. If $M$ is a subset of $G$, then $A_{\hat{G}} (M)$ is a closed subgroup
+of $\hat{G}$.
+
+
+    \wmph{Proof.} It suffices to note that
+
+
+        $A_{\hat{G}}(M) = \bigcap_{x \in M} \{ \chi \in \hat{G} : \chi(x) \} = \bigcap\{ker \omega_G(x) : x \in M \}$
+
+
+where each $ker \omega(x)$ is a closed subgroup of $\haat{G}$
+
+
+Call a continuous homomorphism $f : G \to H$ of topological groups proper if $f : G \to f(G)$ is open, whenever
+$f(G)$ carries the topology inherited from $H$. In particular, a surjective continuous homomorphism is proper iff
+it is open.
+
+
+    A short sequence $0 \to G_1 \to^f G \to^h G_2 \to 0$ in $\mathcal{L}$, where $f$ and $h$ are continuous homomorphisms, is exact if
+$f$ is injective, $h$ is surjective and $im f = ker h$. It is proper if $f$ and $h$ are proper.
+
+
+\textbf{Lemma 7.28.} Let $G$ be a locally compact abelian group, $H$ a subgroup of $G$ and $i : H \to G$ the canonical
+inclusion of $H$ in $G$. Then
+
+
+\begin{itemize}
+
+    \item (a) $\hat{i} : \hat{G} \to \hat{H}$ is surjective if $H$ is dense or open or compact;
+
+    \item (b) $\hat{i}$ is injective if and only if $H$ is dense in $G$;
+
+    \item (c) if $H$ is closed and $\pi : G \to G/H$ is the canonical projection, then the sequence
+    
+            $0 \to \hat{G/H} \to^{\hat{\pi}} \hat{G} \to^{\hat{i}} \hat{H}$
+
+        is exact, $\hat{\pi}$ is proper and $im \hat{\pi} = A_{\hat{G}}(H)$. If $H$ is open or compact, then $\hat{i}$ is open and surjective.
+\end{itemize}
+
+
+\emph{Proof.} (a) Note that $\hat{i}$ is surjective if and only if for every $\chi \in \hat{H}$ there exists $\xi \in \hat{G}$ such that $\xi \upharpoonright_H = \chi$. If $H$ is
+compact apply Corollary 6.20. Otherwise Lemma 7.16 applies.
+
+
+    (b) If $H$ is dense, then $\hat{i}$ is injective by Lemma 7.16. Conversely, assume that $\bar{H}$ is a proper subgroup of $G$
+and let $q : G \to G/\bar{H}$ be the canonical projection. By Theorem 6.19 there exists $\chi \in \hat{G/\bar{H}}$ not identically zero.
+Then $\xi = \chi \circ q \in \hat{G}$ is non-zero and satisfies $\xi(H) = \{0\}$, i.e., $\hat{i}(\xi) = 0$. This implies that $\hat{i}$ is not injective.
+
+
+    (c) According to Lemma 7.16 $\hat{i}$ is a monomorphism, since $\pi$ is surjective. We have that $\hat{i} \circ \hat{\pi} = \hat{\pi \circ i} = 0$.
+If $\xi \in ker \hat{i} = {\chi \in \hat{G} : \chi(H) = {0}}$, then $\xi(H) = \{0\}$. So there exists $\xi_1 \in \hat{G/H}$ such that $\xi = \xi_1 \circ \pi$ (i.e.
+$\xi = \hat{\pi}(\xi_1))$ and we can conclude that $ker \hat{i} = im \hat{\pi}$. So the sequence is exact and $im \hat{\pi} = ker \hat{i} = A_{\hat{G}}(H)$.
+
+
+    To show that πb is proper it suffices to apply Lemma 7.16.
+
+
+    If $H$ is open or compact, (a) implies that $\hat{i}$ is surjective. It remains to show that $\hat{i}$ is open. If $H$ is compact
+then $\hat{H}$ is discrete by Example 7.1(2), so $\hat{i}$ is obviously open. If $H$ is open, let $K$ be a compact neighborhood
+of 0 in $G$ such that $K \subseteq H$. Then $W = W_{\hat{G}}(K,\bar{\wedge_4})$ is a compact neighborhood of 0 in Gb. Since bi is surjective,
+V = bi(W) = WHb (K,Λ4) is a neighborhood of 0 in $\hat{H}$. Now $M = \langle W \rangle$ and $M_1 = \langle V \rangle$ are open compactly
+generated subgroups respectively of $\hat{G}$ and $\hat{H}$, and $\hat{i}(M) = M_1$. Since $M$ is $\sigma$-compact by Lemma 4.12, we can
+apply Theorem 4.9 to the continuous surjective homomorphism $\hat{i} \upharpoonright_M: M \to M_1$ and so also bi is open.
+
+
+\textbf{Corollary 7.29.}
+
+
+\textbf{Corollary 7.30.}
+
+
+\textbf{Theorem 7.31.}
+
+
+
+\end{document}
