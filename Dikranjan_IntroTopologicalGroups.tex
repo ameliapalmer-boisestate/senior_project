@@ -415,7 +415,7 @@ sake of completeness we recall here some frequently used properties related to c
             \item \emph{If $ X $ is a closed subspace of a space $ Y $ , then $ X $ is compact (resp., Lindeloff, $\sigma$-compact, locally compact)
             whenever $ Y $ has the same property}
 
-            \item If $ X = \Pi_{i \in I} X_i $, then $ X $ is compact (resp., connected) if every space $ X_i $ has the same property. If $ I $ is
+            \item If $ X = \Pi_{i \in I} X_i $, then $ X $ is compact (resp., connected) iff every space $ X_i $ has the same property. If $ I $ is
             finite, the same holds for local compactness and $\sigma$-compactness.
                 
         \end{itemize}
@@ -556,7 +556,7 @@ Let us start with the following fundamental concept:
     If $ \tau $ is Hausdorff (resp., compact, locally compact, connected, etc.), then the topological group $ (G, \tau) $ is
 called Hausdorff (resp., compact, locally compact, connected, etc.). Analogously, if $ G $ is cyclic (resp., abelian,
 nilpotent, etc.) the topological group $ (G, \tau) $ is called cyclic (resp. abelian, nilpotent, etc.). Obviously, a topology
-$ \tau $ on a group $ G $ is a group topology if the maps 
+$ \tau $ on a group $ G $ is a group topology iff the maps 
 
 
 $ \mu : G\times G \to G $ and $\iota : G \to G$
@@ -585,7 +585,7 @@ in $\mathbb{Q}_p$ (i.e., an element $x \in \mathbb{Q}_p$ has as typical neighbor
 
     If $G$ is a topological group written multiplicatively and $a \in G$, then the translations $x \mapsto ax$ and $x \mapsto xa$
 as well as the \emph{internal automorphism} $x \mapsto axa^{-1}$ are homeomorphisms. Consequently, the group $G$ is discrete
-if the point 1 is isolated, i.e., the singleton \{1\} is open. In the sequel $aM$ will denote the image of a subset
+iff the point 1 is isolated, i.e., the singleton \{1\} is open. In the sequel $aM$ will denote the image of a subset
 $M \subseteq G$ under the (left) translation $x \mapsto ax$, i.e., $aM := {am : m \in M}$. This notation will be extended also to
 families of subsets of $G$, in particular, for every filter $\mathcal{F}$ we denote by $a \mathcal{F}$ the filter ${aF : F \in \mathcal{F}}$.
 
@@ -594,7 +594,7 @@ families of subsets of $G$, in particular, for every filter $\mathcal{F}$ we den
 
 
 \textbf{Exercise 3.3.} \emph{Let $f : G \to H$ be a homomorphism between topological groups. Prove that $f$ is continuous
-(resp., open) if $f$ is continuous (resp., open) at $1 \in G$.}
+(resp., open) iff $f$ is continuous (resp., open) at $1 \in G$.}
 
 
 
@@ -730,7 +730,7 @@ The next simple construction belongs to Taimanov. Now neighborhoods of 1 are sub
         
         \item $\tau$ is Hausdorff;
         
-        \item $\tau$ is discrete if there exists a finite subset of $G$ with trivial centralizer.
+        \item $\tau$ is discrete iff there exists a finite subset of $G$ with trivial centralizer.
 
     \end{itemize}
 
@@ -900,7 +900,7 @@ quotient topology on $G/H$.
 
 
         \begin{itemize}
-            \item (a) $H$ is open in $G$ if $H$ has a non-empty interior;
+            \item (a) $H$ is open in $G$ iff $H$ has a non-empty interior;
 
             \item (b) if $H$ is open, then $H$ is also closed;
             
@@ -1138,7 +1138,7 @@ that:
 
 
     \textbf{Exercise 3.30} Let $G$ be an abelian group and let $H$ be a family of characters of $G$. Prove that the topology
-
+    $T_H$ is Hausdorff iff the characters of $H$ separate the points of $G$.
 
 
     \textbf{Proposition 3.31.} Let $G$ be an infinite abelian group and let $H = Hom(G,S)$. Then the following holds true:
@@ -2090,6 +2090,46 @@ $lim_{\leftarrow} G/N_i$ of the discrete quotients $G/N_i$.
 (b) Show that the completion in (a) is compact iff all $N_i$ have finite index in $G$.
 
 
+(c) Let $p$ be a prime number. Prove that the completion of $\mathbb{Z}$ equipped with the p-adic topology (see Example
+3.7) is the compact group $\mathbb{J}_p$ of p-adic integers.
+
+
+(d) Prove that the completion of $\mathbb{Z}$ equipped with the natural topology (see Example 3.7) is isomorphic to
+$\Pi_p \mathbb{J}_p$
+
+
+\textbf{Exercise 3.85} Let $p$ be a prime number. Prove that:
+
+
+    \begin{itemize}
+
+        \item (a) $\mathbb{Z}$ admits a finest group topology $\tau$ such that $p^n$ converges to 0 in $\tau$ (this is $\tau_{(p^n)}$ in the notation of $\S$3.4);
+    
+        \item (b)* [89,88] (\mathbb{Z}, \tau)
+        
+        \item (c) conclude that $\tau$ is not metrizable.
+        
+    \end{itemize}
+
+\textbf{Exercise 3.86} Let $G$ be a Hausdroff topologized group. Call a filter $\mathcal{F}$ on $G$ Cauchy if for every $U \in \mathcal{V}_G(1)$
+there exists $g \in G$ such that $gU \in \mathcal{F}$. Prove that:
+
+
+    \begin{itemize}
+
+        \item (a)  a filter $\mathcal{F}$ on $G$ Cauchy iff for every $U \in \mathcal{V}_G(1)$ there exists $g \in G$ such that $U_g \in \mathcal{F}$.
+    
+        \item (b) if $\mathcal{F}$ is a Cauchy filter on $G$ and $x_F \in F$ for every $F \in \mathcal{F}$, then the net $\{x_F : F \in \mathcal{F}\}$ is a Cauchy net
+        (here $\mathcal{F}$ is considered as a directed partially ordered set w.r.t. inclusion);
+        
+        \item (c) if $\{x_i: i \in I\}$ is a Cauchy net in $G$ and $Fi = \{x_j : j \in I, j \geq i\}$, then the family $\{F_i: i \in I\}$ is a filter
+        base of a Cauchy filter on $G$;
+        
+        \item (d) $G$ is complete iff every Cauchy filter in $G$ converges.
+        
+    \end{itemize}
+
+
 \section{Compactness and local compactness in topological groups}
 
 
@@ -2542,5 +2582,33 @@ A. Moreover for every $a \in A$ there exists a sufficiently large positive integ
     \emph{Proof.} Define $h : A \to \mathbb{T}^s$ such that $h(x) = (\chi_1(x), . . . , \chi_s(x))$ and
 
 
+        $B = \{(z_1, ..., z_n) \in \mathbb{S}^S : |Arg z_i| < \frac{\delta}{2} \text{ for } i = 1, ..., s\} = \{z \in \mathbb{S} : |Arg z| \frac{\delta}{2} \}^8$.
 
+
+    Then $B$ is big in $\mathbb{S}^s$ and by Proposition 4.26 the set $(B - B) \cap h(A)$ is big with respect to $h(A)$. Since
+
+        $B - B \subseteq C = \{(z_1, . . . , z_s) \in \mathbb{S}^s: ||Arg z_i|| < \delta \text{ for } i = 1, . . . , s\}$,
+
+    we have that $C \cap h(A)$ is big with respect to $h(A)$. Therefore $U(\chi_1, . . . , \chi_s; \delta) = h^{-1}(C)$ is big in $A$.
+        
+    
+    The second statement follows from Proposition 4.26, since
+
+        $U(\chi_1, ..., \chi_s; \frac{\delta}{2}) - U(\chi_1, ..., \chi_s; \frac{\delta}{2}) \subseteq U(\chi_1, ..., \chi_s; \delta)$.
+
+
+\textbf{Corollary 4.31}. For an abelian group $G$ all topologies of the form $\mathcal{T}_H$, where $H \leq G^*$, are totally bounded.
+Moreover, $T_H$ is precompact iff $H$ separates the points of $G$.
+
+
+    It requires a considerable effort to prove that, conversely, every totally bounded group topology has the form
+$\mathcal{T}_H$ for some $H$ (see Remark 6.3).
+
+
+    It follows easily from Corollary 4.31 and Proposition 4.30 that for every neighborhood $E$ of 0 in the Bohr
+topology (namely, a set $E$ containing a subset of the form $U(\chi_1, . . . , \chi_n; \epsilon)$ with characters $\chi_i: G \to \mathbb{S}$,
+$i = 1, 2, . . . , n, \text{ and } \epsilon > 0)$ there exists a big set $B$ of $G$ such that $B_{(8)} \subseteq E$ (just take $B = U(\chi_1, . . . , \chi_n; \epsilon/8)$).
+Surprisingly, the converse is also true. Namely, we shall obtain as a corollary of Folner's lemma that every set
+$E$ satisfying $B_{(8)} \subseteq E$ for some big set $B$ of $G$ must be a neighborhood of 0 in the Bohr topology of $G$ (see
+Corollary 5.8).
 \end{document}
