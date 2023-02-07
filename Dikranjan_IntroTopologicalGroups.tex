@@ -3043,15 +3043,269 @@ $c_\chi$ where $\chi \in G^*$. Then:
 
     \end{itemize}
 
-%NOTE: I stopped here, there are only titles entered from here on out.%
+\{Proof.} (a) The definition of the coefficients $c_\chi$ yeilds
 
-\textbf{Corollary 5.3}
+    $\sum_{\chi \in G^*} c_\chi \chi(x) = \sum_{\chi \in G^*} \frac{1}{|G|} \sum_{y \in G} f(y) \bar{\chi(y)} \chi(x)$\dots
+
+
+    Computing $\sum_{\chi \in G^*} \bar{\chi (y)} \chi(x)$ with Proposition 5.1(b) we get $\sum_{\chi \in G^*} c_\chi \chi(x) = \frac{|G^*|}{|G|}f(x)$ for every $x \in G$. Now
+$|G| = |G^*|$ gives $f(x) = \sum_{\chi \in G^*} c_\chi \chi(x)$ for every $x \in G$.
+
+
+    (b) By Proposition 5.1 the definition of the coefficients $c_\chi$ and the relation $f(x) = \sum_{\chi \in G^*} a_\chi \chi(x)$
+
+
+        $c_\chi = \frac{1}{|G|} \sum_{\varphi \in G^*} a_\varphi \sum_{\chi \in G} f(y)\bar{\chi(x)} = a_\chi$
+
+
+    (d) By item (a) $g(x) = \sum_{\varphi \in G^*} d_\varphi \varphi(x)$ for every $x \in G$. Therefore
+    
+
+        $\sum_{y \in G} \bar{f(y)} g(x+y) = \sum_{y \in G} (\sum_{\chi \in G^*} \bar{c_\chi} \bar{\chi(y)}) (\sum_{\varphi \in G^*} d_\varphi \varphi(x) \varphi(y)) = $
+            $ = \sum_{\chi \in G^*} \sum_{\varphi \in G^*} \bar{c_\chi} d_\chi \varphi(x) \sum_{y \in G} \bar{\chi(y)} \varphi(y) = |G| \sum_{\chi \in G^*} \bar{c_\chi} d_\chi \chi(x)$
+
+
+    (c) It is sufficient to apply (d) with $g = f$ and let $x = 0$.
+
+
+\textbf{Corollary 5.3} Let $G$ be a finite abelian group, $E$ be a non-empty subset of $G$ and let $f$ be the characteristic
+function of $E$. Then for the convolution $g = f * f$ one has
+
+
+    \begin{itemize}
+
+        \item (a) $g(x) > 0$ iff $x \in E_{(2)}$;
+        
+        \item (b) $g(x) = \sum_{\chi \in G^*} |c_\chi|^2 \chi(x)$
+
+    \end{itemize}
+
+
+\emph{Proof} (a) $g(x) > 0$ if and only if there exists $y \in E$ with $x + y \in E$, that is $x \in E - E = E_{(2)}$.
+(b) follows obviously from Proposition 5.2(d).
 
 
 \subsection{Biogoliouboff and Folner Lemmas}
 
 
-\textbf{Lemma 5.4 (Bogoliouboff)}
+\textbf{Lemma 5.4 (Bogoliouboff)} If $F$ is a finite abelian group and $E$ is a non-empty subset of $F$, then
+there exist $\chi_1, . . . , \chi_m \in F^*$, where $m = [(\frac{|F|}{|E|}^2)]$, such that $U(\chi_1, . . . , \chi_m ; \frac{\pi}{2}) \subseteq E_{(4)}$.
 
 
+\emph{Proof} Let $f$ be the characteristic function of E. By Proposition 5.2(a) we have
+
+
+    $f(x) = \sum_{\chi \in F^*} c_\chi \chi(x)$, with $c_\chi = \frac{1}{|F|} \sum_{x \in F} f(x) \bar{\chi(x)}$.  (1)
+
+
+Define $g = f \circ f$ and $h = g * g$. The functions $f$ and $g = f * f$ have real values and by Corollary 5.3
+
+
+    $g(x) = \sum_{\chi \in F^*} |c_\chi|^2 \chi(x)$ and $h(x) = \sum_{\chi \in F^*} |c_\chi|^4 \chi(x)$ for $x \in F$.  (2)
+
+
+Moreover, $g(x) > 0$ if and only if $x \in E - E = E_{(2)}$. Analogously $h(x) > 0$ if and only if $x \in E_{(4)}$.
+
+
+    By Proposition 5.2(c) $\sum_{\chi \in F^*} |c_\chi|^2 = \frac{|E|}{|F|}$. Set $a = \frac{|E|}{|F|}$ and order the Fourier coefficients of $f$ so that
+
+
+        $|c_{\chi_0}| \geq |c_{\chi_1}| \geq \dots |c_{\chi_k}| \geq \dots$
+
+
+(note that they are finitely many). Thus $\chi_0 = 1$ and $c_{\chi_0} = a$ by (1). Then $\sum^k_{i=0} |c_{\chi_i}|^2 \leq \sum_{\chi \in F^*} |c_\chi|^2 = a$ for
+every $k \geq 0$. Consequently $(k + 1) |c_{\chi_k}|^2 \leq a$, so
+
+
+        $|c_{\chi_k}| \leq \frac{a^2}{(k + 2)^2}$  (3)
+
+
+Now let $m = [\frac{1}{a^2}]$. We are going to show now that with these $\chi_1, \dots, \chi_m \in F^*$ one has
+
+
+    $h(x) > 0$ for every $x \in U(\chi_1, \dots, \chi_m; \frac{\pi}{2})$.  (4)
+
+
+Clearly $Re\chi_k(x) \geq 0$ for $k = 1,2, \dots, m$ whenever $x \in U(\chi_1, \dots, \chi_m; \frac{\pi}{2})$ thus
+
+
+    $|a^4 + \sum^m_{k = 0} |c_{\chi_k}|^4 \chi_k(x)| \geq Re(a^4 + \sum^m_{k=1} |c_{\chi_k}|^4 \chi_k (x) \geq a^4)$.  (5)
+
+
+On the other hand, (3) yields
+
+
+    $\sum_{k \geq m + 1} |c_{\chi_k}|^4 \leq \sum_{k \geq m + 1} \frac{a^2}{(k + 1)^2} < a^2 \sum_{k \geq m + 1} \frac{1}{k(k+1)} \leq \frac{a^2}{m+1}$. (6)
+
+
+Since h has real values, (2), (5) and (6) givee
+
+
+$h(x) = |h(x)| = |a^4 + |c_{\chi_1}|^4 \chi_1 (x) + \dots | \geq |a^4 + \sum^m_{k=1} |c_{\chi_k}|^4 \chi_k (c)| - \sum_{k \geq m + 1} |c_{\chi_k}|^4 \geq a^4 - \frac{a^2}{m+1} \geq a^2(a^2 - \frac{1}{m+1}) > 0$.
+
+
+This proves (4). Therefore $U(\chi_1, \dots, \chi_m; \frac{\pi}{2}) \subseteq E_{(4)}$.
+
+
+
+Let us note that the estimate for the number $m$ of characters is certainly non-optimal when $E$ is too small.
+For example, when $E$ is just the singleton $\{0\}$, the upper bound given by the lemma is just $|F|^2$, while one
+can certainly find at most $m = |F| - 1$ characters $\chi_1, . . . , \chi_m$ (namely, all non-trivial $\chi_i \in F^*$) such that
+$U(\chi_1, . . . , \chi_m; \frac{\pi}{2}) = \{0\}$. For certain groups (e.g., $F = \mathbb{Z}^k_2$) one can find even a much smaller number (say
+$m = \log_2|F|$). Nevertheless, in the cases relevant for the proof of Folner's theorem, namely when the subset $E$
+is relatively large with respect to $F$, this estimate seems more reasonable.
+
+
+    The next lemma will be needed in the following proofs.
+
+
+\textbf{Lemma 5.5} Let $A$ be an abelian group and ${A_n}^{\infty}_{n=1}$ be a sequence of finite subsets of $A$ such that
+
+
+    $\lim_{n \to \infty} \frac{|(A_n - a) \cap A_n|}{|A_n|} = 1$
+
+
+for every $a \in A$. If $k$ is a positive integer and $V$ is a subset of A such that $k$ translates of $V$ cover $A$. then for
+every $\varepsilon > 0$ there exists $N > 0$ such that
+
+
+    $|V \cap A_n| > (\frac{1}{k} - \varepsilon) |A_n|$ (7)
+
+
+for every $i = 1, \dots, k$. Since $A_n = \bigcup^k_{i=1} (a_i + V) \cap A_n$, for every $n$ there exists $i_n \in \{1, \dots, k\}$ such that
+
+
+    $\frac{1}{k} |A_n| \leq |(a_{i_n} + V) \cap A_n| = |V \cap (A_n - a_{i_n})|$.
+
+
+Since $V \cap (A_n - a_{i_n}) \subseteq (V \cap A_n) \cup ((A_n - a_{i_n}) \ A_n)$  (7) yields
+
+
+    $\frac{1}{k}|A_n| \leq |V \cap (A_n - a_{i_n})| \leq |V \cap A_n| + |(A_n - a_{i_n}) / A_n| < |V \cap A_n| + \varepsilon |A_n|$.
+
+
+
+\textbf{Lemma 5.6 (Bogoliouboff-Folner lemma)}. Let $A$ be a finitely generated abelian group and let $r = r_0 (A)$. If
+$k$ is a positive integer and $V$ is a subset of $A$ such that $k$ translates of $V$ cover $A$, then there exist $\rho_1, . . . , \rho_s \in A^*$,
+where $s = 3_{2r}k^2$, such that $UA(\rho_1, . . . , \rho_s; \frac{\pi}{2}) \subseteq V_{(4)}$.
+
+
+\emph{Proof.} By Theorem 2.1 we have $A \cong \mathbb{Z}^r \times F$, where $F$ is a finite abelian group; so we can identify $A$ with the
+group $\mathbb{Z}^r \times F$. Define $A_n = (-n, n]^r \times F$, let $a = (a_1, . . . , a_r; f) \in \mathbb{Z}^r \times F$. Then $J_{ni} = (-n, n] \cap (-n-a_i, n-a_i]$
+satisfies $|J_{ni}| \geq 2n - |a_i|$. In particular, $J_{ni} \neq ∅$ for every $n > n_0 = max{|a_i| : i = 1, 2, . . . , n}$. As
+$(A_n-a) \cap A_n = \Pi^r_{i=1} J_{ni} \times F$, we have
+
+
+    $|(A_n - a)\cap A_n| \geq |F| * \Pi^r_{i=0} (2n - |a_i|)$
+
+or all $n > n_0$. Since $|A_n| = |F|(2n)^r$, we can apply Lemma 5.5. Thus for every $\varepsilon > 0$ we have
+
+
+    $|V \cap A_n| > (\frac{1}{k} - \varepsilon) |A_n|$\dots
+
+
+for every sufficiently large $n$. For $n$ with (8) define $G = A/(6n\mathbb{Z}^r)$ and $E = q(V \cap A_n)$ where $q$ is the canonical
+projection of $A$ onto $G$. Observe that $q \upharpoonright_{A_n}$ is injective, as $(A_n - A_n) \cap ker q = \{0\}$. Then (8) gives
+
+
+    $|E| = |V \cap A_n| > (\frac{1}{k} - \varepsilon) |A_n| = (\frac{1}{k} - \varepsilon) (An)^r |F|$
+
+
+and so 
+
+
+    $\frac{|G|}{|E|} \leq \frac{(6n)^r |F|}{(\frac{1}{k} - \varepsilon) (2n)^r |F|} = \frac{3^r k}{1 - k \varepsilon}$
+
+
+Fix $\varepsilon > 0$ sufficiently small to have $[\frac{3^{2r}k^2}{(1-k \varepsilon)^2}] = 3^{2r}k^2$ and pick sufficiently large $n$ to have (8). Now apply the
+Bogoliouboff Lemma 5.4 to find $s = 3^{2r}k^2$ characters $\xi_{1_n}, . . . , \xi_{s_n} \in G^*$ such that $U_G(\xi_{1_n}, . . . , \xi_{s_n}; \frac{\pi}{2}) \subseteq E_{(4)}$.
+For $j = 1, . . . , s$ define $\varrho_{jn} = \xi_{jn} \circ \pi \in A^*$. If $a \in A_n \cap U_A(\varrho_{1n}, . . . , \varrho_{sn}; \frac{\ppi}{2})$ then $q(a) \in U_A(\xi_{1n}, . . . , \xi_{sn};\frac{\pi}{2}) \subseteq E(4)$
+and so there exist $b_1, b_2, b_3, b_4 \in V \cap A_n$ and $c = (c_i) \in 6n \mathbb{Z}^r$ such that $a = b_1 - b_2 + b_3 - b_4 + c$. Now
+
+
+    $c = a - b_1 + b_2 - b_3 + b_4 \in (A_n)_{(4)} + A_n$
+
+
+implies $|c_i| \leq 5n$ for each $i$. So $c = 0$ as $6n$ divides $c_i$ for each $i$. Thus $a \in V_{(4)}$ and so
+
+
+    $A_n \cap U_A (\varrho_{1n}, \dots, \varrho_{sn}; \frac{\pi}{2}) \subseteq V_{(4)}$  (9)
+
+
+for all $n$ satisfying (8).
+
+
+    By Lemma 4.2 there exists $\varrho_1, \dots, \varrho_s \in A^*$ and a subsequence $\{n_l\}_l$ of $\{n\}_{n \in \mathbb{N}_+}$ such that $\varrho_i (a) = lim_l \varrho_{in_l} (a)$
+for every $i = 1, \dots, s$ and $a \in A$. We are going to prove now that
+
+
+    $U_A (\varrho_1, \dots, \varrho_s; \frac{\pi}{2}) \subseteq V_{(4)}$  (10)
+
+
+    Take $a \in U_A (\varrho_1, \dots, \varrho_s; \frac{\pi}{2})$. Since $A = \bigcup^{\infty}_{l=k}A_{n_l}$ for every $k \in \mathbb{N}_+$, there exists $n_0$ satisfying (8) and $a \in A_{n_0}$. 
+As $\varrho_i(a) = \lim_l \varrho_{in_l}(a)$ for every $i = 1, \dots, s$, we can pick $l$ to have $n_l \geq n_0$ and $|Arg(\varrho_{in_l} (a))| < \pi/2$ for every
+$i = 1, \dots, s,$ i.e., $a \in U_A (\varrho_{1n_l}, \dots, \varrho_{sn_l}; \frac{\pi}{2}) \cap A_{n_l}$. Now (9), applied to $n_l$, yields $a \in V_{(4)}$. This proves (10).
+
+
+    Our next aim is to eliminate the dependence of the number $m$ of characters on the free rank of the group $A$
+in Bogoliouboff - Folner's lemma. The price to pay for this is taking $V_{(8)}$ instead of $V_(4)$.
+
+
+\textbf{Lemma 5.7 (Folner lemma)}. Let $A$ be an abelian group. If $k$ is a positive integer and $V$ be a subset of $A$ such
+that $k$ translates of $V$ cover $A$, then there eexist $\chi_1, \dots, \chi_m \in A^*$, where $m = k^2$, such that $U_A (\chi_1, \dots, \chi_m; \frac{\pi}{2}) \subseteq V_{(8)}$ 
+
+
+\emph{Proof}. We consider first the case when $A$ is finitely genereated. Let $r = r_0 (A)$. By Lemma 5.6 there exist 
+$\varrho_1, \dots, \varrho_s \in A^*$, where $s = 3^{2r}k^2$, such that
+
+
+    $U_A (\varrho_1, \dots, \varrho_s; \frac{\pi}{2}) \subseteq V_{(4)}$ 
+
+
+
+    Since it is finitely generated, we can identify $A$ with $\mathbb{Z}^r \times F$, where $F$ is a finite abelian group. For $t \in \{1, \dots, r\}$define
+a monomorphism $i_l : \mathbb{Z} \hookrightarrow A$ by letting
+
+
+    $i_l (n) - (\underbrace{0, \dots, 0, n}_t, 0, \dots, 0; 0) \in A$
+
+
+    Then each $κ_{jt} = \varrho_j \circ i_t$, where $j \in {1, . . . , s}, t \in {1, . . . , r}$, is a character of $\mathbb{Z}$. By Proposition 4.30 the subset
+
+
+    $L = U_{\mathbb{Z}} (\{\kappa_{jt} : j = 1, \dots, s, t=1, \dots, r\}; \frac{\pi}{8r})$
+
+
+of $\mathbb{Z}$ is infinite. Let $L^0 = \bigcup^r_{t=1} i_t (L)$, i.e., this is the set of all elements of $A$ of the form $\pm i_t (n)$ with $n \in L$ and 
+$t \in \{1, \dots, r\}$. Then obviously $L^0 = -L^0 \subseteq U_A (\varrho_1, \dots, \varrho_s; \frac{\pi}{8r})$, therefor,
+
+
+    $L^0_{(4r)} \subseteq U_A (\varrho_1, \dots, \varrho_s; \frac{\pi}{2}) \subseteq V_{(4)}$.  $(\lambda)$
+
+
+    
+    Define $A_n = (-n, n]r \times F$ and pick $\varepsilon > 0$ such that $\frac{k}{1-k\varepsilon}^2= k^2$. As in Lemma 5.6 $A_n$ satisfies the
+hypotheses of Lemma 5.5 and so $|V \cap A_n| > (\frac{1}{k} - \varepsilon)|A_n|$ for sufficiently large $n$. Moreover, we choose this
+sufficiently large n from L. Let $G_n = A/(2n \mathbb{Z}^r) \cong \mathbb{Z}^r_{2n} \times F$ and $E = q(A_n \cap V )$ where $q$ is the canonical
+projection $A \to G_n$. Then $q \upharpoonright_{A_n}$ is injective as $(A_n - A_n) \cap ker q = 0$. So $q$ induces a bijection between $A_n$ and
+$G_n$ on one hand, and between $V \cap A_n$ and $E$. Thus $|A_n| = |G_n| = (2n)^r |F|$, $|E| > (\frac{1}{k} - \varepsilon)|An|$ and so
+
+
+    $(\frac{|Gn|}{|E|})^2 \leq (\frac{k}{\varepsilon k - 1})^2 \leq k^2$
+
+
+    
+    To the finite group $G_n$ apply the Bogoliouboff Lemma 5.4 to get $\xi_{1n}, \dots , \xi_{mn} \in G^*_n$, where $m = k^2$, such tha
+
+
+    $U_{G_n} (\xi_{1n}, \dots, \xi_{mn}; \frac{\pi}{2}) \subseteq E_{(4)}$.
+
+    
+Let $\chi_{jn} = \xi_{jn} \circ q \in A^*$. If $a \in A_n \cap U_A(\chi_{1n}, . . . , \chi_{mn}; \frac{\pi/2})$, then $q(a) \in U_{G_n}(\xi_{1n}, . . . , \xi_{mn}; \frac{\pi}{2}) \subseteq E_{(4)}$. Therefore
+there exist $b_1, b_2, b_3, b_4 \in A_n \cap V$ and $c = (c_i) \in 2n\mathbb{Z}^r$ such that $a = b_1 - b_2 + b_3 - b_4 + c$. Since $2n$ divides $c_i$ for
+every $i$ and $|c_i| \leq 5n$, we conclude that $c_i \in {0, \pm 2n \pm 4n}$ for $i = 1, 2, . . . , r$. This means that $c$ can be written
+as a sum of at most $4r$ elements of $L^0$. This gives $c ∈ L^0_{(4r)} \subseteq V(4)$ by $(\lambda)$, consequently $a \in V_{(8)}$. Therefore
+
+
+    $A_n \cap U_A (\chi_{1n}, \dots, \chi_{mn}; \frac{\pi}{2}) \subseteq V_{(8)}$
 \end{document}
