@@ -661,7 +661,7 @@ In other words, as far as continuous functions are concerned, in the definition 
 approximates via (linear combinations of) continuous or discontinuous characters.
 
 
-4.2. Local forms of Stone-Weierstraß theorem
+\subsection{4.2. Local forms of Stone-Weierstrab theorem}
 
 
 \textbf{Theorem 4.4.} (Stone–Weierstraß theorem). Let $X$ be a compact topological space. A $\mathbb{C}$-subalgebra $\mathcal{A}$ of $C(X)$ containing all constants
@@ -713,5 +713,235 @@ $|\sum^{m}_{i=1} c_i \chi_i (x) -f(x)| < \frac{\epsilon}{4}$ for every $x \in X$
 
         $\delta = \frac{\varepsilon}{2m \max_{i=1,...,m} |c_i|}$
 
+
+then $x - y \in U(\chi_1, \dots, \chi_m; \delta)$ implies $\sum^m_{i=1} |c_i| * |\chi_i (x) - \chi_i (y)| , \frac{\varepsilon}{2}$ and so also $|\sum^m_{i=1} c_i \chi_i (x) - \sum^m_{i=1} c_i \chi_i (x)| < \frac{\varepsilon}{2}$. 
+Consequently,
+
+
+    $|f(x) - f(y)| \leqslant |f(x) - \sum^m_{i=1} c_i \chi_i (x)| + |\sum^m_{i=1} c_i \chi_i (x) - \sum^m_{i=1} c_i \chi_i (y)| + |\sum^m_{i=1} c_i \chi_i (y) - f(y)| < \varepsilon$
+
+
+$(b) \Longrightarrow (a)$ Let $\beta (X)$ be the Cech-Stone compactification of $X$ endowed with the discrete topology. If $F : X \to \mathbb{C}$ is bounded,
+there exists a unique continuous extension $F^{\beta}$ of $F$ to $\beta X$. Let $\mathcal{S}$ be the collection of all continuous functions $g$ on $\beta X$
+such that $g = \sum^n_{j=1} c_j \chi^\beta_j$ with $\chi_j \in H$, $c_j \in \mathbb{C}$ and $n \in \mathbb{N}_+$. Then $\mathbb{S}$ is a subalgebra of $\mathcal{C} (\beta X, \mathbb{C})$ closed under conjugation
+and contains all constants. In fact in $\mathcal{S}$ we have $\chi_k^\beta \chi_j^\beta = (\chi_k \chi_j)^\beta$ by definition and $\bar{\chi^\beta} = (\bar{\chi})^\beta$ because $\chi \bar{\chi} = 1$ and so
+$(\chi \bar{\chi})^\beta = \chi^\beta(\bar{\chi})^\beta$, that is $(\bar{\chi})^\beta = (\chi^{-1})^\beta = \bar{\chi^\beta} $.
+
+
+    Now we will see that $\mathbb{S}$ separates the points of $\beta X$ separated by $f^\beta$, in order to apply the local Stone-Weierstrab
+Corollary 4.5. Let $x, y \in \beta X$ and $f^\beta (x) \neq f \beta (y)$. Consider two nets ${x_i}_i$ and ${y_i}_i$ in $X$ such that $x_i \to x$ and $y_i \to y$. Since
+$f^\beta$ is continuous, we have $f^\beta (x) = lim f (x_i)$ and $f^\beta (y) = lim f (y_i)$. Along with $f^\beta (x) \neq f^\beta (y)$ this implies that there exists
+$\varepsilon > 0$ such that $|f (x_i) - f (y_i)| \geqslant \varepsilon$ for every sufficiently large $i$. By the hypothesis there exist $\delta > 0$ and $\chi_1,...,\chi_k \in H$
+such that for every $u, v \in X$ if $u - v \in U_G (\chi_1, \dots ,\chi_k; \delta)$ then $| f (u) - f (v)| < \varepsilon$. Assume $\chi^\beta_j (x) = \chi^\beta_j (y)$ holds true for every
+$j = 1, \dots ,k$. Then $x_i - y_i \in U_G(\chi_1,...,\chi_k; \delta)$ for every sufficiently large $i$, and this contradicts (a). So each pair of points
+of $\beta X$ separated by $f \beta$ is also separated by $\mathcal{S}$. Since $\beta X$ is compact, one can apply the local version of the Stone-WeierstraB
+Corollary 4.5 to $\mathbb{S}$ and $f^\beta$ and so $f^\beta$ can be uniformly approximated by $\mathcal{S}$. To conclude note that if $g = \sum c_j\chi^\beta_j$ on $\beta X$
+then $g \upharpoonright_X = \sum c_j \chi_j$.
+
+
+    The reader familiar with uniform spaces will note that item (b) is nothing else but $T_H$ -uniform continuity of $f$.
+
+
+    The use of the Cech-Stone compactification in the above proof is inspired by Nobeling and Beyer [23] who proved that
+if $S$ is a subalgebra of $B(X)$, for some set $X$, containing the constants and stable under conjugation, then $g \in B(X)$ belongs
+to the closure of $S$ with respect to the norm topology if and only if for every net $(x_\alpha)$ in $X$ the net $g(x_\alpha)$ is convergent
+whenever the nets $f(x_\alpha)$ are convergent for all $f \in S$.
+
+
+\subsection{4.3. Independence of characters}
+
+
+    We apply now Prodanov's lemma for indiscrete $G$. Note that for $U$ and $f$ as in that lemma, this yields $U = G$ and $f$ is
+necessarily a constant function.
+
+
+\textbf{Corollary 4.7}. Let $G$ be an abelian group, $g \in \mathfrak{X}_0 (G)$ and M be a closed convex subset of $\mathbb{C}$. If $g(x) - c \in M$ for some $c \in \mathbb{C}$ and for
+every $x \in G$, then $c \in M$.
+
+
+\emph{Proof.} Assume that $g(x) = \sum^k_{j=1} c_j \chi_j(x)$ for some $c_1,..., c_k \in \mathbb{C}$ and non-constant $\chi_1,...,\chi_k \in G^*$. Apply Lemma 4.1 with $G$
+indiscrete, $U = G$ and $f$ the constant function $c$. Since all characters $\chi_1,...,\chi_k$ are discontinuous, we conclude $c \in M$ with
+Lemma 4.1. 
+
+
+    Taking as $M$ the closed disk with center 0 and radius $\varepsilon > 0$ we obtain the following corollary:
+
+
+\textbf{Corollary 4.8.} Let $G$ be an abelian group, $g \in \mathfrak{X}_0 (G)$ and $\varepsilon > 0$. If $\|g(x) + c\| \leqslant  \varepsilon$ for some $c \in \mathbb{C}$, then $|c| \leqslant \varepsilon$.
+
+
+    Using this corollary we shall see now that for an abelian group $G$ the characters $G^*$ not only span $\mathfrak{X}(G)$ as a base, but
+they have a much stronger independence property (see Corollary 4.11 and the preceding text).
+
+
+\textbf{Corollary 4.9.} If $G$ is an abelian group and $\chi_0,\chi_1,...,\chi_k \in G^*$ are distinct characters, then $\|\chi_0 - \sum^k_{j=1} c_j \chi_j\| \leqslant 1$ for every
+$c_1, \dots, c_k \in \mathbb{C}$.
+
+
+\textbf{Proof.} Let $\varepsilon = \| \sum^k_{j=1} c_j \chi_j - \chi_0 \|$. By our assumption $\xi_j = \chi_j \chi^{-1}_0$ is non-constant for every $j = 1, 2, \dots, n$. So our assumption
+and the choice of $\varepsilon$ yield $g = \sum^m_{j=1} c_j \xi_j \in \mathfrak{X}_0$ and $\| g(x) - 1 \| = \| \sum^m_{j=1} c_j \chi_j \chi^{-1}_0 - 1\| \leqslant \varepsilon$. Then $|1| \leqslant \epsilon$ by the previous
+corollary. 
+
+
+    Clearly, $\frac{1}{2}$ can be replaced by any constant $< 1$ in the next corollary.
+
+
+\textbf{Corollary 4.10.} Let $G$ be an abelian group and $\chi \in G^*$ such that there exist $k \in \mathbb{N}_+, \chi_1,...,\chi_k \in H$ and $c_1,..., c_k \in \mathbb{C}$ such that
+$\| \sum^k_{j=1} c_j \chi_j (x) - \chi(x)\|  \frac{1}{2}$. Then $\chi = \chi_i$ for some $i$.
+
+
+    This corollary implies, in particular, that $G^*$ is a base of the $\mathbb{C}$-linear space $\maathfrak{X}(G)$. Actually, a much stronger property
+holds: for every $\chi \in G^*$ the $\mathbb{C}$-hyperspace of $\mathfrak{X}(G)$ spanned by $G^* \ {χ}$ is closed. In particular:
+
+
+\textbf{Corollary 4.11.}
+
+
+\textbf{Corollary 4.12.}
+
+
+\textbf{Proof.}
+
+
+\section{Peter-Weyl's theorem and Pontryagin-van Kampen duality theorem}
+
+
+    Here we give further applications of Prodanov's lemma towards obtaining an elementary proof of Folner's theorem and
+consequently Peter-Weyl's theorem, Comfort and Ross's theorem.
+
+
+\subsection{5.1 Folner's theorem}
+
+
+    Again, this theorem can be proved for abelian groups $G$ endowed with a topology such that for every $g \in G$ and every
+$n \in Z$, the functions $x \mapsto g + x$ and $x \mapsto nx$ on $G$ are continuous [8, Theorem 1.4.3].
+
+
+\textbf{Theorem 5.1} (Folner's Theorem). Let $G$ be a topological abelian group. If $k$ is a positive integer and $E$ is a $k$-big subset of $G$, then for
+every neighborhood $U$ of 0 in $G$ there exist $\chi_1,...,\chi_m \in G$, where $m = k^2$, and $\delta > 0$ such that
+
+
+    $U_G(\chi_1,...,\chi_m; \delta) \subseteq U - U + E_{(8)}$.  (1)
+
+
+\textbf{Proof.} By Lemma 2.3, there exist $\varphi_1,...,\varphi_m \in G^*$ such that $U_G(\varphi_1,...,\varphi_m; \frac{\pi}{2} ) \subseteq E_{(8)}$, where the characters $\varphi_j$ can be
+discontinuous. Using Prodanov's lemma, we intend to replace these characters by continuous ones “enlarging” $E_{(8)}$ to
+$U - U + E_{(8)}$.
+
+
+    Clearly, $C := \bar{E_{(8)} + U }\subseteq E_{(8)} + U - U$. Consider the open set $X = U \cup (G \ C)$ and the continuous function $f : X \to C$
+defined by
+
+
+    $f(x) = \{^{0 \text{ if } x \in U}_{1 \text{ if } x \in G / C} $
+
+
+    Let $H$ be the subgroup of $G^*$ generated by $\varphi_1,...,\varphi_m$. Take $x, y \in X$ with $x - y \in U_G(\varphi_1,...,\varphi_m; \frac{\pi}{2} ) \subseteq E_{(8)}$. So if $y \in U$ then
+$x \in E_{(8)} + U$ and consequently $x \notin G / E_{(8)} + U$, that is $x \in U$. Analogously, $x \in U$ yields $y \in U$. Thus $f(x) = f(y)$ whenever
+$x - y \in U_G(\varphi_1,...,\varphi_m; \frac{\pi}{2} ) \subseteq E_{(8)}$. So by Proposition 4.6 one can uniformly approximate $f$ on $X$ by characters from $H$. Hence
+one can find products $\xi_J = \varphi^{j1}_1 · \dots · \varphi^{jm}_m$, with $\tilde{j} = (j_1,..., j_m) \in \mathbb{Z}^m$ and $c_{\tilde{j}} \in \mathbb{C}$ such that $|\sum_{\tilde{J}} c_{\tilde{J}} \xi_{\tilde{J}}(x) - f(x)| \leqslant \frac{1}{3}$ for every
+$x \in X$. Letting $x = 0$ gives $|\sum_{\tilde{J}} c_{\tilde{J}}|  \frac{1}{3}$, and consequently,
+
+
+    $\frac{2}{3} \leqslant |\sum_{\tilde{J}} c_{\tilde{J}} - 1|$
+
+
+    Since $X$ is open and $f$ is continuous, applying Lemma 4.1 to the convex closed set $M = \{z \in \mathbb{C}: |z|  \frac{1}{3}\}$, we may assume
+that all characters $\xi_{\tilde{J}}$ are continuous.
+
+
+Since the group $H$ is $m$-generated, its subgroup $\Phi = H \cap \hat{G}$ of $H$ has at most $m$ generators $\chi_1,...,\chi_m \in \Phi$. Thus,
+$\xi_{\tilde{J}} = \chi^{s_1(\tilde{J})}_1 · ··· · \chi^{s_m(\tilde{J})}_m$ with appropriate $s_1(\tilde{J}), . . . , s_m(\tilde{J}) \in \mathbb{Z}$. Choose $\varepsilon > 0$ with $\varepsilon \sum_\tilde{J} |c_\tilde{J}| < \frac{1}{3}$. There exists $\delta > 0$ such that
+$|\xi_{\tilde{J}}(x) - 1| \leqslant \varepsilon$ for all summands $\xi_{\tilde{J}}$ whenever $x \in U_G (\chi_1,...,\chi_m; \delta)$. We claim that (1) holds for this $\delta$. Indeed, assume that
+there exists $x \in U_G (\chi_1,...,\chi_m; \delta) \ (U - U + E_{(8)})$. Then $x \in G \ C$, and the definition of $f$ gives $f(x) = 1$, so
+
+
+$|\sum_{\tilde{J}} c_{\tilde{J}} - 1| \leqslant |\sum_{\tilde{J}} c_{\tilde{J}}(1 - \xi_{\tilde{J}}(x))| + |\sum_{\tilde{J}} c_{\tilde{J}} \xi_{\tilde{J}}(x) - f(x)| \leqslant \epsilon \sum_{\tilde{J}} |c_{\tilde{J}}| + \frac{1}{3} < \frac{2}{3}$
+
+
+which contradicts (2). This proves (1). 
+
+% Consider this the end of this document.%
+
+    In Følner’s proof [12], π/2 stays in place of δ > 0. He makes recourse to mean values and a theorem of Godeman on
+positively defined functions. Cotlar and Ricabarra [6] use mean values and Krein–Mil’man’s theorem to obtain a similar
+result: for an abelian topological group G and x ∈ G \ {0} there exists χ ∈ G with χ(x) 	= 1 if and only if there exists a big
+neighborhood U of 0 such that x ∈/ U(6).
+
+
+\subsection{5.2. Peter-Weyl's theorem and precompact group topologies on abelian groups}
+
+
+    In this subsection we prove Peter–Weyl’s theorem using Følner’s theorem. Moreover, we use Prodanov’s lemma (via
+Corollary 4.12) to prove Comfort–Ross’ theorem [5] describing the precompact topologies of the abelian groups.
+The next theorem characterizes the precompact topologies on abelian groups.
+
+
+Theorem 5.2. Let (G, τ ) be an abelian group. The following conditions are equivalent:
+
+(a) τ is precompact;
+
+(b) there exists a group H of continuous characters of G that separates the points of G and such that τ = TH .
+
+Proof. (b) ⇒ (a) was already proved in Proposition 3.4.
+
+
+(a) ⇒ (b) If H = (G, τ ) then TH ⊆ τ . Let U and V be open neighborhoods of 0 in (G, τ ) such that V(10) ⊆ U. Then V is
+big and by Følner’s Theorem 5.1 there exist continuous characters χ1,...,χm of G such that UG(χ1,...,χm; δ) ⊆ V(10) ⊆ U
+for some δ > 0. Thus U ∈ TH and τ ⊆ TH . ✷
+
+
+Corollary 5.3 (Peter–Weyl’s theorem). If G is a compact abelian group, then G separates the points of G.
+
+
+Proof. Let τ be the topology of G. By Theorem 5.2 there exists a group H of continuous characters of G (i.e., H ⊆ G) such
+that τ = TH . Since H ⊆ G we conclude that G separates the points of G. ✷
+
+
+Corollary 5.4. If G is a compact abelian group, then G is isomorphic to a (closed) subgroup of the power TG .
+
+
+Proof. Since the characters χ ∈ G separate the points of G, the diagonal map determined by all characters defines a continuous injective homomorphism G 	→ TG . By the compactness of G and the open mapping theorem, this is the required
+embedding. 
+
+
+Corollary 5.5. If G is compact, then C(G) ⊆ A(G).
+
+
+Proof. Stone–Weierstraß theorem and Peter–Weyl’s theorem imply that every f ∈ C(G) can be uniformly approximated by
+linear combinations, with complex coefficients, of characters of G when G is compact, i.e. C(G) ⊆ A(G). ✷
+
+
+    In the sequel w(G) and χ(G) will denote the weight and the character, respectively, of a topological group G.
+
+
+Theorem 5.6 (Comfort and Ross). Let G be an abelian group. Then the map H T→ TH is an order preserving bijection between subgroups
+H  G∗ and totally bounded group topologies on G. Moreover, w(G,TH ) = χ(G,TH ) = |H|. In particular, TH is metrizable iff H is
+countable.
+
+
+Proof. Theorem 5.2 yields that TH is totally bounded and T is surjective. By Corollary 4.12, TH1 = TH2 for H1, H2 ∈ H yields
+H1 = H2. Therefore, T is a bijection.
+
+
+    Since TH is the initial topology of G with respect to the diagonal map G → TH , χ(G,TH )  w(G,TH )  w(TH ) = |H|. To
+check κ := χ(G,TH )  |H|, pick a base B of the neighborhoods at 0 of TH of size κ. By the definition of TH , every element
+B ∈ B can be written as B = UG(χ1,B ,...,χnB ,B ; 1/mB ), where nB ,mB ∈ N and χi,B ∈ H for i = 1,...,nB . Then the subset
+H = {χi,B : B ∈ B, i = 1,...,nB } of H has |H|  κ and TH = TH . So, H = H. Hence |H|=|H |  κ. 
+
+
+5.3. Pontryagin–van Kampen duality theorem and structure of the locally compact abelian groups
+
+
+    Here we give a complete proof of Pontryagin–van Kampen duality theorem [25,18] in the case of discrete and compact
+groups (see Remarks 5.10 and 5.14 for the general case). To this end we need the following immediate corollary of
+Theorem 5.6.
+
+
+Corollary 5.7. If (G, τ ) is a compact abelian group and H  G separates the points of G, then H = G.
+
+
+Proof. τ = TG by Theorem 5.2. Since TH ⊆ TG and TH is Hausdorff by Theorem 5.6, then TH = TG by the compactness
+of TG . Now again Theorem 5.6 yields H = G. 
 
 \end{document}
