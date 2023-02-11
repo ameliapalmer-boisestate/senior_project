@@ -861,87 +861,91 @@ $|\sum_{\tilde{J}} c_{\tilde{J}} - 1| \leqslant |\sum_{\tilde{J}} c_{\tilde{J}}(
 
 which contradicts (2). This proves (1). 
 
-% Consider this the end of this document.%
 
-    In Følner’s proof [12], π/2 stays in place of δ > 0. He makes recourse to mean values and a theorem of Godeman on
-positively defined functions. Cotlar and Ricabarra [6] use mean values and Krein–Mil’man’s theorem to obtain a similar
-result: for an abelian topological group G and x ∈ G \ {0} there exists χ ∈ G with χ(x) 	= 1 if and only if there exists a big
-neighborhood U of 0 such that x ∈/ U(6).
+    In Folner's proof [12], $\pi /2$ stays in place of $\delta > 0$. He makes recourse to mean values and a theorem of Godeman on
+positively defined functions. Cotlar and Ricabarra [6] use mean values and Krein-Mil'man's theorem to obtain a similar
+result: for an abelian topological group $G$ and $x \in G / \{0\}$ there exists $\chi \in G$ with $\chi(x) \neq 1$ if and only if there exists a big
+neighborhood $U$ of 0 such that $x \notin  U_{(6)}$.
 
 
 \subsection{5.2. Peter-Weyl's theorem and precompact group topologies on abelian groups}
 
 
-    In this subsection we prove Peter–Weyl’s theorem using Følner’s theorem. Moreover, we use Prodanov’s lemma (via
-Corollary 4.12) to prove Comfort–Ross’ theorem [5] describing the precompact topologies of the abelian groups.
+    In this subsection we prove Peter-Weyl's theorem using Folner's theorem. Moreover, we use Prodanov's lemma (via
+Corollary 4.12) to prove Comfort-Ross' theorem [5] describing the precompact topologies of the abelian groups.
 The next theorem characterizes the precompact topologies on abelian groups.
 
 
-Theorem 5.2. Let (G, τ ) be an abelian group. The following conditions are equivalent:
+\textbf{Theorem 5.2}. Let $(G, \tau)$ be an abelian group. The following conditions are equivalent:
 
-(a) τ is precompact;
+\begin{itemize}
 
-(b) there exists a group H of continuous characters of G that separates the points of G and such that τ = TH .
+    (a) $\tau$ is precompact;
 
-Proof. (b) ⇒ (a) was already proved in Proposition 3.4.
+    (b) there exists a group $H$ of continuous characters of $G$ that separates the points of $G$ and such that $\tau = \mathcal{T}_H$.
 
+\end{itemize}
 
-(a) ⇒ (b) If H = (G, τ ) then TH ⊆ τ . Let U and V be open neighborhoods of 0 in (G, τ ) such that V(10) ⊆ U. Then V is
-big and by Følner’s Theorem 5.1 there exist continuous characters χ1,...,χm of G such that UG(χ1,...,χm; δ) ⊆ V(10) ⊆ U
-for some δ > 0. Thus U ∈ TH and τ ⊆ TH . ✷
-
-
-Corollary 5.3 (Peter–Weyl’s theorem). If G is a compact abelian group, then G separates the points of G.
+\textbf{Proof.} $(b) \Rightarrow (a)$ was already proved in Proposition 3.4.
 
 
-Proof. Let τ be the topology of G. By Theorem 5.2 there exists a group H of continuous characters of G (i.e., H ⊆ G) such
-that τ = TH . Since H ⊆ G we conclude that G separates the points of G. ✷
+$(a) \Rightarrow (b)$ If $H = \hat{(G, \tau)}$ then $\mathcal{T}_H \subseteq τ$. Let $U$ and $V$ be open neighborhoods of 0 in $(G, \tau)$ such that $V_{(10)} \subseteq U$. Then $V$ is
+big and by Folner's Theorem 5.1 there exist continuous characters $\chi_1,...,\chi_m$ of $G$ such that $U_G(\chi_1,...,\chi_m; \delta) \subseteq V_{(10)} \subseteq U$
+for some $\delta > 0$. Thus $U \in \mathcal{T}_H$ and $τ \subseteq \mathcal{T}_H$.
 
 
-Corollary 5.4. If G is a compact abelian group, then G is isomorphic to a (closed) subgroup of the power TG .
+\textbf{Corollary 5.3} (Peter-Weyl's theorem). If $G$ is a compact abelian group, then $G$ separates the points of $G$.
 
 
-Proof. Since the characters χ ∈ G separate the points of G, the diagonal map determined by all characters defines a continuous injective homomorphism G 	→ TG . By the compactness of G and the open mapping theorem, this is the required
+\textbf{Proof.} Let $\tau$ be the topology of $G$. By Theorem 5.2 there exists a group $H$ of continuous characters of $G$ (i.e., $H \subseteq \hat{G}$) such
+that $\tau = \mathcal{T}_H$. Since $H \subseteq \hat{G}$ we conclude that $G$ separates the points of $G$. 
+
+
+\textbf{Corollary 5.4.} If $G$ is a compact abelian group, then $G$ is isomorphic to a (closed) subgroup of the power $\mathbb{T}^{\hat{G}}$.
+
+
+\textbf{Proof.} Since the characters $\chi \in G$ separate the points of $G$, the diagonal map determined by all characters defines a continuous
+injective homomorphism $G \hookrightarrow \mathbb{T}^{\hat{G}}$. By the compactness of G and the open mapping theorem, this is the required
 embedding. 
 
 
-Corollary 5.5. If G is compact, then C(G) ⊆ A(G).
+\textbf{Corollary 5.5.} If $G$ is compact, then $C(G) \subseteq \mathfrak{A}(G)$.
 
 
-Proof. Stone–Weierstraß theorem and Peter–Weyl’s theorem imply that every f ∈ C(G) can be uniformly approximated by
-linear combinations, with complex coefficients, of characters of G when G is compact, i.e. C(G) ⊆ A(G). ✷
+\textbf{Proof.} Stone-WeierstraB theorem and Peter-Weyl's theorem imply that every $f ∈ C(G)$ can be uniformly approximated by
+linear combinations, with complex coefficients, of characters of $G$ when $G$ is compact, i.e. $C(G) \subseteq \mathfrak{A}(G)$. 
 
 
-    In the sequel w(G) and χ(G) will denote the weight and the character, respectively, of a topological group G.
+    In the sequel $w(G)$ and $\chi(G)$ will denote the weight and the character, respectively, of a topological group $G$.
 
 
-Theorem 5.6 (Comfort and Ross). Let G be an abelian group. Then the map H T→ TH is an order preserving bijection between subgroups
-H  G∗ and totally bounded group topologies on G. Moreover, w(G,TH ) = χ(G,TH ) = |H|. In particular, TH is metrizable iff H is
+\textbf{Theorem 5.6} (Comfort and Ross). Let $G$ be an abelian group. Then the map $H \mapsto^{T} \mathcal{T}_H$ is an order preserving bijection between subgroups
+$H \leqslant G^*$ and totally bounded group topologies on $G$. Moreover, $w(G,\mathcal{T}_H) = \chi(G,\mathcal{T}_H) = |H|$. In particular, $\mathcal{T}_H$ is metrizable iff $H$ is
 countable.
 
 
-Proof. Theorem 5.2 yields that TH is totally bounded and T is surjective. By Corollary 4.12, TH1 = TH2 for H1, H2 ∈ H yields
-H1 = H2. Therefore, T is a bijection.
+\textbf{Proof.} Theorem 5.2 yields that $\mathcal{T}_H$ is totally bounded and $T$ is surjective. By Corollary 4.12, $\mathcal{T}_{H_1} = \mathcal{T}_{H_2}$ for $H_1, H_2 \in \mathcal{H}$ yields
+$H_1 = H_2$. Therefore, $T$ is a bijection.
 
 
-    Since TH is the initial topology of G with respect to the diagonal map G → TH , χ(G,TH )  w(G,TH )  w(TH ) = |H|. To
-check κ := χ(G,TH )  |H|, pick a base B of the neighborhoods at 0 of TH of size κ. By the definition of TH , every element
-B ∈ B can be written as B = UG(χ1,B ,...,χnB ,B ; 1/mB ), where nB ,mB ∈ N and χi,B ∈ H for i = 1,...,nB . Then the subset
-H = {χi,B : B ∈ B, i = 1,...,nB } of H has |H|  κ and TH = TH . So, H = H. Hence |H|=|H |  κ. 
+    Since $\mathcal{T}_H$ is the initial topology of $G$ with respect to the diagonal map $G \to \mathbb{T}^H$ , $\chi(G,\mathcal{T}_H ) \leqslant w(G,\mathcal{T}_H) \leqslant w(\mathbb{T}^H ) = |H|$. To
+check $\kappa := \chi(G,\mathcal{T}_H ) \geqslant |H|$, pick a base $\mathcal{B}$ of the neighborhoods at 0 of $\mathcal{T}_H$ of size $\kappa$. By the definition of $\mathcal{T}_H$, every element
+$B \in \mathcal{B}$ can be written as $B = U_G(\chi_{1,B} ,...,\chi_{n_B,B} ; 1/m_B )$, where $n_B ,m_B \in \mathbb{N}$ and $\chi_{i,B} \in H$ for $i = 1,...,n_B$ . Then the subset
+$H' = \{\chi_{i,B} : B \in B, i = 1,...,n_B \}$ of $H$ has $|H'| \leqslant \kappa$ and $\mathcal{T}_{(H')} = \mathcal{T}_H$. So, $\langle H' \rangle = H$. Hence $|H|=|H'| \leqslant \kappa$. 
 
 
-5.3. Pontryagin–van Kampen duality theorem and structure of the locally compact abelian groups
+\subsection{5.3. Pontryagin-van Kampen duality theorem and structure of the locally compact abelian groups}
 
 
-    Here we give a complete proof of Pontryagin–van Kampen duality theorem [25,18] in the case of discrete and compact
+    Here we give a complete proof of Pontryagin-van Kampen duality theorem [25,18] in the case of discrete and compact
 groups (see Remarks 5.10 and 5.14 for the general case). To this end we need the following immediate corollary of
 Theorem 5.6.
 
 
-Corollary 5.7. If (G, τ ) is a compact abelian group and H  G separates the points of G, then H = G.
+\textbf{Corollary 5.7.} If $(G, \tau)$ is a compact abelian group and $H \leqslant \hat{G}$ separates the points of $G$, then $H = \hat{G}$.
 
 
-Proof. τ = TG by Theorem 5.2. Since TH ⊆ TG and TH is Hausdorff by Theorem 5.6, then TH = TG by the compactness
-of TG . Now again Theorem 5.6 yields H = G. 
+\textbf{Proof.} $\tau = \mathcal{T}_{\hat{G}}$ by Theorem 5.2. Since $\mathcal{T}_H \subseteq \mathcal{T}_{\hat{G}}}$ and $\mathcal{T}_H$ is Hausdorff by Theorem 5.6, then $\mathcal{T}_H = \mathcal{T}_{\hat{G}}$ by the compactness
+of $\mathcal{T}_{\hat{G}}$ . Now again Theorem 5.6 yields $H = \hat{G}$. 
 
 \end{document}
