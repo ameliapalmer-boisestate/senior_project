@@ -280,7 +280,7 @@ abelian groups.
 homomorphism $ f : H \to D $ there exists a homomorphism $ \bar{f} : G \to D $ such that $ \bar{f} \upharpoonright_{H} = f $.}
 
 
-    \emph{If $ a \in G \ H $ and $ D $ contains elements of arbitrary finite order, then $ \bar{f} $ can be chosen such that $ \bar{f} (a) \neq 0 $.}
+    \emph{If $ a \in G / H $ and $ D $ contains elements of arbitrary finite order, then $ \bar{f} $ can be chosen such that $ \bar{f} (a) \neq 0 $.}
 
 
     \emph{Proof}. Let $ H' $ be a subgroup of $ G $ such that $H' \supseteq H $ and suppose that $ g : H' \to D $ is such that $ g \upharpoonright_{H} = f $. We
@@ -318,7 +318,7 @@ element $ (H_{max}, f_{max}) $ of $ (M, \leq) $. It is easy to see that $ H_{max
 
     Suppose now that $ D $ contains elements of arbitrary finite order. If $ a \in G / H $, we can extend $ f $ to $ H + \langle a \rangle $
 defining it as in the first part of the proof. If $ \langle a \rangle \cap H = \{0\}$ then $ \bar{f}(h + ka) = f(h) + ky $ for every $ k \in \mathbb{Z} $, where
-$ y \in D \ \{0\} $. If $ \langle a \rangle \cap H \neq \{0\} $, since $ D $ contains elements of arbitrary order, we can choose $ y \in D $ such that
+$ y \in D / \{0\} $. If $ \langle a \rangle \cap H \neq \{0\} $, since $ D $ contains elements of arbitrary order, we can choose $ y \in D $ such that
 $ \bar{f}(h + ka) = f(h) + ky $ with $ y \neq 0 $. In both cases $ \bar{f}(a) = y \neq 0 $.
 
 
@@ -912,7 +912,7 @@ quotient topology on $G/H$.
         open, contains $1$ and $h \in hU \subseteq H$ for every $h \in H$. Therefore $H$ is open.
 
 
-        (b) If $H$ is open then every coset $gH$ is open and consequently the complement $G \ H$ is open. So $H$ is
+        (b) If $H$ is open then every coset $gH$ is open and consequently the complement $G / H$ is open. So $H$ is
             closed.
 
         (c) Since $H$ is discrete there exists $U \in \mathcal{V}(1)$ with $U \cap H = \{1\}$. Choose $V \in \mathcal{V}(1)$ with $V^{-1} \times V \subseteq U$. Then
@@ -1044,7 +1044,7 @@ the canonical homomorphism.
 
     (b) Since $H = HN$, item (a) implies that the induced topology of $p(H)$ coincides with the quotient topology
     of $H/N$. Hence we can identify $H/N$ with the topological subgroup $p(H) of G/N$. Since $H = HN$, the set
-    $(G/N) \ p(HN) = p(G \ HN)$ is open, hence $p(H)$ is closed. Finally note that the composition $f : G \to (G/N)/(H/N)$
+    $(G/N) / p(HN) = p(G / HN)$ is open, hence $p(H)$ is closed. Finally note that the composition $f : G \to (G/N)/(H/N)$
     of $p$ with the canonical homomorphism $G/N \to (G/N)/(H/N)$ is open, being the latter open.
     Applying to the open homomorphism $f$ with ker $f = H$ Theorem 3.21 we can conclude that $j$ is a topological
     isomorphism.
@@ -1531,9 +1531,9 @@ that:
     size at most $m$ and every injection $f : Y \to X$ there exists $a \in A$ that extends $f$.
     \footnote[5]{Note that a countable subset $H$ of $S(X)$ cannot be transitive unless $X$ itself is countable.}
     The leading idea is that a transitive subset $A$ of $S(X)$ is placed “generically” in $S(X)$, whereas a non-tranisitve one is a subset of some
-    subgroup of $S(X)$ that is a direct product $S(Y ) \times S(X \ Y )$. (Here and in the sequel, for a subset $Y$ of $X$
+    subgroup of $S(X)$ that is a direct product $S(Y ) \times S(X / Y )$. (Here and in the sequel, for a subset $Y$ of $X$
     we tacitly identify the group $S(Y)$ with the subgroup of $S(X)$ consisting of all permutations of $S(X)$ that are
-    identical on $X \ Y$ .)
+    identical on $X / Y$ .)
     
     
         The first fact concerns the stabilizers $S_x = S_\{x\} = {f \in S(X) : f(x) = x}$ of points $x \in X$. They consitute
@@ -1542,7 +1542,7 @@ that:
 
     \textbf{Fact 3.56}. For every $x \in X$ the subgroup $S_x of S(X)$ is maximal
         Proof. Assume $H$ is a subgroup of $S(X)$ properly containing $S_x$. To show that $H = S(X)$ take any $f \in S(X)$.
-    If $y = f(x)$ coincides with $x$, then $f \in S_x \subseteq H$ and we are done. Assume $y \neq x$. Get $h \in H \ S_x$. Then
+    If $y = f(x)$ coincides with $x$, then $f \in S_x \subseteq H$ and we are done. Assume $y \neq x$. Get $h \in H w/ S_x$. Then
     $z = h(x) \neq x$, so $x \notin \{z, y\}$. There exists $g \in S(X)$ such that $g(x) = x, g(y) = z$ and $g(z) = y$. Then
     $g \in S_x \subseteq H$ and $f(x) = g(h(x)) = y$, so $h^{-1} g^{-1}f(x) = x$ and $h^{-1} g^{-1}f \in S_x \cap G \subseteq H$. So $f \in ghH = H$.
 
@@ -1553,7 +1553,7 @@ that:
 
         Proof. As $S_x$ is T-closed, for every fixed $y \neq x$ the set $V_y = {f \in S(X) : f(x) \neq y}$ is T-open and contains 1.
     So there exists a symmetric neighborhood $W$ of 1 in $T$ such that $W.W \subseteq V_y$. By the definition of $V_y$ this gives
-    $W x \times \cap W y = \emptyset$. Then either $|X \ Wx| = |X|$ or $|X \ W y| = |X|$. Suppose this occurs with $x$, i.e., $|X \ W x| = |X|$.
+    $W x \times \cap W y = \emptyset$. Then either $|X / Wx| = |X|$ or $|X / W y| = |X|$. Suppose this occurs with $x$, i.e., $|X / W x| = |X|$.
 
 
         Then one can find a permutation $f \in S(X)$ that sends $W x / \{x\}$ to the complement of $W x$ and $f(x) = x$. Such
@@ -3178,7 +3178,7 @@ for every $i = 1, \dots, k$. Since $A_n = \bigcup^k_{i=1} (a_i + V) \cap A_n$, f
     $\frac{1}{k} |A_n| \leq |(a_{i_n} + V) \cap A_n| = |V \cap (A_n - a_{i_n})|$.
 
 
-Since $V \cap (A_n - a_{i_n}) \subseteq (V \cap A_n) \cup ((A_n - a_{i_n}) \ A_n)$  (7) yields
+Since $V \cap (A_n - a_{i_n}) \subseteq (V \cap A_n) \cup ((A_n - a_{i_n}) / A_n)$  (7) yields
 
 
     $\frac{1}{k}|A_n| \leq |V \cap (A_n - a_{i_n})| \leq |V \cap A_n| + |(A_n - a_{i_n}) / A_n| < |V \cap A_n| + \varepsilon |A_n|$.
@@ -3308,4 +3308,268 @@ as a sum of at most $4r$ elements of $L^0$. This gives $c ∈ L^0_{(4r)} \subset
 
 
     $A_n \cap U_A (\chi_{1n}, \dots, \chi_{mn}; \frac{\pi}{2}) \subseteq V_{(8)}$
+
+
+for $n \in L$ sufficiently large $n$. By Lemma 4.2 there exist $\chi_1, . . . , \chi_m \in A^*$ and a subsequence $\{n_l\}_l$ of $\{n\}_{n \in \mathbb{N}_+}$
+such that $\chi_j (a) = lim_l \chi_{jn_l}(a)$ for every $j = 1, . . . , m$ and for every $a \in A$. Being $A =\bigcup \{A_n : l > k, n_l \in L\}$ for
+every $k \in \mathbb{N}_+$ we can conclude as above that $U_A (\chi_1, . . . , \chi_m; \frac{\pi}{2}) \subseteq V_{(8)}$.
+
+
+    Consider now the general case. Let $g_1, . . . , g_k \in A $be such that $A =\bigcup^k_{i=1}(g_i + V)$. Suppose that $G$ is a
+finitely generated subgroup of $A$ containing $g_1, . . . , g_k$. Then $G = \bigcup^k_{1=1}(g_i + V \cap G)$ and so $k$ translates of $V \cap G$
+cover $G$. By the above argument and by Theorem 2.5 there exist $\varphi_{1G}, . . . , \varphi_{mG} \in G^*$, where $m = k^2$, such that
+
+
+    $U_G (\varphi_{1G}, ...  \varphi_{mG}; \frac{\pi}{2}) \subseteq (V \cap G)_{(8)} \subseteq V_{(8)}$ (11)
+
+
+
+    By Corollary 2.6 we can extend each $\varphi_{iG}$ to a character of $A$, so that we assume from now on $\varphi_{1G}, . . . , \varphi_{mG} \in A^*$
+and 
+
+
+    $G \cap U_A (\varphi_{1G}, ...  \varphi_{mG}; \frac{\pi}{2}) = U_A (\varphi_{1G}, ...  \varphi_{mG}; \frac{\pi}{2}) \subseteq V_{(8)}$ (12)
+
+
+From (11) and (12) we conclude as before that $U_A (\chi_1, ..., \chi_m; \frac{\pi}{2}) \subseteq V_{(2)}$.
+
+    
+    As a corollary of Folner's lemma we obtain the following description of the neighborhoods of 0 in the Bohr
+topology of $A$.
+
+
+\textbf{Collary 5.8} For a subset $E$ of an abelian group $A$ the following are equivalent
+
+    \begin{itemize}
+
+        \item $E$ contains $V_{(8)}$ for some big subset $V$ of $A$;
+
+        \item for every $n \in \mathbb{N}_+$ $E$ contains $V_{(2n)}$ for some big subset $V$ of $A$;
+
+        \item $E$ is a neighborhood of 0 in the Bohr topology of $A$.
+
+    \end{itemize}
+
+
+\emph{Proof.}  The implication $(c) \Rightarrow (b)$ follows from Folner's lemma. The implication $(c) \Rightarrow (b)$ follows from Corollary
+4.31 and Proposition 4.30.
+
+
+    It follows from results of Folner [45] obtained by less elementary tools, that (b) can be replaced by the weaker
+assumption $V_{(4)} \subseteq E$ (see also Ellis and Keynes [43] or Cotlar and Ricabarra [24] for further improvements).
+Nevertheless the following old problems concerning the group $\mathbb{Z}$ is still open (see Cotlar and Ricabarra [24],
+Ellis and Keynes [43], Følner [45], Glasner [54], Pestov [80, Question 1025] or Veech [94])
+
+
+\textbf{Question 5.9.}  Does there exist a big set $V \subseteq \mathbb{Z}$ such that $V - V$ is not a neighborhood of 0 in the Bohr
+topology of $G$?
+
+
+    It is known that every infinite abelian group $G$ admits a big set with empty interior with respect to the Bohr
+topology [4] (more precisely, these authors prove that every totally bounded group has a big subset with empty
+interior)
+
+
+\subsection{Prodanov's lemma and proof of Folner's theorem}
+
+
+Let $C$ be a set in a real or complex vector space. Then $C$ is said to be convex if, for all $x, y \in C$ and all $t \in [0, 1],$
+the point $(1 - t)x + ty \in C$.
+
+
+    The next lemma, due to Prodanov [84], allows us to eliminate the discontinuous characters in uniform
+approximations of continuous functions via linear combinations of characters
+
+
+\textbf{Lemma 5.10 Prodanov's Lemma}. Let $G$ be a topological abelian group, let $U$ be an open subset of $G, f$ a
+complex valued continuous function on $G$ and $M$ a convex closed subset of $\mathbb{C}$. Let $k \in \mathbb{N}_+$ and $\chi_1, . . . , \chi_k \in G'$.
+Suppose that $c_1, . . . , c_k \in \mathbb{C}$ are such that $\sum^k_{j=1} c_j \chi_j (x) - f(x) \in M$ for every $x \in U$. If $\chi_{m_1}, . . . , \chi_{m_s}$, with
+$m_1 < · · · < m_s, s \in \mathbb{N}, {m_1, . . . , m_s} \subseteq {1, . . . , k}$, are the continuous among $\chi_1, . . . , \chi_k$, then
+$\sum^s_{i=1} c_{m_i} \chi_{m_i}(x)-f(x) \in M \text{ for every } x \in U.$
+
+
+\emph{Proof.} Let $\chi_k \in G^*$ be discontinuous. Then it is discontinuous at 0. Consequently there exists a net ${x_\gamma}\gamma$ in
+$G$ such that $lim_\gamma x_\gamma = 0$ and there exist $y_j = lim_\gamma \chi_j (x_\gamma)$ for all $j = 1, . . . , k$, but $y_k \neq 1$. Notice that always
+$|y_j | = 1$. Moreover, $y_j = 1$ when $\chi_j$ is continuous because $x_\gamma \to 0$, so $y_j = lim \chi_j (x_\gamma) = 1$.
+
+
+    Consider $\sum^k_{j=1} c_j \chi_j (x + tx_\gamma) - f(x + tx_\gamma)$, where $t \in \mathbb{Z}$. Since $lim_\gamma x_\gamma = 0$, we have $x + tx_\gamma \in U$ for every
+$x \in U$ and for every sufficiently large $\gamma$. Thus $\sum^k_{j=1} c_j \chi_j (x)\chi_j (x_\gamma)^t - f(x + tx_\gamma) \in M$ and so passing to the
+limit $\sum^k_{j=1} c_j \chi_j (x)y^t_j - f(x) \in M$, because $f$ is continuous and $M$ is closed.
+
+
+    Take an arbitrary $n \in \mathbb{N}$. By the convexity of $M$ and the relation above for $t = 0, . . . , n$, we obtain
+
+
+    $\frac{1}{n+1} \sum^n_{t=0} (\sum^k_{j=1}c_j \chi_j (x)y^t_j - f(x)) \in M$
+
+
+Note that $\sum^n_{t=0} y^t_k = \frac{y^{n+1}_k - 1}{y_k - 1}$ because $y_k \neq 1$. Hence we get
+
+
+    $\sum^{k-1}_{j=1} c_{jn} \chi_j (x) + \frac{c_k}{1+n} \frac{1-y^{n+1}_k}{1-y_k} \chi_k (x) - f(x) \in M$
+
+
+for every $x \in U$, where $c_{jn} = \frac{\sum^n_{t=0} c_j y^t_j}{n+1}$. Now for every $j=1,2,...,k-1$
+
+
+\begin{itemize}
+
+    \item $|c_{jn}| \leq |c_j| \frac{\sum^n_{t=0} |y_j|^t}{n+1} = |c_j|$
+
+    \item if $y_j=1$ then $c_{jn}=c_j$.
+
+\end{itemize}
+
+
+By the boundedness of the sequences ${c_{jn}}^\infty_{n=1} for j = 1, . . . , k - 1$, there exists a subsequence ${n_m}\infty_{m=1}$ such
+that all limits $c'_j = lim_m c_{jn_m}$ exist for $j = 1, . . . , k - 1$. On the other hand, $|y_k| = 1$, so
+
+
+    $lim_n \frac{c_k}{n+1} \frac{1-y^{n+1}_k}{1-y_k} = 0$
+
+
+Taking the limit for $m \to \infty$ in
+
+
+    $\sum^{k-1}_{j=1} c_{jn_m} \chi_j (x) + \frac{c_k}{1+n_m} \frac{1-y^{n_m+1}_k}{1-y_k} \chi k(x)-f(x) \in M$
+
+
+gives
+
+
+    $\sum^{k-1}_{j=1} c'_j \chi_j -f(x) \in M$ for $x \in U$; (13)
+
+
+moreover $c'_j = c_j$ for every $j = 1, . . . , k - 1$ such that $\chi_j$ is continuous.
+
+
+    The condition (13) is obtained by the hypothesis, removing the discontinuous character $\chi_k$ in such a way
+that the coefficients of the continuous characters remain the same. Iterating this procedure, we can remove all
+discontinuous characters among $\chi_1, . . . , \chi_k$.
+
+
+    Now we give an (apparently) topology-free form of the local version of the Stone-WeierstraB theorem 2.19.
+
+
+\textbf{Proposition 5.11} Let $G$ be an abelian group and $H$ be a group of characters of $G$. If $X$ is a subset of $G$ and
+$f$ is a complex valued bounded function on $X$ then the following conditions are equivalent:
+
+
+\begin{itemize}
+
+    \item $f$ can be uniformly approximated on $X$ by a linear combination of elements of $H$ with complex coefficients;
+
+    \item  for every $\varepsilon > 0$ there exist $\delta > 0$ and $\chi_1, . . . , \chi_m \in H$ such that $x - y \in U_G(\chi_1, . . . , \chi_m; \delta)$ yields
+    $|f(x) - f(y)| < \varepsilon$ for every $x, y \in X$.
+
+\end{itemize}
+
+
+\emph{Proof.} $(a) \Rightarrow (b)$ Let $\varepsilon > 0$. By (a) there exist $c_1,...,c_m \in \mathbb(C)$ and $\chi_1,...,\chi_m \in H$ such that $\|\sum^m_{i=1} c_1 \chi_1 - f\|_\infty < \frac{\varepsilon}{4}$,
+that is $|\sum^m_{i=l} c_l \chi_i| < \frac{\varepsilon}{4}$ for every $x \in X$.
+
+
+    On the other hand note that $|\sum^m_{i=l} c_i \chi_i (y)| \leq \sum^m_{i=l} |c_i| * |\chi_i(x)-y_i(y)|$ and that 
+$|\chi_i (x-y)-1|=|\chi_i (x) \chi_i (y)^{-1} - 1|=|\chi_i(x)-\chi_i(y)|$. If we take 
+
+
+    $\delta = \frac{\varepsilon}{2m \max_{i=1,...,m}|c_i|}$
+
+
+    then $x-y \in U(\chi_1, . . . , \chi_m; \delta)$ implies $\sum^m_{i=1} |c_i|*|\chi_i(x)-\chi_i(y)| < \frac{\varepsilon}{2}$ and so also $|\sum^m_{i=1} c_i \chi_i(x) - \sum^m_{i=1} c_i \chi_i(y)| < \frac{\varepsilon}{2}$.
+
+
+    Consequently,
+
+
+    $|f(x)-f(y)| \leq |f(x)-\sum^m_{i=1}c_i \chi_i (x)| + |\sum^m_{i=l} c_i \chi_i (x) \sum^m_{i=l} c_i \chi_i (y)| + |\sum^m_{i=l}c_i \chi_i (y)-f(y)| > \varepsilon$
+
+
+$(b)\Rightarrow(a)$ Let $\beta X$ be the Cech-Stone compactification of $X$ endowed with the discrete topology. If $F : X \to \mathbb{C}$ is
+bounded, there exists a unique continuous extension $F^\beta$ of $F$ to $\beta X$. Let $\mathcal{S}$ be the collection of all continuous
+functions $g$ on $\beta X$ such that $g = \sum^n_{j=1} c_j \chi^\beta_j$ with $\chi_j \in H, c_j \in \mathbb{C}$ and $n \in \mathbb{N}_+$. Then $\mathcal{S}$ is a subalgebra
+of $\mathcal{C}(\beta X, \mathbb{C})$ closed under conjugation and contains all constants. In fact in $\mathcal{S}$ we have $\chi^\beta_k \chi^\beta_j = (\chi_k \chi_j)^\beta$ by
+definition and $\bar{\chi^\beta} = (\bar{\chi})^\beta$ because $\chi \bar{\chi} = 1$ and so $(\chi \bar{\chi})^\beta = \chi^\beta(\bar{\chi})^\beta = 1$, that is $(\bar{\chi})^\beta = (\chi^{-1})^\beta = \bar{\chi^\beta}$.
+
+
+Now we will see that $\mathcal{S}$ separates the points of $\beta X$ separated by $f^{\beta}$, to apply the local Stone-WeierstraB
+Theorem 2.19. Let $x, y \in \beta X$ and $f^{\beta}(x) \neq f^\beta(y)$. Consider two nets $\{x_i\}_i$ and ${y_i}_i$ in $X$ such that $x_i \to x$ and
+$y_i \to y$. Since $f^\beta$ is continuous, we have $f^\beta(x) = lim f(x_i)$ and $f^\beta(y) = lim f(y_i)$. Along with $f^\beta(x) \neq f^\beta(y)$ this
+implies that there exists $\varepsilon > 0$ such that $|f(x_i)-f(y_i)| \geq \varepsilon$ for every sufficiently large $i$. By the hypothesis there
+exist $\delta > 0$ and $\chi_1, . . . , \chi_k \in H$ such that for every $u, v \in X$ if $u - v \in U_G(\chi_1, . . . , \chi_k; \delta)$ then $|f(u) - f(v)| < \varepsilon$.
+Assume $\chi^\beta_j(x) = \chi^\beta_j(y)$ holds true for every $j = 1, . . . , k$. Then $x_i - y_i \in U_G(\chi_1, . . . , \chi_k; \delta)$ for every sufficiently
+large $i$, this contradicts (a). So each pair of points of $\beta X$ separated by $f^\beta$ is also separated by $\mathcal{S}$. Since $\beta X$ is
+compact, one can apply the local version of the Stone-WeierstraB Theorem 2.19 to $\mathcal{S}$ and $f^\beta$ and so $f^\beta$ can be
+uniformly approximated by $\mathcal{S}$. To conclude note that if $g =\Sigma c_j \chi^\beta_j$ on $\beta X$ then $g \upharpoonright_X =\Sigma c_j \chi_j$.
+
+
+The reader familiar with uniform spaces will note that item (b) is nothing else but uniform continuity of $f$
+w.r.t. the uniformity on $X$ induced by the uniformity of the whole group $G$ determined by the topology $\mathcal{T}_H$.
+
+
+\textbf{Theorem 5.12 (Folner theorem)} Let $G$ be a topological abelian group. If $k$ is a positive integer and $E$
+is a subset of $G$ such that $k$ translates of $E$ cover $G$, then for every neighborhood $U$ of 0 in $G$ there exist
+$\chi_1, . . . , \chi_m \in \hat{G}$, where $m = k^2$, and $\delta > 0$ such that $U_G(\chi_1, . . . , \chi_m; \delta) \subseteq U - U + E_{(8)}$.
+
+
+\emph{Proof.} By Folner's lemma 5.7 there exist $\varphi_1, . . . , \varphi_m \in G^*$ such that $U_G(\varphi_1, . . . , \varphi_m; \frac{\pi}{2}) \subseteq E_{(8)}$, where the
+characters $\varphi_j$ can be discontinuous. Our aim will be to replace these characters by continuous ones “enlarging”
+$E_{(8)}$ to $U - U + E_{(8)}$.
+
+
+It follows from Lemma 3.18 that $C := E_{(8)} + U \subseteq E_{(8)} + U - U$. Consider the open set $X = U \cup (G / C)$
+and the function $f : X \to \mathbb{C}$ defined by
+
+
+    $f(x)=\{^{0 \text{ if } x \in U}_{1 \text{ if } x \in G / C}$
+
+
+Then $f$ is continuous as $X = U \bigcup (G / C)$ is a clopen partition of $X$.
+
+
+    Let $H$ be the group generated by $\varphi_1, . . . , \varphi_m$. Take $x, y \in X$ with $x - y \in U_G(\varphi_1, . . . , \varphi_m; \frac{\pi}{2}) \subseteq E(8)$. So if
+$y \in U$ then $x \in E_{(8)} + U$ and consequently $x \notin G / \bar{E_{(8)} + U}$, that is $x \in U$. In the same way it can be showed
+that $x \in U$ yields $y \in U$. This gives $f(x) = f(y)$ by the definition of $f$. So by Proposition 5.11 one can uniformly
+approximate $f$ on $X$ by characters of $H$. Hence one can find a finite number of $m$-uples $\tilde{j} = (j_1, . . . , j_m)$ of
+integers and $c_{\tilde{j}} \in \mathbb{C}$ such that
+
+
+    $|\sum_{\tilde{j}} c_{\tilde{j}} \varphi^{j_1}_1(x) * ... * \varphi^{j_m}_m (x) - f(x)| \leq \frac{1}{3}$ (13)
+
+
+    holds for every $x \in X$. Since $X$ is open and $f$ is continuous, we can apply Lemma 5.10 to the convex closed set
+$M = \{z \in \mathbb{C} : |z| \leq \frac{1}{3}\}$ and this permits us to assume that all products $\varphi^{j1}_1· . . . · \varphi^{jm}_m$ are continuous. Letting
+$x = 0$ in (13) one gets $|\sum_{\tilde{j}}c_{\tilde{j}}| \leq \frac{1}{3}$, and consequently,
+
+
+    $\frac{2}{3} \leq |\sum_\tilde{j} c_\tilde{j} - 1|$  (14)
+
+
+    Let now Φ be the subgroup of H consisting of all continuous characters of H, i.e., Φ = H ∩ Gb. By Theorem
+2.1 there exist $\chi_1, . . . , \chi_m \in \Phi$ that generate $\Phi$. Choose $\varepsilon > 0$ with $\varepsilon\sum_\tilde{j}|c_\tilde{j}| < \frac{1}{3}$. By the continuity of
+$\chi_1, . . . , \chi_m \in \Phi$ there exists $\delta > 0$ such that $x \in U_G(\chi_1, . . . , \chi_m; \delta)$ implies $|\varphi^{j_1}_1(x) * ... * \varphi^{j_m}_m(x) - 1| \leq \varepsilon$ for all
+summands $\varphi^{j_1}_1 * ... * \varphi^{j_m}_m$ in (13).
+
+
+    To prove
+
+
+    $U_G (\chi_1, ..., \chi_m; \delta) \subseteq U - U + E_{(8)}$
+
+
+    assume for a contradiction that some $z \in U_G(\chi_1, . . . , \chi_m; \delta)$ and $z \neq U - U + E_{(8)}$. Since $C = \tilde{E_{(8)} + U} \subseteq E_{(8)} + U - U$,
+then $z \in G / C \subseteq X$. Thus, by the definition of $f$, (13), (14) and $|\varphi^{j1}_1(z) * . . . * \varphi^{jm}_m (z) - 1| \leq \varepsilon$,
+we have
+
+
+    $\frac{2}{3} \leq |\sum_\tilde{j} c_{\tilde{j}} - 1| \leq |\sum_{\tilde{j}} c_{\tilde{j}} (1 - \varphi^{j_1}_1(z)) * ... * \varphi^{j_m}_m(z))| + |\sum_{\tilde{j}} c_{\tilde{j}} \varphi^{j_1}_1 (z) ... * \varphi^{j_m}_m(z))| \leq \varepsilon \sum_\tilde{j} |c_\tilde{j}| + \frac{1}{3}$
+
+
+    These inequalities together give $\frac{2}{3} \leq \varepsilon \sum_{\tilde{j}}|c_{\tilde{j}}| + \frac{1}{3}$. This contradicts the choice of $\varepsilon$.
+
+
+\section{Peter-Weyl's theorem and other applications of Folner's theorem}
+
+
 \end{document}
