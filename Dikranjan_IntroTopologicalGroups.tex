@@ -3679,23 +3679,354 @@ Now again Theorem 6.5 yields $H = \hat{G}$.
 where $n$ is a positive integer and $F$ is a finite abelian group.
 
 
+\textbf{Proposition 6.8} Let $G$ be a compact abelian group and let $U$ be an open neighborhood of 0 in $G$. Then
+there exists a closed subgroup $C$ of $G$ such that $C \subseteq U$ and $G/C$ is an elementary compact abelian group. In
+particular, $G$ is an inverse limit of elementary compact abelian groups.
 
-%   End of current work.    %
+
+    \emph{Proof.} By the Peter-Weyl Theorem 6.4 $\bigcap_{\chi \in \hat{G}} ker \chi = \{0\}$ and each $ker \chi$ is a closed subgroup of $G$. By the
+compactness of $G$ there exists a finite subset $F$ of $\hat{G}$ such that $C =\bigcap_{\chi \in F} ker \chi \subseteq U$. Define now $g =\Pi_{\chi \in F} \chi :G \to \mathbb{T}^F$. 
+Thus $ker g = C$ and $G/C$ is topologically isomorphic to the closed subgroup $g(G)$ of $\mathbb{T}^F$ by the
+compactness of $G$. So $G/C$ is elementary compact abelian by Lemma 4.47.
 
 
+    To prove the last statement, fix for every open neighborhood $U_i$ of 0 in $G$ a closed subgroup $C_i$ of $G$ with
+$C_i \subseteq U$ and such that $G/C_i$ is elementary compact abelian. Note that for $C_i$ and $C_j$ obtained in this way
+the subgroup $C_i \cap C_j$ has the same property as $G/C_i \cap C_j$ is isomorphic to a closed subgroup of the product
+$G/C_i \times G/C_j$ which is again an elementary compact abelian group. Enlarging the family $(C_i)$ with all finite
+intersections we obtain an inverse system of elementary compact abelian groups $G/C_i$ where the connecting
+homomorphisms $G/C_i \to G/C_j$, when $C_i\leq C_j$ , are simply the induced homomorphisms. Then the inverse limit
+$G'$ of this inverse system is a compact abelian group together with a continuous homomorphism $f : G \to G'$
+induced by the projections $p_i: G \to G/C_i$. Assume $x \in G$ is non-zero. Pick on open neighborhood $U$ of 0. By
+the first part of the proof, there exists $C_i \subseteq U$, hence $x \neq C_i$. Therefore, $p_i(x) \neq 0$, so $f(x) \neq 0$ as well. This
+proves that $f$ is injective. To check surjectivity of $f$ take an element $x' = (x_i +C_i)$ of the inverse limit $G'$. Then,
+the family of closed cosets $x_i + C_i$ in $G$ has the finite intersection property, so has a non-empty intersection.
+For every element $x$ of that intersection one has $f(x) = x'$. Finally, the continuous isomorphism $f : G \to G'$
+must be open by the compactness of $G$.
 
-\textbf{Proposition 6.8}
+
+    For a topological abelian group $G$ we say that $G$ has no small subgroups, or shortly, $G$ is $NSS$, if there exists
+a neighborhood $U$ of 0 such that $U$ contain no non-trivial subgroups of $G$. It follows immediately from the
+above proposition that the compact abelian group $G$ has no small subgroups precisely when $G$ is an elementary
+compact abelian group.
+
+
 \subsection{Precompact group topologies determined by sequences}
-\textbf{Proposition 6.9}
-\textbf{Definition 6.10}
-\textbf{Theorem 6.11}
-\textbf{Example 6.12}
-\textbf{Example 6.13}\textbf{Theorem 6.14}
+Large and lacunary sets (mainly in $\mathbb{Z}$ or elsewhere) are largely studied in number theory, harmonic analysis and
+dynamical systems ([43], [24], [80], [52], [53], [54], [55], [59]).
+
+
+    Let us consider a specific problem. For a strictly increasing sequence $\underline{u} = (u_n)_{n \geq 1}$ of integers, the interest in
+the distribution of the multiples ${u_n \alpha : n \in \mathbb{N}}$ of a non-torsion element $\alpha$ of the group $\mathbb{T} = \mathbb{R}/\mathbb{Z}$ has roots in
+number theory (Weyl's theorem of uniform distribution modulo 1) and in ergodic theory (Sturmian sequences
+and Hartman sets [99]). According to Weyl's theorem, the set ${u_n \alpha : n \in \mathbb{N}}$ will be uniformly dense in $\mathbb{T}$ for
+almost all $\alpha \in \mathbb{T}$. One can consider the subset $t_{\underline{u}}(\mathbb{T})$ of all elements $\alpha \in \mathbb{T}$ such that $lim_n u_n \alpha = 0$ in $\mathbb{T}$. Clearly
+it will have measure zero. Moreover, it is a subgroup of $\mathbb{T}$ as well as a Borel set, so it is either countable or has
+size $c$. It was observed by Armacost [3] that when $u_n = p^n$ for all $n$ and some prime $p$, then $t_{\underline{u}}(\mathbb{T}) = \mathbb{Z}(p^{\infty})$.
+He posed the question of describing the subgroup $t_{\underline{u}}(\mathbb{T})$ for the sequence $u_n = n!$, this was done by Borel [19]
+(see also [36] and [31] for the more general problem concerning sequences $\underline{u}$ with $u_n^{-1}|u_n$ for every $n$).
+
+
+    Another motivation for the study of the subgroups of the form $t_{\underline{u}}(\mathbb{T})$ come from the fact that they lead to
+the description of precompact group topologies on $\mathbb{Z}$ that make the sequence un converge to 0 in $\mathbb{Z}$ (see the
+comment after proposition 6.9). Let us start by an easy to prove general fact:
+
+
+\textbf{Proposition 6.9} [7] A sequence $A = \{a_n\}\n$ in a precompact abelian group $G$ converges to 0 in $G$ iff $\chi(a_n) \to 0$
+in $\mathbb{T}$ for every continuous character of $G$.
+
+
+    In the case of $G = \mathbb{Z}$ the characters of $G$ are simply simply elements of $\mathbb{T}$, i.e., a precompact group topology
+on $\mathbb{Z}$ has the form $\mathcal{T}_H$ for some subgroup $H$ of $\mathbb{T}$. Thus the above proprosition for $G = \mathbb{Z}$ can be reformulated
+as: a sequence $A = \{a_n\}_n$ in $(\mathbb{Z}, \mathcal{T}_H)$ converges to 0 iff $a_n x \to 0$ for every $x \in H$, i.e., simply $H \subseteq t_{\underline{a}}(\mathbb{T})$.
+
+
+    Now we can discuss a counterpart of the notion of $T$-sequences (introduced in §3.5), defined with respect to
+topologies induced by characters, i.e., precompact topologies.
+
+
+\textbf{Definition 6.10} [7, 9] A sequence $A = \{a_n\}_n$ in an abelian group $G$ is called a $TB$-sequence is there exists a
+precompct group topology on $G$ such that $a_n \to 0$.
+
+
+    Clearly, every $TB$-sequence is a $T$-sequence (see Example 6.12 for a $T$-sequence in $\mathbb{Z}$ that is not a $TB$-sequence).
+The advantage of $TB$-sequences over the $T$-sequences is in the easier way of determining sufficient
+condition for a sequence to be a $TB$-sequence [7, 9]. For example, a a sequence $(a_n)$ in $\mathbb{Z}$ is a $TB$-sequence iff
+the subgroup $t_a(\mathbb{T})$ of $\mathbb{T}$ is infinite.
+
+
+    Egglestone [42] proved that the asymptotic behavior of the sequence of ratios $q_n = \frac{u_n+1}{u_n}$ may have an impact
+on the size of the subgroup $t_{\underline{u}}(\mathbb{T})$ in the following remarkable dichotomy:
+
+
+\textbf{Theorem 6.11} Let $(a_n)$ be a sequence in $\mathbb{Z}$.
+
+    \begin{itemize}
+
+        \item If $\lim_n \frac{a_n+1}{a_n} = + \infty$, then $(a_n)$ is a $TB$-sequence and $|t_{\underline{a}}(\mathbb{T})| = c$.
+
+        \item If $\frac{a_n+1}{a_n}$ is bounded, then $t_{\underline{a}}(\mathbb{T})$ is countable.
+
+    \end{itemize}
+
+\textbf{Example 6.12} [9] There exists a $TB$-sequence $(a_n)$ in $\mathbb{Z}$ with $lim_n \frac{a_{n+1}}{a_n} = 1$.
+
+
+    Here is an example of a $T$-sequence in $\mathbb{Z}$ that is not a $TB$-sequence.
+
+
+\textbf{Example 6.13} For every $TB$-sequence $A = \{a_n\}$ in $\mathbb{Z}$ such that $t_\underline{a}(\mathbb{T})$ is countable, there exists a sequence ${c_n}$
+in $\mathbb{Z}$ such that the sequence $q_n$ defined by $q_{2n} = c_n$ and $q_{2n-1} = a_n$, is a $T$-sequence, but not a $TB$-sequence.
+
+
+\emph{Proof.} Let $\{z_1, . . . , z_n, . . .\}$ be an enumeration of $t_{\underline{a}} (\mathbb{T})$.
+
+
+    According to Lemma 3.51 there exists a sequence bn in $\mathbb{Z}$ such that for every choice of the sequence $(e_n)$,
+where $e_n \in \{0, 1\}$, the sequence $q_n$ defined by $q__{2n} = b_n + e_n$ and $q_{2n-1} = a_n$, is a $T$-sequence. Now we define
+the sequence qn with $q_{2m-1} = a_m$ and $q_{2m} = b_m$ when $m$ is not a prime power. Let $p_1, . . . , p_n, . . .$ be all prime
+numbers enumerated one-to-one. Now fix $k$ and define $e_k \in {0, 1}$ depending on $lim_n b_{p^n_k} z_k$ as follows:
+
+
+\begin{itemize}
+
+    \item if $lim_n b_{p^n_k} z_k = 0$ let $e_k = 1$ 
+
+    \item if $lim_n b_{p^n_k} z_k \neq 0$ (in particular, if the limit does not exists) let $e_k = 0$. 
+
+\end{itemize}
+
+
+Now let $q_{2p^n_k} = b_{p^n_k} + e_k$ for $n \in \mathbb{N}$. Hence for every $k \in \mathbb{N}$
+
+
+    $lim_n q_{2p^n_k} z_k = 0 \Rightarrow e_k = 1$
+
+
+    To see that $(q_n)$ is not a $TB$-sequence assume that $\chi : \mathbb{Z} \to \mathbb{T}$ a character such that $\chi(q_n) \to 0$ in $\mathbb{T}$. Then
+$x = \chi(1) \in \mathbb{T}$ satisfies $q_n x \to 0$, so $x \in t_{\underline{q}}(\mathbb{T}) \subseteq t_{\underline{a}}(T)$. So there exists $k \in \mathbb{N}$ with $x = z_k$. By (*) $e_k = 1$. Hence
+$q_{2p^n_k} = b_{p^n_k}+ 1$ and $\lim_n b_{p^n_k} z_k = 0$, so $x \in t_{\underline{q}}(\mathbb{T})$ yields $0 = lim_n q_{2p^n_k}x = 0 + x$, i.e., $x = 0$. This proves that
+every character $\chi : \mathbb{Z} \to \mathbb{T}$ such that $\chi(q_n) \to 0$ in $\mathbb{T}$ is trivial. In particular, $(q_n)$ not a $TB$-sequence.
+
+
+    Let us note that the above proof gives much more. Since $q_n \to 0$ in $\tau(q_n)$, it shows that every $\tau_{(q_n)}$-continuous
+character of $\mathbb{Z}$ is trivial, i.e., $\hat{(\mathbb{Z}, \tau_{(q_n)})} = 0$.
+
+
+    The information accumulated on the properties of the subgroups $t_{\underline{u}}(\mathbb{T})$ of {\mathbb{T}} motivated the problem of
+describing those subgroups $H$ of $\mathbb{T}$ that can be characterized as $H = t_{\underline{u}}(\mathbb{T})$ for some sequence $\underline{u}$. As already
+mentioned, such an $H$ can be only countable or can have size c being of measure zero. A measure zero subgroup
+$H$ of $\mathbb{T}$ of size $\mathfrak{c}$ that is not even contained in any proper subgroup of $\mathbb{T}$ of the form $t_{\underline{u}}(\mathbb{T})$ was built in [7]
+(under the assumption of Martin Axiom) and in later in [61, 62] (in ZFC). Much earlier Borel [19] had already
+resolved in the positive the remaining part of the problem showing that every countable subgroup of $\mathbb{T}$ can be
+characterized (in the above sense). Unaware of his result, Larcher [74], and later Kraaikamp and Liardet [71],
+proved that some cyclic subgroups of $\mathbb{T}$ are characterizable (see also [16, 15, 12, 14, 13] for related results). The
+paper [9] describes the algebraic structure of the subgroup $t_{\underline{u}}(\mathbb{T})$ when the sequence $\underline{u} := (u_n)$ verifies a linear
+recurrence relation of order $\leq k$,
+
+
+    $u_n = a^{(1)}_n u_{n-1} + a^{(2)}_n u_{n-2} + . . . + a^{(k)}_n u_{n-k}$
+
+
+for every $n > k$ with $a^{(i)}_n \in \mathbb{Z}$ for $i = 1, . . . , k$.
+
+
+    Three proofs of Borel's theorem of characterizability of the countable subgroups of $\mathbb{T}$ were given in [13]. These
+author mentioned that the theorem can be extended to compact abelian groups in place of $\mathbb{T}$, without giving
+any precise formulation. There is a natural way to extend the definition of $t_{\underline{u}}(\mathbb{T})$ to an arbitrary topological
+abelian group $G$ by letting $t_{\underline{u}}(G) = {x \in G : lim_n u_n x = 0 \text{ in } G}$. Actually, for the sequence $u^n = p^n$ (resp.,
+$u_n = n!$) an element $x$ satisfying $lim_n u_n x = 0$ has been called topologically $p$-torsion (resp., topologically torsion)
+by Braconnier and Vilenkin in the forties of the last century and these notions played a prominent role in the
+development of the theory of locally compact abelian groups. One can easily reduce the computation of $t_{\underline{u}}(G)$
+for an arbitrary locally compact abelian group to that of $t_{\underline{u}}(\mathbb{T})$ [26]. Independently on their relevance in other
+questions, the subgroups $t_{\underline{u}}(G)$ turned out to be of no help in the characterization of countable subgroups of
+the compact abelian groups. Indeed, a much weaker condition, turned out the characterize the circle group $\mathbb{T}$
+in the class of all locally compact abelian groups:
+    
+
+\textbf{Theorem 6.14} [31] In a locally compact abelian group $G$ every cyclic subgroup of the group $G$ is an intersection
+of subgroups of the form $t_{\underline{u}}(G)$ iff $G \cong \mathbb{T}$.
+
+
+    Actually, one can remove the “abelian” restraint in the theorem remembering that in the non-abelian case
+$t_{\underline{u}}(G)$ is just a subset of $G$, not a subgroup in general [31].
+
+
+    The above theorem suggested to use in [35] a different approach to the problem, replacing the sequence of
+integers $u_n$ (characters of $\mathbb{T}!$) by a sequence $u_n$ in the Pontryagin-van Kampen dual $\mathbb{G}$. Then the subgroup
+$s_{\underline{u}}(G) = \{x \in G : lim_n u_n (x) = 0 \text{ in } T\}$ of $G$ really can be used for such a characterization of all countable
+subgroups of the compact metrizable groups (see [35, 33, 17] for major detail).
+
+
 \subsection{On the structure of compactly generated locally compact abelian groups}
-\textbf{Lemma 6.15}
-\textbf{Corollary 6.16}
-\textbf{Proposition 6.17}
-\textbf{Proposition 6.18}
+From now on all groups are Hausdorff; quotients are taken for closed subgroups and so they are still Hausdorff.
 
 
+    An abelian topological group is elementary locally compact if it is topologically isomorphic to $\mathbb{R}^n \times \mathbb{Z}^m \times \mathbb{T}^s \times F$,
+where $n, m, s$ are positive integers and $F$ is a finite abelian group. Observe that the class of elementary locally
+compact abelian groups is closed under taking quotient, closed subgroups and finite products (see Theorem 4.37
+and Corollary 4.47).
+
+
+\textbf{Lemma 6.15} Let $G$ be a locally compact monothetic group. Then $G$ is either compact or is discrete.
+
+
+    \emph{Proof.} If $G$ is finite, then $G$ is both compact and discrete. So we can suppose without loss of generality that
+$\langle x \rangle \cong \mathbb{Z}$ is infinite and so also that $\mathbb{Z}$ is a subgroup of $G$.
+
+
+    If $G$ induces the discrete topology on $\mathbb{Z}$, then $\mathbb{Z}$ is closed and so $G = \mathbb{Z}$ is discrete.
+
+
+    Suppose now that $G$ induces on $\mathbb{Z}$ a non-discrete topology. Our aim is to show that it is totally bounded.
+Then the density of $\mathbb{Z}$ in $G$ yields that $G = \tilde{\mathbb{Z}} = \bar{\mathbb{Z}}$ is compact, as $G$ is locally compact and so complete (see
+Lemma 4.7).
+
+
+    Every open subset of $G$ has no maximal element. Indeed, if $U$ is an open subset of $\mathbb{Z}$ that contains 0 and
+it has a maximal element, then $-U$ is an open subset of $\mathbb{Z}$ that contains 0 and it has a minimal element and
+$U \cap -U$ is an open finite neighborhood of 0 in $\mathbb{Z}$; thus $\mathbb{Z}$ is discrete against the assumption. Consequently every
+open subset of $\mathbb{Z}$ contains positive elements.
+
+
+    Let $U$ be a compact neighborhood of 0 in $G$ and $V$ a symmetric neighborhood of 0 in $G$ such that $V +V \subseteq U$.
+There exist $g_1, . . . , g_m \in G$ such that $U \subseteq \bigcup^m_{i=1} (g_i + V)$. Let $n_1, . . . , n_m \in \mathbb{Z}$ be positive integers such that
+$n_i \in g_i + V$ for every $i = 1, . . . , m$. Equivalently $g_i \in n_i - V = n_i + V$. Thus
+
+
+    $U \subseteq \bigcup^m_{i=1}(g_i + V ) \subseteq \bigcup^m_{i=1}(n_i + V + V ) \subseteq \bigcup^m_{i=1}(n_i + U)$
+
+
+implies
+
+
+    $U \cap \mathbb{Z} \subseteq \bigcup^m_{i=1}(n_i + U \cap \mathbb{Z})$. (1)
+
+
+We show that $U \cap \mathbb{Z}$ is big with respect to $\mathbb{Z}$. Let $t \in \mathbb{Z}$; since $U \cap \mathbb{Z}$ has no maximal element, then there exists
+$s \in U \cap \mathbb{Z}$ such that $s \leq t$. Define $s_t = \min \{s \in U \cap \mathbb{Z} : s \geq t\}$. By (1) $s_t = n_i + u_t$ for some $i \leq m$ and
+$u_t \in U \cap \mathbb{Z}$. Since $n_i > 0$, then $u_t < s_t$ and so $u_t < t \leq s_t$. Now put $N = \max \{n_1, . . . , n_m\}$ and $F = {1, . . . , N}$.
+Hence $U \cap \mathbb{Z} + F = \mathbb{Z}$. This proves that the topology induced on Z by G is totally bounded.
+
+
+\textbf{Corollary 6.16} Let $G$ be a locally compact abelian group and $x \in G$. Then $\bar{\langle x \rangle}$ is either compact or discrete.
+
+
+\textbf{Proposition 6.17} Let $G$ be a compactly generated locally compact abelian group. Then there exists a discrete
+subgroup $H$ of $G$ such that $H \cong \mathbb{Z}^n$ for some $n \in \mathbb{N}$ and $G/H$ is compact.
+
+
+    \emph{Proof.} Suppose first that there exist $g_1, . . . , g_m \in G$ such that $G = \bar{\langle g_1, . . . , g_m \rangle}$. We proceed by induction. For
+$m = 1$ apply Lemma 6.15: if $G$ is infinite and discrete take $H = G$ and if $G$ is compact $H = \{0\}$. Suppose
+now that the property holds for $m \geq 1$ and $G = \bar{\langle g_1, . . . , g_{m+1} \rangle}$. If every $\bar{\langle g_i \rangle}$ is compact, then so is $G$ and
+$H = \{0\}$. If $\langle g_{m+1} \rangle$ is discrete, consider the canonical projection $\pi : G \to G_1 = G/\langle g_{m+1} \rangle$. Since $G_1$ has a
+dense subgroup generated by $m$ elements, by the inductive hypothesis there exists a discrete subgroup $H_1$ of
+$G_1$ such that $H_1 \cong \mathbb{Z}^n$ and $G_1 / H_1$ is compact. Therefore $H = \pi^{-1}(H_1)$ is a closed countable subgroup of $G$.
+Thus $H$ is locally compact and countable, hence discrete by Lemma 4.8.
+
+
+    Since $H$ is finitely generated, it is isomorphic to $H_2 \times F$, where $H_2 \cong \mathbb{Z}^s$ for some $s \in \mathbb{N}$ and $F$ is a finite
+abelian group (see Theorem 2.1). Now $G/H$ is isomorphic to $G_1/H_1$ and $H/H_2$ is finite, so $G/H_2$ is compact
+thanks to Lemma 4.5.
+
+
+    Now consider the general case. There exists a compact subset $K$ of $G$ that generates $G$. By Lemma 4.14 we
+can assume wlog that $K = \bar{U}$, where $U$ is a symmetric neighborhood of 0 in $G$ with compact closure. We show
+now that there exists a finite subset $F$ of $G$ such that
+
+
+    $K + K \subseteq K + \langle F \rangle$. (2)
+
+
+In fact, pick a symmetric neighborhood $V$ of 0 in $G$ such that $V + V \subseteq U$. For the compact set $K$ satisfying
+$K \subseteq \bigcup_{x \in K}(x + V )$ there exists a finite subset $F$ of $K$ such that $K \subseteq \bigcup_{x \in F}(x + V) = F + V$. Then
+
+
+    $K + K \subseteq F + F + V + V \subseteq \langle F \rangle + U ⊆ \langle F \rangle + K$.
+
+
+gives (2). An easy inductive argument shows that $\langle K \rangle = G$ and (2) imply $G = \langle K \rangle \subseteq K + \langle F \rangle $.
+
+
+    Let $G_1 = \langle F \rangle$. By $G = \langle F \rangle + K$ the quotient $\pi(K) = G/G_1$ is compact. By the first part of the proof there
+exists a discrete subgroup $H$ of the locally compact subgroup $G_1$ of $G$, such that $H \cong \mathbb{Z}^n$ for some $n \in \mathbb{N}$ and
+$G_1/H$ is compact. Since $G_1/H$ is a compact subgroup of $G/H$ such that $(G/H)/(G_1/H) \cong G/G_1$ is compact,
+we conclude that also $G/H$ is compact.
+
+
+\textbf{Proposition 6.18} Let $G$ be a compactly generated locally compact abelian group. Then there exists a compact
+subgroup $K$ of $G$ such that $G/K$ is elementary locally compact abelian.
+
+
+    \emph{Proof.} By Proposition 6.17 there exists a discrete subgroup $H$ of $G$ such that the quotient $G/H$ is compact.
+Consider the canonical projection $\pi$ of $G$ onto $G/H$. Let $U$ be a compact symmetric neighborhood of 0 in $G$
+such that $(U + U + U) \cap H = \{0\}$. So $\pi(U)$ is a neighborhood of 0 in $G/H$ and applying Lemma 6.8 we find a
+closed subgroup $L \supseteq H$ of $G$ such that the closed subgroup $L/H$ of $G/H$ satisfies
+
+
+    $L/H \subseteq \pi(U)$ and $(G/H)/(L/H) = G/L \cong \mathbb{T}^t \times F$, (4)
+
+
+where $F$ is a finite abelian group and $t \in \mathbb{N}$, i.e., $G/L$ is elementary compact abelian.
+
+
+    The set $K = L \cap U$ is compact being closed in the compact neighborhood $U$. Let us see now that $K$ is a
+subgroup of $G$. To this end take $x, y \in K$. Then $x - y \in L$ and $\pi(x - y) \in C \subseteq \pi(U)$. Thus $\pi(x - y) = \pi(u)$ for
+some $u \in U$. As $\pi(x-y-u) = 0$ in $G/H$, one has $x-y-u \in (U+U+U) \cap H = \{0\}$. Hence $x-y = u \in L\cap U = K$.
+
+
+    Now take $x \in L$; consequently $\pi(x) \in C \subseteq \pi(U)$ so $\pi(x) = \pi(u)$ for some $u \in U$. Clearly, $u \in L \cap U = K$,
+hence $\pi(L) = \pi(K)$. Thus $L = K + H$ and $K \cap H = \{0\}$ yields that the canonical projection $l : G \to G/K$
+restricted to $H$ is a continuous isomorphism of $H$ onto $l(H) = l(L)$. Let us see now that $l(H)$ is discrete. The
+compact set $K$ is contained in the open set $W_1 = G / (H / \{0\}) = G / H \cup {0}$ ($H$ is discrete). By Lemma 4.3
+(c) there exists an open neighborhood $V$ of 0 in $G$ such that $K +V  \subsetteq W_1$. This implies that $(K + V) \cap H = \{0\}$
+and so $(K + V) \cap (K + H) = K$, that gives $l(V ) \cap l(H) = \{0\}$ in G/K. Thus
+
+
+    $l(L) = l(H) \cong H \onga \mathbb{Z}^s$
+
+
+is discrete in G/K.
+
+
+    Observe that (4) yields the following isomorphisms:
+
+
+    (G/K)/l(L) = (G/K)/(L/K) ∼= G/L ∼= Tt × F.
+    
+
+Denote by $\varrho$ the composition $G/K → G/L \to \mathbb{T}^t \times F$. Let $W$ be a compact neighborhood of 0 in $G/K$ such
+that $W + W \subseteq l(V )$ and $\varrho (W) \subseteq \mathbb{T}^t \times \{0\}$. Then $\varrho \upharpoonright_W$ is injective because $l(V ) \cap l(L) = \{0\}$. In particular, $\varrho$
+is a local homeomorphism.
+
+
+    Consider now the canonical projection $q : \mathbb{R}^t \to \mathbb{T}^t$. Our aim is to lift it to a continuous homomorphism
+$f : \mathbb{R}^t \to G/K$ such that $\varrho \circ f = q$. The existence of such a lifting is immediate from the facts that both $q$
+and $\varrho$ are covering homomorphisms and Rtsimply connected. In particular, $D = f(\mathbb{R}^t)$ is an open subgroup of
+$G/K$ as has a non-empty interior (as $q$ and $\varrho$ are local homeomorphisms). Since $\mathbb{R}^t$ is divisible, by Lemma 2.8
+$G/K = D \times B$ where $B$ is a discrete subgroup of $G/K$ because $D \cap B = \{0\}$ and $D$ is open. Moreover $B$ is
+compactly generated as it is a quotient of $G$. Since it is also discrete, $B$ is finitely generated. Then $f : \mathbb{R}^t \to D$
+is open by Theorem 4.9 and so $D$ is isomorphic to a quotient of $\mathbb{R}^t$, which is elementary locally compact abelian.
+
+
+    For the reader who is not familiar with covering maps we provide now a self-contained proof.
+
+
+    Take an open neighborhood $U$ of 0 in $\mathbb{R}^t$ such that $U - U \cap ker q = \{0\}$ and let $U_0 = U \cap q^{-1}(\varrho(W))$.
+Then $U_0$ is an open neighborhood of 0 in $\mathbb{R}^t$ such that $q \upharpoonright_{U_0}$ is one-to-one from $U_0$ to $\varrho(W)$. Pick a symmetric
+neighborhood $U_1$ of 0 in $\mathbb{R}^t$ such that $U_1 + U_1 \subseteq U_0$. Define a map $f : \mathbb{R}^t \to G/K$ as follows: $f \upharpoonright_{U_0}$ is simply
+the composition $\varrho^{-1} \circ q$. So $f$ maps $U_0$ onto the open subset $\varrho^{-1}(q(U_0))$ of $G/K$. If $x \in \mathbb{R}^t$ there exists $n \in \mathbb{N}_+$
+such that $\frac{1}{n} x \in U_0$. We put $f(x) = nf(\frac{1}{n} x)$ and we note that this definition does not depend on $n$. Moreover,
+$f(x_1 + x_2) = f(x_1) + f(x_2)$ for every $x_1, x_2 \in U_1$.
+
+
+    We can prove now that $f$ is a homomorphism. First of all we note that for every $x \in \mathbb{R}^t f \upharpoonright_{\langle x \rangle}$ is a
+homomorphism, i.e., $f(kx) = kf(x)$ for every $k \in \mathbb{Z}$. Now take $x, y \in \mathbb{R}^t$. There exists an integer $n > 0$ such
+that $\frac{1}{n}x, \frac{1}{n}y \in U_1$ and so $\frac{1}{n}x + \frac{1}{n}y \in U_0$. By the the previous step
+
+
+    $f(x + y) = nf (\frac{1}{n}(x + y))= nf (\frac{1}{n}x + \frac{1}{n}y)= nf (\frac{1}{n}x)+ nf (\frac{1}{n})= f(x) + f(y)$,
+
+
+for all $x,y \in \mathbb{R}^t$
 \end{document}
