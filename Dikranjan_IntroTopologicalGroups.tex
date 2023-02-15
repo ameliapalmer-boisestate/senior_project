@@ -4029,4 +4029,1088 @@ that $\frac{1}{n}x, \frac{1}{n}y \in U_1$ and so $\frac{1}{n}x + \frac{1}{n}y \i
 
 
 for all $x,y \in \mathbb{R}^t$
+
+
+    So $f$ is continuous and also a local homeomorphism on $\mathbb{R}^t$ because it is the composition of local homeomorphisms:
+restricted to the open subset $U_0$, $f$ is the composition of $q$ and $\varrho^{-1}$(note that both $\varrho \upharpoonright_W$ and $q \upharpoonRight_{U_0}$ are
+continuous and open).
+
+
+    To prove the Pontryagin-van Kampen duality theorem in the general case (for $G \in \mathcal{L}$), we need Theorem
+6.19, which generalizes the Peter-Weyl Theorem 6.4.
+
+
+\textbf{Theorem 6.19.} If $G$ is a locally compact abelian group, then $\hat{G}$ separates the points of $G$.
+
+
+\emph{Proof} Let $V$ be a compact neighborhood of 0 in $G$. Take $x \in G / \{0\}$. Then $G_1 = \langle V \cup \{x\} \rangle$ is an open (it
+has non-void interior) compactly generated subgroup of $G$. In particular $G_1$ is locally compact. By Proposition
+6.17 there exists a discrete subgroup $H$ of $G_1$ such that $H \cong \mathbb{Z}^m$ for some $m \in \mathbb{N}$ and $G_1/H$ is compact. Thus
+$\bigcap_{n \in \mathbb{N}_+} nH = \{0\}$ and so there exists $n \in \mathbb{N}_+$ such that $x \notin nH$. Since $H/nH$ is finite, the quotient $G_2 = G_1/nH$
+is compact by Lemma 4.5. Consider the canonical projection $\pi : G_1 \to G_2$ and note that $\pi(x) = y \neq 0$ in $G_2$.
+By the Peter-Weyl Theorem 6.4 there exists $\xi \in \hat{G}$ such that $\xi(y) \neq 0$. Consequently $\chi = \xi \circ \pi \in \hat{G_1}$ and
+$\chi(x) \neq 0$. By Theorem 2.5 there exists $\chi \in \hat{G}$ such that $\bar{\chi} \upharpoonright_{G_1}= \chi$.
+
+
+    It follows from Theorem 6.19 and Remark 7.24 that $\omega_G$ is a continuous monomorphism for every locally
+compact abelian group $G$.
+
+
+\textbf{Corollary 6.20.} Let $G$ be a locally compact abelian group and $K$ a compact subgroup of $G$. Then for every
+$\chi \in \hat{K}$ there exists $\xi \in \hat{G}$ such that $\xi \upharpoonright_K = \chi$.
+
+
+    \emph{Proof.} Define $H = \{ \chi \in \hat{K} : \text{ there exists } \xi \in \hat{G} \text{ with } \xi \upharpoonright_K= \chi \}$. By Theorem 6.19 the continuous characters of
+$G$ separate the points of $G$. Therefore $H$ separate the points of $K$. Now apply Corollary 6.6 to conclude that
+$H = \hat{K}$.
+
+
+    Here is another corollary of Theorem 6.19:
+
+
+\textbf{Corollary 6.21.} A $\sigma$-compact and locally compact abelian group is totally disconnected iff for every continuous
+character $\chi$ of $G$ the image $\chi(G)$ is a proper subgroup of $\mathbb{T}$.
+
+
+    \emph{Proof.} Assume that $G$ is a locally compact abelian group such that $\chi(G)$ is a proper subgroup of $\mathbb{T}$ for every
+continuous character $\chi$ of $G$. According to Theorem 6.19 the diagonal homomorphism $f : G \to \Pi \{ \chi(G) : \chi \in \hat{G} \}$
+of all $\chi \in \hat{G}$ is injective. Since the proper subgroups of $\mathbb{T}$ are totally disconnected, the whole product will be
+totally disconnected, so also $G$ will be totally disconnected. Now assume that $G$ is $\sigma$-compact, locally compact
+and totally disconnected. Consider $\chi \in \hat{G}$ and assume for a contradiction that $\chi(G) = \mathbb{T}$. Then $\chi : G \to \mathbb{T}$
+will be an open map by the open mapping theorem, so $\mathbb{T}$ will be a quotient of $G$. As total disconnectedness
+is inherited by quotiens of locally compact groups (see Corollary 4.20), we conclude that $\mathbb{T}$ must be totally
+disconnected, a contradiction.
+
+
+\textbf{Corollary 6.22.} A compact abelian group is totally disconnected iff every continuous character of $G$ is torsion.
+
+
+\emph{Proof.} For a compact abelian group $G$ the image $\chi(G)$ under a continuous character $\chi$ of $G$ is a compact, hence
+closed subgroup of $\mathbb{T}$. Hence $\chi(G)$ is a proper subgroup of $\mathbb{T}$ precisely when it is finite. This means that the
+character $\chi$ is torsion.
+
+
+    Compactness plays an essential role here. We shall see examples of totally disconnected $\sigma$-compact and
+locally compact abelian groups $G$ such that no continuous character of $G$ is torsion (e.g., $G = \mathbb{Q}_p$).
+
+
+\section{Pontryagin-van Kampen duality}
+
+\subsection{The Dual Group}
+
+
+In the sequel we shall write the circle additively as $(\mathbb{T}, +)$ and we denote by $q_0 : \mathbb{R} \to \mathbb{T} = \mathbb{R}/\mathbb{Z}$ the canonical
+projection. For every $k \in \mathbb{N}_+$ let $\wedge_k = q_0((\frac{-1}{3k},\frac{1}{3k}))$. Then ${\wedge_k : k \in \mathbb{N}_+}$ is a base of the neighborhoods of 0
+in $\mathbb{T}$, because ${(\frac{-1}{3k}, \frac{1}{3k}) : k \in \mathbb{N}_+}$ is a base of the neighborhoods of 0 in $\mathbb{R}$.
+
+
+    For every abelian group $G^* = Hom (G,\mathbb{T})$. For a subset $K$ of $G$ and a subset $U$ of $\mathbb{T}$ let
+
+
+        $W_{G^*} (K, U) = \{\chi \in G : \chi(K) \subseteq U\}$.
+
+
+    For any subgroup $H$ of $G^*$ we abbreviate $H \cap W(K, U)$ to $W_H (K, U)$. When there is no danger of confusion
+we shall write only $W(K, U)$ in place of $W_{G^*} (K, U)$. The group $G^*$ will be considered only with one topology,
+namely the induced from ${T}^G$ compact topology (see Remark 4.1).
+
+
+    If $G$ is a topological abelian group, $\hat{G}$ will denote the subgroup of $G^*$ consisting of continuous characters.
+
+
+    The group $\hat{G}$ will carry the compact open topology that has as basic neighborhoods of 0 the sets $W_{\hat{G}}(K, U)$,
+where $K$ is a compact subset of $G$ and $U$ is neighborhood of 0 in $\mathbb{T}$. We shall see below that when $U \subseteq \wedge_1$,
+then $W_{\hat{G}}(K, U)$ coincides with $W_{G^*} (K, U)$ in case $K$ is a neighborhood of 0 in $G$. Therefore we shall use mainly
+the notation $W(K, U)$ when the group $G$ is clear from the context.
+
+
+    Let us start with an easy example.
+
+
+\textbf{Example 7.1.} Let $G$  be an abelian topological group.
+
+
+    \begin{enumerate}
+
+        \item If $G$ is compact, then $\hat{G}$ is discrete.
+
+        \item If $G$ is discrete, then $\hat{G}$ is compact.
+
+    \end{enumerate}
+
+
+    Indeed, to prove (1) it is sufficient to note that $W_{\hat{g}}(G,\wedge_1) = {0}$ as $\wedge_1$ contains no subgroup of $\mathbb{T}$ beyond 0
+
+
+    (2) Suppose that $G$ is discrete. Then $\hat{G} = Hom(G,\mathbb{T})$ is a subgroup of the compact group $T^G$. The 
+compactopen topology of $\hat{G}$ coincides with the topology inherited from $\mathbb{T}^G$: let $F$ be a finite subset of $G$ and $U$ an open
+neighborhood of 0 in $\mathbb{T}$, then
+
+
+    $\bigcap_{x \in F} π^{-1}_x (U) \cap Hom (G,T) = {\chi \in Hom(G,\mathbb{T}) : \pi_x \in U \text{ for every } x \in F}$
+
+
+        $= {\chi \in Hom (G,\mathbb{T}) : \chi(x) \in U \text{ for every } x \in F} = W(F, U)$.
+
+
+    Moreover $Hom (G,\mathbb{T})$ is closed in the compact product $\mathbb{T}^G$ by Remark 4.1 and we can conclude that $\hat{G}$ is
+compact.
+
+
+    Now we prove that the dual group is always a topological group. If the group $G$ is locally compact, then its
+dual is locally compact too. This is the first step of the Pontryagin-van Kampen duality theorem.
+
+
+\textbf{Theorem 7.2}. For an abelian topological group $G$ the following assertions hold true:
+
+
+    \begin{itemize}
+
+        \item (a) if $x \in \mathbb{T}$ and $k \in \mathbb{N}_+$, then $x \in \wedge_k$ if and only if $x, 2x, . . . , kx \in \wedge_1$;
+        
+        \item (b) $\chi \in Hom (G,T)$ is continuous if and only if $\chi^{-1} (\wedge_1)$ is a neighborhood of 0 in $G$;
+        
+        \item (c) $\{W_{\hat{G}}(K,\wedge_1) : K \text{ compact } \subseteq G\}$ is a base of the neighborhoods of 0 in $\hat{G}$, in particular $\hat{G}$ is a topological
+        group.        
+        
+        \item (d) $W_{\hat{G}}(A,\wedge_s) + W_{\hat{G}}(A,\wedge_s) \subseteq W_{\hat{G}}(A,\wedge_{s-1})$ and $W_{\hat{G}}(\bar{A},\wedge_s) + W_{\hat{G}}(\bar{A},\wedge_s) ⊆ W_{\hat{G}}(\bar{A},\wedge_{s-1})$ for every $A \subseteq G$
+        and $s > 1$.        
+        
+        \item (e) if $F$ is a closed subset of $\mathbb{T}$, then for every $K \subseteq G$ the subset $W_{G^*}(K, F)$ of $G^*$ is closed (hence, compact);        
+        
+        \item (f) if $U$ is neighborhood of 0 in $G$, then
+            
+            \item (f_1) $W_{G^*}(\bar{U}, V) = W_{G^*} (\bar{U}, V)$ for every neighborhood of 0 $V \subseteq \wedge_1$ in $T$;
+            
+            \item (f_2) $W(\bar{U},\wedge_4)$ has compact closure;
+            
+            \item (f_3)  if $U$ has compact closure, then $W(\bar{U},\wedge_4)$ is a neighborhood of 0 in $\hat{G}$ with compact closure, so $\hat{G}$ is
+            locally compact.
+
+    \end{itemize}
+
+
+    \emph{Proof.} (a) Note that for $s \in \mathbb{N}$, $sx \in \wedge_1$ if and only if $x \in A_{s,t} = \wedge_s+\pi_{\mathbb{T}}(\frac{t}{s})$ for some integer $t$ with $0 \leq t \leq s$. On
+the other hand, $A_s, 0 = \wedge_s$ and $\wedge_s \cap A_{s+1,t}$ is non-empty if and only if $t = 0$. Hence, if $x \in \wedge_s$ and $(s+ 1)x \in \wedge_1$,
+then $x \in \wedge_{s+1}$ and this holds in particular for $1 \leq s < k$. This proves that $sx \in \wedge_1$ for $s = 1, . . . , k$ if and only
+if $x \in \wedge_k$.
+
+
+    (b) Suppose that $\chi^{-1}(\wedge_1)$ is a neighborhood of 0 in $G$. So there exists an open neighborhood $U$ of 0 in $G$
+such that $U \subseteq \chi_{-1}(\wedge_1)$. Moreover, there exists an other neighborhood $V$ of 0 in $G$ with $\underbrace{V + · · · + V}_k \subseteq U$ where
+$k \in \mathbb{N}_+$. Now $\chi(y) \in \wedge_1$ for every $y \in V$ and $s = 1, . . . , k$. By item (a) $\chi(y) \in \wedge_k$ and so $\chi(V) \subseteq \wedge_k$.
+
+
+    (c) Let $k \in \mathbb{N}_+$ and $K$ be a compact subset of $G$. Define $L = \underbrace{K + · · · + K}_k$, which is a compact subset of
+$G$ because it is a continuous image of the compact subset $K^k$ of $G^k$. Take $\chi \in W(L,\wedge_1)$. For every $x \in K$ we
+have $s\chi(x) \in \wedge_1$ for $s = 1, . . . , k$ and so $\chi(x) \in \wedge_k$ by item (a). Hence $W(L,\wedge_1) \subseteq W(K,\wedge_k)$.
+
+
+    (d) obvious.
+
+
+    (e) If $\pi_x : \mathbb{T}^G \to \mathbb{T}$ is the projection defined by the evaluation at $x$, for $x \in G$, then obviously
+
+
+    $W_{G^*} (K, F) = \bigcap_{x \in K} \{\chi \in G^*: \chi(x) \in F\} = \bigcap_{x \in K}\pi^{-1}_{x}(F)$
+
+
+is cloased as each $\pi^{-1}_{x}(F)$ is closed in $G^*$.
+
+
+    (f1) follows immediately from item (c).
+
+
+    (f2) To prove that the closure of $W0 = W(U,Λ4)$ is compact it is sufficient to note that $W_0 \subseteq W_1 := W(\bar{U},\bar{\wedge_4})$
+and prove that $W_1$ is compact. Let $\tau_s$ denote the subspace topology of W1 in Gb. We prove in the sequel that
+(W1, τs) is compact.
+
+
+    Consider on the set $W_1$ also the weaker topology $\tau$ induced from $G^*$ and consequently from $\mathbb{T}^G$. By (e)
+$(W_1, \tau)$ is compact.
+
+
+    It remains to show that both topologies $\tau_s$ and $\tau$ of $W_1$ coincide. Since $\tau_s$ is finer than $\tau$ , it suffices to show
+that if $\alpha \in W_1$ and $K$ is a compact subset of $G$, then $(\alpha + W(K,\wedge_1)) \cap W_1$ is also a neighborhood of $\alpha$ in
+$(W_1, \tau)$
+
+
+    Since $\bigcup{a + U : a \in K} \supseteq K$ and $K$ is compact, $K \subseteq F + U$, where $F$ is a finite subset of $K$. We prove
+now that
+
+
+    $(\alpha + W(F,\wedge_2)) \cap W_1 \subseteq (\alpha + W(K,\wedge_1)) \cap W_1$. (*) 
+
+
+    Let $\xi \in W(F,\wedge_2)$, so that $\alpha + \xi' \in W_1 = W(\bar{U},\bar{\wedge_4})$. As $\alpha \in W_1$ as well, we deduce from items (c) and (d) that
+$\xi = (\alpha + \xi') - \alpha \in W_1 - W_1$. Hence $\xi(\bar{U}) \subseteq Λ_2$ and consequently
+    
+
+    $\xi(K) \subseteq \xi(F + U) \subseteq \wedge_2 + \bar{\wedge_2} \subseteq \wedge_1.$
+
+
+This proves $\xi \in W(K,\wedge_1)$ and (*).
+
+
+    (f3) Follows obviously from (f2) and the definition of the compact open topology
+
+
+    The above proof shows another relevant fact. The neighborhood $W(\bar{U},\wedge_4)$ of 0 in the dual group $\hat{G}$ carries
+the same topology in $\hat{G}$ and $G^*$, nevertheless the inclusion map $j : \hat{G} , \hookrightarrow G^*$ need not be an embedding:
+    
+
+\textbf{Corollary 7.3}. For a locally compact abelian group $G$ the following are equivalent:
+
+
+    \begin{itemize}
+
+        \item the inclusion map $j : \hat{G} , b \to G^*$ is an embedding;
+
+        \item $G$ is discrete;
+
+        \item $\hat{G} = G^*$ is compact
+
+    \end{itemize}
+
+
+Proof. Since $G^*$ is compact, $j$ can be an embedding iff $\hat{G}$ itself is compact. According to Example 7.1 this
+occurs precisely when $G$ is discrete. In that case $\hat{G} = G^*$ is compact.
+
+
+    Actually, it can be proved, once the duality theorem is available, that $j : \hat{G}, \hookrightarrow G^*$ need not be even a local
+homeomorphism. (If $j$ is a local homeomorphism, then the topological subgroup $j(\hat{G})$ of $G^*$ will be locally
+compact, hence closed in $G^*$. This would yield that $j(G^*)$ is compact. On the other hand, the topology of
+$j(G^*)$ is precisely the initial topology of all projections $p_x$ restricted to $\hat{G}$. By the Pontryagin duality theorem,
+these projections form the group of all continuous characters of $\hat{G}$. So this topology coincides with $T_{\hat{\hat{G}}}$. By a
+general theorem of Glicksberg, a locally compact abelian groups $H$ and $(H, \mathcal{T}_{\hat{H}})$ have the same compact sets.
+In particular, compactness of $(H, \mathcal{T}_{\hat{H}})$ yields compactness of $H$. This proves that if $j : \hat{G}, \hookrightarrow G^*$ is a local
+homeomorphism, then $\hat{G}$ is compact and consequently $G$ is discrete.)
+
+
+\subsection{Computation of some dual groups}
+
+
+In the next proprosition we show, roughly speaking, that the projective order between continuous surjective
+open homomorphisms with the same domain corresponds to the order by inclusion of their kernels.
+
+
+\textbf{Proposition 7.4} Let $G$, $H_1$ and $H_2$ be topological abelian groups and let $\chi_i: G \to H_i, i = 1, 2$, be continuous
+surjective open homomorphisms. Then there exists a continuous homomorphism $\iota : H_1 \to H_2$ such that $\chi_2 = \iota \circ \chi_1 $
+iff ker $\chi_1 \leq ker \chi_2$. If ker $\chi_1 = ker \chi_2$ then $\iota$ will be a topological isomorphism.
+
+
+    Proof. The necessity is obvious. So assume that ker $\chi_1 \leq ker \chi_2$ holds. By the homomorphism theorem applied
+to $\chi_i$ there exists a topological isomorphisms $j_i: G/ ker \chi_i \to H_i$ such that $\chi_i = j_i \circ q_i$, where $q_i: G \to G/ ker \chi_i$
+is the canonical homomorphism for $i = 1, 2$. As $ker \chi_1 \leq ker \chi_2$ we get a continuous homomorphism $t$ that
+makes commutative the following diagram
+
+%Note from Skarlet: This diagram is a little difficult to type out so I had to describe it a bit, feel free to contact me for clarification
+At the top of the diagram, there is $G$, and $G$ points to all of the elements in the line below like so $G \to^{\chi_1} H_1$, $G \to^{q_1} G / ker \chi_1$, $G \to^{q_2} G / ker \chi_2$, $G \to^{\chi_2} H_2$
+$H_1 \leftarrow^{j_1} G / ker \chi_1 \dashrightarrow^t G / ker \chi_2 \rightarrow^{j_2} H_2$
+Along the bottom of the diagram, there is an arrow arching from one end to the other $H_1 \to_\iota H_2$
+
+
+Obviously $\iota = j_2 \circ t \circ j^{-1}_1$ works. If $ker \chi_1 = ker \chi_2$, then t is a topological isomorphism, hence $\iota$ will be a
+topological isomorphism as well.
+
+
+    In the sequel we denote by $k · id_G$ the endomorphism of an abelian group $G$ obtained by the map $x \mapsto kx$,
+for a fixed $k \in \mathbb{Z}$. The next lemma will be used for the computation of the dual groups in Example 7.7.
+
+
+\prrof{Proof.} We prove first that the only topological isomorphisms $\chi : \mathbb{T} \to \mathbb{T}$ are $\pm id_{\mathbb{T}}$. The proof will exploit the
+fact that the arcs are the only connected sets of $\mathbb{T}$. Hence $\chi$ sends any arc of $\mathbb{T}$ to an arc, sending end points to
+end points. Denote by $\varphi$ the canonical homomorphism $\mathbb{R} \to \mapsto{T}$ and for $n \in \mathbb{N}$ let $c_n = \varphi(1/2^n)$ be the generators
+of the Pr¨ufer subgroup $\mathbb{Z}(2^{\infty})$ of $\mathbb{T}$. Then, $c_1$ is the only element of $\mathbb{T}$ of order 2, hence $g(c_1) = c_1$. Therefore,
+the arc $A_1 = \varphi([0, 1/2])$ either goes onto itself, or goes onto its symmetric image $-A_1$. Let us consider the first
+case. Clearly, either $g(c_2) = c_2$ or $g(c_2) = -c_2$ as $o(g(c_2)) = 4$ and being $\pm c_2$ the only elements of order 4 of $\mathbb{T}$.
+By our assumption $g(A_1) = A_1$ we have $g(c_2) = c_2$ since $c_2$ is the only element of order 4 on the arc $A_1$. Now
+the arc $A_2 = [0, c_2]$ goes onto itself, hence for $c_3$ we must have $g(c_3) = c_3$ as the only element of order 8 on the
+arc $A_2$, etc. We see in the same way that $g(c_n) = c_n$. Hence $g$ is identical on the whole subgroup $\mathbb{Z}(2^{\infty})$. As
+this subgroup is dense in $\mathbb{T}$, we conclude that $g$ coincides with $id_{\mathbb{T}}$. In the case $g(A_1) = -A_1$ we replace $g$ by
+$-g$ and the previous proof gives $-g = id_{\mathbb{T}}$, i.e., $g = -id_{\mathbb{T}}$.
+
+
+    For $k \in \mathbb{N}_+$ let $\pi_k = k · id_{\mathbb{T}}$. Then $ker \pi_k = \mathbb{Z}_k$ and $\pi_k$ is surjective. Let now $χ : \mathbb{T} \to \mathbb{T}$ be a non-trivial
+continuous homomorphism. Then $ker \chi$ is a closed proper subgroup of $\mathbb{T}$, hence $ker \chi = \mathbb{Z}_k$ for some $k \in N_+$.
+Moreover, $\chi(\mathbb{T})$ is a connected non-trivial subgroup of $\mathbb{T}$, hence $\chi(\mathbb{T}) = \mathbb{T}$. By Proposition 7.4 $\chi = \pm \pi_k$.
+
+
+    Obviously, $\chi = \pm \xi$ for characters $\chi, \xi : G \to \mathbb{T}$ implies $ker \chi = ker \xi$ and $\chi (G) = \xi (G)$. More generally,
+if $\chi = k · \xi$ for some $k \in \mathbb{Z}$, then $ker \chi \geq ker \xi$ and $\chi (G) \leq \xi (G)$. Now we see that this implication can be
+(partially) inverted under appropriate hypotheses.
+
+
+\textbf{Corollary 7.6.} Let $G$ be a $\sigma$-compact locally compact abelian group and let $\chi, \xi : G \hookrightarrow T$ be continuous
+characters such that $ker \chi \geq ker \xi$ and $\chi (G) \leq \xi (G)$.
+
+
+\begin{itemize}
+
+    \item (a) If $\chi(G) = \xi(G) \mathbb{T}$ then $\chi = k · \xi$ for some $k \in \mathbb{Z}$; moreover, $ker \chi = ker \xi$ iff $\chi = \pm \xi$
+
+    \item (b) If $G$ is compact and $|\xi (G)| = m$ for some $m \in \mathbb{N}_+$, then $\chi = k \xi$ for some $k \in \mathbb{Z}$; moreover, $ker \chi = ker \xi$
+    iff $\chi(G) = \xi(G)$, in such a case $k$ must be coprime to $m$.
+
+    \item (c) If $ker \xi = ker \xi$ is open and H = χ(G) = ξ(G), then χ = ι ◦ ξ, where ι : H → H is an arbitrary
+    automorphism of the subgroup H of T equipped with the discrete topology.    
+
+\end{itemize}
+
+
+\emph{Proof.} (a) As $\chi (G) = \xi (G) = T$ and $G$ is $\sigma$-compact, we can apply Lemma 7.4 and observe that the only $\iota$ given
+by the lemma can be $k · id_{\mathbb{T}}$ for some $k \in \mathbb{Z}$ in view of the previous lemma. The same lemma yields $k = \pm 1$
+when ker $\chi = ker \xi$.
+
+
+    (b) If $G$ is compact and $|\xi (G)| = m$ for some $m \in \mathbb{N}_+$, $\xi (G)$ is a cyclic subgroup of $\mathbb{T}$ of order $m$. Note that
+$\mathbb{T}$ has a unique such cyclic subgroup. By Proposition 7.4 there exists a homomorphism $\iota : \xi (G) \to \chi (G)$ such
+that $\chi = \iota \circ \xi$. The hypothesis $\chi (G) \leq \xi (G)$ implies that there such a $\iota$ must by the multiplication by some
+$k \in \mathbb{Z}$. In case $\chi (G) = \xi (G)$ this $k$ is coprime to $m$.
+
+
+    (c) Obvious.
+
+
+\textbf{Example 7.7} Let $p$ be a prime. Then $\hat{Z(p^{\infty})} \cong \mathbb{J}_p, \hat{\mathbb{J}_p} \cong \mathbb{Z}(p^{\infty}), \hat{\mathbb{T}} \cong \mathbb{Z}, \hat{\mathbb{Z}} \cong \hat{\mathbb{T}}$ and $\hat{\mathbb{R}} \cong \mathbb{R}$.
+
+
+Proof. The first isomorphism $\hat{\mathbb{Z}(p^{\infty})} = \mathbb{J}_p$ follows from our definition $\mathbb{J}_p = End(\mathbb{Z}(p^{\infty})) = Hom(\mathbb{Z}(p^{\infty}),\mathbb{T}) = \hat{\mathbb{Z}(p^{\infty})}$.
+
+
+    To verify the isomorphism $\hat{\mathbb{J}_p} \cong Z(p^{\infty})$ consider first the quotient homomorphism $\eta_n : \mathbb{J}_p \to \mathbb{J}_p / p^n \mathbb{J}_p\cong \mathbb{Z}_{p^n} \leq \mathbb{T}$.
+With this identifications we consider $\eta_n \in \hat{\mathbb{J}_p}$. It is easy to see that under this identification $p\eta_n = \eta_{n-1}$.
+Therefore, the subgroup $H$ of $\hat{\mathbb{J}_p}$ generated by the characters $\eta_n$ is isomorphic to $\mathbb{Z}(p^\infty)$. Let us see that $H = \hat{\mathbb{J}_p}$.
+Indeed, take any non-trivial character $\chi : \mathbb{J}_p \to \mathbb{T}$. Then $\mathbb{N} = ker \chi$ is a closed proper subgroup of $\mathbb{J}_p$. Moreover,
+$N \neq 0$ as $\mathbb{J}_p$ is not isomorphic to a subgroup of $\mathbb{T}$ by Exercise 4.49. Thus $N = p^n \mathbb{J}_p$ for some $n \in \mathbb{N}_+$. Since
+N = ker ηn, we conclude with (b) of Corollary 7.6 that χ = kηn for some k ∈ Z. This proves that χ = H and
+consequently $\hat{\mathbb{J}_p} \cong \mathbb{Z}(p^{\infty})$.
+
+
+    The isomorphism $g : \mathbb{\hat{Z}} \to \mathbb{T}$ is obtained by setting $g(\chi) := \chi(1)$ for every $\chi : \mathbb{Z} \to \mathbb{T}$. It is easy to check that
+this isomorphism is topological.
+
+
+    According to 7.5 every $\chi \in \mathbb{T}$ has the form $\chi = k · id_{\mathbb{T}}$ for some $k \in \mathbb{Z}$. This gives a homomorphism $\hat{\mathbb{T}} \to \mathbb{Z}$
+assigning $\chi \mapsto k$. It is obviously injective and surjective. This proves $\hat{\mathbb{T}} \cong \mathbb{Z}$ since both groups are discrete.
+
+
+    To prove $\hat{\mathbb{R}} \cong \mathbb{R}$ consider the character $\chi_1 : \mathbb{R} \to \mathbb{T}$ obtained simply by the canonical map $\mathbb{R} \to \mathbb{R} / \mathbb{Z}$. For
+every non-zero $r \in \mathbb{R}$ consider the map $\rho r : \mathbb{R} \to \mathbb{R}$ defined by $\rho r(x) = rx$. Then its composition $\chi_r = \chi_1 \circ \rho_r$
+with $\chi_1$ gives a continuous character of $\mathbb{R}$ that is surjective and $ker \chi_r = \langle 1/r \rangle$. Now consider any continuous
+non-trivial character $\chi \in \hat{\mathbb{R}}$. Then $\chi$ is surjective and $N = ker \chi$ is a proper closed subgroup of $\mathbb{R}$. Hence $N$
+is cyclic by Exercise 3.20. Let $N = \langle 1/r \rangle$. Then $ker \chi = ker \chi_r$, so that Corollary 7.6 yields $\chi = \pm \chi_r$. The
+assignment $\chi \mapsto \pm r$ defines a homomorphism $\hat{\mathbb{R}} \to \mathbb{R}$ that is obviously injective and surjective. Its continuity
+immediately follows from the definition of the compact-open topology of $\hat{\mathbb{R}}$. As $\mathbb{R}$ is $\sigma$-compact, this isomorphism
+is also open by the open mapping theorem.
+
+
+\textbf{Exercise 7.8.} Let $G$ be an abelian group and $p$ be a prime. Prove that
+
+
+\begin{itemize}
+
+    \item (a) $\chi \in p \hat{G}$ iff $\chi(G[p]) = 0$.
+
+    \item (b) $p \chi = 0$ in $\hat{G}$ iff $\chi (pG) = 0$.
+
+\end{itemize}
+
+
+Conclude that
+
+
+\begin{itemize}
+
+    \item a discrete abelian group $G$ is divisible (resp., torsion-free) iff $\hat{G}$ is torsion-free (resp., divisible)
+
+    \item  the groups $\hat{\mathbb{Q}}$ and $\hat{\mathbb{Q}_p}$ are torsion-free and divisible.
+
+\end{itemize}
+
+
+\textbf{Exercise 7.9.} Let $G$ be a totally disconnected locally compact abelian group. Prove that $ker \chi$ is an open
+subgroup of $G$ for every $\chi \in \hat{G}$.
+
+
+    (Hint. Use the fact that by the continuity of $\chi$ and the total disconnectedness of $G$ there exists an open
+subgroup $O$ of $G$ such that $\chi(O) \subseteq \wedge_1$.)
+
+
+\textbf{Exercise 7.10.} Let $p$ be a prime. Prove that $\hat{\mathbb{Q}_p} \cong \mathbb{Q}_p$, where $\mathbb{Q}_p$ denotes the field of all $p$-adic numbers.
+
+
+    (Hint. Fix $N = {\chi \in \hat{\mathbb{Q}_p} : ker \chi \geq \mathbb{J}_p}$. By the compactness of $\mathbb{J}_p$, conclude that $N$ is an open subgroup of $\mathbb{Q}_p$
+topologically isomorphic to $\mathbb{J}_p$ using Exercise 7.9 and Corollary 7.6 (c). For every $n \in \mathbb{N}_+$ let $\xi_n : \mathbb{Q}_p \to \mathbb{Q}_p/p^n \mathbb{J}_p$
+be the canonical homomorphism. As $\mathbb{Q}_p/p^{-n} \mathbb{J}_p \cong \mathbb{Z}(p^{\infty}) \leq \mathbb{T}$, we can consider $\xi_n \in \hat{\mathbb{Q}_p}$. Show that $p \xi_{n+1} = \xi_n$
+for $n \in \mathbb{N}_+$ and $p \xi_1 \in N$. The subgroup of $\hat{\mathbb{Q}_p}$ generated by $N$ and $(\xi_n)$ is isomorphic to $\mathbb{Q}_p$. Using Corollary
+7.6 (c) and Exercise 7.9 deduce that it coincides with the whole group $\hat{\mathbb{Q}_p}$.)
+
+
+\textbf{Exercise 7.11.} Let $H$ be a subgroup of $\mathbb{R}^n$. Prove that every $\chi \in \hat{H}$ extends to a continuous character of $\mathbb{R}^n$.
+
+
+\subsection{Some general properties of the dual}
+We prove next that the dual group of a finite product of abelian topological groups is the product of the dual
+groups of each group.
+
+
+\textbf{Lemma 7.12.} If $G$ and $H$ are topological abelian groups, then $\hat{G \times H}$ is isomorphic to $\hat{G} \times \hat{H}$.
+
+
+\emph{Proof.} Define $\Phi : \hat{G} \times \hat{H} \to \hat{G \tiems H}$ by $\Phi(\chi_1, \chi_2)(\chi_1, x_2) = \chi_1(x_1) + \chi_2(x_2)$ for every $(\chi_1, \chi_2) \in \hat{G} \times \hat{H}$ and
+$(x_1, x_2) \in G \times H$. Then $\Phi$ is a homomorphism, in fact $\Phi(\chi_1+\psi_1, \chi_2+\psi_2)(x_1, x_2) = (\chi_1+\psi_1)(x_1)+(\chi_2+\psi_2)(x_2) =$
+$\chi_1 (x_1) + \psi_1 (x_1) + \chi_2 (x_2) + \psi_2 (x_2) = \Phi (\chi_1, \chi_2)(x_1, x_2) + \Phi (\psi_1, \psi_2)(x_1, x_2)$.
+
+
+    Moreover $\Phi$ is injective, because
+
+
+        $ker \Phi = {(\chi, \psi) \in \hat{G} \times \hat{H} : \Phi (\chi, \psi) = 0}$ 
+            $ = {(\chi, \psi) \in \hat{G} \times \hat{H} : \Phi (\chi, \psi)(x, y) = 0 \text{ for every } (x, y) \in G \times H}$
+            $ = {(\chi, \psi) \in \hat{G} \times \hat{H} : \chi(x) + \psi(y) = 0 \text{ for every } (x, y) \in G \times H}$
+            $ = {(\chi, \psi) \in \hat{G} \times \hat{H} : \chi(x) = 0 \text{ and } \psi(x) = 0 \text{ for every } (x, y) \in G \times H}$
+            $ = {(0, 0)}$.
+
+
+    To prove that $\Phi$ is surjective, take $\psi \in \hat{G \times H}$ and note that $\psi(x_1, x_2) = \psi(x_1, 0) + \psi(0, x_2)$. Now define
+$\psi_1(x_1) = \psi(x_1, 0)$ for every $x_1 \in G$ and $\psi_2(x_2) = \psi(0, x_2)$ for every $x_2 \in H$. Hence $\psi_1 \in \hat{G}$, $\psi_2 \in \hat{H}$ and
+$\psi = \Phi(\psi_1, \psi_2)$.
+
+
+    Now we show that $\Phi$ is continuous. Let $W(K, U)$ be an open neighborhood of $0$ in $\hat{G \times H}$ ($K$ is a compact
+subset of $G \times H$ and $U$ is an open neighborhood of 0 in $\mathbb{T}$). Since the projections $\pi_G$ and $\pi_H$ of $G \times H$ onto
+$G$ and $H$ are continuous, $K_G = \pi_G (K)$ and $K_H = \pi_H (K)$ are compact in $G$ and in $H$ respectively. Taking an
+open symmetric neighborhood $V$ of 0 in $\mathbb{T}$, it follows $\Phi(W(K_G, V ) \times W(K_H, V )) \subseteq W(K, U)$.
+
+
+    It remains to prove that Φ is open. Consider two open neighborhoods $W(K_G, U_G)$ of 0 in $\hat{G}$ and $W(K_H, U_H)$
+of 0 in $\hat{H}$, where $K_G \subseteq G$ and $K_H \subseteq H$ are compact and $U_G, U_H$ are open neighborhoods of 0 in $\mathbb{T}$. Then
+$K = (K_G \cup \{0\}) \times (K_H \cup \{0\})$ is a compact subset of $G \times H$ and $U = U_G \cap U_H$ is an open neighborhood of
+0 in $\mathbb{T}$. Thus $W(K, U) \subseteq \Phi(W(K_G, U_G) \times W(K_H, U_H))$, because if $\chi \in W(K, U)$ then $\chi = \Phi(\chi_1, \chi_2)$, where
+$χ1(x1) = \chi(x_1, 0) \in U \subseteq U_G$ for every $x_1 \in G$ and $\chi_2(x_2) = \chi(0, x_2) \in U \subseteq U_H$ for every $x_2 \in H$.
+
+
+    It follows from Proposition 7.7 that the groups $\mathbb{T}, \mathbb{Z}, \mathbb{Z}(p^{\infty}), \mathbb{J}_p e \mathbb{R}$ satisfy $\hat{\hat{G}} \cong G$, namely the 
+Pontryaginvan Kampen duality theorem. Using the next theorem this propertiy extends to all finite direct products of
+these groups.
+
+
+    Call a topological abelian group $G$ autodual, if $G$ satisfies $\hat{G} \cong G$. We have seen already that $\mathbb{R}$ and $\mathbb{Q}_p$ are
+autodual. By Lemma 7.12 finite direct products of autodual groups are autodual. Now using this observation
+and Lemma 7.12 we provide a large supply of groups for which the Pontryagin-van Kampen duality holds true.
+
+
+\textbf{Proposition 7.13.} Let $P_1, P_2$ and $P_3$ be finite sets of primes, $m, n, k, k_p \in N (p \in P_3)$ and
+$n_p, m_p \in \mathbb{N}_+ (p \in P_1 \cup P_2)$. Then every group of the form
+
+
+    $G = \mathbb{T}^n \times \mathbb{Z}^m \times \mathbb{R}^k \times F \times \Pi_{p \in P_1} \mathbb{Z} (p^{\infty})^{n_p} \times \Pi_{p \in P_2} \mathbb{J}_{p}^{m_p} \times \Pi_{j \in P_3} \mathbb{Q}_{p}^{k_p}$
+
+
+where $F$ is a finite abelian group, satisfies $\hat{\hat{G}} \cong G$
+
+
+Moreover, such a group is autodual iff $n = m$, $P_1 = P_2$ and $n_p = m_p$ for all $p \in P_1 = P_2$. In particular,
+$\hat{\hat{G}} \cong G$ holds true for all elementary locally compact abelian groups.
+
+
+\emph{Proof.} Let us start by proving $\hat{F} = F^* \cong F$. Recall that $F$ has the form $F \cong \mathbb{Z}_{n_1} \times . . . \times \mathbb{Z}_{n_m}$. So applying
+Theorem 7.14 we are left with the proof of the isomorphism $\mathbb{Z}^*_n \cong \mathbb{Z}_n$ for every $n \in \mathbb{N}_+$. The elements $x$ of
+$T$ satisfying $nx = 0$ are precisely those of the unique cyclic subgroup of order $n$ of $\mathbb{T}$, we shall denote that
+subgroup by $\mathbb{Z}_n$. Therefore, the group $Hom(\mathbb{Z}_n,\mathbb{Z}_n)$ of all homomorphisms $\mathbb{Z}_n \to \mathbb{Z}_n$ is isomorphic to $\mathbb{Z}_n$.
+
+
+It follows easily from Lemma 7.12 that if $\hat{\hat{G}}_i \cong G_i$ (resp., $\hat{G}_i \cong G_i$) for a finite family $\{G_i\}^n_{i=1}$ of topological
+abelian groups, then also $G = \Pi^n_{i=1} G_i$ satisfies $\hat{\hat{G}}_i \cong G$ (resp., $\hat{G}_i \cong G$). Therefore, it suffices to verify that the
+groups $\mathbb{T}, \mathbb{Z}, \mathbb{Z}(p^{\infty})$, and $\mathbb{J}_p e$ satisfy $\hat{\hat{G}} \cong G$, while $\hat{\mathbb{R}} \cong \mathbb{R}$, $\hat{\mathbb{Q}_p} \cong \mathbb{Q}_p$ were already checked.
+
+
+    It follows from Proposition 7.7 that $\hat{\mathbb{Z}} \cong \mathbb{T}$ and $\hat{\mathbb{T}} \cong \mathbb{Z}$, hence $\mathbb{Z} \cong \hat{\hat{\mathbb{Z}}}$ and $\mathbb{T} \cong \hat{\hat{\mathbb{T}}}$. Analogously, $\hat{\mathbb{Z} (p^{\infty})} \cong \mathbb{J}_p$
+and $\hat{\mathbb{J}_p} \cong \mathbb{Z}(p^{\infty})$ yield $\mathbb{Z}(p^{\infty}) \cong \hat{\hat{\mathbb{Z}(p^{\infty})}}$ and $\mathbb{J}_p \cong \hat{\hat{\mathbb{J}_p}}$.
+
+
+    The problem of characterizing all autodual locally compact abelian groups is still open [47, 48].
+
+
+\textbf{Theorem t.14.} Let $\{D_i\}_{i \in I}$ be a family of discrete abelian groups and let $\{G_i\}_{i \in I}$ be a family of compact
+abelian groups. Then
+
+
+    $\hat{\bigoplus D_i}_{i \in \I} \cong \Pi_{i \in I} \hat{D_i}$ and $\hat{\Pi_{i \in I} G_i} \cong \bigoplus_{i \in I} \hat{G_i}$ (5)
+
+
+\emph{Proof.} Let $\chi : \oplus_{i \in I} D_i \to \mathbb{T}$ be a character and let $\chi_i: D_i \to \mathbb{T}$ be its restriction to $D_i$. Then $\chi \mapsto (\chi_i) \in \Pi_{i \in I} \hat{D_i}$
+is the first isomorphism in (5).
+
+
+    Let $\chi : \Pi_{i \in I} G_i \to \mathbb{T}$ be a continuous character. Pick a neighborhood $U$ of 0 containing no non-trivial
+subgroups of $\mathbb{T}$. Then there exists a neighborhood $V$ of 0 in $G = \Pi_{i \in I} G_i$ with $\chi(V) \subseteq U$. By the definition of
+the Tychonov topology there exists a finite subset $F \subseteq I$ such that $V$ contains the subproduct $B = Q_{i \in I/F} G_i$.
+Being $\chi(B)$ a subgroup of $\mathbb{T}$, we conclude that $\chi(B) = 0$ by the choice of $U$. Hence $\chi$ factorizes through the
+projection $p : G \to \Pi_{i \in F} G_i = G/B$; so there exists a character $\chi' : \Pi_{i \in F} G_i \to \mathbb{T}$ such that $\chi = \chi' \circ p$.
+Obviously, $\chi' \in \oplus_{i \in I} \hat{G_i}$. Then $\chi \mapsto \chi'$ is the second isomorphism in (5).
+
+
+    In order to extend the isomorphism (5) to the general case of locally compact abelian groups one has to
+consider a specific topology on the direct sum.
+
+
+    Algebraic properties of the dual group $\hat{G}$ of a compact abelian group $G$ can be described in terms of
+topological properties of the group $G$. We saw in Corollary 6.22 that $\hat{G}$ is torsion precisely when $G$ is totally
+disconnected. Here is the counterpart of this property in the connected case:
+
+
+\textbf{Proposition 7.15.} Let $G$ be a topological abelian group.
+
+
+\begin{itemize}
+
+    \item (a) If $G$ is connected, then the dual group $\hat{G}$ is torsion-free.
+
+    \item (b) If $G$ is compact, then the dual group $\hat{G}$ is torsion-free iff $G$ is connected.
+
+\end{itemize}
+
+
+\emph{Proof.} (a) Since for every non-zero continuous character $\chi : G \to \mathbb{T}$ the image $\chi(G)$ is a non-trivial connected
+subgroup of $\mathbb{T}$, we deduce that $\chi(G) = \mathbb{T}$ for every non-zero $\chi \in \hat{G}$. Hence $\hat{G}$ is torsion-free.
+
+
+    (b) If the group $G$ is compact and disconnected, then by Theorem 4.19 there exists a proper open subgroup
+$N$ of $G$. Take any non-zero character $\xi$ of the finite group $G/N$. Then $m \xi = 0$ for some positive integer $m$.
+Now the composition $\chi$ of $\xi$ and the canonical homomorphism $G \to G/N$ satisfies $m\chi = 0$ as well. So $\hat{G}$ haas a
+non-zero torsion character. This proves the implication left open by item (a).
+
+
+    Let $G$ and $H$ be abelian topological groups. If $f : G \to H$ is a continuous homomorphism, define $\hat{f}: \hat{H} \to \hat{G}$
+putting $\hat{f}(\chi) = \chi \circ f$ for every $\chi \in \hat{H}$.
+
+
+\textbf{Lemma 7.16.} If $f:G \to H$ is a continuous homomorphism of topological abelian group, then $\hat{f} : \hat{H} \to \hat{G}$ is
+a continuous homomorphism as well.
+
+
+\begin{itemize}
+
+    \item (a) If $f(G)$ is dense in $H$, then $\hat{f}$ is injective.
+
+    \item (b) If $f$ is injective and $f(G)$ is either open or dense in $H$, then $\hat{f}$ is surjective.
+
+    \item (c) if $f$ is a surjective homomorphism, such that every compact subset of $H$ is covered by some compact subset
+    of $G$, then $\hat{f}$ is an embedding.
+
+    \item (d) if $f$ is a quotient homomorphism and $G$ is locally compact, then $\hat{f}$ is an embedding.
+
+    \item (e) If $f$ is a topological isomorphism, then $\hat{f}$ is a topological isomorphism too.
+
+\end{itemize}
+
+
+\emph{Proof.} Assume $K$ is a compact subset of $G$ and $U$ a neighborhood of 0 in $\mathbb{T}$. Then $f(K)$ is a compact set in $H$,
+so $W = W_{\hat{G}}(f(K), U)$ is a neighborhood of 0 in $\hat{H}$ and $\hat{f}(W) \subseteq W(K, U)$. This proves the continuity of $\hat{f}$.
+
+
+\begin{itemize}
+
+    \item (a) If $\hat{f}(\chi) = 0$, then $\chi \circ f = 0$. By the density of $f(G)$ in $H$ this yields $\chi = 0$.
+
+    \item (b) Let $\chi \in \hat{G}$. If $f(G)$ is open in $H$, then any extension $\xi : H \to \mathbb{T}$ of $\chi$ will be continuous on $f(G)$. There
+    exists at least one such extension $\xi$ by Corollary 2.6. Hence $\xi \in Hb$ and $\chi = \hat{f}(\xi)$. Now consider the case
+    when $f(G)$ is dense in $H$. Then $\tilde{H} = \tilde{G}$ and the characters of $H$ can be extended to characters of $G$ (see
+    Theorem 3.79).
+
+    \item (c) Assume $L$ is a compact subset of $G/H$ and $U$ a neighborhood of 0 in $\mathbb{T}$. Let $K$ be a compact set in $G$
+    such that $f(K) = L$. Then $\hat{f}(W_{\hat{H}} (L, U)) = Im \hat{f} \cap W_{\hat{G}} (K, U)$, so $\hat{f}$ is an embedding.    
+
+    \item (d) Follows from (c) and Lemma 4.6.
+
+    \item (e) Obvious.
+
+\end{itemize}
+
+
+\textbf{Exercise 7.17.} Prove that $\hat{\mathbb{G}/\mathbb{Z}} \cong \Pi_p \mathbb{J}_p$
+
+
+(Hint. Use the isomorphism $\mathbb{Q}/\mathbb{Z} \cong \oplus_p \mathbb{Z}(p^{\infty})$, Example 7.7 and Theorem 7.14.)
+Now we shall see that the group $\mathbb{Q}$ satisfies the duality theorem (see item (b) below).
+
+
+\textbf{Example 7.18.} Let $K$ denote the compact group $\hat{\mathbb{Q}}$. Then: 
+
+
+    (a) $K$ contains a closed subgroup $H$ isomorphic to $\hat{\mathbb{Q}/\mathbb{Z}}$ such that $K/H \cong \mathbb{T}$;
+
+    (ii) $\hat{K} \cong \mathbb{Q}$
+
+
+    (a) Denote by $H$ the subgroup of all $\chi \in K$ such that $\chi{\mathbb{Z}} = 0$. To prove that $H$ is a closed subgroup of $K$ such
+that $K/H$ is isomorphic to $\mathbb{T}$. To this end consider the continuous map $\rho : K \to \hat{Z}$ obtained by the restriction
+to $\mathbb{Z}$ of every $\chi \in K$. Obviously, $ker \rho = H$, so $\mathbb{T} \cong \hat{\mathbb{Z}} \cong K/H$. To see that $H \cong \hat{\mathbb{Q}/\mathbb{Z}}$ note that the characters
+of $\mathbb{Q}/\mathbb{Z}$ correspond precisely to those characters of $\mathbb{Q}$ that vanish on $\mathbb{Z}$, i.e., precisely $H$.
+
+    
+    (b) By Exercise 7.8 $K$ is a divisible torsion-free group, every non-zero $r \in \mathbb{Q}$ defines a continuous automorphism
+$\lambda_r$ of $K$ by setting $\lambda_r(x) = rx$ for every $x \in K$. Then the composition $\rho \circ \lambda_r : K \to T$ defines a character
+$\chi_r \in \hat{K}$ with $ker \chi_r = r^{-1} H$. For the sake of completeness let $\chi_0 = 0$. By Exercise 7.17 $\hat{\mathbb{Q}/\mathbb{Z}} \cong \Pi_p \mathbb{J}_p$ is totally
+disconnected, so by Corollary 6.21 H has no surjective characters $\chi : H \to \mathbb{T}$. Now let $\chi \xi \hat[K]$ be non-zero.
+Then $\chi(K)$ will be a non-zero closed divisible subgroup of $\mathbb{T}$, hence $\chi(K) = \mathbb{T}$. On the other hand, $N = ker \chi$ is
+a proper closed subgroup of $K$ such that $N + H \neq \mathbb{T}$, as $\chi(H)$ is a proper closed subgroup of $\mathbb{T}$ by the previous
+argument. Hence, $\chi(H)$ is finite, say of order $m$. Then $N + H$ contains $N$ is a finite-index subgroup, more
+precisely $[H : (N \cap H)] = [(N + H) : N] = m$. Then $mH \leq \mathbb{N}$. Consider the character $\chi_{m-1}$ of $K$ having
+ker $\chi_{m-1} = mH \leq \mathbb{N}$. By Corollary there exists $k \in \mathbb{Z}$ such that $\chi = k\chi_{m-1} = \chi_r$, where $r = km^{-1} \in \mathbb{Q}$. This
+shows that $\mathbb{K} = {\chi_r : r \in \mathbb{Q}} \cong \mathbb{Q}$.
+
+
+    The compact group $\hat{\mathbb{Q}}$ is closely related to the adele rings of the field $\mathbb{Q}$, more detail can be found in
+[34, 38, 75, 97].
+    
+
+\textbf{Exercise 7.19.} Prove that a discrete abelian group $G$ satisfies $\hat{\hat{G}} \cong G$ whenever
+
+\begin{itemize}
+
+    \item (a) $G$ is divisible;
+
+    \item (b) $G$ is free;
+
+    \item (c) $G$ is of finite exponent;
+
+    \item (d) $G$ is torsion and every primary component of $G$ is of finite exponent.
+
+\end{itemize}
+
+    (Hint. (a) Use Examples 7.7 and 7.18 (b) and the fact that every divisible group is a direct sum of copies of
+Q and the groups $\mathbb{Z}(p^{\infty})$.
+
+
+    (c) and (d) Use that fact that every abelian group of finite exponent is a direct sum of cyclic subgroups (i.e.,
+Prufer's theorem, see (d) of Example 2.3)).
+
+
+\subsection{The natural transformation $\omega$}
+
+
+Let $G$ be a topological abelian group. Define $\omega_G : G \to \hat{\hat{G}}$ such that $\omega_G(x)(\chi) = \chi(x)$, for every $x \in G$ and for
+every $\chi \in \hat{G}$. We show now that $\omega_G (x) \in \hat{\hat{G}}$.
+
+
+\textbf{Proposition 7.21.} If $G$ is a topological abelian group. Then $\omega_G (x) \in \hat{\hat{G}}$ and $\omega_G : G \to \hat{\hat{G}}$ is a homomorphism.
+If $G$ is locally compact, then the homomorphism $\omega_G$ is a continuous.
+
+
+\emph{Proof.} In fact, 
+
+    
+    $\omega_G(x)(\chi + \psi) = (\chi + \psi)(x) = \chi (x) + \psi (x) = \omega_G(x)(\chi) + \omega_G(x)(\psi)$,
+
+
+for every $\chi, \psi \in \hat{G}$. Moreover, if $U$ is an open neighborhood of 0 in $\mathbb{T}$, then $\omega_G(x)(W(\{x\}, U)) \subseteq U$. This
+proves that $\omega_G(x)$ is a character of $\hat{G}$, i.e., $\omega_G(x) \in \hat{\hat{G}}$. For every $x, y \in G$ and for every $\chi \in \hat{G}$ we have
+$\omega_G(x + y)(\chi) = (\chi)(x + y) = \chi(x) + \chi(y) = \omega_G(\chi)(x) + \omega_G(\chi)(y)$ and so $\omega_G$ is a homomorphism.
+
+
+    Now assume $G$ is locally compact. To prove that $\omega_G$ is continuous, pick an open neighborhood $A$ of 0 in $\mathbb{T}$ and
+a compact subset $K$ of $\hat{G}$. Then $W(K, A)$ is an open neighborhood of 0 in $\hat{\hat{G}}$. Let $U$ be an open neighborhood of
+0 in $G$ with compact closure. Take an open symmetric neighborhood $B$ of 0 in $\mathbb{T}$ with $B+B \subseteq A$. Thus $W(\bar{U}, B)$
+is an open neighborhood of 0 in $\hat{G}$. Since $K$ is compact, there exist finitely many characters $\chi_1, . . . , \chi_m$ of $G$
+such that $K \subseteq (\chi_1 + W(\bar{U}, B)) \cup · · · \cup (\chi_m + W(\bar{U}, B))$. For every $i = 1, . . . , m$ there is an open neighborhood
+$V_i$ of 0 in $G$ such that $\chi_i(V_i) \subseteq B$. Define $V = U \cap V_1 \cap · · · \cap V_m \subesteq U$ and note that $\chi_i(V ) \subseteq B$ for every
+$i = 1, . . . , m$. Thus $\omega_G(V ) \subseteq W(K, A)$. Indeed, if $x \in V$ and $\chi \in K$, then $\chi_i(x) \subseteq B$ for every $i = 1, . . . , m$ and
+there exists $i_0 \in {1, . . . , m}$ such that $\chi \in \chi_{i_0} + W(\bar{U}, B)$; so $\chi(x) = \chi_{i_0} (x) + \psi (x)$ with $\psi \in W(\bar{U}, B)$ and then
+$\omega_G(x)(\chi) = \in(x) \in B + B \subseteq A$.
+
+
+    In this chapter we shall have a precise approach, by saying that a group $G$ satisfies the Pontryagin-van
+Kampen duality theorem when ωG is a topological isomorphism.
+
+
+\textbf{Lemma 7.22.} If the topological abelian groups $G_i$ satisfy Pontryagin-van Kampen duality theorem for
+$i = 1, 2, . . . , n$, then also $G =\Pi^{n}_{i=1} G_i$ satisfies Pontryagin-van Kampen duality theorem.
+
+
+    Proof. Apply Lemma 7.12 twice to obtain an isomorphism $j : \Pi_n_{i=1} \hat{\hat{G}}_i \to \hat{\hat{G}}$. It remains to verify that the
+product $\pi : G \to \Pi^n_{i=1} \hat{\hat{G}}_i$ of the isomorphisms $\omega_{G_i}: G_i \to \Pi^n_{i=1} \hat{\hat{G}}_i$ given by our hypothesis composed with the
+isomorphism $j$ gives precisely $\omega_G$.
+
+
+    Consider two categories $\mathcal{A}$ and $\mathcal{B}$. A covariant [contravariant] functor $F : \mathcal{A} \to \mathcal{B}$ assigns to each object
+$A \in \mathcal{A}$ an object $F A \in \mathcal{B}$ and to each arrow $f : A \to A'$ in $\mathcal{A}$ an arrow $F f : F A \to F A'[F f : F A' \to F A]$ such
+that $F id_A = id_{FA}$ and $F(g \circ f) = F g \circ F f [F(g \circ f) = F f \circ F g]$ for every arrow $f : A \to A'$ and $g : A' → A''$
+in $\mathcal{A}$.
+
+
+Let $F, F': A \to B$ be covariant functors. A natural transformation $\gamma$ from $F$ to $F'$ assigns to each $A \in \mathcal{A}$
+an arrow $\gamma A : F A \to F'A$ such that for every arrow $f : A \to A'$ in $\mathcal{A}$ the following diagram is commutative
+
+
+%The following diagram is in the shape of a square, but like the last one I will have to describe it%
+
+$FA \to^{Ff} FA'$ %Is along the top%
+
+$F'A \to^{F'f} F'A'$ %Is along the bottom%
+
+%Down the sides are the following arrows%
+
+$FA \to^{\gamma_{A}} F'A$
+
+$FA' \to^{\gamma_{A'}} F'A'$
+
+
+    A \emph{natural equivalence} is a natural transformation $\gamma$ such that each $\gamma_A$ is an isomorphism.
+
+
+    If $\mathcal{H}$ denote the category of all Hausdorff abelian topological groups, the \emph{Pontryagin-van Kampen duality
+functor}, defined by
+
+
+    $G \mapsto \hat{G}$ and $f \mapsto \hat{f}$
+
+
+for objects $G$ and morphisms $f$ of $\mathcal{H}$, is a contravariant functor $\hat{}: \mathcal{H} \to \mathcal{H}$. Let $\mathcal{L}$ be the full subcategory of $\mathcal{H}$
+having as objects all locally compact abelian groups. According to Proposition 7.2, the functor $\hat{}$ sends $\mathcal{L}$ to
+itself, i.e., defines a functor $\hat{}: \mathcal{L} \to \mathcal{L}$. The Pontryagin-van Kampen duality theorem states that $\omega$ is a natural
+equivalence from id_$\mathcal{L}$ to $\hat{\hat{}}: \mathcal{L} \to \mathcal{L}$. We start by proving that $\omega$ is a natural transformation.
+
+
+\textbf{Proposition 7.23.} $\omega$ is a natural transformation from id_${\mathcal{L}}$ to $\hat{\hat{}}: \mathcal{L} \to \mathcal{L}$
+
+
+\emph{Proof.} By Proposition 7.21 $\omega_G$ is continuous for every $G \in \mathcal{L}$. Moreover for every continuous homomorphism
+$f : G \to H$ the following diagram commutes:
+
+
+%The following diagram is also in the shape of a square, so I will describe it%
+
+$G \to^{f} H$ %Is along the top%
+
+$\hat{\hat{G}} \to^{\hat{\hat{f}}} \hat{\hat{H}}$ %Is along the bottom%
+
+%Down the sides are the following arrows%
+
+$G \to^{\omega_G} \hat{\hat{G}}$ 
+
+$H \to^{\omega_H} \hat{\hat{H}}$ 
+
+
+In fact, if $x \in G$ and $\xi \in \hat{H}$, then $\omega_H(f(x))(\xi) = \xi(f(x))$. On the other hand,
+
+
+    $(\hat{\hat{f}}(\omega_G(x)))(\xi) = (\omega_G(x) \circ \hat{f})(ξ) = ω_G(x)(\hat{f}(\xi)) = \omega_G(x)(\xi \circ f) = \xi(f(x))$.
+
+
+Hence $\omega_H(f(x)) = \hat{\hat{f}}(\omega_G(x))$ for every $x \in G$.
+
+
+\textbf{Remark 7.24}  Note that $\omega_G$ is a monomorphism if and only if $\hat{G}$ separates the points of $G$. Moreover, $\omega_G(G)$
+is a subgroup of $\hat{\hat{G}}$ that separates the points of $\hat{G}$.
+
+
+    Now we can prove the Pontryagin-van Kampen duality theorem in the case when $G$ is either compact or
+discrete.
+
+
+\textbf{Theorem 7.25.} If the abelian topological group $G$ is either compact or discrete, then $\omega_G$ is a topological
+isomorphism.
+
+
+\emph{Proof.} If $G$ is discrete, then $\hat{G}$ separates the points of $G$ by Corollary 2.7 and if $G$ is compact, then $\hat{G}$ separates
+the points of $G$ by the Peter-Weyl Theorem 6.4. Therefore $\omega_G$ is injective by Remark 7.24. If $G$ is discrete,
+then $\hat{G}$ is compact and $\omega_G(G) = \hat{\hat{G}}$ by Corollary 6.6. Since $\hat{\hat{G}}$ is discrete, $\omega_G$ is a topological isomorphism.
+
+
+    Let now $G$ be compact. Then $\omega_G$ is open thanks to Theorem 4.9. Suppose that $\omega_G(G)$ is a proper subgroup
+of $\hat{\hat{G}}?$. By the compactness of $G, \hat{\hat{G}}$ is compact, hence closed in $\hat{\hat{G}}$. By the Peter-Weyl Theorem 6.4 applied
+to $\hat{\hat{G}}/\omega_G(G)$, there exists $\xi \in \hat{\hat{\hat{G}}} / \{0\}$ such that $\xi(\omega_G(G)) = \{0\}$. Since $\hat{G}$ is discrete, $\omega_{\hat{G}}$ is a topological
+isomorphism and so there exists $\chi \in \hat{G}$ such that $\omega_{\hat{G}}(\chi) = \xi$. Thus for every $x \in G$ we have
+$0 = \xi(\omega_G(x)) = \omega_{\hat{G}}(\chi)(\omega_G(x)) = \omega_G(x)(\chi) = \chi(x)$. It follows that $\chi ≡ 0$ and so that also $\xi ≡ 0$, a contradiction.
+
+
+    Our next step is to prove the Pontryagin-van Kampen duality theorem when $G$ is elementary locally compact
+abelian:
+
+
+\textbf{Theorem 2.76.} If $G$ is an elementary locally compact abelian group, then $\omega_G$ is a topological isomorphism of
+$G$ onto $\hat{\hat{G}}$.
+
+
+\emph{Proof.} According to Lemma 7.22 and Theorem 7.25 it suffices to prove that $\omega_{\mathbb{R}}$ is a topologically isomorphism.
+Of course, by the fact that $\hat{\mathbb{R}}$ is topologically isomorphic to $\mathbb{R}$, one concludes immediately that also $\mathbb{R}$ and $\hat{\hat{\mathbb{R}}}$
+are topologically isomorphism. A more careful analysis of the dual $\hat{\mathbb{R}}$ shows the crucial role of the ($\mathbb{Z}$-)bilnear
+map $\lambda : \mathbb{R} \times \mathbb{R} \to \mathbb{T}$ defined by $λ(x, y) = \chi__1(xy)$, where $\chi_1 : \mathbb{R} \to \mathbb{T}$ is the character determined by the canonical
+quotient map $\mathbb{R} \to \mathbb{T} = \mathbb{R}/\mathbb{Z}$. Indeed, for every $y \in \mathbb{R}$ the map $\chi_y : \mathbb{R} \to \mathbb{T}$ defined by $x \mapsto \lambda(x, y)$ is an element
+of $\hat{\mathbb{R}}$. Hence the second copy $\{0\} \times \mathbb{R}$ of $\mathbb{R}$ in $\mathbb{R} \times \mathbb{R}$ can be identified with $\hat{\mathbb{R}}$. On the other hand, every element
+$x \in \mathbb{R}$ gives a continuous character $\mathbb{R} \to \mathbb{T}$ defined by $y \mapsto \lambda(x, y)$, so can be considered as the element $\omega_R(x)$ of
+$\hat{\hat{R}}$. We have seen that every $\xi \in \hat{\hat{R}}$ has this form. This means that $\omega_{\mathbb{R}}$ is surjective. Since continuity of $\omega_{\mathbb{R}}$, as
+well as local compactness of $\hat{\hat{\mathbb{R}}}$ are already established, $\omega_{\mathbb{R}}$ is a topological isomorphism by the open mapping
+theorem.
+
+
+    For a subset $X$ of $G$ the annihilator of $X$ in $\hat{G}$ is $A_{\hat{G}}(X) = \{\chi \in \hat{G} : \chi(A) = {0}\}$ and for a subset $Y$ of $\hat{G}$
+the annihilator of $Y$ in $G$ is $A_G(Y ) = {x \in G : \chi(x) = 0 \text{ for every } x \in Y }$. When no confusion is possible we
+shall omit the subscripts $_{\hat{G}}$ and $_G$.
+
+
+    The next lemma will help us in computing the dual of a subgroup and a quotient group.
+
+
+\textbf{Lemma 7.27} Let $G$ be a locally compact abelian group. If $M$ is a subset of $G$, then $A_{\hat{G}} (M)$ is a closed subgroup
+of $\hat{G}$.
+
+
+    \wmph{Proof.} It suffices to note that
+
+
+        $A_{\hat{G}}(M) = \bigcap_{x \in M} \{ \chi \in \hat{G} : \chi(x) \} = \bigcap\{ker \omega_G(x) : x \in M \}$
+
+
+where each $ker \omega(x)$ is a closed subgroup of $\haat{G}$
+
+
+Call a continuous homomorphism $f : G \to H$ of topological groups proper if $f : G \to f(G)$ is open, whenever
+$f(G)$ carries the topology inherited from $H$. In particular, a surjective continuous homomorphism is proper iff
+it is open.
+
+
+    A short sequence $0 \to G_1 \to^f G \to^h G_2 \to 0$ in $\mathcal{L}$, where $f$ and $h$ are continuous homomorphisms, is exact if
+$f$ is injective, $h$ is surjective and $im f = ker h$. It is proper if $f$ and $h$ are proper.
+
+
+\textbf{Lemma 7.28.} Let $G$ be a locally compact abelian group, $H$ a subgroup of $G$ and $i : H \to G$ the canonical
+inclusion of $H$ in $G$. Then
+
+
+\begin{itemize}
+
+    \item (a) $\hat{i} : \hat{G} \to \hat{H}$ is surjective if $H$ is dense or open or compact;
+
+    \item (b) $\hat{i}$ is injective if and only if $H$ is dense in $G$;
+
+    \item (c) if $H$ is closed and $\pi : G \to G/H$ is the canonical projection, then the sequence
+    
+            $0 \to \hat{G/H} \to^{\hat{\pi}} \hat{G} \to^{\hat{i}} \hat{H}$
+
+        is exact, $\hat{\pi}$ is proper and $im \hat{\pi} = A_{\hat{G}}(H)$. If $H$ is open or compact, then $\hat{i}$ is open and surjective.
+\end{itemize}
+
+
+\emph{Proof.} (a) Note that $\hat{i}$ is surjective if and only if for every $\chi \in \hat{H}$ there exists $\xi \in \hat{G}$ such that $\xi \upharpoonright_H = \chi$. If $H$ is
+compact apply Corollary 6.20. Otherwise Lemma 7.16 applies.
+
+
+    (b) If $H$ is dense, then $\hat{i}$ is injective by Lemma 7.16. Conversely, assume that $\bar{H}$ is a proper subgroup of $G$
+and let $q : G \to G/\bar{H}$ be the canonical projection. By Theorem 6.19 there exists $\chi \in \hat{G/\bar{H}}$ not identically zero.
+Then $\xi = \chi \circ q \in \hat{G}$ is non-zero and satisfies $\xi(H) = \{0\}$, i.e., $\hat{i}(\xi) = 0$. This implies that $\hat{i}$ is not injective.
+
+
+    (c) According to Lemma 7.16 $\hat{i}$ is a monomorphism, since $\pi$ is surjective. We have that $\hat{i} \circ \hat{\pi} = \hat{\pi \circ i} = 0$.
+If $\xi \in ker \hat{i} = {\chi \in \hat{G} : \chi(H) = {0}}$, then $\xi(H) = \{0\}$. So there exists $\xi_1 \in \hat{G/H}$ such that $\xi = \xi_1 \circ \pi$ (i.e.
+$\xi = \hat{\pi}(\xi_1))$ and we can conclude that $ker \hat{i} = im \hat{\pi}$. So the sequence is exact and $im \hat{\pi} = ker \hat{i} = A_{\hat{G}}(H)$.
+
+
+    To show that πb is proper it suffices to apply Lemma 7.16.
+
+
+    If $H$ is open or compact, (a) implies that $\hat{i}$ is surjective. It remains to show that $\hat{i}$ is open. If $H$ is compact
+then $\hat{H}$ is discrete by Example 7.1(2), so $\hat{i}$ is obviously open. If $H$ is open, let $K$ be a compact neighborhood
+of 0 in $G$ such that $K \subseteq H$. Then $W = W_{\hat{G}}(K,\bar{\wedge_4})$ is a compact neighborhood of 0 in Gb. Since bi is surjective,
+V = bi(W) = WHb (K,Λ4) is a neighborhood of 0 in $\hat{H}$. Now $M = \langle W \rangle$ and $M_1 = \langle V \rangle$ are open compactly
+generated subgroups respectively of $\hat{G}$ and $\hat{H}$, and $\hat{i}(M) = M_1$. Since $M$ is $\sigma$-compact by Lemma 4.12, we can
+apply Theorem 4.9 to the continuous surjective homomorphism $\hat{i} \upharpoonright_M: M \to M_1$ and so also bi is open.
+
+ 
+\textbf{Corollary 7.29.} Let $G$ be a locally compact abelian group and let $H$ be a closed subgroup of $G$. Then
+$\hat{G/H} \cong A_{\hat{G}}(H)$. Moreover, if $H$ is open or compact, then $\hat{H} \cong \hat{G}/A_{\hat{G}}(H)$.
+
+
+    The next corollary says that the duality functor preserves proper exactness for some sequences.
+
+
+\textbf{Corollary 7.30.} If the sequence $0 \to G_1 \to^f G \to^h G_2 → 0$ in $\mathcal{L}$ is proper exact, with $G_1$ compact or $G_2$ discrete,
+then $0 \to \hat{G_2} \to^{\hat{h}} \hat{G} \to^{\hat{f}} \hat{G_1} \to 0$ is proper exact with the same property.
+
+
+    Now we can prove prove the Pontryagin-van Kampen duality theorem, namely $\omega$ is a natural equivalence
+from id_$\mathcal{L}$ to $\hat{\hat{}}: \mathcal{L} \to \mathcal{L}$.
+
+
+
+\textbf{Theorem 7.31.} If $G$ is a locally compact abelian group, then $\omega_G$ is a topological isomorphism of $G$ onto $\hat{\hat{G}}$.
+
+
+\emph{Proof.} We know by Proposition 7.23 that $\omega$ is a natural transformation from $id_\mathcal{L}$ to $\hat{\hat{}}: \mathcal{L} \to \mathcal{L}$. Our plan is to
+chase the given locally compact abelian group G into an appropriately chosen proper exact sequence
+
+
+    $0 \to G_1 \to^t G \to^h G_2 \to 0$
+
+
+in $\mathcal{L}$, with $G_1$ compact or $G_2$ discrete, such that $G_1$ and $G_2$ satisfy the duality theorem. By Corollary 7.30 the
+sequences
+
+
+    $0 \to \hat{G_2} \to^{\hat{h}} \to \hat{G} \to^{\hat{f}} \to \hat{G_2} \to 0$ and $0 \to \hat{\hat{G_1}} \to^{\hat{\hat{f}}} \hat{\hat{G}} \to^{\hat{\hat{h}}} \hat{\hat{G_2}} \to 0$
+
+
+are proper exact. According to Proposition 7.23 the following diagram commutes:
+
+
+% The following diagram consists of the first sequence above the third sequences from Theorem 7.31, and the G's have arrows from the top down
+
+% The following sequence is along the top
+
+$0 \to G_1 \to^t G \to^h G_2 \to 0$
+
+% The following sequence is along the bottom
+
+$0 \to \hat{\hat{G_1}} \to^{\hat{\hat{f}}} \hat{\hat{G}} \to^{\hat{\hat{h}}} \hat{\hat{G_2}} \to 0$
+
+% These are the following arrows from the top to bottom, from left to right
+
+$G_1 \to^{\omega_{G_1}} \hat{\hat{G_1}}$
+
+$G \to^{\omega_G} \hat{\hat{G}}$
+
+$G_2 \to^{\omega_{G_2}} \hat{\hat{G_2}}$
+
+
+According to Theorem 6.19, $\omega_{G_1}$, $\omega_G$, $\omega_{G_2}$ are injective. Moreover, $\omega_{G_1}$ and $\omega_{G_2}$ are surjective by our
+choice of $G_1$ and $G_2$. Then $\omega_G$ must be surjective too. (Indeed, if $x \in ker \hat{\hat{h}}$, then there exists $y \in \omega_G(G)$ with
+$\hat{\hat{h}}(x) = \hat{\hat{h}}(y)$, because $\hat{\hat{h}}(\omega_G(G)) = \hat{\hat{G_2}}$. Now $y - x \in ker \hat{\hat{h}} \subseteq \omega_G(G)$ and so $x \in y + \omega_G(G) = \omega_G(G)$.)
+If $G$ is locally compact abelian and compactly generated, by Proposition 6.18 we can choose $G_1$ compact
+and $G_2$ elementary locally compact abelian. Then $G_1$ and $G_2$ satisfy the duality theorem by Theorems 7.25
+and 7.26, hence $\omega_G$ is surjective. Since $\omega_G$ is a continuous isomorphism and $G$ is $\sigma$-compact, we conclude with
+Theorem 4.9 that $\omega_G$ is a topological isomorphism.
+
+
+    In the general case of locally compact abelian group $G$, we can take an open compactly generated subgroup
+$G_1$ of $G$. This will produce a proper exact sequence $0 \to G_1 \to^f G \to^h G_2 \to 0$ with $G_1$ compactly generated and
+$G_2 \cong G/G_1$ discrete. By the previous case $\omega_{G_1}$ is a topological isomorphism and $\omega_{G_2}$ is an isomorphism thanks
+to Theorem 7.25. Therefore $\omega_G$ is a continuous isomorphism.
+
+
+    Moreover $\omega_G \upharpoonright_{f(G_1)}: f(G_1) \to \hat{\hat{f}}(\hat{\hat{G_1}})$ is a topological isomorphism (as $\omega_{G_1}, f : G_1 \to f(G_1)$
+and $\hat{\hat{f}} : \hat{\hat{G_1}} \to \hat{\hat{f}}(\hat{\hat{G_1}})$ are topological isomorphisms) and $f(G_1)$ and $\hat{\hat{f}}(\hat{\hat{G_1}})$ are open subgroups respectively of $G$ and $\hat{\hat{G}}$. Thus
+$\omega_G$ is a topological isomorphism.
+
+
+    Our last aim is to prove that the annihilators define an inclusion-inverting bijection between the family of
+all closed subgroups of a locally compact group $G$ and the family of all closed subgroups of $\hat{G}$. We use that fact
+that one can identify $G$ and $\hat{\hat{G}}$ by the topological isomorphism $\omega_G$. In more precise terms:
+
+
+\textbf{Exercise 7.32.} Let $G$ be a locally compact abelian group and $Y$ be a subset of $\hat{G}$. Then $A_{\hat{\hat{G}}}(Y ) = \omega_G(A_G(Y ))$.
+
+
+\textbf{Lemma 7.33.} Let G be a locally compact abelian group and $H$ a closed subgroup of $G$. If $a \in G \ H$ then there
+exists $\chi \in A(H)$ such that $\chi(x) \neq 0$.
+
+
+\emph{Proof.} Let $\rho : \hat{G/H} \to A(H)$ be the topological isomorphism of Corollary 7.29. By Theorem 6.19 there exists
+$\psi \in \hat{G/H}$ such that $\psi(a + H) \neq 0$. Therefore $\chi = \rho(\psi) \in A(H)$ and $\chi(a) = \rho(\psi)(a) = \psi(a + H) \neq 0$.
+
+
+\textbf{Corollary 7.34.} If $G$ is a locally compact abelian group and $H$ a closed subgroup of $G$, then
+
+
+    $H = A_G (A_{\hat{G}}(H)) = \omega_G^{-1}(A_{\hat{\hat{G}}}(A_{\hat{G}}(H)))$
+
+
+\emph{Proof.} The first equality follows immediately from the above lemma.
+The last equality follows from the equality $H = A_G (A_{\hat{G}}(H))$ and Exercise 7.32.
+
+
+    By Lemma 7.29 the equality $H = A_G (A_{\hat{G}}(H))$ holds if and only if $H$ is a closed subgroup of $G$.
+
+
+\textbf{Proposition 7.35.} Let $G$ be a locally compact abelian group and $H$ a closed subgroup of $G$. Then $\hat{H} \cong \hat{G} / A(H)$
+
+
+\eemph{Proof.} Since $H = \omega_G^{-1}(A_{\hat{\hat{G}}}(A_{\hat{G}}(H)))$  by Lemma 7.34 we have a topological isomorphism $\phi$ from $H$ to $\hat{\hat{G} / A(H)}$
+given by $\phi(h)(\alpha + A(H))=\alpha(h)$ for every $h \in H$ and $\alpha \in \hat{G}$. This gives rise to another topological isomorphism
+$\hat{\phi} : \hat{\hat{\hat{G} / A(H)}} \to \hat{H}$.  By Pontryagin's duality theorem 7.31 $\omega_{\hat{G}/A(H)}$ is a topological isomorphism from $\hat{G}/A(H)$
+to $\hat{\hat{\hat{G} / A(H)}}$. The composition gives the desired isomorphism.
+
+
+Finally, let us resume for reader's benefit some of the most relevant points of Pontryagin-van Kampen duality
+theorem established so far:
+
+
+\textbf{Theorem 7.36.} Let $G$ be a locally compact abelian group. Then $\hat{G}$ is a locally compact abelian group and:
+
+
+\begin{itemize}
+
+    \item (a) the correspondence $H \mapsto A_{\hat{G}}(H)$, $N \mapsto A_G(N)$, where $H$ is a closed subgroup of $G$ and $N$ is a closed
+    subgroup of $\hat{G}$, defines an order-inverting bijection between the family of all closed subgroups of $G$ and the
+    family of all closed subgroups of $\hat{G}$;
+
+    \item (b) for every closed subgroup $H$ of $G$ the dual group $\hat{H}$ is isomorphic to $\hat{G}/A (H)$, while $A(H)$ is isomorphic
+    to the dual $\hat{G/H}$;
+
+    \item (c) $\omega_G : G \to \hat{\hat{G}}$ is a topological isomorphism;
+
+    \item (d) $G$ is compact (resp., discrete) if and only if $\hat{G}$ is discrete (resp., compact);
+
+\end{itemize}
+
+
+\emph{Proof} The first sentence is proved in Theorem 7.2. (a) is Corollary 7.34 while (b) is Proposition 7.35. (c) is
+Theorem 7.31. To prove (d) apply Theorem 7.31 and Lemma 7.1.
+
+
+    Using the full power of the duality theorem one can prove the following structure theorem on compactly
+generated locally compact abelian groups.
+
+
+\textbf{Theorem 7.37.} Let G be a locally compact compactly generated abelian group. Prove that $G \cong \mathbb{R}^n \times \mathbb{Z}^m \times K$,
+where $n, m \in N$ and $K$ is a compact abelian group.
+
+
+\emph{Proof.} According to Theorem 6.18 there exists a compact subgroup $K$ of $G$ such that $G/K$ is an elementary
+locally compact abelian group. Taking a bigger compact subgroup one can get the quotient $G/K$ to be of the
+form $\mathbb{R}^n \times \mathbb{Z}^m$ for some $n, m \in \mathbb{N}$. Now the dual group $\hat{G}$ has an open subgroup $A(K) \cong \hat{G/K} \cong \mathbb{R}^n \times \mathbb{T}^m$.
+Since this subgroup is divisible, one has $\hat{G} \cong \mathbb{R}^n \times \mathbb{T}^m \times D$, where $D \cong \hat{G}/A (K)$ is discrete and $D \cong \hat{K}$. Taking
+duals gives $G \cong \hat{\hat{G}} \cong \mathbb{R}^n \times \mathbb{Z}^m \times K$.
+
+
+    Making sharp use of the annihilators one can prove the structure theorem on locally compact abelian groups
+(see [67, 36] for a proof).
+
+
+\textbf{Theorem 7.38.} Let $G$ be a locally compact abelian group. Then $G \cong \textbf{R}^n \times G_0$, where $G_0$ is a closed subgroup
+of $G$ containing an open compact subgroup $K$.
+
+
+    As a corollary one can prove:
+
+
+\textbf{Corollary 7.39.} Every locally compact abelian group is isomorphic to a subgroup of a group of the form
+$\mathbb{R}^n \times D \times K$, where $n \in \mathbb{N}, D$ is a discrete abelian group and $K$ is a compact abelian group.
+
+
+\textbf{Exercise 7.40} Let $G$ be a locally compact abelian group. Prove that for $\chi_1, . . . , \chi_n \in \hat{G}$ and $\delta > 0$ one has
+
+
+    $U_G (\chi_1, . . . , \chi_n; \delta) = \omega^{-1}_G (W_{\hat{\hat{G}}} ({\chi_1, . . . , \chi_n}, U)),$,
+
+
+where $U$ is the neighborhood of 0 in $\mathbb{T} \cong \mathbb{S}$ determined by $|Argz| < \delta$.
+
+
+\textbf{Exercise 7.41.} Let $G$ be a compact connected abelian group. Prove that $t(G)$ is dense in $G$ iff $\hat{G}$ is reduced.
+Deduce that every compact connected abelian group $G$ has the form $G \cong G_1 \times \mathbb{Q}^\alpha$ for some cardinal $\alpha$, where
+the compact subgroup $G_1$ coincides with the closure of the subgroup $t(G)$ of $G$.
+
+
+(Hint. Note first that $\hat{G}$ is torsion-free. Deduce that $\hat{G}$ is reduced iff $\bigcap^{\infty}_{n=1} n \hat{G} = 0$. Show that this equality
+is equivalent to density of $t(G) = \bigcup^{\infty}_{n=1} G[n]$ in $G$. To prove the second assertion consider the torsion-free dual
+$\hat{G}$ and its decomposition $\hat{G} = d(\hat{G}) \times R$, where R is a reduced subgroup of $\hat{G}$. Now apply the first part and the
+isomorphism $G \cong \hat{\hat{G}}$.)
+
+
+\textbf{Exercise 7.42.} . Give example of a reduced abelian group $G$ such that $\bigcap^{\infty}_{n=1} n \hat{G} \neq 0$.
+(Hint. Fix a prime number p and take an appropriate quotient of the group $\bigoplus^{\infty}_{n=1} \mathbb{Z}(p^n)$).
+
 \end{document}
