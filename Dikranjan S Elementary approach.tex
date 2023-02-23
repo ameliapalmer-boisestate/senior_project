@@ -1369,8 +1369,237 @@ every $x \in G$, then $c \in M$.
 of $\mathbb{C}$ and $h(x) + c \in M + D$, we conclude with Corollary 4.7 that $c \in M + D$, a contradiction. 
 
 
+\textbf{Theorem 6.13.} For every abelian group $G$ the assignment $f \mapsto I(f )$ defines a unique invariant mean on $A(G)$ with $|I(f )| \leqslant \| f \|$ for
+all $f \in A(G)$.
 
 
+\emph{Proof.} Obviously, $I(1) = 1$. To establish positivity of the linear functional $f \mapsto I(f )$, apply Lemma 6.12 to the closed convex
+subset of $\mathbb{C}$ consisting of all non-negative real numbers.
 
+
+    To check invariance fix a function $f \in C(G)$. Let $f = f_0 + I(f )\cdot 1$, with $f_0 \in A_0(G)$. Since the action of $G$ on $\mathbb{C} \cdot 1$ is trivial
+and $A_0(G)$ is invariant, we get $f_a = (f_0)_a + I(f ) \cdot 1$ with $(f_0)_a \in A_0(G)$. Hence $I(f_a) = I(f )$.
+
+
+    The last assertion is true if $f = 0$, since then $I(f ) = 0$ and there is nothing to prove. Assume $f \neq 0$ and let $\varepsilon = \| f \|$.
+Then $\| f \|=\| f_0 + I(f )\| \leqslant \varepsilon$ yields $|I(f )| \leqslant \varepsilon$ by Lemma 6.12.
+
+
+    To prove the uniqueness part, we have to see that for every invariant mean $\int$ on $A(G)$ one has $\int f = I(f )$ for every
+$f \in A(G)$. It follows from Lemma 6.11 and the definition of $I$, that $\int f = I(f ) = 0$ for every $f \in A_0(G)$. On the other hand,
+by $\int 1 = 1 = I(1)$ and linearity, it follows that $\int$ and $I$ coincide on $\mathbb{C} \cdot 1$ too. Therefore, (3) yields $\int = I$.
+
+
+    For a different proof of this theorem for arbitrary groups see [15, Theorems 18.8 and 18.9] or [19].
+
+
+\section{Haar integral of the locally compact abelian groups}
+
+
+    Let $G$ be a compact abelian group. A Haar integral on $G$ is a linear functional $\int : C(G) \to \mathbb{C}$ with the properties $(a)-(c)$
+applied to functions $f \in C(G)$. This makes sense since every continuous function on a compact abelian group is almost
+periodic. In other words, a Haar integral on $G$ is an invariant mean defined only on the subalgebra $C(G)$ of continuous
+functions of $G$ according to Theorem 6.13. This proves the existence part of the following
+
+
+\textbf{Theorem 7.1} For every compact abelian group $G$ the assignment $f \mapsto I(f ) (f \in C(G))$ defines a (unique) Haar integral on $G$.
+
+
+\textbf{Proof.} The uniqueness of the Haar integral cannot be derived directly from Theorem 6.13 since the Haar integral is not
+defined for all almost periodic functions. Nevertheless, if: $C(G) \to \mathbb{C}$ is a Haar integral on $G$, then one can still see
+(arguing as in the proof of items (a) and (b) of Theorem 6.13) that  vanishes on $\mathfrak{X}_0(G)$ and $\int : C(G) \to \mathbb{C}$ is continuous.
+From this one can conclude that  vanishes on the closure $C^0(G) := A_0(G) \cap C(G)$ of $\mathfrak{X}_0(G)$ in $B(G)$ as well. By (3), the
+subspace $C^0(G)$ splits, i.e., $C(G) = C^0(G) \oplus C \cdot 1$. Since both $\int$ and $I$ vanish on $C^0(G)$, while they obviously coincide on $\mathbb{C} \cdot 1$,
+we deduce that $\int$ coincides with the restriction of $I$ on $C(G)$. This ends up the proof of the uniqueness.
+
+
+    Analogously, we can define a Haar integral on a locally compact (abelian) group $G$ as follows. Denote by $C_0(G)$ the
+space of all continuous complex-valued functions on $G$ with compact support. A Haar integral on $G$ is a linear functional $I = \int_G : C_0(G) \to \mathbb{C}$
+such that:
+
+
+\begin{itemize}
+
+    \item (i) $\int f \geqslant 0$ for any real-valued $f \in C_0(G)$ with $f \geqslant 0$;
+
+    \item (ii) $\int f_a = \int f$ for any $f \in C_0(G)$ and any $a \in G$;
+
+    \item (iii) there exists $f \in C_0(G)$ with $\int f \neq 0$.
+
+\end{itemize}
+
+
+    In the remaining part of this section we will show that every LCA group $G$ admits a Haar integral $\int_G$.
+
+
+    We begin with a simple property of Haar integrals that will be useful later on.
+
+
+\textbf{Lemma 7.2}. Let $I = \int_G$ be a Haar integral on a LCA group $G$. Then for any real-valued $h \in C_0(G)$ with $h \geqslant 0$ on G and $h(x) > 0$ for at
+least one $x \in G$ we have $I(h) > 0$.
+
+
+\textbf{Proof.} Let $h \in C_0(G)$ be a real-valued function such that $h \geqslant 0$ on $G$ and $h(x_0) > 0$ for some $x_0 \in G$. Then there exists a
+neighborhood $V$ of $0$ in $G$ such that $h(x) \geqslant a = h(x_0)/2$ for all $x \in x_0 + V$ .
+
+
+    By property (iii) of Haar integrals, there exists $f \in C_0(G)$ with $I(f) \neq 0$. Then $f = u + \mathbf{i}v$ for some real-valued
+$u, v \in C_0(G)$, so we must have either $I(u) \neq 0$ or $I(v) \neq 0$. So, without loss of generality we may assume that $f$ is
+realvalued. Setting $f_+(x) = \max\{f (x), 0\}$, $x \in G$ and $f_-(x) = \max\{- f (x), 0\}$, we get functions $f_+, f_- \in C_0(G)$ such that $f_+ \geqslant 0$
+and $f_-\geqslant 0$ on $G$ and $f = f_+ - f_-$. Thus, either $I(f_+) \neq 0$ or $I(f_-) \neq 0$.
+
+
+    So, we may assume that $f \geqslant 0$ and $I(f ) \neq 0$; then by (i) we must have $I(f ) > 0$. Since $f \in C_0(G)$, there exists a compact
+$K \subset G$ with $f (x) = 0$ on $G / K$. So one can find a finite $F \subset G$ such that $K \subset F + V$. If $A = \max_{x \in G} f (x)$, then $A > 0$
+and for every $g \in F$ we have $h_{x_0-g} (x) \geqslant a$ for all $x \in g + V$. Thus, $f(x) \leqslant \frac{A}{a} \sum_{g \in F} h_{x_0-g} (x)$ for all $x \in G$, and therefore
+$0 < I(f ) \leqslant \frac{A}{a} |F |I(h)$, which shows that $I(h) > 0$. 
+
+
+    The following three lemmas are the main steps in the proof of existence of Haar integrals.
+
+\textbf{Lemma 7.3.} If $G$ is a discrete abelian group, then $G$ admits a Haar integral.
+
+
+\textbf{Proof.} Setting
+
+
+    $\int_G f = \sum_{x \in G} f(x)$. $f \in C_0 (G)$ 
+
+
+one checks easily that $\int_G$ is a Haar integral on $G$.
+
+
+\textbf{Lemma 7.4.} If $G \in \mathcal{L}$ and $H$ is a closed subgroup of $G$ such that both $H$ and $G/H$ admit a Haar integral, then also $G$ admits a Haar
+integral.
+
+
+\textbf{Proof.} Let $f \in C_0(G)$. Then $f_y \upharpoonright_H \in C_0(H)$ for every $y \in G$. Let $F(y) = \int_H f_y \upharpoonright_H$. Then $F : G \to \mathbb{C}$ is a continuous function.
+Indeed, let $y_0 \in G$ and $\varepsilon > 0$. There exists a compact $K \subset G$ such that $f = 0$ on $G / K$. Let $U$ be an arbitrary compact
+symmetric neighborhood of 0 in $G$. There exists $h \in C_0(G)$ such that $0 \leqslant h(x) \leqslant 1$ for all $x \in G$ and $h(x) = 1$ for all
+$x \in y_0 + U + K$.
+
+
+    Since $f$ is continuous and $U + K$ is compact, there exists a symmetric neighborhood $V$ of 0 in $G$ such that $V \subset U$ and
+
+
+$|f(x) - f(y)| \leqslant \varepsilon$, $x,y \in U + K$, $x - y \in V$.  (1)
+
+
+We will now show that $|F (y) - F (y_0)| \leqslant \varepsilon$ for all $y \in y_0 + V$. Given $y \in y_0 + V$ let us first check that
+
+
+$|f(x - y) - f(x - y_0)| \leqslant \varepsilon h(x)$, $x \in G$  (2)
+
+
+Indeed, if $x \in G$ is such that $f (x - y) = f (x - y_0) = 0$, then (2) is obviously true. Assume that either $f (x - y) \neq 0$ or
+$f (x - y_0) \neq 0$. Then either $x - y \in K$ or $x - y_0 \in K$, so either $x \in y + K \subset y_0 + V + K$ or $x \in y_0 + K$. In both cases
+$x \in y_0 + U + K$ and $x - y, x - y_0 \in U + K$. Moreover,
+
+
+$(x - y) - (x - y_0) = y_0 - y \in y_0 - (y_0 + V) = V$,
+
+
+so (1) and $h(x) = 1$ imply
+
+
+$ f(x - y) - f(x - y_0) \leqslant \varepsilon \leqslant \varepsilon h(x)$.
+
+
+This proves (2).
+
+
+    From (2) it follows that $| f_y \upharpoonright_H - f_{y_0} \upharpoonright_H |  \varepsilon h \upharpoonright_H$ , so
+
+
+    $F(y) - F(y_0)| \leqslant \int_H | f_y \upharpoonright_H - f_{y_0} \upharpoonright{H} | \leqslant \varepsilon \int_H h \upharpoonright_H $
+
+
+This proves the continuity of $F$ at $y_0$.
+
+
+    Next, for any $x, y \in G$ with $x - y \in H$ we have
+
+
+$F(x) = \int_H f_x \upharpoonright_H = \int_H (f_y)_{x-y} \upharpoonright_H = \int_H f_y \upharpoonright_H = F(y)$
+
+
+using the invariance of $\int_H$ in $H$. Then there exists a continuous function $\tilde{F} : G/H \to \mathbb{C}$ such that $F = \tilde{F} \circ p$, where
+$p : G \to G/H$ is the natural projection. Moreover, $\tilde{F} \in C_0(G/H)$.
+
+
+    Set $\int_G f := \int_{G/H} \tilde{F}$ for any $f \in C_0(G)$. It is now easy to check thatG is a Haar integral on $G$. Indeed, the linearity of $\int_G$
+follows from that of $\int_{G/H}$ and the fact that $(\alpha f_1 + \beta f_2) \cong \alpha \tilde{F}_1 + \beta \tilde{F}_2$ for any $\alpha, \beta \in \mathbb{C}$ and any $f_1, f_2 \in C_0(G)$. If $f \geqslant 0$,
+then $\tilde{F} \geqslant 0$, too, so $\int_G = \int_{G/H} \tilde{F} \geqslant 0$. To check invariance, notice that for any $x \in G$ we have $(f_x) \tilde{} = (\tilde{F} )_{p(x)}$, so
+
+
+$\int_G f_x = \int_{G/H} (f_x) \tilde{} = \int_{G/H} \tilde{(F)}_{p(x)} = \int_{G/H} \tilde{F} = \int_G f$
+
+
+    We will now show that $\int_G$ is non-trivial, i.e. it satisfies (iii). Take an arbitrary compact neighborhood $U$ of 0 in $G$.
+There exists a real-valued $f \in C_0(G)$ with $f \geqslant 0$ on $G$ such that $f (x) \geqslant 1$ for all $x \in U$. Then $f \geqslant 1$ on $U \cap H$, so by
+Lemma 7.2, $F (0) = \int_H f \upharpoonright H > 0$, which gives $\tilde{F} (0) > 0$. Moreover $f \geqslant 0$ implies $\tilde{F} \geqslant 0$ on $G/H$, so using Lemma 7.2 again,
+$\int_G f = \int_{G/H} \tilde{F} > 0$.
+
+
+    Thus, $\int_G$ is a Haar integral on $G$. 
+
+
+    We are now ready to prove existence of Haar integrals on general LCA groups.
+
+
+\textbf{Theorem 7.5.} Every locally compact abelian group admits a Haar integral.
+
+
+\textbf{Proof.} Let $G$ be a LCA group. If $G$ is compact or discrete, then Theorem 7.1 or Lemma 7.3 apply. In case $G$ is compactly
+generated, $G$ has a discrete subgroup $H$ such that $G/H$ is compact by Theorem 5.12. So both $H$ and $G/H$ admit a Haar
+integral. It follows from Lemma 7.4 that $G$ admits a Haar integral, too.
+
+
+    In the general case $G$ has an open subgroup $H$ which is compactly generated - just take the subgroup generated by an
+arbitrary compact neighborhood of 0 in $G$. Such a subgroup $H$ is locally compact (and compactly generated), hence admits
+a Haar integral by the above argument, while $G/H$ is discrete, so it also admits a Haar integral by Lemma 7.3. Finally,
+Lemma 7.4 implies that $G$ admits a Haar integral, too.
+
+
+\textbf{Acknowledgement}
+
+
+Thanks are due to the referee for her/his careful reading and useful advise.
+
+
+\textbf{References}
+[1] G. Artico, V. Malykhin, U. Marconi, Some large and small sets in topological groups, Math. Pannon. 12 (2) (2001) 157-165.
+[2] N. Bogoliouboff, Sur quelques propriétés arithmétiques des presque-périodes, Ann. Chaire Phys. Math., Kiev 4 (1939) 195-205.
+[3] H. Bohr, Collected mathematical works, in: E. Følner, B Jessen (Eds.), Dansk Matemetitisk Forsening, 1952.
+[4] H. Cartan, Sur le mesure de Haar, C. R. Acad. Sci. Paris 211 (1940) 759-762.
+[5] W.W. Comfort, Ross, Topologies induced by groups of characters, Fund. Math. 55 (1964) 283-291.
+[6] M. Cotlar, R. Ricabarra, On the existence of characters in topological groups, Amer. J. Math. 76 (1954) 375-388.
+[7] D. Dikranjan, A. Orsatti, On an unpublished manuscript of Ivan Prodanov concerning locally compact modules and their dualities, Comm. Algebra 17
+(1989) 2739-2771.
+[8] D. Dikranjan, Iv. Prodanov, L. Stoyanov, Topological Groups: Characters, Dualities and Minimal Group Topologies, Pure Appl. Math., vol. 130, Marcel
+Dekker Inc., New York, Basel, 1989.
+[9] R. Ellis, H.B. Keynes, Bohr compactifications and a result of Følner, Israel J. Math. 12 (1972) 314-330.
+[10] R. Engelking, General Topology, Heldermann Verlag, Berlin, 1989.
+[11] E. Følner, A proof of the main theorem for almost periodic functions in an abelian group, Ann. of Math. (2) 50 (1949) 559-569.
+[12] E. Følner, Generalization of a theorem of Bogolioúboff to topological abelian groups. With an appendix on Banach mean values in non-abelian groups,
+Math. Scand. 2 (1954) 5e-18.
+[13] L. Fuchs, Infinite Abelian Groups, vol. I, Academic Press, New York, London, 1973.
+[14] E. Glasner, On minimal actions of Polish groups, Topology Appl. 85 (1998) 119-125.
+[15] E. Hewitt, K. Ross, Abstract Harmonic Analysis, vol. I, Springer-Verlag, Berlin, Göttingen, Heidelberg, 1979.
+[16] K.H. Hofmann, S. Morris, The Structure of Compact Groups. A Primer for the Student—A Handbook for the Expert, de Gruyter Stud. Math., vol. 25,
+Walter de Gruyter & Co., Berlin, 1998, xviii+835 pp.
+[17] P. Holm, On the Bohr compactification, Math. Ann. 156 (1964) 34-46.
+[18] E.R. van Kampen, Locally bicompact abelian groups and their character groups, Ann. of Math. (2) 36 (1935) 448-463.
+[19] W. Maak, Fastperiodische Funktionen, Springer-Verlag, Berlin, 1950.
+[20] G.W. Mackey, Harmonic analysis as the exploitation of symmetry—A historical survey, Bull. Amer. Math. Soc. (N.S.) 3 (1) (1980) 543-698, part 1.
+[21] S. Morris, Pontryagin Duality and the Structure of Locally Compact Abelian Groups, Cambridge Univ. Press, Cambridge, 1977.
+[22] L. Nachbin, The Haar Integral, D. Van Nostrand Company, Princeton, 1965.
+[23] G. Nobeling, H. Beyer, Allgemaine Approximationskriterien mit Anwendungen, Jahrsber. Deutsch. Math. Ver. 58 (1955) 54-72.
+[24] V. Pestov, Forty-plus annotated questions about large topological groups, in: Elliott Pearl (Ed.), Open Problems in Topology II, Elsevier B.V., March,
+2007, pp. 439–450.
+[25] L. Pontryagin, Topological Groups, Gordon and Breach Science Publishers, Inc., New York, London, Paris, 1966, translated from Russian by Arlen Brown.
+[26] Iv. Prodanov, Compact representations of continuous algebraic structures, in: General Topology and its Relations to Modern Analysis and Algebra, II,
+Proc. Second Prague Topological Sympos., 1966, Academia, Prague, 1967, pp. 290-294 (in Russian).
+[27] Iv. Prodanov, Elementary proof of the Peter-Weyl theorem, C. R. Acad. Bulgare Sci. 34 (3) (1981) 315-318 (in Russian).
 
 \end{document}
