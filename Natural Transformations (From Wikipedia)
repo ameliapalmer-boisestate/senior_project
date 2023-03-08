@@ -1,0 +1,377 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage{mathrsfs}
+\usepackage{amssymb}
+
+\title{Natural Transformations}
+\author{From Wikipedia}
+\date{2023-02-26}
+
+\begin{document}
+
+
+\maketitle
+
+
+    In category theory, a branch of mathematics, a natural transformation provides a way of transforming one functor
+into another while respecting the internal structure (i.e., the composition of morphisms) of the categories involved. 
+Hence, a natural transformation can be considered to be a "morphism of functors". Informally, the notion of a
+natural transformation states that a particular map between functors can be done consistently over an entire category.
+
+
+    Indeed, this intuition can be formalized to define so-called functor categories. Natural transformations are,
+after categories and functors, one of the most fundamental notions of category theory and consequently appear in the 
+majority of its applications.
+
+
+\section{Definition}
+
+
+    If $F$ and $G$ are functors between the categories $C$ and $D$, then a natural transformation $\eta$ from $F$ to 
+$G$ is a family of morphisms that satisfies two requirements.
+
+
+\begin{enumerate}
+
+    \item The natural transformation must associate, to every object $X$ in $C$, a morphism $\eta_X : F(X) \to G(X)$
+    between objects of $D$. The morphism $\etq_X$ is called the component of $\eta$ at $X$.
+
+    \item Components must be such that for every morphism 
+        $f : X \to Y$ in $C$ we have:
+            $\eta_Y \circ F(f) = G(f) \circ \eta_X\eta$
+\end{enumerate}
+
+
+The last equation can conveniently be expressed as by the commutative diagram.
+
+
+% This diagram has one to-arrow on the side, to the side and a square of to-arrows
+
+%The to-arrow on the side is the following
+
+$X \to^f Y$  
+
+%The top of the square has the following
+
+$F(X) \to^{\eta_X} G(X)$
+
+%The bottom of the square has the following 
+
+$F(Y) \to^{\eta_Y} G(Y)$
+
+%The left side of the square points from the top left corner to the bottom left corner with the following
+
+$F(X) \to^{F(f)} F(Y)$
+
+%The right side of the square points from the top right corner to the bottom right corner with the following
+
+$G(X) \to^{G(f)} G(Y)$
+
+    If both $F$ and $G$ are contravariant, the vertical arrows in the right diagram are reversed. If $\eta$ is a natural
+transformation from $F$ to $G$, we also write $\eta : F \to G$ or $\eta : F \Rightarrow G$. This is also expressed
+by saying the family of morphisms $\eta_X : F(X) \to G(X)$ is natural in $X$.
+
+
+    If, for every object $X$ in $C$, the morphism $\eta_X$ is an isomorphism in $D$, then $\eta$ is said to be a natural
+isomorphism (or sometimes natural equivalence or isomorphism of functors). Two functors $F$ and $G$ are called 
+naturally isomorphic or simply isomorphic if there exists a natural isomorphism from $F$ to $G$.
+
+
+    An infranatural transformation $\eta$ from $F$ to $G$ is simply a family of morphisms $\eta_X : F(X) \to G(X)$,
+for all $X$ in $C$. Thus a natural transformation is an infranatural transformation for which $\eta_Y \circ F(f) = G(f) \circ \eta_X$
+for every morphism $f: X \to Y$. The naturalizer of $\eta$, $nat(\eta)$, is the largest subcategory of $C$ containing
+all the objects of $C$ on which $\eta$ restricts to a natural transformation.
+
+
+
+\section{Examples}
+
+
+\textbf{Opposite Group}
+
+
+Statements such as
+
+
+    "Every group is naturally isomorphic to its opposite group"
+
+
+abound in modern mathematics. We will now give the precise meaning of this statement
+as well as its proof. Consider the category $\mathbf{Grp}$ of all groups with group
+homomorphisms as morphisms. If $(G,*)$, is a group, we define its opposite group
+$(G^{op}, *^{op})$ as follows: $G^{op}$ is the same set as $G$, and the operation $*^{op}$ is defined by
+$(G^{op},*^{op})$ as follows: $G^{op}$ is the same set as $G$, and the operation $*^{op}$ are thus "turned around". Forming the
+opposite group becomes a (covariant) functor from $\mathbf{Grp}$ to $\mathbf{Grp}$ if we define $f^{op} = f$
+for any group homomorphism $f: G \to H$. Note that $f^{op}$ is indeed a group
+homomorphism from $G^{op}$ to $H^{op}$:
+
+
+    $f^{op}(a*^{op}b) = f(b*a) = f(b) * f(a) = f^{op} (a) *^{op} f^{op}(b)$.
+
+
+    The content of the above statement is:
+
+
+    "The identity functor $Id_{\mathbf{Grp}} : \mathbf{Grp} \to \mathbf{Grp}$ is naturally isomprhic to the opposite
+    functor $\mathbf{op} : \mathbf{Grp} \to \mathbf{Grp}$"
+
+To prove this, we need to provide isomorphisms $\eta_G : G \to G^{op}$ for every group $G$, such
+that the above diagram commutes. Set $\eta_G (a) = a^{-1}$. The formulas
+$(a * b)^{-1} = b^{-1} * a^{-1} = a^{-1} *^{op} b^{-1}$ and $(a^{-1})^{-1} = a$ show that $\eta_G$ is a grou
+homomorphism with inverse $\eta_{G_{op}}$. To prove the naturality, we start with a group
+for all $a$ in $G$. This is true since $f^{op} = f$ and every group homomorphism has the
+property $(f(a))^{-1}=f(a^-1)$
+
+
+\textbf{Abelianization}
+
+
+    Given a group $G$, we can define its abelianization $G^{ab} = G / [G,G]$. Let $\pi_G : G \to G^{ab}$
+denote the projection map onto the cosets of $[G,G]$. This homomorphism is "natural in
+$G$", i.e., it defines a natural transformation, which we now check. Let $H$ be a group. For
+any homomorphism $f: G \to H$, we have that $[G,G]$ is contained in the kernel of
+$\pi_H \circ f$, because any homomorphism into an abelian group kills the commutator
+subgroup. Then $\pi_H \circ f$ factors through $G^{ab}$ as $f^{ab} \circ \pi_G = \pi_H \circ f$ for the unique
+homomorphism $f^{ab} : G^{ab} \to H^{ab}$. This makes $\mathbf{ab : Grp \to Grp}$  a functor and $\pi$ a
+natural transformation, but not a natural isomorphism, from the identity functor to $\mathbf{ab}$.
+
+
+\textbf{Hurewicz homomorphism}
+
+
+Functors and natural transformations abound in algebraic topology, with the Hurewicz
+homomorphisms serving as examples. For any pointed topological space $\textbf{(X,x)}$ and
+positive integer $n$ there exists a group homomorphism
+
+
+    $h_n : \pi_n (X,x) \to H_n (X)$
+
+
+from the $n$-th homotopy group of $(X,x)$ to the $n$-th homology group of $X$. Both $\pi_n$
+and $H_n$ are functors from the category \textbf{Top^*} of a pointed topological spaces to the 
+category $\textbf{Grp}$ of groups, and $h_n$ is a natural transformation from $\pi_n$ to $H_n$. 
+
+
+\textbf{Determinant}
+
+
+    Given commutative rings $R$ and $S$ with a ring homomorphism $f : R \to S$, the respective
+groups of invertible $n \times n$ matrices $GL_n (R)$ and $GL_n (S)$ inherit a homomorphism
+which we denote by $GL_n (f)$, obtained by applying $f$ to each matrix entry. Similarly, $f$
+restricts to a group homomorphism $f^* : R^* \to S^*$, where $R^*$ denotes the group of
+units of $R$. In fact, $GL_n$ and $*$ are functors from the category of commutative rings
+$\textbf{CRing}$ to $\textbf{Grp}$. The determinant on the group $GL_n (R)$, denoted by $\text{det}_R$, is a group
+homomorphism
+
+
+    $\text{det}_R : GL_n (R) \to R^*$
+
+
+which is natural in $R:$ because the determinant is defined by the same formula for every
+ring, $f \circ \text{det}_R = \text{det}_S \circ GL_n (f)$ holds. This makes the determinant a natural
+transformation from $GL_n$ to $*$.
+
+
+\textbf{Double dual of a vector space}
+
+
+If $K$ is a field, then for every vector space $V$ over $K$ we have a "natural" injective linear
+map $V \to V^{**}$ from the vector space into its double dual. These maps are "natural" in
+the following sense: the double dual operation is a functor, and the maps are the
+components of a natural transformation from the identity functor to the double dual
+functor.
+
+
+\textbf{Finite calculus}
+
+
+For every abelian group $G$, the set $\text{Hom}_{\text{Set}} (\mathbb{Z}, U(G))$ of functions from the integers to
+the underlying set of $G$ forms an abelian group $V_{\mathbb{Z}(G)}$ under pointwise addition. (here
+$U$ is the standard forgetful functor $U : \mathbf{Ab \to Set}$.) Given an $\mathbf{Ab}$ morphism
+$\varphi : G \to G'$, the map $V_\mathbb{Z} (\varphi) : V_\mathbb{Z} (G) \to V_\mathbb{Z} (G')$ given by left compromising $\varphi$ with the
+elements of the former is itself a homomorphism of abelian groups; in this way we obtain
+a functor $V_\mathbb{Z} : \mathbf{Ab \to Ab}$ The finite difference operate $\Delta_G$ taking each function
+$f : \mathbb{Z} \to U(G)$ to $\Delta(f) : n \mapsto f(n + 1) - f(n)$ is a map from $V_\mathbb{Z} (G)$ to itself, and the
+collection $\Delta$ of such maps gives a natural transformation $\Delta : V_\mathbb{Z} \to Z_\mathbb{Z}$.
+
+
+\textbf{Tensor-hom adjunction}
+
+
+Consider the category $mathbf{Ab}$ of abelian groups and group homomorphisms. For all abelian
+groups, $X, Y$ and $Z$ we have a group isomorphism
+
+    $\text{Hom}(X \otimes Y, Z) \to  \text{Hom}(X, \text{Hom}(Y,Z))$\dots
+
+
+These isomorphisms are "natural" in the sense that they define a natural transformation
+between the two involved functor $\mathbf{Ab^{op} \times Ab^{op} \times Ab \to Ab}$. (Here "op" is the
+opposite category of $\mathbf{Ab}$, not to be confused with the trivial opposite group functor on $\mathbf{AB}$!)
+
+
+This is formally the tensor-hom adjunction, and is an archetypal example of a pair of
+adjoint functors. Natural transformations arise frequently in conjunction with adjoint 
+functors, and indeed, adjoint functors are defined by a certain natural isomorphism.
+Additionally, every pair of adjoint functors comes equipped with two natural
+transformations (generally not isomorphisms) called the unit and counit.
+
+
+\section{Unnatural isomorphism}
+
+
+The notion of a natural transformation is categorical, and states (informally) that a
+particular map between functors can be done consistently over an entire category.
+Informally, a particular map (esp. an isomorphism) between individual objects (not entire
+categories) is referred to as a "natural isomorphism", meaning implicitly that it is actually
+defined on the entire category, and defines a natural transformation of functors;
+formalizing this intuition was a motivating factor in the development of category theory.
+Conversely, a particular map between particular objects may be called an unnatural
+isomorphism (or "this isomorphism is not natural") if the map cannot be extended to a
+natural transformation on the entire category. Given an object $X$, a functor $G$ (taking for
+simplicity the first functor to be the indentity) and an isomorphism $\eta: X \to G(X)$, proof
+of unnaturality is most easily shown by giving an automorphism $A : X \to Y$ that does
+not commute with this isomorphism (so $\eta \circ A \neq G(A) \circ \eta$). More strongly, if one wishes
+to prove that $X$ and $G(X)$ are not naturally isomorphic, without reference to a particular
+isomorphism, this requires showing that for any isomorphism $\eta$, there is some $A$ with
+which it does not commute; in some cases a single automorphism $A$ works for all
+candidate isomorphisms $\eta$ while in other cases one must show how to construct a
+different $A_n$ for each isomorphism. The maps of the category play a crucial role - any
+infranatural transform is natural if the only maps are the identity map, for instance.
+
+
+This is similar (but more categorical) to concepts in group theory or module theory,
+where a given decomposition of an object into a direct sum is "not natural", or rather
+"not unique", as automorphisms exist that do not preserve the direct sum decomposition
+- see Structure theorem for finitely generated modules over a principal ideal domain
+$\S$ Uniqueness for example.
+
+
+
+Some authors distinguish notationally, using $\cong$ for a natural isomorphism and $\approx$ for an
+unnatural isomorphism, reserving $=$ for equality (usually equality of maps).
+
+
+\textbf{Example: fundamental group of torus}
+
+
+As an example of the distinction between the functorial statement and individual objects,
+consider homotopy groups of a product space, specifically the fundamental group of the
+torus.
+
+
+
+The homotopy groups of a product space are naturally the product of the homotopy
+groups of the components, $\pi_n ((X, x_0) \times (Y, y_0)) \cong \pi_n ((X, x_0)) \times \pi_n ((Y, y_0))$,
+with the isomorphism given by projection onto the two factors, fundamentally because
+maps into a product space are exactly products of maps into the components - this is a
+functorial statement.
+
+However, the torus (which is abstractly a product of two circles) has fundamental group
+isomorphic to $Z^2$, but the splitting $\pi_1 (T,t_0) \approx \mathbf{Z} \times \mathbf{Z}$ is not natural. Note the use of $\approx$,
+$\cong$, and $=$:
+
+
+    $\pi_1 (T,t_0) \approx \pi_1 (S^1, x_0) \times \pi_1 (S^1 , y_0) \cong \mathbf{Z} \times \mathbf{Z} = \mathbf{Z}^2$. 
+
+
+This abstract isomorphism with a product is not natural, as some isomorphisms of $T$ do
+not preserve the product: the self-homeomorphism of $T$ (thought of as the quotient
+space $R^2 / \mathbb{Z}^2$) given by
+
+\begin{equation*}
+    \begin{pmatrix}
+    1 & 1 \\
+    0 & 1 
+    \end{pmatrix}
+\end{equation*}
+
+
+(geometrically a Dehn twist about one of the generating curves) acts as this matrix on $\mathbb{Z}^2$ (it's in the general linear group $\mathbf{GL}(\mathbb{Z},2)$ of invertible
+integer matrices), which does not preserve the decomposition as a product because it is
+not diagonal. However, if one is given the torus as a product
+$(T,t_0) = (s^1, x_0) \times (S^1, y_0)$ - equivalently, given a decomposition of the space - then
+the splitting of the group follows from the general statement earlier. In categorical terms,
+the relevant category (preserving the structure of a product space) is "maps of product
+spaces, namely a pair of maps between the respective components".
+
+Naturality is a categorical notion, and requires being very precise about exactly what data
+is given – the torus as a space that happens to be a product (in the category of spaces
+and continuous maps) is different from the torus presented as a product (in the category
+of products of two spaces and continuous maps between the respective components).
+
+
+\textbf{Example: dual of a finite-dimensional vector space}
+
+
+Every finite-dimensional vector space is isomorphic to its dual space, but there may be
+many different isomorphisms between the two spaces. There is in general no natural
+isomorphism between a finite-dimensional vector space and its dual space.[1] However,
+related categories (with additional structure and restrictions on the maps) do have a
+natural isomorphism, as described below.
+
+The dual space of a finite-dimensional vector space is again a finite-dimensional vector
+space of the same dimension, and these are thus isomorphic, since dimension is the only
+invariant of finite-dimensional vector spaces over a given field. However, in the absence
+of additional constraints (such as a requirement that maps preserve the chosen basis), the
+map from a space to its dual is not unique, and thus such an isomorphism requires a
+choice, and is "not natural". On the category of finite-dimensional vector spaces and
+linear maps, one can define an infranatural isomorphism from vector spaces to their dual
+by choosing an isomorphism for each space (say, by choosing a basis for every vector
+space and taking the corresponding isomorphism), but this will not define a natural
+transformation. Intuitively this is because it required a choice, rigorously because any
+such choice of isomorphisms will not commute with, say, the zero map; see (Mac Lane &
+Birkhoff 1999, §VI.4) for detailed discussion.
+
+
+
+Starting from finite-dimensional vector spaces (as objects) and the identity and dual
+functors, one can define a natural isomorphism, but this requires first adding additional
+structure, then restricting the maps from "all linear maps" to "linear maps that respect
+this structure". Explicitly, for each vector space, require that it comes with the data of an
+isomorphism to its dual, $\eta_V : V \to V^*$. In other words, take as objects vector spaces with
+a nondegenerate bilinear form $b_v : V \times V \to K$. This defines an infranatural
+isomorphism (isomorphism for each object). One then restricts the maps to only those
+maps $T : V \to U$ that commute with the isomorphisms: $T^* (\eta_U(T(v))) = \eta_V (v)$ or in
+other words, preserve the bilinear form: $b_v(T(v),T(w)) = b_V(v,w)$.  (These maps
+define the naturalizer of the isomorphisms.) The resulting category, with objects finite-
+dimensional vector spaces with a nondegenerate bilinear form, and maps linear
+transforms that respect the bilinear form, by construction has a natural isomorphism from
+the identity to the dual (each space has an isomorphism to its dual, and the maps in the
+category are required to commute). Viewed in this light, this construction (add transforms
+for each object, restrict maps to commute with these) is completely general, and does not
+depend on any particular properties of vector spaces.
+
+In this category (finite-dimensional vector spaces with a nondegenerate bilinear form,
+maps linear transforms that respect the bilinear form), the dual of a map between vector
+spaces can be identified as a transpose. Often for reasons of geometric interest this is
+specialized to a subcategory, by requiring that the nondegenerate bilinear forms have
+additional properties, such as being symmetric (orthogonal matrices), symmetric and
+positive definite (inner product space), symmetric sesquilinear (Hermitian spaces), skew-
+symmetric and totally isotropic (symplectic vector space), etc. – in all these categories a
+vector space is naturally identified with its dual, by the nondegenerate bilinear form.
+
+
+\section{Operations with natural transformations}
+
+
+\section{Functor categories}
+
+
+\section{Yoneda lemma}
+
+
+\section{Historical notes}
+
+
+\section{See also}
+
+
+\section{Notes}
+
+
+\section{References}
+
+\end{document}
