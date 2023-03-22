@@ -115,7 +115,7 @@ homomorphism from $G^{op}$ to $H^{op}$:
     The content of the above statement is:
 
 
-    "The identity functor $Id_{\mathbf{Grp}} : \mathbf{Grp} \to \mathbf{Grp}$ is naturally isomprhic to the opposite
+    "The identity functor $\text{Id}_{\mathbf{Grp}} : \mathbf{Grp} \to \mathbf{Grp}$ is naturally isomprhic to the opposite
     functor $\mathbf{op} : \mathbf{Grp} \to \mathbf{Grp}$"
 
 To prove this, we need to provide isomorphisms $\eta_G : G \to G^{op}$ for every group $G$, such
@@ -151,7 +151,7 @@ positive integer $n$ there exists a group homomorphism
 
 
 from the $n$-th homotopy group of $(X,x)$ to the $n$-th homology group of $X$. Both $\pi_n$
-and $H_n$ are functors from the category \textbf{Top^*} of a pointed topological spaces to the 
+and $H_n$ are functors from the category $\textbf{Top^*}$ of a pointed topological spaces to the 
 category $\textbf{Grp}$ of groups, and $h_n$ is a natural transformation from $\pi_n$ to $H_n$. 
 
 
@@ -350,28 +350,248 @@ spaces can be identified as a transpose. Often for reasons of geometric interest
 specialized to a subcategory, by requiring that the nondegenerate bilinear forms have
 additional properties, such as being symmetric (orthogonal matrices), symmetric and
 positive definite (inner product space), symmetric sesquilinear (Hermitian spaces), skew-
-symmetric and totally isotropic (symplectic vector space), etc. – in all these categories a
+symmetric and totally isotropic (symplectic vector space), etc. - in all these categories a
 vector space is naturally identified with its dual, by the nondegenerate bilinear form.
 
 
 \section{Operations with natural transformations}
 
+    % Diagram, labelled "Horizontal and vertical composition of natural transformations"
+
+    %  The center of the diagram is 
+
+        $A \to^{G} A' \to^{G'} A''$
+
+    % The top of the diagram has overarching vectors
+
+        $A \to^{F} A' \to^{F'} A''$ 
+
+        % and the top vectors, based on their labels, point down to the center with the following 
+        
+        $F \Rightarrow^{\alpha} G$ , $F' \Rightarrow^{\alpha'} G'$
+
+    %  The bottom has underarching vectors
+
+        $A \to^{H} A' \to^{H'} A''$ 
+
+        % and the center vectors, based on their labels, point down to the bottom with the following 
+        
+        $G \Rightarrow^{\beta} H$ , $G' \Rightarrow^{\beta'} H'$
+
+
+    \subsection{Vertical Composition}
+
+    If $\eta : F \Rightarrow G$ and $\epsilon : G \Rightarrow H$ are natural transformations between functors
+    $F,G,H : C \to D$, then we can compose them to get a natural transformation
+    $\epsilon \circ \eta : F \Rightarrow H.$ This is done componentwise:
+
+
+        $(\epsilon \circ \eta)_X = \epsilon_X \circ \eta$
+
+
+            % We have another diagram, this one with two vectors on the top, two vectors on the bottom, and vectors between the three components in the middle
+            
+            % The top of the diagram
+                
+                $F(X) \to^{\eta_X} G(X) \to^{\epsilon_X} H(X)$
+            
+            
+            % The bottom of the diagram
+                
+                $F(Y) \to^{\eta_Y} G(Y) \to^{\epsilon_Y} H(Y)$
+            
+            % The middle of the diagram
+
+                $F(X) \to^{F(f)} F(Y)$ , $G(X) \to^{G(f)} G(Y)$ , $H(X) \to^{H(f)} H(Y)$
+
+    
+    This vertical composition of natural transformations is associative and has an identity, and
+    allows one to consider the collection of all functors $C \to D$ itself as a category (see
+    below under Functor categories). The identity natural transformation $\text{id}_F$ on functor $F$
+    has components $(\text{id}_F)_X = \text{id}_{F(X)}$.
+
+
+    For $\eta : F \Rightarrow G$, $\text{id}_G \circ \eta = \eta = \eta \circ \text{id}_F$
+
+
+    \subsection{Horizontal Composition}
+
+
+    If $\eta : F \Rightarrow G$ is a natural transformation between functors $F, G : C \to D$ and
+    $\epsilon : J \Rightarrow K$ is a natural transformation between functors $J, K : D \to E$, then the
+    composition of functors allows a composition of natural transformations
+    $\epsilon * \eta : J \circ F \Rightarrow K \circ G$ with components
+
+
+        $(\epsilon * \eta)_X = \epsilon_{G(X)} \circ J(\eta_X) = K(\eta_X) \circ \epsilon_{F(X)}$.
+
+
+    By using whiskering (see below), we can write
+
+
+        $(\epsilon * \eta)_X = (\epsilon G)_X \circ (J \eta)_X = (K \eta)_X \circ (\epsilon F)_X$,
+
+
+    hence
+
+
+        $\epsilon * \eta = \epsilon G \circ J \eta = K \eta \circ \epsilon F$.
+
+
+        % The diagram here is very similar to the last one.
+
+        % The top of the diagram
+                
+        $J(F(X)) \to^{J(\eta_X)} J(G(X)) \to^{\epsilon_{G(X)}} K(H(X))$
+            
+            
+        % The bottom of the diagram
+            
+            $J(F(Y)) \to^{J(\eta_Y)} J(G(Y)) \to^{\epsilon_{G(Y)}} K(H(Y))$
+        
+        % The middle of the diagram
+
+            $J(F(X)) \to^{J(F(f))} J(F(Y))$ , $J(G(X)) \to^{J(G(f))} J(G(Y))$ , $K(G(X)) \to^{K(G(f))} K(G(Y))$
+
+
+
+
+
+    \subsection{Whiskering}
+
+
+        Whiskering is an external binary operation between a functor and a naturalq
+        transformation.
+
+
+        If $\eta : F \Rightarrow G$ is a natural transformation between functors $F, G : C \to D$, and
+        $H : D \to E$ is another functor, then we can form the natural transformation
+        $H_\eta : H \circ F \Rightarrow H \circ G$ by defining
+
+
+            $(H \eta)_X = H(\eta_X).$
+
+
+        If on the other hand $K : B \to C$ is sa functor, the natural transformation
+        $\eta K : F \circ K \Rightarrow G \circ K$ is defined by
+
+
+            $(\eta K)_X = \eta_{K(X)}$
+
+        
+        It's also an horizontal composition where one of the natural transformations is the
+        identity natural transformation:
+
+
+            $H \eta = \text{id}_H * \eta$ and $\eta K = \eta * \text{id}_K$. 
+            
+        
+            Note that $\text{id}_H$ (resp. $\text{id}_K$) is generally not the left (resp. right) identity of horizontal
+        composition $ * $ ($H\eta \neq \eta$ and $\eta K \neq \eta$ in general), except if $H$(resp. $K$) is the identity
+        functor of the category $D$(resp. $C$).
+
+
+    \subsection{Interchange Law}
+
+        The two operations are related by an identity which exchanges vertical composition with
+        horizontal composition: if we have four natural transformations $\alpha, \alpha', \beta, \beta'$ as shown on
+        the image to the right (Horizontal and vertical composition of natural transformations), then the following identity holds:
+
+
+            $(\beta' \circ \alpha') * (\beta \circ \alpha) = (\beta' * \beta) \circ (\alpha' * \alpha)$
+
+
+        Vertical and horizontal compositions are also linked through identity natural 
+        transformations:
+
+
+            for $F : C \to D$ and $G : D \to E$, $\text{id}_G * \text{id}_F = \text{id}_{G*F}$
+
+
+            As whiskering is horizontal composition with an identity, the interchange law gives
+            immediately the compact formulas of horizontal composition of $\eta : F \Rightarrow G$ and
+            $\epsilon : J \Rightarrow K$ without having to analyze components and the commutative diagram:
+
+
+                $\epsilon * \eta = (\epsilon \circ \text{id}_j) * (\text{id}_G \circ \eta) = (\epsilon * \text{id}_G) \circ (\text{id}_J * \eta) = \epsilon G \circ J \eta$
+
+                    $ = (\text{id}_K \circ \epsilon) * (\eta \circ \text{id}_F) = (\text{id}_K * \eta) \circ (\epsilon * \text{id}_F) = K \eta \circ \epsilon F$
+
 
 \section{Functor categories}
+
+
+If $C$ is any category and $I$ is a small category, we can form the functor category $C^I$
+having as objects all functors from $I$ to $C$ and as morphisms the natural transformations
+between those functors. This forms a category since for any functor $F$ there is an identity
+natural transformation $1_F : F$ (which assigns to every object $X$ the identity
+morphism on $F(X)$) and the composition of two natural transformations (the "vertical
+composition" above) is again a natural transformation.
+
+
+The isomorphisms in $C^!$ are precisely the natural isomorphisms. That is, a natural
+transformation $\eta : F \to G$ is a natural isomorphism if and only if there exists a natural
+transformation $\epsilon : G \to F$ such that $\eta \epsilon = 1_G$ and $\epsilon \eta = 1_F$
+
+
+The isomorphisms in $C^I$ are precisely the natural isomorphisms. That is, a natural
+transformation $\mu : F \to G$ is a natural isomorphism if and only if there exists a natural
+transformation $\epsilon : G \to F$ such that $\mu \epsilon = 1_G$ and $\epsilon \mu = 1_F$.
+
+
+The functor category $C^I$ is especially useful if $I$ arises from a directed graph. For
+instance, if $I$ is the category of the directed graph $\cdot \to \cdot$, then $C^I$ has as objects the
+morphisms of $C$,  and a morphism between $\phi : U \to V$ and $\psi : X \to Y$ in $C^I$ is a pair
+of morphisms $f : U \to X$ and $g : V \to Y$ in $C$ such that the "square commutes", i.e.
+$\psi \circ f = g \circ \phi$
+
+
+\begin{itemize}
+
+    \item  0-cells (objects) are the small categories,
+     
+    \item 1-cells (arrows) between two objects $C$ and $D$ are the functors from $C$ to $D$,
+
+    \item 2-cells between two 1-cells (functors) $F : C \to D$ and $G : C \to D$ are the natural
+    transformations from $F$ to $G$
+
+\end{itemize}
+
+
+The horizontal and vertical compositions are the compositions between natural
+transformations described previously. A functor category $C^I$ is then simply a hom-
+category in this category (smallness issues aside).
 
 
 \section{Yoneda lemma}
 
 
+If $X$ is an object of a locally small category $C$, then the assignment $Y \mapsto \text{Hom}_C(X,Y)$
+defines a covariant functor $F_X : C \to \textbf{Set}$ This functor is called representable
+(more generally, a representable functor is any functor naturally isomorphic to this functor for
+an appropriate choice of $X$). The natural transformations from a representable functor to
+an arbitrary functor $F : C \to \textbf{Set}$ are completely known and easy to describe; this is the
+content of the Yoneda lemma.
+
+
 \section{Historical notes}
 
 
-\section{See also}
+Saunders Mac Lane, one of the founders of category theory, is said to have remarked, "I
+didn't invent categories to study functors; I invented them to study natural
+transformations."[7] Just as the study of groups is not complete without a study of
+homomorphisms, so the study of categories is not complete without the study of
+functors. The reason for Mac Lane's comment is that the study of functors is itself not
+complete without the study of natural transformations.
 
 
-\section{Notes}
 
-
-\section{References}
+The context of Mac Lane's remark was the axiomatic theory of homology. Different ways
+of constructing homology could be shown to coincide: for example in the case of a
+simplicial complex the groups defined directly would be isomorphic to those of the
+singular theory. What cannot easily be expressed without the language of natural
+transformations is how homology groups are compatible with morphisms between
+objects, and how two equivalent homology theories not only have the same homology
+groups, but also the same morphisms between those groups.
 
 \end{document}
